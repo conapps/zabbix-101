@@ -1,8 +1,8 @@
 # Workshop de Zabbix
 
-# **DÍA 1 – Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
+## **Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
 
-## **Módulo –** [Bienvenida e introducción](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)
+## **Módulo –** [Bienvenida e introducción](modulos-detallado.md#módulo--bienvenida-e-introducción)
 
 **Objetivo:** Presentación, objetivos, agenda, expectativas.
 
@@ -10,12 +10,12 @@
 
 - Presentación de instructores y participantes.
 - Objetivos generales del workshop.
-- Agenda de los dos días.
+- Agenda de los días.
 - Metodología: **70% práctica – 30% teoría**.
 - Expectativas y dinámica de trabajo.
 - Herramientas que se utilizarán.
 
-## **Módulo 1 – [Introducción al monitoreo y a Zabbix](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 1 – [Introducción al monitoreo y a Zabbix](modulos-detallado.md#módulo-1--introducción-al-monitoreo-y-a-zabbix)**
 
 **Objetivo:** Entender qué es el monitoreo, para qué sirve y por qué **Zabbix** es una herramienta poderosa para gestionar la infraestructura de TI.
 
@@ -29,7 +29,7 @@
 
 ---
 
-## **Módulo 2 – [Arquitectura y Componentes principales de Zabbix](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 2 – [Arquitectura y Componentes principales de Zabbix](modulos-detallado.md#módulo-2--arquitectura-y-componentes-principales-de-zabbix)**
 
 **Objetivo:** Comprender cómo se compone **Zabbix** y cómo interactúan sus elementos principales y adicionales dentro de una infraestructura de monitoreo.
 
@@ -54,7 +54,7 @@
 
 ---
 
-## **Módulo 3 – [Interfaz Web](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 3 – [Interfaz Web](modulos-detallado.md#módulo-3--interfaz-web)**
 
 **Objetivo:** Familiarizarse con el **frontend web** de Zabbix, explorar menús, dashboards, gráficos y eventos, y aprender a navegar entre las vistas principales.
 
@@ -68,7 +68,7 @@
 
 ---
 
-## **Módulo 4 – [Monitoreo básico de hosts y servicios](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 4 – [Monitoreo básico de hosts y servicios](modulos-detallado.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)**
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
@@ -89,7 +89,7 @@
 
 ---
 
-## **Módulo 5 – [Visualización de datos y descubrimiento automático](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 5 – [Visualización de datos y descubrimiento automático](modulos-detallado.md#módulo-5--visualización-de-datos-y-descubrimiento-automático)**
 
 **Objetivo:** Ver datos en tiempo real (interpretar gráficas, ítems y triggers) y aprender a automatizar el descubrimiento de recursos para reducir la configuración manual.
 
@@ -105,7 +105,7 @@
 
 ---
 
-## **Módulo – [Ejercicios integradores](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo – [Ejercicios integradores](modulos-detallado.md#módulo--ejercicios-integradores)**
 
 **Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, asociará un template, validará métricas, visualizará los dashboards, configurará descubrimientos automáticos y verificará eventos y problemas.
 
@@ -122,9 +122,9 @@
 
 ---
 
-## **Módulo – [Cierre del Día 1](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo – [Cierre - Primera parte](modulos-detallado.md#módulo--cierre--primera-parte)**
 
-**Objetivo:** Resolver dudas, repasar conceptos clave y adelantar lo que veremos en el Día 2.
+**Objetivo:** Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop.
 
 ### Conceptos clave
 
@@ -132,19 +132,19 @@
 - Repaso general de los módulos vistos.
 - Revisión de los ejercicios prácticos realizados.
 - Resumen de conceptos principales aprendidos.
-- Avance de los temas que se verán el **Día 2**.
+- Avance de los siguientes temas del workshop.
 
 ---
 
-# **DÍA 2 – Alertas, automatización y mejores prácticas**
+## **Alertas, automatización y mejores prácticas**
 
-## **Módulo – [Bienvenida y repaso Día 1](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo – [Bienvenida y repaso](modulos-detallado.md#módulo--bienvenida-y-repaso)**
 
-**Objetivo:** Resolver dudas pendientes del **Día 1** y reforzar los conceptos principales antes de avanzar con los módulos del **Día 2**.
+**Objetivo:** Resolver dudas pendientes y reforzar los conceptos principales antes de avanzar con los siguientes módulos.
 
 ### Conceptos clave
 
-- Resolución de dudas del Día 1.
+- Resolución de dudas.
 - Repaso general de los módulos anteriores:
     - Introducción al monitoreo y Zabbix.
     - Arquitectura y componentes principales.
@@ -152,9 +152,9 @@
     - Monitoreo básico de hosts y servicios.
     - Visualización de datos y descubrimiento automático.
 - Confirmación de que todos completaron los ejercicios.
-- Preparación para los temas del **Día 2**.
+- Preparación para los siguientes temas.
 
-## **Módulo 6 – [Triggers y eventos](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 6 – [Triggers y eventos](modulos-detallado.md#módulo-6--triggers-y-eventos)**
 
 **Objetivo:** Configurar condiciones para generar alertas.
 
@@ -171,7 +171,7 @@
 
 ---
 
-## **Módulo 7 – [Acciones y notificaciones](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 7 – [Acciones y notificaciones](modulos-detallado.md#módulo-7--acciones-y-notificaciones)**
 
 **Objetivo:** Aprender a configurar **acciones** y **canales de notificación** para enviar alertas automáticas.
 
@@ -189,7 +189,7 @@
 
 ---
 
-## **Módulo 8 – [Recopilación de datos (métricas)](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 8 – [Recopilación de datos (métricas)](modulos-detallado.md#módulo-8--recopilación-de-datos-métricas)**
 
 **Objetivo:** Conocer los diferentes métodos de monitoreo que ofrece **Zabbix** y aprender a elegir el más adecuado según el tipo de recurso.
 
@@ -210,7 +210,7 @@
 
 ---
 
-## **Módulo 9 – [Buenas prácticas de configuración y escalabilidad](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 9 – [Buenas prácticas de configuración y escalabilidad](modulos-detallado.md#módulo-9--buenas-prácticas-de-configuración-y-escalabilidad)**
 
 **Objetivo:** Configurar **Zabbix** de forma eficiente y escalable, organizando correctamente **hosts, templates, permisos, roles y proxies** para mantener un sistema limpio, optimizado y fácil de administrar.
 
@@ -227,7 +227,7 @@
 
 ---
 
-## **Módulo 10 – [Roadmap y ecosistema Zabbix](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo 10 – [Roadmap y ecosistema Zabbix](modulos-detallado.md#módulo-10--roadmap-y-ecosistema-zabbix)**
 
 **Objetivo:** Explorar las posibilidades de **automatización con la API de Zabbix**, mostrar **integraciones clave** (como Grafana) y entender cómo **ampliar el alcance del monitoreo**.
 
@@ -247,20 +247,20 @@
 
 ---
 
-## **Módulo – [Ejercicio final: monitoreo completo](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo – [Ejercicio final: monitoreo completo](modulos-detallado.md#módulo--ejercicio-final-monitoreo-completo)**
 
 **Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
 
 ---
 
-## **Módulo – [Cierre del Día 2](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)**
+## **Módulo – [Cierre del Workshop](modulos-detallado.md#módulo--cierre-del-workshop)**
 
 **Objetivo:** Cerrar el workshop, responder preguntas, analizar casos reales y recoger feedback.
 
 ### Conceptos clave
 
 - Discusión de **casos reales** de monitoreo.
-- Revisión de los **módulos avanzados** vistos en el Día 2.
+- Revisión de los **módulos avanzados** vistos.
 - Espacio de **Q&A** (preguntas y respuestas).
 - Intercambio de **buenas prácticas** y experiencias.
 - Feedback sobre el workshop.
@@ -303,7 +303,3 @@
     - Network Maps (Mapas de red)
 
 ---
-
-[Workshop detallado de Zabbix](https://www.notion.so/Workshop-detallado-de-Zabbix-26778920c8bd807ba604c9d1f3f1153d?pvs=21)
-
-[Cronograma del Workshop Zabbix](https://www.notion.so/Cronograma-del-Workshop-Zabbix-26778920c8bd80b7a800f5c59b707aa0?pvs=21)

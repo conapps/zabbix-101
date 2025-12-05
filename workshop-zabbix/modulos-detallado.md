@@ -1,6 +1,6 @@
 # Workshop detallado de Zabbix
 
-# **DÍA 1 – Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
+## **Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
 
 ## **Módulo –** Bienvenida e introducción
 
@@ -27,11 +27,7 @@
 
 ### **3. Agenda general**
 
-[Cronograma del Workshop Zabbix](https://www.notion.so/Cronograma-del-Workshop-Zabbix-26778920c8bd80b7a800f5c59b707aa0?pvs=21) 
-
-**Día 1:** Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix.
-
-**Día 2:** Alertas, automatización y mejores prácticas.
+El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix, y Alertas, automatización y mejores prácticas.
 
 ---
 
@@ -77,10 +73,7 @@
 
 ### **1.2. Casos típicos de uso en empresas**
 
-> 
-> 
-> 
-> ![640px-Metric_collection.svg.png](Workshop%20detallado%20de%20Zabbix/640px-Metric_collection.svg.png)
+> ![640px-Metric_collection.svg.png](imagenes/640px-Metric_collection.svg.png)
 > 
 > - Monitoreo de **servidores** (CPU, RAM, disco, procesos).
 > - Control de **bases de datos** (MySQL, PostgreSQL, Oracle, etc.).
@@ -114,17 +107,13 @@
 > - **Alertas automáticas**, flexibles y personalizables.
 > - Integraciones con **herramientas externas** (Grafana, Ansible, Slack, Telegram, etc.).
 > 
-> ![zabbix_features_1200x766.svg](Workshop%20detallado%20de%20Zabbix/zabbix_features_1200x766.svg)
+> ![zabbix_features_1200x766.svg](imagenes/zabbix_features_1200x766.svg)
 > 
 
 ---
 
 ### **1.4. Beneficios de implementar Zabbix**
 
-> 
-> 
-> 
-> 
 > | **Beneficio** | **Cómo ayuda Zabbix** | **Impacto en la empresa** |
 > | --- | --- | --- |
 > | **Reducción de inactividad** | Detecta fallos antes de que escalen. | Menos downtime y mejor disponibilidad. |
@@ -163,21 +152,12 @@
 
 > Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instalarse **en una sola máquina** para entornos pequeños o **distribuirse** en varios servidores para grandes infraestructuras.
 > 
-> 
-> <aside>
-> 💡
-> 
-> **Dato clave:** Toda la comunicación interna usa **JSON-RPC sobre TCP**, lo que permite integraciones y automatización sencillas.
-> 
-> </aside>
-> 
+> **💡 Dato clave:** Toda la comunicación interna usa **JSON-RPC sobre TCP**, lo que permite integraciones y automatización sencillas. 
 
 ---
 
 ### **2.2. Componentes principales**
 
-> 
-> 
 > - **Zabbix Server** *(el **cerebro** del sistema)*
 >     
 >     
@@ -187,7 +167,7 @@
 >     - Transfiere los valores recopilados a una base de datos.
 >     - Controla, procesa y coordina la comunicación entre todos los elementos (agentes, proxies y frontend).
 >     
->     ![features_Smart_thresholds.svg](Workshop%20detallado%20de%20Zabbix/features_Smart_thresholds.svg)
+>     ![features_Smart_thresholds.svg](imagenes/features_Smart_thresholds.svg)
 >     
 >     - Soporta múltiples sistemas operativos: Linux (RedHat / CentOS / Oracle Linux, Alma Linux / Rocky Linux, Debian / Ubuntu / Raspbian, SUSE Linux), Solaris, AIX, HP-UX, FreeBSD / OpenBSD, MacOS, Otros.
 > - **Base de datos** *(el corazón de los datos)*
@@ -212,18 +192,18 @@
 >     - Recolecta métricas del sistema y las envía al servidor.
 >     - Tiena una sobrecarga de rendimiento insignificante.
 >     
->     ![features_Automatic_agent_deployment_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Automatic_agent_deployment_zabbix.svg)
+>     ![features_Automatic_agent_deployment_zabbix.svg](imagenes/features_Automatic_agent_deployment_zabbix.svg)
 >     
 >     - Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.
 >         - **Modo activo** → El agente **envía** datos directamente al servidor.
 >         - **Modo pasivo** → El servidor **consulta** al agente bajo demanda.
 >         
->         ![image.png](Workshop%20detallado%20de%20Zabbix/image.png)
+>         ![image.png](imagenes/image.png)
 >         
 >     
 >     - Implementación del agente en cualquier SO: Linux, UNIX, macOS, Windows, etc. como instalarse en servidores, PCs y dispositivos de red.
 >     
->     ![features_Agents4_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Agents4_zabbix.svg)
+>     ![features_Agents4_zabbix.svg](imagenes/features_Agents4_zabbix.svg)
 >     
 > - **Zabbix Proxy** *(para entornos distribuidos)*
 >     - Ideal para monitorear **sitios remotos, múltiples zonas horarias o grandes clientes**.
@@ -232,14 +212,9 @@
 >         - **Modo activo** → El proxy **se conecta** al servidor y envía datos.
 >         - **Modo pasivo** → El servidor **se conecta** y **consulta** al proxy.
 >         
->         ![8-1.jpg](Workshop%20detallado%20de%20Zabbix/8-1.jpg)
+>         ![8-1.jpg](imagenes/8-1.jpg)
 >         
->         <aside>
->         ℹ️
->         
->         El modo de proxy preferido depende de la configuración de la red
->         
->         </aside>
+>         **ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
 >         
 >     - Se puede implementar una **cantidad ilimitada de proxies** por instancia del servidor Zabbix.
 > 
@@ -253,13 +228,13 @@
 > - **Zabbix Web Service**
 >     - Genera reportes PDF programados automáticamente.
 >     
->     ![features_Scheduled_reports.svg](Workshop%20detallado%20de%20Zabbix/features_Scheduled_reports.svg)
+>     ![features_Scheduled_reports.svg](imagenes/features_Scheduled_reports.svg)
 >     
 > - **API REST de Zabbix**
 >     - Permite **automatizar tareas** y conectar con otros sistemas.
 >     - Ideal para integraciones con Ansible, Grafana, n8n, etc.
 >     
->     ![features_Zabbix_API_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Zabbix_API_zabbix.svg)
+>     ![features_Zabbix_API_zabbix.svg](imagenes/features_Zabbix_API_zabbix.svg)
 >     
 
 ---
@@ -275,9 +250,9 @@
 |                                                                  |
 |                                                        [Frontend Web]
 
-![features_Install_in_minutes_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Install_in_minutes_zabbix.svg)
+![features_Install_in_minutes_zabbix.svg](imagenes/features_Install_in_minutes_zabbix.svg)
 
-![image.png](Workshop%20detallado%20de%20Zabbix/image%201.png)
+![image.png](imagenes/image%201.png)
 
 ---
 
@@ -292,7 +267,7 @@
 > 
 > 
 > 
-> ![image.png](Workshop%20detallado%20de%20Zabbix/image%202.png)
+> ![image.png](imagenes/image%202.png)
 > 
 > | **Componente** | **Puerto TCP** | **Función** |
 > | --- | --- | --- |
@@ -336,7 +311,7 @@
 >     - Pueden contener varias páginas y rotar automáticamente.
 >     - Muestran un resumen completo del estado de los sistemas.
 >     
->     ![visualization.svg](Workshop%20detallado%20de%20Zabbix/visualization.svg)
+>     ![visualization.svg](imagenes/visualization.svg)
 >     
 > - Problems → Lista de **alertas y eventos activos**.
 > - Hosts→ Estado actual de los equipos monitoreados.
@@ -353,14 +328,14 @@
 > - Analiza el estado de los servicios relacionados para realizar el cálculo del SLA.
 > - Accede a resúmenes diarios / semanales / mensuales / anuales de los SLA de servicio.
 > 
-> ![features_SLA_monitoring.svg](Workshop%20detallado%20de%20Zabbix/features_SLA_monitoring.svg)
+> ![features_SLA_monitoring.svg](imagenes/features_SLA_monitoring.svg)
 > 
 > **3.2.3. Inventory** *(Inventario de activos)*
 > 
 > - Overview → Resumen de datos de inventario.
 > - Hosts → Información detallada de cada equipo.
 > 
-> ![features_Inventory_information.svg](Workshop%20detallado%20de%20Zabbix/features_Inventory_information.svg)
+> ![features_Inventory_information.svg](imagenes/features_Inventory_information.svg)
 > 
 > **3.2.4. Reports** *(Reportes automáticos)*
 > 
@@ -435,7 +410,7 @@
 > - Un template puede incluir otros templates.
 > - Ejemplo: Crear un **template principal** que contenga varios templates específicos y asociar solo el principal al host.
 > 
-> ![features_Out-of-the-box_templates_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Out-of-the-box_templates_zabbix.svg)
+> ![features_Out-of-the-box_templates_zabbix.svg](imagenes/features_Out-of-the-box_templates_zabbix.svg)
 > 
 
 ---
@@ -466,17 +441,12 @@
 > 
 > → Se puede tener múltiples interfaces definidas.
 > 
-> <aside>
-> 💡
-> 
-> **Estado de interfaces**:
+> **💡 Estado de interfaces:**
 > 
 > - Icono interfaz verde → todas las interfaces están "Available" (disponibles).
 > - Icono interfaz gris → al menos una interfaz esta "Unknown" (desconocida).
-> - Icono interfaz amarillo/naranja  → al menos una interfaz esta "Available" (disponible) y al menos una "No available" (no disponible).
-> - Icono interfaz rojo → todas las interfaces están "No available" - Unavailable (no disponible).
-> </aside>
-> 
+> - Icono interfaz amarillo/naranja → al menos una interfaz esta "Available" (disponible) y al menos una "No available" (no disponible).
+> - Icono interfaz rojo → todas las interfaces están "No available" - Unavailable (no disponible). 
 
 ---
 
@@ -621,7 +591,7 @@
 > - Servicios activos.
 > - Aplicaciones específicas.
 > 
-> ![features_low_level_discovery.svg](Workshop%20detallado%20de%20Zabbix/features_low_level_discovery.svg)
+> ![features_low_level_discovery.svg](imagenes/features_low_level_discovery.svg)
 > 
 > **5.2.2. Estructura de una LLD Rule**
 > 
@@ -632,13 +602,7 @@
 > - **Graph prototypes** → Gráficos asociados a los ítems generados.
 > - **Host prototypes** → Creación automática de hosts.
 > 
-> <aside>
-> ❓
-> 
-> LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente.
-> 
-> </aside>
-> 
+> **❓ Nota:** LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente. 
 
 ---
 
@@ -760,15 +724,15 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo – Cierre del Día 1**
+## **Módulo – Cierre - Primera parte**
 
-**Objetivo:** Resolver dudas, repasar conceptos clave y adelantar lo que veremos en el Día 2.
+**Objetivo:** Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop.
 
 ---
 
 ### **1. Repaso general**
 
-- Revisión rápida de los módulos del Día 1:
+- Revisión rápida de los módulos vistos:
     - Introducción y fundamentos.
     - Arquitectura y componentes.
     - Interfaz web.
@@ -794,7 +758,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-### **4. Avance del Día 2**
+### **4. Avance de los siguientes temas**
 
 - Configuración de triggers y alertas.
 - Acciones y notificaciones automáticas.
@@ -804,11 +768,11 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-# **DÍA 2 – Alertas, automatización y mejores prácticas**
+## **Alertas, automatización y mejores prácticas**
 
-## **Módulo – Bienvenida y repaso Día 1**
+## **Módulo – Bienvenida y repaso**
 
-**Objetivo:** Resolver dudas pendientes del **Día 1** y reforzar los conceptos principales antes de avanzar con los módulos del **Día 2**.
+**Objetivo:** Resolver dudas pendientes y reforzar los conceptos principales antes de avanzar con los siguientes módulos.
 
 ---
 
@@ -842,7 +806,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-### **4. Preparación para el Día 2**
+### **4. Preparación para los siguientes temas**
 
 - Adelanto de los temas:
     - Configuración de **triggers** y **eventos**.
@@ -913,13 +877,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >     `nodata(/Host/item,10m)=1`
 >     
 > 
-> <aside>
-> ✅
-> 
-> Una buena práctica es usar **dependencias** entre triggers para evitar cascadas (p. ej., “High CPU utilization” → suprime “Average CPU utilization”).
-> 
-> </aside>
-> 
+> **✅ Buena práctica:** Usar **dependencias** entre triggers para evitar cascadas (p. ej., "High CPU utilization" → suprime "Average CPU utilization"). 
 
 ---
 
@@ -980,7 +938,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >     - **Escalar** notificaciones según la severidad.
 >     - **Ejecutar scripts personalizados**.
 >     
->     ![features_Escalations.svg](Workshop%20detallado%20de%20Zabbix/features_Escalations.svg)
+>     ![features_Escalations.svg](imagenes/features_Escalations.svg)
 >     
 > - Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
@@ -1000,18 +958,12 @@ Al finalizar el ejercicio, cada participante deberá:
 > - **Webhooks** (ej.: Slack, Telegram, MS Teams, Grafana OnCall).
 > - **Scripts personalizados** (AlertScripts).
 > 
-> ![features_Messaging_channels_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Messaging_channels_zabbix.svg)
+> ![features_Messaging_channels_zabbix.svg](imagenes/features_Messaging_channels_zabbix.svg)
 > 
-> <aside>
-> 💡
-> 
-> Tip: Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
-> 
-> </aside>
-> 
+> **💡 Tip:** Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados. 
 > Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 > 
-> ![features_Custom_alerts_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Custom_alerts_zabbix.svg)
+> ![features_Custom_alerts_zabbix.svg](imagenes/features_Custom_alerts_zabbix.svg)
 > 
 
 ---
@@ -1111,7 +1063,7 @@ Al finalizar el ejercicio, cada participante deberá:
 > - Recopilar datos de end-points de API externos
 > - NVIDIA GPUs
 > 
-> ![features_Collect_from_any_source_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Collect_from_any_source_zabbix.svg)
+> ![features_Collect_from_any_source_zabbix.svg](imagenes/features_Collect_from_any_source_zabbix.svg)
 > 
 
 ---
@@ -1153,7 +1105,7 @@ Al finalizar el ejercicio, cada participante deberá:
 > 
 > * Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
 > 
-> ![features_Agent-less_monitoring.svg](Workshop%20detallado%20de%20Zabbix/features_Agent-less_monitoring.svg)
+> ![features_Agent-less_monitoring.svg](imagenes/features_Agent-less_monitoring.svg)
 > 
 > **8.2.4. Scripts y métricas personalizadas**
 > 
@@ -1224,21 +1176,12 @@ Al finalizar el ejercicio, cada participante deberá:
 >     - No existe template adecuado.
 >     - Requiere scripts personalizados.
 > 
-> <aside>
-> 💡
-> 
-> Tip: Antes de crear ítems manuales, revisar la Zabbix Template Library oficial.
-> 
-> </aside>
-> 
+> **💡 Tip:** Antes de crear ítems manuales, revisar la Zabbix Template Library oficial. 
 
 ---
 
 ### **9.2. Organización lógica de hosts y grupos**
 
-> 
-> 
-> 
 > Crear **grupos de hosts** basados en criterios claros:
 > 
 > - Cliente, área, servicio, aplicación, ubicación o entorno (prod, dev, test).
@@ -1285,7 +1228,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >     - Limitar el acceso para realizar acciones específicas en la interfaz de usuario.
 >     - Crear una lista para permitir o denegar acceso a métodos API específicos.
 >     
->     ![features_User_Roles.svg](Workshop%20detallado%20de%20Zabbix/features_User_Roles.svg)
+>     ![features_User_Roles.svg](imagenes/features_User_Roles.svg)
 >     
 > 
 > - Crear **grupos de usuarios** para asignar permisos en bloque.
@@ -1298,32 +1241,24 @@ Al finalizar el ejercicio, cada participante deberá:
 >     - Solamente lectura: acceso a lectura solamente
 >     - Denegar: acceso denegado
 >     
->     ![features_Flexible_permissions_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Flexible_permissions_zabbix.svg)
+>     ![features_Flexible_permissions_zabbix.svg](imagenes/features_Flexible_permissions_zabbix.svg)
 >     
 > - Beneficios:
 >     - Mayor **seguridad**.
 >     - **Control granular** de accesos.
 >     - Simplifica la delegación de tareas.
 > 
-> <aside>
-> 💡
-> 
-> Tip: Zabbix proporciona monitoreo para entornos de múltiples clientes, se puede implementar Zabbix como el punto central de monitoreo para múltiples organizaciones.
+> **💡 Tip:** Zabbix proporciona monitoreo para entornos de múltiples clientes, se puede implementar Zabbix como el punto central de monitoreo para múltiples organizaciones.
 > 
 > - Por eso es importante utilizar **grupos de usuarios para aislar** a los clientes entre sí.
-> - Definir **roles de usuario para controlar el acceso** de los usuarios a diferentes funciones de Zabbix.
+> - Definir **roles de usuario para controlar el acceso** de los usuarios a diferentes funciones de Zabbix.
 > 
-> ![features_Multi-tenancy_zabbix.svg](Workshop%20detallado%20de%20Zabbix/features_Multi-tenancy_zabbix.svg)
-> 
-> </aside>
-> 
+> ![features_Multi-tenancy_zabbix.svg](imagenes/features_Multi-tenancy_zabbix.svg) 
 
 ---
 
 ### **9.4. Nombres claros y consistentes**
 
-> 
-> 
 > - Mantener un **estándar de nombres** para:
 >     - Hosts.
 >     - Templates.
@@ -1354,19 +1289,19 @@ Al finalizar el ejercicio, cada participante deberá:
 >     - Monitorear el estado y la latencia de los proxies.
 > - Beneficios:
 > 
-> ![Ampliación Vertical](Workshop%20detallado%20de%20Zabbix/features-proxy_zabbix.svg)
+> ![Ampliación Vertical](imagenes/features-proxy_zabbix.svg)
 > 
 > Ampliación Vertical
 > 
-> ![Monitoreo Distribuído](Workshop%20detallado%20de%20Zabbix/features_remote_monitoring_zabbix.svg)
+> ![Monitoreo Distribuído](imagenes/features_remote_monitoring_zabbix.svg)
 > 
 > Monitoreo Distribuído
 > 
-> ![Balanceo de carga y alta disponibilidad](Workshop%20detallado%20de%20Zabbix/features_high_availability_zabbix.svg)
+> ![Balanceo de carga y alta disponibilidad](imagenes/features_high_availability_zabbix.svg)
 > 
 > Balanceo de carga y alta disponibilidad
 > 
-> ![Política de Retención de Datos](Workshop%20detallado%20de%20Zabbix/features_storage_periods.svg)
+> ![Política de Retención de Datos](imagenes/features_storage_periods.svg)
 > 
 > Política de Retención de Datos
 > 
@@ -1377,18 +1312,14 @@ Al finalizar el ejercicio, cada participante deberá:
 
 > Normalmente se requiere alta disponibilidad (HA) en infraestructuras críticas que prácticamente no puede permitirse ningún tiempo de inactividad.
 > 
+> Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan varios servidores Zabbix como nodos en un clúster. Mientras un servidor Zabbix en el clúster está activo, otros están en espera, listos para asumir el control si fuera necesario.
 > 
-> Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan varios servidores Zabbix como nodos en un clúster. Mientras un servidor Zabbix en el clúster está activo, otros están en espera, listos para asumir el control si fuera necesario.
+> ![zabbix_ha.png](imagenes/zabbix_ha.png)
 > 
-> ![zabbix_ha.png](Workshop%20detallado%20de%20Zabbix/zabbix_ha.png)
-> 
-> ![zabbix_ha_agent.png](Workshop%20detallado%20de%20Zabbix/zabbix_ha_agent.png)
-> 
+> ![zabbix_ha_agent.png](imagenes/zabbix_ha_agent.png) 
 
 ### **9.7. Buenas prácticas generales**
 
-> 
-> 
 > - Usar **templates** siempre que sea posible.
 > - Organizar hosts en **grupos lógicos**.
 > - Mantener **nombres claros y consistentes**.
@@ -1396,13 +1327,7 @@ Al finalizar el ejercicio, cada participante deberá:
 > - Aprovechar los **proxies** para ambientes distribuidos.
 > - Documentar configuraciones personalizadas.
 > 
-> <aside>
-> 💡
-> 
-> Implementar Machine learning para detectar anomalías basándose en el análisis de datos históricos en tiempo real ya que aveces definir los umbrales del problema manualmente no siempre es un enfoque eficaz.
-> 
-> </aside>
-> 
+> **💡 Tip:** Implementar Machine learning para detectar anomalías basándose en el análisis de datos históricos en tiempo real ya que a veces definir los umbrales del problema manualmente no siempre es un enfoque eficaz. 
 
 ---
 
@@ -1563,7 +1488,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo – Cierre del Día 2**
+## **Módulo – Cierre del Workshop**
 
 **Objetivo:** Cerrar el workshop, responder preguntas, analizar casos reales y recoger feedback.
 
@@ -1580,7 +1505,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-### **2. Revisión de módulos del Día 2**
+### **2. Revisión de módulos avanzados**
 
 - **Módulo 6** → Triggers y eventos.
 - **Módulo 7** → Acciones y notificaciones.
@@ -1668,5 +1593,3 @@ Tip: Identificar qué funcionalidades podrían aplicarse en los entornos de cada
     - Network Maps (Mapas de red)
 
 ---
-
-[Cronograma del Workshop Zabbix](https://www.notion.so/Cronograma-del-Workshop-Zabbix-26778920c8bd81b3b9f4dbe41aff8a0c?pvs=21)
