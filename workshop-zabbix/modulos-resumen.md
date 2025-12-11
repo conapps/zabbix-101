@@ -6,7 +6,7 @@
 
 **Objetivo:** Presentación, objetivos, agenda, expectativas.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Presentación de instructores y participantes.
 - Objetivos generales del workshop.
@@ -19,7 +19,7 @@
 
 **Objetivo:** Entender qué es el monitoreo, para qué sirve y por qué **Zabbix** es una herramienta poderosa para gestionar la infraestructura de TI.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - **Qué es el monitoreo** y **por qué es importante**.
 - **Casos típicos de uso** en empresas.
@@ -33,7 +33,7 @@
 
 **Objetivo:** Comprender cómo se compone **Zabbix** y cómo interactúan sus elementos principales y adicionales dentro de una infraestructura de monitoreo.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Cómo funciona la **arquitectura general** de Zabbix.
 - Cuáles son los **componentes principales**:
@@ -58,7 +58,7 @@
 
 **Objetivo:** Familiarizarse con el **frontend web** de Zabbix, explorar menús, dashboards, gráficos y eventos, y aprender a navegar entre las vistas principales.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Cómo acceder al **frontend web** y realizar login.
 - Recorrido general por la **interfaz gráfica**.
@@ -72,7 +72,7 @@
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Qué es un **host** y qué podemos monitorear.
 - Cómo dar **alta de un host** desde cero.
@@ -93,7 +93,7 @@
 
 **Objetivo:** Ver datos en tiempo real (interpretar gráficas, ítems y triggers) y aprender a automatizar el descubrimiento de recursos para reducir la configuración manual.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Cómo visualizar **métricas** en tiempo real.
 - Diferentes tipos de **gráficos** y su interpretación.
@@ -109,7 +109,7 @@
 
 **Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, asociará un template, validará métricas, visualizará los dashboards, configurará descubrimientos automáticos y verificará eventos y problemas.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Acceso al **frontend** y exploración inicial.
 - Alta de un **host** desde cero.
@@ -124,9 +124,9 @@
 
 ## **Módulo – [Cierre - Primera parte](modulos-detallado.md#módulo--cierre--primera-parte)**
 
-**Objetivo:** Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop.
+**Objetivo:** Resolver dudas, repasar <u>Conceptos clave</u> y adelantar los siguientes temas del workshop.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Espacio para preguntas y respuestas.
 - Repaso general de los módulos vistos.
@@ -142,7 +142,7 @@
 
 **Objetivo:** Resolver dudas pendientes y reforzar los conceptos principales antes de avanzar con los siguientes módulos.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Resolución de dudas.
 - Repaso general de los módulos anteriores:
@@ -158,7 +158,7 @@
 
 **Objetivo:** Configurar condiciones para generar alertas.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - ¿Qué es un **trigger** y qué evalúa?
 - Estados del trigger: **OK**, **Problem**, **Unknown**.
@@ -175,7 +175,7 @@
 
 **Objetivo:** Aprender a configurar **acciones** y **canales de notificación** para enviar alertas automáticas.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Qué es una **acción** y para qué sirve.
 - Condiciones y operaciones de las acciones.
@@ -193,7 +193,7 @@
 
 **Objetivo:** Conocer los diferentes métodos de monitoreo que ofrece **Zabbix** y aprender a elegir el más adecuado según el tipo de recurso.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Recolección de datos con **Zabbix Agent** y **Zabbix Proxy**.
 - Monitoreo **sin agente** (agentless) desde el **Zabbix Server**.
@@ -214,7 +214,7 @@
 
 **Objetivo:** Configurar **Zabbix** de forma eficiente y escalable, organizando correctamente **hosts, templates, permisos, roles y proxies** para mantener un sistema limpio, optimizado y fácil de administrar.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Uso recomendado de **templates** vs. ítems manuales.
 - Organización lógica de **hosts** y **grupos de hosts**.
@@ -231,7 +231,7 @@
 
 **Objetivo:** Explorar las posibilidades de **automatización con la API de Zabbix**, mostrar **integraciones clave** (como Grafana) y entender cómo **ampliar el alcance del monitoreo**.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Introducción a la **API de Zabbix** y casos de uso.
 - Integración con **Grafana** para dashboards avanzados.
@@ -257,7 +257,7 @@
 
 **Objetivo:** Cerrar el workshop, responder preguntas, analizar casos reales y recoger feedback.
 
-### Conceptos clave
+### <u>Conceptos clave</u>
 
 - Discusión de **casos reales** de monitoreo.
 - Revisión de los **módulos avanzados** vistos.
