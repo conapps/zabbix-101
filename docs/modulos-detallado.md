@@ -160,23 +160,23 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 > - $\color[rgb]{0.5,0,0.5}{\textbf{Zabbix\ Server}}$ *(el **cerebro** del sistema)*
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     - Es el proceso central de Zabbix.
 >     - Recibe, procesa, almacena y correlaciona datos.
 >     - Detecta problemas y envía alertas.
 >     - Transfiere los valores recopilados a una base de datos.
 >     - Controla, procesa y coordina la comunicación entre todos los elementos (agentes, proxies y frontend).
 >     - Soporta múltiples sistemas operativos: Linux (RedHat / CentOS / Oracle Linux, Alma Linux / Rocky Linux, Debian / Ubuntu / Raspbian, SUSE Linux), Solaris, AIX, HP-UX, FreeBSD / OpenBSD, MacOS, Otros.
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds">
+
+    </div>
+    </div>
 > - $\color[rgb]{0.5,0,0.5}{\textbf{Base\ de\ datos}}$ *(el corazón de los datos)*
 >     - Dónde se almacena **configuración**, **métricas** e **históricos**.
 >     - Guarda todos los cambios hechos desde la interfaz web y los datos recolectados.
@@ -193,38 +193,38 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Zabbix\ Agent}}$ *(recolector de métricas)*
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     - Recolecta métricas del sistema y las envía al servidor.
 >     - Tiena una sobrecarga de rendimiento insignificante.
 >     - Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment">
+
+    </div>
+    </div>
 >         - **Modo activo** → El agente **envía** datos directamente al servidor.
 >         - **Modo pasivo** → El servidor **consulta** al agente bajo demanda.
 >
 >         ![image.png](imagenes/image.png)
 >
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     - Implementación del agente en cualquier SO: Linux, UNIX, macOS, Windows, etc. como instalarse en servidores, PCs y dispositivos de red.
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents">
+
+    </div>
+    </div>
 >
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Zabbix\ Proxy}}$ *(para entornos distribuidos)*
 >     - Ideal para monitorear **sitios remotos, múltiples zonas horarias o grandes clientes**.
@@ -327,20 +327,20 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Dashboards}}$ → Vista general del estado de la infraestructura.
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     - Permiten personalizar cómo se presenta la información mediante **widgets**.
 >     - Pueden contener varias páginas y rotar automáticamente.
 >     - Muestran un resumen completo del estado de los sistemas.
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/visualization.svg" alt="Visualization">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/visualization.svg" alt="Visualization">
+
+    </div>
+    </div>
 >
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Problems}}$ → Lista de **alertas y eventos activos**.
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Hosts}}$→ Estado actual de los equipos monitoreados.
@@ -350,39 +350,39 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >
 > $\color[rgb]{0.5,0,0.5}{\textbf{3.2.2.\ Services}}$ *(Gestión de SLA)*
 >
-> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-> <div>
->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 > - Configuración de **servicios**.
 > - Definición de **SLA (Service Level Agreement)**.
 > - Visualización de **cumplimiento de objetivos**.
 > - Se definen servicios y componentes de servicio con lógica de cálculo de SLA personalizada.
 > - Analiza el estado de los servicios relacionados para realizar el cálculo del SLA.
 > - Accede a resúmenes diarios / semanales / mensuales / anuales de los SLA de servicio.
->
-> </div>
-> <div>
->
-> <img src="/zabbix-101/imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring">
->
-> </div>
-> </div>
+
+</div>
+<div>
+
+<img src="imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring">
+
+</div>
+</div>
 >
 > $\color[rgb]{0.5,0,0.5}{\textbf{3.2.3.\ Inventory}}$ *(Inventario de activos)*
 >
-> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-> <div>
->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Overview}}$ → Resumen de datos de inventario.
 > - $\color[rgb]{0.75,0.25,0.6}{\textbf{Hosts}}$ → Información detallada de cada equipo.
->
-> </div>
-> <div>
->
-> <img src="/zabbix-101/imagenes/features_Inventory_information.svg" alt="Inventory Information">
->
-> </div>
-> </div>
+
+</div>
+<div>
+
+<img src="imagenes/features_Inventory_information.svg" alt="Inventory Information">
+
+</div>
+</div>
 >
 > $\color[rgb]{0.5,0,0.5}{\textbf{3.2.4.\ Reports}}$ *(Reportes automáticos)*
 >
@@ -451,20 +451,20 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 > Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos y reglas que se pueden aplicar a múltiples hosts.
 >
-> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-> <div>
->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 > - Cambiar algo en un template propaga el cambio a todos los hosts vinculados.
 > - Un template puede incluir otros templates.
 > - Ejemplo: Crear un **template principal** que contenga varios templates específicos y asociar solo el principal al host.
->
-> </div>
-> <div>
->
-> <img src="/zabbix-101/imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates">
->
-> </div>
-> </div>
+
+</div>
+<div>
+
+<img src="imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates">
+
+</div>
+</div>
 >
 
 ---
@@ -640,21 +640,21 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >
 > **5.2.1. Recursos que puede descubrir**
 >
-> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-> <div>
->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 > - Interfaces de red.
 > - Discos y sistemas de almacenamiento.
 > - Servicios activos.
 > - Aplicaciones específicas.
->
-> </div>
-> <div>
->
-> <img src="/zabbix-101/imagenes/features_low_level_discovery.svg" alt="Low Level Discovery">
->
-> </div>
-> </div>
+
+</div>
+<div>
+
+<img src="imagenes/features_low_level_discovery.svg" alt="Low Level Discovery">
+
+</div>
+</div>
 >
 > **5.2.2. Estructura de una LLD Rule**
 >
@@ -995,21 +995,21 @@ Al finalizar el ejercicio, cada participante deberá:
 >
 > - Sirven para:
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     - **Notificar** usuarios y grupos por diferentes canales.
 >     - **Ejecutar comandos remotos**.
 >     - **Escalar** notificaciones según la severidad.
 >     - **Ejecutar scripts personalizados**.
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/features_Escalations.svg" alt="Escalations">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Escalations.svg" alt="Escalations">
+
+    </div>
+    </div>
 >
 > - Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
@@ -1293,44 +1293,44 @@ Al finalizar el ejercicio, cada participante deberá:
 >
 >     Permiten ocultar o mostrar elementos de la interfaz de usuario de Zabbix para adaptarse a las diferentes necesidades de acceso.
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     → Con los roles de usuario se puede:
->
+
 >     - Limitar el acceso a elementos específicos de la interfaz de usuario.
 >     - Limitar el acceso para realizar acciones específicas en la interfaz de usuario.
 >     - Crear una lista para permitir o denegar acceso a métodos API específicos.
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/features_User_Roles.svg" alt="User Roles">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_User_Roles.svg" alt="User Roles">
+
+    </div>
+    </div>
 >
 >
 > - Crear **grupos de usuarios** para asignar permisos en bloque.
 >
 >     Zabbix proporciona un esquema flexible de permisos de usuario que se puede usar de manera eficiente para gestionar los permisos de usuario.
 >
->     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
->     <div>
->
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
 >     → Se puede definir tres niveles de permisos:
->
+
 >     - Lectura y escritura: acceso a lectura y escritura
 >     - Solamente lectura: acceso a lectura solamente
 >     - Denegar: acceso denegado
->
->     </div>
->     <div>
->
->     <img src="/zabbix-101/imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
->
->     </div>
->     </div>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
+
+    </div>
+    </div>
 >
 > - Beneficios:
 >     - Mayor **seguridad**.
@@ -1339,19 +1339,19 @@ Al finalizar el ejercicio, cada participante deberá:
 >
 > **💡 Tip:** Zabbix proporciona monitoreo para entornos de múltiples clientes, se puede implementar Zabbix como el punto central de monitoreo para múltiples organizaciones.
 >
-> <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-> <div>
->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 > - Por eso es importante utilizar **grupos de usuarios para aislar** a los clientes entre sí.
 > - Definir **roles de usuario para controlar el acceso** de los usuarios a diferentes funciones de Zabbix.
->
-> </div>
-> <div>
->
-> <img src="/zabbix-101/imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy">
->
-> </div>
-> </div>
+
+</div>
+<div>
+
+<img src="imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy">
+
+</div>
+</div>
 
 ---
 
@@ -1387,36 +1387,36 @@ Al finalizar el ejercicio, cada participante deberá:
 >     - Monitorear el estado y la latencia de los proxies.
 > - Beneficios:
 >
-> <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start;">
-> <div style="text-align: center;">
->
-> <img src="/zabbix-101/imagenes/features-proxy_zabbix.svg" alt="Ampliación Vertical">
->
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start;">
+<div style="text-align: center;">
+
+<img src="imagenes/features-proxy_zabbix.svg" alt="Ampliación Vertical">
+
 > **Ampliación Vertical**
->
-> </div>
-> <div style="text-align: center;">
->
-> <img src="/zabbix-101/imagenes/features_remote_monitoring_zabbix.svg" alt="Monitoreo Distribuído">
->
+
+</div>
+<div style="text-align: center;">
+
+<img src="imagenes/features_remote_monitoring_zabbix.svg" alt="Monitoreo Distribuído">
+
 > **Monitoreo Distribuído**
->
-> </div>
-> <div style="text-align: center;">
->
-> <img src="/zabbix-101/imagenes/features_high_availability_zabbix.svg" alt="Balanceo de carga y alta disponibilidad">
->
+
+</div>
+<div style="text-align: center;">
+
+<img src="imagenes/features_high_availability_zabbix.svg" alt="Balanceo de carga y alta disponibilidad">
+
 > **Balanceo de carga y alta disponibilidad**
->
-> </div>
-> <div style="text-align: center;">
->
-> <img src="/zabbix-101/imagenes/features_storage_periods.svg" alt="Política de Retención de Datos">
->
+
+</div>
+<div style="text-align: center;">
+
+<img src="imagenes/features_storage_periods.svg" alt="Política de Retención de Datos">
+
 > **Política de Retención de Datos**
->
-> </div>
-> </div>
+
+</div>
+</div>
 
 ---
 
