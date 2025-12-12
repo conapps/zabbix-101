@@ -2,7 +2,7 @@
 
 ## **Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
 
-## **Módulo –** Bienvenida e introducción
+## <span style="color: green;"><strong>Módulo –</strong></span> Bienvenida e introducción
 
 **Objetivo:** Presentación, objetivos, agenda, expectativas.
 
@@ -50,7 +50,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 - Herramientas que se utilizarán.
 - Entrega de material y ejercicios.
 
-## **Módulo 1 –** Introducción al monitoreo y a Zabbix
+## <span style="color: green;"><strong>Módulo 1 –</strong></span> Introducción al monitoreo y a Zabbix
 
 **Objetivo:** Entender qué es el monitoreo, para qué sirve y por qué **Zabbix** es una herramienta poderosa para gestionar la infraestructura de TI.
 
@@ -142,7 +142,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo 2 –** Arquitectura y Componentes principales de Zabbix
+## <span style="color: green;"><strong>Módulo 2 –</strong></span> Arquitectura y Componentes principales de Zabbix
 
 **Objetivo:** Comprender cómo se compone **Zabbix** y cómo interactúan sus elementos principales y adicionales dentro de una infraestructura de monitoreo.
 
@@ -299,7 +299,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo 3 –** Interfaz Web
+## <span style="color: green;"><strong>Módulo 3 –</strong></span> Interfaz Web
 
 **Objetivo:** Familiarizarse con el **frontend web** de Zabbix, explorar menús, dashboards, gráficos y eventos, y aprender a navegar entre las vistas principales.
 
@@ -423,7 +423,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo 4 –** Monitoreo básico de hosts y servicios
+## <span style="color: green;"><strong>Módulo 4 –</strong></span> Monitoreo básico de hosts y servicios
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
@@ -587,7 +587,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo 5 –** Visualización de datos y descubrimiento automático
+## <span style="color: green;"><strong>Módulo 5 –</strong></span> Visualización de datos y descubrimiento automático
 
 **Objetivo:** Ver datos en tiempo real (interpretar gráficas, ítems y triggers) y aprender a automatizar el descubrimiento de recursos para reducir la configuración manual.
 
@@ -708,7 +708,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo –** Ejercicios integradores
+## <span style="color: green;"><strong>Módulo –</strong></span> Ejercicios integradores
 
 **Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, asociará un template, validará métricas, visualizará los dashboards, configurará descubrimientos automáticos y verificará eventos y problemas.
 
@@ -787,7 +787,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo –** Cierre - Primera parte
+## <span style="color: green;"><strong>Módulo –</strong></span> Cierre - Primera parte
 
 **Objetivo:** Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop.
 
@@ -833,7 +833,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ## **Alertas, automatización y mejores prácticas**
 
-## **Módulo –** Bienvenida y repaso
+## <span style="color: green;"><strong>Módulo –</strong></span> Bienvenida y repaso
 
 **Objetivo:** Resolver dudas pendientes y reforzar los conceptos principales antes de avanzar con los siguientes módulos.
 
@@ -877,7 +877,7 @@ Al finalizar el ejercicio, cada participante deberá:
     - Buenas prácticas de configuración y escalabilidad.
     - Ejercicio integrador final.
 
-## **Módulo 6 –** Triggers y eventos
+## <span style="color: green;"><strong>Módulo 6 –</strong></span> Triggers y eventos
 
 **Objetivo:** Configurar condiciones para generar alertas.
 
@@ -979,7 +979,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo 7 –** Acciones y notificaciones
+## <span style="color: green;"><strong>Módulo 7 –</strong></span> Acciones y notificaciones
 
 **Objetivo:** Aprender a configurar **acciones** y **canales de notificación** para enviar alertas automáticas.
 
@@ -1107,7 +1107,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo 8 –** Recopilación de datos (métricas)
+## <span style="color: green;"><strong>Módulo 8 –</strong></span> Recopilación de datos (métricas)
 
 **Objetivo:** Conocer los diferentes métodos de monitoreo que ofrece **Zabbix** y aprender a elegir el más adecuado según el tipo de recurso.
 
@@ -1228,7 +1228,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo 9 –** Buenas prácticas de configuración y escalabilidad
+## <span style="color: green;"><strong>Módulo 9 –</strong></span> Buenas prácticas de configuración y escalabilidad
 
 **Objetivo:** Configurar **Zabbix** de forma eficiente y escalable, organizando correctamente **hosts, templates, permisos, roles y proxies** para mantener un sistema limpio, optimizado y fácil de administrar.
 
@@ -1456,7 +1456,7 @@ Política de Retención de Datos
 
 ---
 
-## **Módulo 10 –** Roadmap y ecosistema Zabbix
+## <span style="color: green;"><strong>Módulo 10 –</strong></span> Roadmap y ecosistema Zabbix
 
 **Objetivo:** Explorar las posibilidades de **automatización con la API de Zabbix**, mostrar **integraciones clave** (como Grafana) y entender cómo **ampliar el alcance del monitoreo**.
 
@@ -1594,13 +1594,13 @@ Política de Retención de Datos
 
 ---
 
-## **Módulo –** Ejercicio final: monitoreo completo
+## <span style="color: green;"><strong>Módulo –</strong></span> Ejercicio final: monitoreo completo
 
 **Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
 
 ---
 
-## **Módulo –** Cierre del Workshop
+## <span style="color: green;"><strong>Módulo –</strong></span> Cierre del Workshop
 
 **Objetivo:** Cerrar el workshop, responder preguntas, analizar casos reales y recoger feedback.
 
