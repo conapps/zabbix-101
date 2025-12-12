@@ -204,10 +204,11 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-<ul>
-<li>Recolecta métricas del sistema y las envía al servidor.</li>
-<li>Tiena una sobrecarga de rendimiento insignificante.</li>
-</ul>
+     <ul>
+     <li>Recolecta métricas del sistema y las envía al servidor.</li>
+     <li>Tiena una sobrecarga de rendimiento insignificante.</li>
+     <li>Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.</li>
+     </ul>
 
     </div>
     <div>
@@ -226,7 +227,6 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     <img src="imagenes/image.png" alt="Modos de operación">
     </div>
 
-
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
@@ -242,44 +242,36 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     </div>
     </div>
 
-<ul>
-<li><span style="color: violet;"><strong>Zabbix Proxy</strong></span> *(para entornos distribuidos)*</li>
-<li>Ideal para monitorear <strong>sitios remotos, múltiples zonas horarias o grandes clientes</strong>.</li>
-<li>Reduce la carga del servidor principal ya que <strong>distribuye la carga</strong> entre proxies.</li>
-<li>También pueden operar en uno de los dos modos:</li>
-<li><strong>Modo activo</strong> → El proxy <strong>se conecta</strong> al servidor y envía datos.</li>
-<li><strong>Modo pasivo</strong> → El servidor <strong>se conecta</strong> y <strong>consulta</strong> al proxy.</li>
-</ul>
+- <span style="color: violet;"><strong>Zabbix Proxy</strong></span> *(para entornos distribuidos)*
+    - Ideal para monitorear <strong>sitios remotos, múltiples zonas horarias o grandes clientes</strong>.
+    - Reduce la carga del servidor principal ya que <strong>distribuye la carga</strong> entre proxies.
+    - También pueden operar en uno de los dos modos:
+        - <strong>Modo activo</strong> → El proxy <strong>se conecta</strong> al servidor y envía datos.
+        - <strong>Modo pasivo</strong> → El servidor <strong>se conecta</strong> y <strong>consulta</strong> al proxy.
 
-         ![8-1.jpg](imagenes/8-1.jpg)
+    ![8-1.jpg](imagenes/8-1.jpg)
 
-         **ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
+    **ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
 
-<ul>
-<li>Se puede implementar una <strong>cantidad ilimitada de proxies</strong> por instancia del servidor Zabbix.</li>
-</ul>
+    - Se puede implementar una <strong>cantidad ilimitada de proxies</strong> por instancia del servidor Zabbix.
 
- ---
+---
 
- **Otros componentes**
+**Otros componentes**
 
-<ul>
-<li><span style="color: violet;"><strong>Zabbix Java Gateway</strong></span></li>
-<li>Permite monitorear <strong>aplicaciones Java</strong> (JMX).</li>
-<li>Se puede conectar al servidor Zabbix o al zabbix proxy.</li>
-<li><span style="color: violet;"><strong>Zabbix Web Service</strong></span></li>
-<li>Genera reportes PDF programados automáticamente.</li>
-</ul>
+- <span style="color: violet;"><strong>Zabbix Java Gateway</strong></span>
+    - Permite monitorear <strong>aplicaciones Java</strong> (JMX).
+    - Se puede conectar al servidor Zabbix o al zabbix proxy.
+- <span style="color: violet;"><strong>Zabbix Web Service</strong></span>
+    - Genera reportes PDF programados automáticamente.
 
-     ![features_Scheduled_reports.svg](imagenes/features_Scheduled_reports.svg)
+    ![features_Scheduled_reports.svg](imagenes/features_Scheduled_reports.svg)
 
-<ul>
-<li><span style="color: violet;"><strong>API REST de Zabbix</strong></span></li>
-<li>Permite <strong>automatizar tareas</strong> y conectar con otros sistemas.</li>
-<li>Ideal para integraciones con Ansible, Grafana, n8n, etc.</li>
-</ul>
+- <span style="color: violet;"><strong>API REST de Zabbix</strong></span>
+    - Permite <strong>automatizar tareas</strong> y conectar con otros sistemas.
+    - Ideal para integraciones con Ansible, Grafana, n8n, etc.
 
-     ![features_Zabbix_API_zabbix.svg](imagenes/features_Zabbix_API_zabbix.svg)
+    ![features_Zabbix_API_zabbix.svg](imagenes/features_Zabbix_API_zabbix.svg)
 
 
 ---
