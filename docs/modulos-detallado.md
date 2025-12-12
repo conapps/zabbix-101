@@ -1,6 +1,34 @@
 # Workshop detallado de Zabbix
 
-## <span style="color: blue;"><strong>Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix</strong></span>
+## 📑 Índice
+
+<div style="background-color: #f6f8fa; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #0366d6;">
+
+### <span style="color: blue;">📚 Introducción, fundamentos y primeros pasos</span>
+
+- [**Módulo –** Bienvenida e introducción](#módulo--bienvenida-e-introducción)
+- [**Módulo 1 –** Introducción al monitoreo y a Zabbix](#módulo-1--introducción-al-monitoreo-y-a-zabbix)
+- [**Módulo 2 –** Arquitectura y Componentes principales de Zabbix](#módulo-2--arquitectura-y-componentes-principales-de-zabbix)
+- [**Módulo 3 –** Interfaz Web](#módulo-3--interfaz-web)
+- [**Módulo 4 –** Monitoreo básico de hosts y servicios](#módulo-4--monitoreo-básico-de-hosts-y-servicios)
+- [**Módulo 5 –** Visualización de datos y descubrimiento automático](#módulo-5--visualización-de-datos-y-descubrimiento-automático)
+- [**Módulo –** Ejercicios integradores](#módulo--ejercicios-integradores)
+- [**Módulo –** Cierre - Primera parte](#módulo--cierre---primera-parte)
+
+### <span style="color: blue;">🚀 Alertas, automatización y mejores prácticas</span>
+
+- [**Módulo –** Bienvenida y repaso](#módulo--bienvenida-y-repaso)
+- [**Módulo 6 –** Triggers y eventos](#módulo-6--triggers-y-eventos)
+- [**Módulo 7 –** Acciones y notificaciones](#módulo-7--acciones-y-notificaciones)
+- [**Módulo 8 –** Recopilación de datos (métricas)](#módulo-8--recopilación-de-datos-métricas)
+- [**Módulo 9 –** Buenas prácticas de configuración y escalabilidad](#módulo-9--buenas-prácticas-de-configuración-y-escalabilidad)
+- [**Módulo 10 –** Roadmap y ecosistema Zabbix](#módulo-10--roadmap-y-ecosistema-zabbix)
+- [**Módulo –** Ejercicio final: monitoreo completo](#módulo--ejercicio-final-monitoreo-completo)
+- [**Módulo –** Cierre del Workshop](#módulo--cierre-del-workshop)
+
+</div>
+
+---
 
 ## **Módulo –** <span style="color: green;">Bienvenida e introducción</span>
 
@@ -289,12 +317,12 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
 
-![features_Install_in_minutes_zabbix.svg](imagenes/features_Install_in_minutes_zabbix.svg)
+<img src="imagenes/features_Install_in_minutes_zabbix.svg" alt="Install in Minutes">
 
 </div>
 <div>
 
-![image.png](imagenes/image%201.png)
+<img src="imagenes/image 1.png" alt="Arquitectura">
 
 </div>
 </div>
