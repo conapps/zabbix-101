@@ -185,25 +185,21 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
     </div>
     </div>
-<ul>
-<li><span style="color: purple;"><strong>Base de datos</strong></span> *(el corazón de los datos)*</li>
-<li>Dónde se almacena <strong>configuración</strong>, <strong>métricas</strong> e <strong>históricos</strong>.</li>
-<li>Guarda todos los cambios hechos desde la interfaz web y los datos recolectados.</li>
-<li>Motores de base de datos soportados: MySQL, MariaDB, PostgreSQL, TimescaleDB, Oracle, SQLite3.</li>
-<li>Para entornos grandes, se recomienda <strong>PostgreSQL + TimescaleDB</strong>.</li>
-<li><span style="color: purple;"><strong>Frontend Web</strong></span> *(el panel de control)*</li>
-<li>Interfaz gráfica para <strong>gestionar, visualizar y administrar</strong> el sistema.</li>
-<li>Permite configurar hosts, triggers, alertas, dashboards, gráficos y reportes.</li>
-<li>Se puede instalar en cualquier so y funciona sobre Apache o Nginx y requiere PHP.</li>
-</ul>
+- <span style="color: purple;"><strong>Base de datos</strong></span> *(el corazón de los datos)*
+    - Dónde se almacena <strong>configuración</strong>, <strong>métricas</strong> e <strong>históricos</strong>.
+    - Guarda todos los cambios hechos desde la interfaz web y los datos recolectados.
+    - Motores de base de datos soportados: MySQL, MariaDB, PostgreSQL, TimescaleDB, Oracle, SQLite3.
+    - Para entornos grandes, se recomienda <strong>PostgreSQL + TimescaleDB</strong>.
+- <span style="color: purple;"><strong>Frontend Web</strong></span> *(el panel de control)*
+    - Interfaz gráfica para <strong>gestionar, visualizar y administrar</strong> el sistema.
+    - Permite configurar hosts, triggers, alertas, dashboards, gráficos y reportes.
+    - Se puede instalar en cualquier so y funciona sobre Apache o Nginx y requiere PHP.
 
 ---
 
 ### 2.3. Componentes adicionales
 
-<ul>
-<li><span style="color: violet;"><strong>Zabbix Agent</strong></span> *(recolector de métricas)*</li>
-</ul>
+- <span style="color: violet;"><strong>Zabbix Agent</strong></span> *(recolector de métricas)*
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
@@ -211,7 +207,6 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 <ul>
 <li>Recolecta métricas del sistema y las envía al servidor.</li>
 <li>Tiena una sobrecarga de rendimiento insignificante.</li>
-<li>Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.</li>
 </ul>
 
     </div>
@@ -221,12 +216,15 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
     </div>
     </div>
-<ul>
-<li><strong>Modo activo</strong> → El agente <strong>envía</strong> datos directamente al servidor.</li>
-<li><strong>Modo pasivo</strong> → El servidor <strong>consulta</strong> al agente bajo demanda.</li>
-</ul>
 
-         ![image.png](imagenes/image.png)
+    - Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.
+
+    - <strong>Modo activo</strong> → El agente <strong>envía</strong> datos directamente al servidor.
+    - <strong>Modo pasivo</strong> → El servidor <strong>consulta</strong> al agente bajo demanda.
+
+    <div style="text-align: center; margin: 20px 0;">
+    <img src="imagenes/image.png" alt="Modos de operación">
+    </div>
 
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
