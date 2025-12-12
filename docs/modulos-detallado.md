@@ -1392,28 +1392,28 @@ Al finalizar el ejercicio, cada participante deberá:
 
 <img src="imagenes/features-proxy_zabbix.svg" alt="Ampliación Vertical">
 
-> **Ampliación Vertical**
+Ampliación Vertical
 
 </div>
 <div style="text-align: center;">
 
 <img src="imagenes/features_remote_monitoring_zabbix.svg" alt="Monitoreo Distribuído">
 
-> **Monitoreo Distribuído**
+Monitoreo Distribuído
 
 </div>
 <div style="text-align: center;">
 
 <img src="imagenes/features_high_availability_zabbix.svg" alt="Balanceo de carga y alta disponibilidad">
 
-> **Balanceo de carga y alta disponibilidad**
+Balanceo de carga y alta disponibilidad
 
 </div>
 <div style="text-align: center;">
 
 <img src="imagenes/features_storage_periods.svg" alt="Política de Retención de Datos">
 
-> **Política de Retención de Datos**
+Política de Retención de Datos
 
 </div>
 </div>
