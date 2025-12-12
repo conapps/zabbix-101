@@ -76,15 +76,13 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
 
-<ul>
-<li>Monitoreo de <strong>servidores</strong> (CPU, RAM, disco, procesos).</li>
-<li>Control de <strong>bases de datos</strong> (MySQL, PostgreSQL, Oracle, etc.).</li>
-<li>Supervisión de <strong>servicios críticos</strong> (ERP, CRM, intranets, APIs).</li>
-<li>Control de <strong>dispositivos de red</strong> (switches, routers, firewalls).</li>
-<li>Monitoreo de <strong>aplicaciones</strong> y disponibilidad de sitios web.</li>
-<li>Gestión de <strong>entornos cloud</strong> e <strong>infraestructuras híbridas</strong>.</li>
-<li>Integración con <strong>herramientas ITSM</strong> para gestión de incidentes.</li>
-</ul>
+- Monitoreo de <strong>servidores</strong> (CPU, RAM, disco, procesos).
+- Control de <strong>bases de datos</strong> (MySQL, PostgreSQL, Oracle, etc.).
+- Supervisión de <strong>servicios críticos</strong> (ERP, CRM, intranets, APIs).
+- Control de <strong>dispositivos de red</strong> (switches, routers, firewalls).
+- Monitoreo de <strong>aplicaciones</strong> y disponibilidad de sitios web.
+- Gestión de <strong>entornos cloud</strong> e <strong>infraestructuras híbridas</strong>.
+- Integración con <strong>herramientas ITSM</strong> para gestión de incidentes.
 
 </div>
 <div>
@@ -204,11 +202,8 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-     <ul>
-     <li>Recolecta métricas del sistema y las envía al servidor.</li>
-     <li>Tiena una sobrecarga de rendimiento insignificante.</li>
-     <li>Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.</li>
-     </ul>
+     - Recolecta métricas del sistema y las envía al servidor.
+     - Tiena una sobrecarga de rendimiento insignificante.
 
     </div>
     <div>
@@ -220,8 +215,8 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
     - Puede funcionar en dos modos de operación ya sea pasivo, activo o simultáneamente.
 
-    - <strong>Modo activo</strong> → El agente <strong>envía</strong> datos directamente al servidor.
-    - <strong>Modo pasivo</strong> → El servidor <strong>consulta</strong> al agente bajo demanda.
+        - <strong>Modo activo</strong> → El agente <strong>envía</strong> datos directamente al servidor.
+        - <strong>Modo pasivo</strong> → El servidor <strong>consulta</strong> al agente bajo demanda.
 
     <div style="text-align: center; margin: 20px 0;">
     <img src="imagenes/image.png" alt="Modos de operación">
@@ -230,9 +225,9 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-<ul>
-<li>Implementación del agente en cualquier SO: Linux, UNIX, macOS, Windows, etc. como instalarse en servidores, PCs y dispositivos de red.</li>
-</ul>
+     <ul>
+     <li>Implementación del agente en cualquier SO: Linux, UNIX, macOS, Windows, etc. como instalarse en servidores, PCs y dispositivos de red.</li>
+     </ul>
 
     </div>
     <div>
