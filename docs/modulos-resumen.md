@@ -1,6 +1,6 @@
 # Workshop de Zabbix
 
-## **Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
+## <span style="color: blue;"><strong>Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix</strong></span>
 
 ## **Módulo –** [Bienvenida e introducción](modulos-detallado.md#módulo--bienvenida-e-introducción)
 
@@ -136,7 +136,7 @@
 
 ---
 
-## **Alertas, automatización y mejores prácticas**
+## <span style="color: blue;"><strong>Alertas, automatización y mejores prácticas</strong></span>
 
 ## **Módulo – [Bienvenida y repaso](modulos-detallado.md#módulo--bienvenida-y-repaso)**
 

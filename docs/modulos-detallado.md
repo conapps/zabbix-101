@@ -1,8 +1,8 @@
 # Workshop detallado de Zabbix
 
-## **Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
+## <span style="color: blue;"><strong>Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix</strong></span>
 
-## <span style="color: green;"><strong>Módulo –</strong></span> Bienvenida e introducción
+## **Módulo –** <span style="color: green;">Bienvenida e introducción</span>
 
 **Objetivo:** Presentación, objetivos, agenda, expectativas.
 
@@ -50,7 +50,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 - Herramientas que se utilizarán.
 - Entrega de material y ejercicios.
 
-## <span style="color: green;"><strong>Módulo 1 –</strong></span> Introducción al monitoreo y a Zabbix
+## **Módulo 1 –** <span style="color: green;">Introducción al monitoreo y a Zabbix</span>
 
 **Objetivo:** Entender qué es el monitoreo, para qué sirve y por qué **Zabbix** es una herramienta poderosa para gestionar la infraestructura de TI.
 
@@ -142,7 +142,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## <span style="color: green;"><strong>Módulo 2 –</strong></span> Arquitectura y Componentes principales de Zabbix
+## **Módulo 2 –** <span style="color: green;">Arquitectura y Componentes principales de Zabbix</span>
 
 **Objetivo:** Comprender cómo se compone **Zabbix** y cómo interactúan sus elementos principales y adicionales dentro de una infraestructura de monitoreo.
 
@@ -299,7 +299,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## <span style="color: green;"><strong>Módulo 3 –</strong></span> Interfaz Web
+## **Módulo 3 –** <span style="color: green;">Interfaz Web</span>
 
 **Objetivo:** Familiarizarse con el **frontend web** de Zabbix, explorar menús, dashboards, gráficos y eventos, y aprender a navegar entre las vistas principales.
 
@@ -423,7 +423,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## <span style="color: green;"><strong>Módulo 4 –</strong></span> Monitoreo básico de hosts y servicios
+## **Módulo 4 –** <span style="color: green;">Monitoreo básico de hosts y servicios</span>
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
@@ -587,7 +587,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## <span style="color: green;"><strong>Módulo 5 –</strong></span> Visualización de datos y descubrimiento automático
+## **Módulo 5 –** <span style="color: green;">Visualización de datos y descubrimiento automático</span>
 
 **Objetivo:** Ver datos en tiempo real (interpretar gráficas, ítems y triggers) y aprender a automatizar el descubrimiento de recursos para reducir la configuración manual.
 
@@ -708,7 +708,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## <span style="color: green;"><strong>Módulo –</strong></span> Ejercicios integradores
+## **Módulo –** <span style="color: green;">Ejercicios integradores</span>
 
 **Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, asociará un template, validará métricas, visualizará los dashboards, configurará descubrimientos automáticos y verificará eventos y problemas.
 
@@ -787,7 +787,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## <span style="color: green;"><strong>Módulo –</strong></span> Cierre - Primera parte
+## **Módulo –** <span style="color: green;">Cierre - Primera parte</span>
 
 **Objetivo:** Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop.
 
@@ -831,9 +831,9 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Alertas, automatización y mejores prácticas**
+## <span style="color: blue;"><strong>Alertas, automatización y mejores prácticas</strong></span>
 
-## <span style="color: green;"><strong>Módulo –</strong></span> Bienvenida y repaso
+## **Módulo –** <span style="color: green;">Bienvenida y repaso</span>
 
 **Objetivo:** Resolver dudas pendientes y reforzar los conceptos principales antes de avanzar con los siguientes módulos.
 
@@ -877,7 +877,7 @@ Al finalizar el ejercicio, cada participante deberá:
     - Buenas prácticas de configuración y escalabilidad.
     - Ejercicio integrador final.
 
-## <span style="color: green;"><strong>Módulo 6 –</strong></span> Triggers y eventos
+## **Módulo 6 –** <span style="color: green;">Triggers y eventos</span>
 
 **Objetivo:** Configurar condiciones para generar alertas.
 
@@ -979,7 +979,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## <span style="color: green;"><strong>Módulo 7 –</strong></span> Acciones y notificaciones
+## **Módulo 7 –** <span style="color: green;">Acciones y notificaciones</span>
 
 **Objetivo:** Aprender a configurar **acciones** y **canales de notificación** para enviar alertas automáticas.
 
@@ -1107,7 +1107,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## <span style="color: green;"><strong>Módulo 8 –</strong></span> Recopilación de datos (métricas)
+## **Módulo 8 –** <span style="color: green;">Recopilación de datos (métricas)</span>
 
 **Objetivo:** Conocer los diferentes métodos de monitoreo que ofrece **Zabbix** y aprender a elegir el más adecuado según el tipo de recurso.
 
@@ -1228,7 +1228,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## <span style="color: green;"><strong>Módulo 9 –</strong></span> Buenas prácticas de configuración y escalabilidad
+## **Módulo 9 –** <span style="color: green;">Buenas prácticas de configuración y escalabilidad</span>
 
 **Objetivo:** Configurar **Zabbix** de forma eficiente y escalable, organizando correctamente **hosts, templates, permisos, roles y proxies** para mantener un sistema limpio, optimizado y fácil de administrar.
 
@@ -1456,7 +1456,7 @@ Política de Retención de Datos
 
 ---
 
-## <span style="color: green;"><strong>Módulo 10 –</strong></span> Roadmap y ecosistema Zabbix
+## **Módulo 10 –** <span style="color: green;">Roadmap y ecosistema Zabbix</span>
 
 **Objetivo:** Explorar las posibilidades de **automatización con la API de Zabbix**, mostrar **integraciones clave** (como Grafana) y entender cómo **ampliar el alcance del monitoreo**.
 
@@ -1594,13 +1594,13 @@ Política de Retención de Datos
 
 ---
 
-## <span style="color: green;"><strong>Módulo –</strong></span> Ejercicio final: monitoreo completo
+## **Módulo –** <span style="color: green;">Ejercicio final: monitoreo completo</span>
 
 **Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
 
 ---
 
-## <span style="color: green;"><strong>Módulo –</strong></span> Cierre del Workshop
+## **Módulo –** <span style="color: green;">Cierre del Workshop</span>
 
 **Objetivo:** Cerrar el workshop, responder preguntas, analizar casos reales y recoger feedback.
 
