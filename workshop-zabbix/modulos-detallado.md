@@ -2,7 +2,7 @@
 
 ## **Introducción, fundamentos y primeros pasos del Monitoreo con Zabbix**
 
-## **Módulo –** <span style="color: green;">Bienvenida e introducción</span>
+## **Módulo –** $\color{green}{Bienvenida\ e\ introducción}$
 
 **Objetivo:** Presentación, objetivos, agenda, expectativas.
 
@@ -50,7 +50,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 - Herramientas que se utilizarán.
 - Entrega de material y ejercicios.
 
-## **Módulo 1 –** <span style="color: green;">Introducción al monitoreo y a Zabbix</span>
+## **Módulo 1 –** $\color{green}{Introducción\ al\ monitoreo\ y\ a\ Zabbix}$
 
 **Objetivo:** Entender qué es el monitoreo, para qué sirve y por qué **Zabbix** es una herramienta poderosa para gestionar la infraestructura de TI.
 
@@ -142,7 +142,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo 2 –** <span style="color: green;">Arquitectura y Componentes principales de Zabbix</span>
+## **Módulo 2 –** $\color{green}{Arquitectura\ y\ Componentes\ principales\ de\ Zabbix}$
 
 **Objetivo:** Comprender cómo se compone **Zabbix** y cómo interactúan sus elementos principales y adicionales dentro de una infraestructura de monitoreo.
 
@@ -158,7 +158,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **2.2. Componentes principales**
 
-> - <span style="color: purple;">**Zabbix Server**</span> *(el **cerebro** del sistema)*
+> - $\color[rgb]{0.5,0,0.5}{\textbf{Zabbix\ Server}}$ *(el **cerebro** del sistema)*
 >
 >     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 >     <div>
@@ -177,12 +177,12 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >
 >     </div>
 >     </div>
-> - <span style="color: purple;">**Base de datos**</span> *(el corazón de los datos)*
+> - $\color[rgb]{0.5,0,0.5}{\textbf{Base\ de\ datos}}$ *(el corazón de los datos)*
 >     - Dónde se almacena **configuración**, **métricas** e **históricos**.
 >     - Guarda todos los cambios hechos desde la interfaz web y los datos recolectados.
 >     - Motores de base de datos soportados: MySQL, MariaDB, PostgreSQL, TimescaleDB, Oracle, SQLite3.
 >     - Para entornos grandes, se recomienda **PostgreSQL + TimescaleDB**.
-> - <span style="color: purple;">**Frontend Web**</span> *(el panel de control)*
+> - $\color[rgb]{0.5,0,0.5}{\textbf{Frontend\ Web}}$ *(el panel de control)*
 >     - Interfaz gráfica para **gestionar, visualizar y administrar** el sistema.
 >     - Permite configurar hosts, triggers, alertas, dashboards, gráficos y reportes.
 >     - Se puede instalar en cualquier so y funciona sobre Apache o Nginx y requiere PHP.
@@ -191,7 +191,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### 2.3. Componentes adicionales
 
-> - <span style="color: #ff69b4;">**Zabbix Agent**</span> *(recolector de métricas)*
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Zabbix\ Agent}}$ *(recolector de métricas)*
 >
 >     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 >     <div>
@@ -226,7 +226,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >     </div>
 >     </div>
 >
-> - <span style="color: #ff69b4;">**Zabbix Proxy**</span> *(para entornos distribuidos)*
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Zabbix\ Proxy}}$ *(para entornos distribuidos)*
 >     - Ideal para monitorear **sitios remotos, múltiples zonas horarias o grandes clientes**.
 >     - Reduce la carga del servidor principal ya que **distribuye la carga** entre proxies.
 >     - También pueden operar en uno de los dos modos:
@@ -243,15 +243,15 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >
 > **Otros componentes**
 >
-> - <span style="color: #ff69b4;">**Zabbix Java Gateway**</span>
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Zabbix\ Java\ Gateway}}$
 >     - Permite monitorear **aplicaciones Java** (JMX).
 >     - Se puede conectar al servidor Zabbix o al zabbix proxy.
-> - <span style="color: #ff69b4;">**Zabbix Web Service**</span>
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Zabbix\ Web\ Service}}$
 >     - Genera reportes PDF programados automáticamente.
 >
 >     ![features_Scheduled_reports.svg](imagenes/features_Scheduled_reports.svg)
 >
-> - <span style="color: #ff69b4;">**API REST de Zabbix**</span>
+> - $\color[rgb]{1,0.41,0.71}{\textbf{API\ REST\ de\ Zabbix}}$
 >     - Permite **automatizar tareas** y conectar con otros sistemas.
 >     - Ideal para integraciones con Ansible, Grafana, n8n, etc.
 >
@@ -299,7 +299,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo 3 –** <span style="color: green;">Interfaz Web</span>
+## **Módulo 3 –** $\color{green}{Interfaz\ Web}$
 
 **Objetivo:** Familiarizarse con el **frontend web** de Zabbix, explorar menús, dashboards, gráficos y eventos, y aprender a navegar entre las vistas principales.
 
@@ -323,9 +323,9 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > El **menú lateral** es la base para navegar el frontend.
 >
 >
-> <span style="color: purple;">**3.2.1. Monitoring**</span> *(Monitoreo en vivo)*
+> $\color[rgb]{0.5,0,0.5}{\textbf{3.2.1.\ Monitoring}}$ *(Monitoreo en vivo)*
 >
-> - <span style="color: #ff69b4;">Dashboards</span> → Vista general del estado de la infraestructura.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Dashboards}}$ → Vista general del estado de la infraestructura.
 >
 >     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 >     <div>
@@ -342,13 +342,13 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >     </div>
 >     </div>
 >
-> - <span style="color: #ff69b4;">Problems</span> → Lista de **alertas y eventos activos**.
-> - <span style="color: #ff69b4;">Hosts</span>→ Estado actual de los equipos monitoreados.
-> - <span style="color: #ff69b4;">Latest data</span> → Últimas métricas recolectadas.
-> - <span style="color: #ff69b4;">Maps</span> → Mapas visuales con estado de hosts y servicios.
-> - <span style="color: #ff69b4;">Discovery</span>→ Reglas para descubrimiento automático de recursos.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Problems}}$ → Lista de **alertas y eventos activos**.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$→ Estado actual de los equipos monitoreados.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Latest\ data}}$ → Últimas métricas recolectadas.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Maps}}$ → Mapas visuales con estado de hosts y servicios.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Discovery}}$→ Reglas para descubrimiento automático de recursos.
 >
-> <span style="color: purple;">**3.2.2. Services**</span> *(Gestión de SLA)*
+> $\color[rgb]{0.5,0,0.5}{\textbf{3.2.2.\ Services}}$ *(Gestión de SLA)*
 >
 > <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 > <div>
@@ -368,13 +368,13 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > </div>
 > </div>
 >
-> <span style="color: purple;">**3.2.3. Inventory**</span> *(Inventario de activos)*
+> $\color[rgb]{0.5,0,0.5}{\textbf{3.2.3.\ Inventory}}$ *(Inventario de activos)*
 >
 > <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 > <div>
 >
-> - <span style="color: #ff69b4;">Overview</span> → Resumen de datos de inventario.
-> - <span style="color: #ff69b4;">Hosts</span> → Información detallada de cada equipo.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Overview}}$ → Resumen de datos de inventario.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → Información detallada de cada equipo.
 >
 > </div>
 > <div>
@@ -384,22 +384,22 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > </div>
 > </div>
 >
-> <span style="color: purple;">**3.2.4. Reports**</span> *(Reportes automáticos)*
+> $\color[rgb]{0.5,0,0.5}{\textbf{3.2.4.\ Reports}}$ *(Reportes automáticos)*
 >
 > - Crear y enviar informes programados basados en dashboards.
 >
-> <span style="color: purple;">**3.2.5. Configuration**</span> *(Configuración principal)*
+> $\color[rgb]{0.5,0,0.5}{\textbf{3.2.5.\ Configuration}}$ *(Configuración principal)*
 >
-> - <span style="color: #ff69b4;">Host Groups</span> → Agrupar lógicamente hosts y templates.
-> - <span style="color: #ff69b4;">Templates</span> → Templates para agrupar **ítems**, **triggers** y **gráficos**.
-> - <span style="color: #ff69b4;">Hosts</span> → Alta y configuración de equipos.
-> - <span style="color: #ff69b4;">Maintenance</span> → Definir períodos de mantenimiento:
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Host\ Groups}}$ → Agrupar lógicamente hosts y templates.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Templates}}$ → Templates para agrupar **ítems**, **triggers** y **gráficos**.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → Alta y configuración de equipos.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Maintenance}}$ → Definir períodos de mantenimiento:
 >     - Suprime notificaciones de problemas.
 >     - Puede pausar la recolección de datos.
 >     - Hosts en mantenimiento se marcan con un **icono de herramienta naranja**.
-> - <span style="color: #ff69b4;">Actions</span> → Automatización de notificaciones y tareas.
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Actions}}$ → Automatización de notificaciones y tareas.
 >
-> <span style="color: purple;">**3.2.6. Administration**</span> *(Administración global)*
+> $\color[rgb]{0.5,0,0.5}{\textbf{3.2.6.\ Administration}}$ *(Administración global)*
 >
 > - Configuración general de Zabbix.
 > - Gestión de **usuarios, roles y permisos**.
@@ -417,13 +417,13 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 **Pasos guiados**
 
 1. **Ingresar al frontend** con usuario y contraseña.
-2. Abrir <span style="color: #ff69b4;">**Dashboards**</span> → Identificar estado general.
-3. Ir a <span style="color: #ff69b4;">**Problems**</span> → Ver problemas actuales y su severidad.
-4. Buscar un **host** específico desde <span style="color: purple;">**Monitoring**</span> → <span style="color: #ff69b4;">**Hosts**</span>.
+2. Abrir $\color[rgb]{1,0.41,0.71}{\textbf{Dashboards}}$ → Identificar estado general.
+3. Ir a $\color[rgb]{1,0.41,0.71}{\textbf{Problems}}$ → Ver problemas actuales y su severidad.
+4. Buscar un **host** específico desde $\color[rgb]{0.5,0,0.5}{\textbf{Monitoring}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$.
 
 ---
 
-## **Módulo 4 –** <span style="color: green;">Monitoreo básico de hosts y servicios</span>
+## **Módulo 4 –** $\color{green}{Monitoreo\ básico\ de\ hosts\ y\ servicios}$
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
@@ -497,10 +497,10 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >
 > **💡 Estado de interfaces:**
 >
-> - Icono interfaz <span style="color: green;">verde</span> → todas las interfaces están "Available" (disponibles).
-> - Icono interfaz <span style="color: gray;">gris</span> → al menos una interfaz esta "Unknown" (desconocida).
-> - Icono interfaz <span style="color: yellow;">amarillo</span>/<span style="color: orange;">naranja</span> → al menos una interfaz esta "Available" (disponible) y al menos una "No available" (no disponible).
-> - Icono interfaz <span style="color: red;">rojo</span> → todas las interfaces están "No available" - Unavailable (no disponible).
+> - Icono interfaz $\color{green}{verde}$ → todas las interfaces están "Available" (disponibles).
+> - Icono interfaz $\color{gray}{gris}$ → al menos una interfaz esta "Unknown" (desconocida).
+> - Icono interfaz $\color{yellow}{amarillo}$/$\color{orange}{naranja}$ → al menos una interfaz esta "Available" (disponible) y al menos una "No available" (no disponible).
+> - Icono interfaz $\color{red}{rojo}$ → todas las interfaces están "No available" - Unavailable (no disponible).
 
 ---
 
@@ -559,7 +559,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 **Procedimiento básico**
 
-1. Ir a <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Hosts**</span> → <span style="color: blue;">**Create host**</span>.
+1. Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → $\color{blue}{\textbf{Create\ host}}$.
 2. Configurar:
     1. Nombre del host.
 
@@ -577,17 +577,17 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
         - **Con agente** → Más detallado.
         - **Sin agente** → SNMP, ICMP o HTTP.
 
-        → <span style="color: blue;">Add</span> y seleccionar Agent
+        → $\color{blue}{\textbf{Add}}$ y seleccionar Agent
 
         → Dirección IP `192.168.0.0`
 
-    5. <span style="color: blue;">Guardar (Add)</span> y verificar la conectividad.
+    5. $\color{blue}{\textbf{Guardar\ (Add)}}$ y verificar la conectividad.
 3. Ir a **Monitoring**→ **Hosts** y seleccionar **Latest Data** o directamente a **Monitoring**→ **Latest data** y validar que las métricas se recolecten.
 4. Revisar **Graphs** y **Problems** para confirmar datos.
 
 ---
 
-## **Módulo 5 –** <span style="color: green;">Visualización de datos y descubrimiento automático</span>
+## **Módulo 5 –** $\color{green}{Visualización\ de\ datos\ y\ descubrimiento\ automático}$
 
 **Objetivo:** Ver datos en tiempo real (interpretar gráficas, ítems y triggers) y aprender a automatizar el descubrimiento de recursos para reducir la configuración manual.
 
@@ -677,7 +677,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 **Pasos guiados**
 
-1. Ir a <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Hosts**</span> → en el host anteriormente creado → seleccionar la pestaña <span style="color: #ff69b4;">**Discovery**</span> → <span style="color: blue;">**Create discovery rule**</span>
+1. Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → en el host anteriormente creado → seleccionar la pestaña $\color[rgb]{1,0.41,0.71}{\textbf{Discovery}}$ → $\color{blue}{\textbf{Create\ discovery\ rule}}$
 2. Configurar:
     - Nombre de la regla.
 
@@ -699,7 +699,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
         → `1h`
 
-    - <span style="color: blue;">Guardar (Add)</span>
+    - $\color{blue}{\textbf{Guardar\ (Add)}}$
 3. Verificar los ítems descubiertos automáticamente.
 4. Observar:
     - Nuevas métricas.
@@ -708,7 +708,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-## **Módulo –** <span style="color: green;">Ejercicios integradores</span>
+## **Módulo –** $\color{green}{Ejercicios\ integradores}$
 
 **Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, asociará un template, validará métricas, visualizará los dashboards, configurará descubrimientos automáticos y verificará eventos y problemas.
 
@@ -731,7 +731,7 @@ Se entregará a cada participante la IP y nombre de un **host de prueba**. El ob
 
 ### **2. Alta de un nuevo host** *(Módulo 4)*
 
-1. Ir a <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Hosts**</span> → <span style="color: blue;">**Create host**</span>.
+1. Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → $\color{blue}{\textbf{Create\ host}}$.
 2. Definir:
     - Nombre del host.
     - Grupo de hosts.
@@ -752,8 +752,8 @@ Se entregará a cada participante la IP y nombre de un **host de prueba**. El ob
 
 ### **4. Verificación de métricas y visualización de datos** *(Módulo 5)*
 
-1. Ir a <span style="color: purple;">**Monitoring**</span> → <span style="color: #ff69b4;">**Latest Data**</span> y validar que las métricas del host se estén recolectando.
-2. Abrir la pestaña de <span style="color: #ff69b4;">**Graphs**</span> y visualizar tendencias históricas.
+1. Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Monitoring}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Latest\ Data}}$ y validar que las métricas del host se estén recolectando.
+2. Abrir la pestaña de $\color[rgb]{1,0.41,0.71}{\textbf{Graphs}}$ y visualizar tendencias históricas.
 3. Explorar diferentes tipos de gráficos disponibles.
 4. Verificar los **eventos y problemas** asociados al host.
 
@@ -761,7 +761,7 @@ Se entregará a cada participante la IP y nombre de un **host de prueba**. El ob
 
 ### **5. Configuración de Low-Level Discovery (LLD)** *(Módulo 5)*
 
-1. Ir a <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Hosts**</span> y seleccionar el host creado.
+1. Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ y seleccionar el host creado.
 2. Entrar en la pestaña **Discovery rules**.
 3. Crear una nueva **LLD rule** para **interfaces de red**.
 4. Configurar:
@@ -787,7 +787,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo –** <span style="color: green;">Cierre - Primera parte</span>
+## **Módulo –** $\color{green}{Cierre\ -\ Primera\ parte}$
 
 **Objetivo:** Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop.
 
@@ -833,7 +833,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ## **Alertas, automatización y mejores prácticas**
 
-## **Módulo –** <span style="color: green;">Bienvenida y repaso</span>
+## **Módulo –** $\color{green}{Bienvenida\ y\ repaso}$
 
 **Objetivo:** Resolver dudas pendientes y reforzar los conceptos principales antes de avanzar con los siguientes módulos.
 
@@ -877,7 +877,7 @@ Al finalizar el ejercicio, cada participante deberá:
     - Buenas prácticas de configuración y escalabilidad.
     - Ejercicio integrador final.
 
-## **Módulo 6 –** <span style="color: green;">Triggers y eventos</span>
+## **Módulo 6 –** $\color{green}{Triggers\ y\ eventos}$
 
 **Objetivo:** Configurar condiciones para generar alertas.
 
@@ -907,11 +907,11 @@ Al finalizar el ejercicio, cada participante deberá:
 >
 > Usá severidades coherentes para priorizar atención y escalamientos:
 >
-> - <span style="color: blue;">**Information**</span>
-> - <span style="color: yellow;">**Warning**</span>
-> - <span style="color: #ff8c00;">**Average**</span>
-> - <span style="color: red;">**High**</span>
-> - <span style="color: #ff69b4;">**Disaster**</span>
+> - $\color{blue}{\textbf{Information}}$
+> - $\color{yellow}{\textbf{Warning}}$
+> - $\color[rgb]{1,0.55,0}{\textbf{Average}}$
+> - $\color{red}{\textbf{High}}$
+> - $\color[rgb]{1,0.41,0.71}{\textbf{Disaster}}$
 
 ---
 
@@ -952,7 +952,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 **Pasos guiados**
 
-1. <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Hosts**</span> → (host) → <span style="color: #ff69b4;">**Triggers**</span> → <span style="color: blue;">**Create trigger**</span>.
+1. $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → (host) → $\color[rgb]{1,0.41,0.71}{\textbf{Triggers}}$ → $\color{blue}{\textbf{Create\ trigger}}$.
 2. Configurar:
     1. Definir **Name** (claro y accionable).
 
@@ -974,12 +974,12 @@ Al finalizar el ejercicio, cada participante deberá:
 
         → `service=compute`, `env=prod`
 
-    6. <span style="color: blue;">Guardar (Add)</span> y **probar**.
-3. Verificar en <span style="color: purple;">**Monitoring**</span> → <span style="color: #ff69b4;">**Problems**</span> cuando la condición se cumpla.
+    6. $\color{blue}{\textbf{Guardar\ (Add)}}$ y **probar**.
+3. Verificar en $\color[rgb]{0.5,0,0.5}{\textbf{Monitoring}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Problems}}$ cuando la condición se cumpla.
 
 ---
 
-## **Módulo 7 –** <span style="color: green;">Acciones y notificaciones</span>
+## **Módulo 7 –** $\color{green}{Acciones\ y\ notificaciones}$
 
 **Objetivo:** Aprender a configurar **acciones** y **canales de notificación** para enviar alertas automáticas.
 
@@ -1043,14 +1043,14 @@ Al finalizar el ejercicio, cada participante deberá:
 
 > **1. Configurar un Media Type**
 >
-> - Ir a <span style="color: purple;">**Administration**</span> → <span style="color: #ff69b4;">**Media types**</span> → <span style="color: blue;">**Create media type**</span>.
+> - Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Administration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Media\ types}}$ → $\color{blue}{\textbf{Create\ media\ type}}$.
 > - Seleccionar el tipo: **Email**, **Telegram**, **Slack**, **Webhook** o **Script**.
 > - Completar la configuración requerida (servidores SMTP, tokens, URLs, etc.).
 > - Probar el envío de mensajes desde la opción **Test**.
 >
 > **2. Configurar un usuario**
 >
-> - Ir a <span style="color: purple;">**Administration**</span> → <span style="color: #ff69b4;">**Users**</span> → <span style="color: blue;">**Create user**</span>.
+> - Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Administration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Users}}$ → $\color{blue}{\textbf{Create\ user}}$.
 > - Definir:
 >     - Nombre, rol y permisos.
 >     - Grupo de usuarios.
@@ -1059,7 +1059,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >
 > **3. Crear una acción**
 >
-> - Ir a <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Actions**</span> → <span style="color: blue;">**Create action**</span>.
+> - Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Actions}}$ → $\color{blue}{\textbf{Create\ action}}$.
 > - Definir:
 >     - **Name**: Nombre claro y representativo.
 >     - **Conditions**:
@@ -1091,7 +1091,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 **Pasos guiados**
 
-1. <span style="color: purple;">**Administration**</span> → <span style="color: #ff69b4;">**Media types**</span> → Editar un media type existente o <span style="color: blue;">**Create media type**</span>.
+1. $\color[rgb]{0.5,0,0.5}{\textbf{Administration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Media\ types}}$ → Editar un media type existente o $\color{blue}{\textbf{Create\ media\ type}}$.
 2. Configurar:
     1. Definir **Name**.
 
@@ -1103,11 +1103,11 @@ Al finalizar el ejercicio, cada participante deberá:
     - Envíe notificaciones al usuario configurado.
     - Incluya un mensaje personalizado.
 5. Generar un evento de prueba para validar la notificación.
-6. Verificar en <span style="color: purple;">**Monitoring**</span> → <span style="color: #ff69b4;">**Problems**</span> cuando la condición se cumpla y ver los Actions.
+6. Verificar en $\color[rgb]{0.5,0,0.5}{\textbf{Monitoring}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Problems}}$ cuando la condición se cumpla y ver los Actions.
 
 ---
 
-## **Módulo 8 –** <span style="color: green;">Recopilación de datos (métricas)</span>
+## **Módulo 8 –** $\color{green}{Recopilación\ de\ datos\ (métricas)}$
 
 **Objetivo:** Conocer los diferentes métodos de monitoreo que ofrece **Zabbix** y aprender a elegir el más adecuado según el tipo de recurso.
 
@@ -1206,7 +1206,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### **Pasos guiados**
 
-1. Ir a <span style="color: purple;">**Configuration**</span> → <span style="color: #ff69b4;">**Hosts**</span> → <span style="color: blue;">**Create host**</span>.
+1. Ir a $\color[rgb]{0.5,0,0.5}{\textbf{Configuration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{Hosts}}$ → $\color{blue}{\textbf{Create\ host}}$.
 2. Definir:
     - Nombre del host.
     - Dirección IP.
@@ -1228,7 +1228,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo 9 –** <span style="color: green;">Buenas prácticas de configuración y escalabilidad</span>
+## **Módulo 9 –** $\color{green}{Buenas\ prácticas\ de\ configuración\ y\ escalabilidad}$
 
 **Objetivo:** Configurar **Zabbix** de forma eficiente y escalable, organizando correctamente **hosts, templates, permisos, roles y proxies** para mantener un sistema limpio, optimizado y fácil de administrar.
 
@@ -1456,7 +1456,7 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ---
 
-## **Módulo 10 –** <span style="color: green;">Roadmap y ecosistema Zabbix</span>
+## **Módulo 10 –** $\color{green}{Roadmap\ y\ ecosistema\ Zabbix}$
 
 **Objetivo:** Explorar las posibilidades de **automatización con la API de Zabbix**, mostrar **integraciones clave** (como Grafana) y entender cómo **ampliar el alcance del monitoreo**.
 
@@ -1587,20 +1587,20 @@ Al finalizar el ejercicio, cada participante deberá:
 
 **Pasos guiados**
 
-1. Generar un **API Token** en <span style="color: purple;">**Administration**</span> → <span style="color: #ff69b4;">**API tokens**</span>.
+1. Generar un **API Token** en $\color[rgb]{0.5,0,0.5}{\textbf{Administration}}$ → $\color[rgb]{1,0.41,0.71}{\textbf{API\ tokens}}$.
 2. Probar una **consulta básica** a la API para listar hosts.
 3. Configurar un **data source** de Zabbix en Grafana.
 4. Crear un dashboard con métricas de CPU y RAM.
 
 ---
 
-## **Módulo –** <span style="color: green;">Ejercicio final: monitoreo completo</span>
+## **Módulo –** $\color{green}{Ejercicio\ final:\ monitoreo\ completo}$
 
 **Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
 
 ---
 
-## **Módulo –** <span style="color: green;">Cierre del Workshop</span>
+## **Módulo –** $\color{green}{Cierre\ del\ Workshop}$
 
 **Objetivo:** Cerrar el workshop, responder preguntas, analizar casos reales y recoger feedback.
 
