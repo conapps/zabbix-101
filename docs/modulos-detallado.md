@@ -76,13 +76,15 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
 
-- Monitoreo de <strong>servidores</strong> (CPU, RAM, disco, procesos).
-- Control de <strong>bases de datos</strong> (MySQL, PostgreSQL, Oracle, etc.).
-- Supervisión de <strong>servicios críticos</strong> (ERP, CRM, intranets, APIs).
-- Control de <strong>dispositivos de red</strong> (switches, routers, firewalls).
-- Monitoreo de <strong>aplicaciones</strong> y disponibilidad de sitios web.
-- Gestión de <strong>entornos cloud</strong> e <strong>infraestructuras híbridas</strong>.
-- Integración con <strong>herramientas ITSM</strong> para gestión de incidentes.
+<ul>
+<li>Monitoreo de <strong>servidores</strong> (CPU, RAM, disco, procesos).</li>
+<li>Control de <strong>bases de datos</strong> (MySQL, PostgreSQL, Oracle, etc.).</li>
+<li>Supervisión de <strong>servicios críticos</strong> (ERP, CRM, intranets, APIs).</li>
+<li>Control de <strong>dispositivos de red</strong> (switches, routers, firewalls).</li>
+<li>Monitoreo de <strong>aplicaciones</strong> y disponibilidad de sitios web.</li>
+<li>Gestión de <strong>entornos cloud</strong> e <strong>infraestructuras híbridas</strong>.</li>
+<li>Integración con <strong>herramientas ITSM</strong> para gestión de incidentes.</li>
+</ul>
 
 </div>
 <div>
@@ -202,8 +204,10 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-     - Recolecta métricas del sistema y las envía al servidor.
-     - Tiena una sobrecarga de rendimiento insignificante.
+     <ul>
+     <li>Recolecta métricas del sistema y las envía al servidor.</li>
+     <li>Tiena una sobrecarga de rendimiento insignificante.</li>
+     </ul>
 
     </div>
     <div>
