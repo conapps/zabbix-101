@@ -73,15 +73,24 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **1.2. Casos típicos de uso en empresas**
 
- ![640px-Metric_collection.svg.png](imagenes/640px-Metric_collection.svg.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
 
- - Monitoreo de **servidores** (CPU, RAM, disco, procesos).
- - Control de **bases de datos** (MySQL, PostgreSQL, Oracle, etc.).
- - Supervisión de **servicios críticos** (ERP, CRM, intranets, APIs).
- - Control de **dispositivos de red** (switches, routers, firewalls).
- - Monitoreo de **aplicaciones** y disponibilidad de sitios web.
- - Gestión de **entornos cloud** e **infraestructuras híbridas**.
- - Integración con **herramientas ITSM** para gestión de incidentes.
+- Monitoreo de **servidores** (CPU, RAM, disco, procesos).
+- Control de **bases de datos** (MySQL, PostgreSQL, Oracle, etc.).
+- Supervisión de **servicios críticos** (ERP, CRM, intranets, APIs).
+- Control de **dispositivos de red** (switches, routers, firewalls).
+- Monitoreo de **aplicaciones** y disponibilidad de sitios web.
+- Gestión de **entornos cloud** e **infraestructuras híbridas**.
+- Integración con **herramientas ITSM** para gestión de incidentes.
+
+</div>
+<div>
+
+<img src="imagenes/640px-Metric_collection.svg.png" alt="Casos típicos de uso">
+
+</div>
+</div>
 
 ---
 
@@ -163,7 +172,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-     - Es el proceso central de Zabbix.
+     - Es el <u>proceso central</u> de Zabbix.
      - Recibe, procesa, almacena y correlaciona datos.
      - Detecta problemas y envía alertas.
      - Transfiere los valores recopilados a una base de datos.
