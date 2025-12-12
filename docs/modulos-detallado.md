@@ -250,7 +250,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
     ![8-1.jpg](imagenes/8-1.jpg)
 
-    **ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
+    - >**ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
 
     - Se puede implementar una <strong>cantidad ilimitada de proxies</strong> por instancia del servidor Zabbix.
 
@@ -286,9 +286,18 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 |                                                                  |
 |                                                        [Frontend Web]
 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 ![features_Install_in_minutes_zabbix.svg](imagenes/features_Install_in_minutes_zabbix.svg)
 
+</div>
+<div>
+
 ![image.png](imagenes/image%201.png)
+
+</div>
+</div>
 
 ---
 
@@ -324,14 +333,17 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 
 
- 1. Abrir el navegador e ingresar la URL del frontend (por ejemplo: `https://zabbix.demo.local`).
- 2. Iniciar sesión con las credenciales entregadas durante el workshop.
+ 1. Abrir el navegador e ingresar la URL del frontend (por ejemplo: `https://alertasX.conatel-lab.conatel.cloud`).
+    > **Nota:** Remplazar X por el número asignado a cada uno.
+ 2. Iniciar sesión con las credenciales:
+    - Usuario: `demo`
+    - Contraseña: `Zabbix123!`
  3. Identificar en la esquina superior derecha:
-<ul>
-<li>Usuario actual.</li>
-<li>Idioma y tema.</li>
-<li>Acceso rápido a configuración personal.</li>
-</ul>
+    <ul>
+    <li>Usuario actual.</li>
+    <li>Idioma y tema.</li>
+    <li>Acceso rápido a configuración personal.</li>
+    </ul>
 
 ---
 
