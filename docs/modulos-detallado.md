@@ -173,7 +173,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >     </div>
 >     <div>
 >
->     ![features_Smart_thresholds.svg](imagenes/features_Smart_thresholds.svg)
+>     <img src="/zabbix-101/imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds">
 >
 >     </div>
 >     </div>
@@ -203,7 +203,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >     </div>
 >     <div>
 >
->     ![features_Automatic_agent_deployment_zabbix.svg](imagenes/features_Automatic_agent_deployment_zabbix.svg)
+>     <img src="/zabbix-101/imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment">
 >
 >     </div>
 >     </div>
@@ -221,7 +221,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >     </div>
 >     <div>
 >
->     ![features_Agents4_zabbix.svg](imagenes/features_Agents4_zabbix.svg)
+>     <img src="/zabbix-101/imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents">
 >
 >     </div>
 >     </div>
@@ -337,7 +337,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 >     </div>
 >     <div>
 >
->     ![visualization.svg](imagenes/visualization.svg)
+>     <img src="/zabbix-101/imagenes/visualization.svg" alt="Visualization">
 >
 >     </div>
 >     </div>
@@ -363,7 +363,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > </div>
 > <div>
 >
-> ![features_SLA_monitoring.svg](imagenes/features_SLA_monitoring.svg)
+> <img src="/zabbix-101/imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring">
 >
 > </div>
 > </div>
@@ -379,7 +379,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > </div>
 > <div>
 >
-> ![features_Inventory_information.svg](imagenes/features_Inventory_information.svg)
+> <img src="/zabbix-101/imagenes/features_Inventory_information.svg" alt="Inventory Information">
 >
 > </div>
 > </div>
@@ -461,7 +461,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > </div>
 > <div>
 >
-> ![features_Out-of-the-box_templates_zabbix.svg](imagenes/features_Out-of-the-box_templates_zabbix.svg)
+> <img src="/zabbix-101/imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates">
 >
 > </div>
 > </div>
@@ -651,7 +651,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 > </div>
 > <div>
 >
-> ![features_low_level_discovery.svg](imagenes/features_low_level_discovery.svg)
+> <img src="/zabbix-101/imagenes/features_low_level_discovery.svg" alt="Low Level Discovery">
 >
 > </div>
 > </div>
@@ -1006,7 +1006,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >     </div>
 >     <div>
 >
->     ![features_Escalations.svg](imagenes/features_Escalations.svg)
+>     <img src="/zabbix-101/imagenes/features_Escalations.svg" alt="Escalations">
 >
 >     </div>
 >     </div>
@@ -1305,7 +1305,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >     </div>
 >     <div>
 >
->     ![features_User_Roles.svg](imagenes/features_User_Roles.svg)
+>     <img src="/zabbix-101/imagenes/features_User_Roles.svg" alt="User Roles">
 >
 >     </div>
 >     </div>
@@ -1327,7 +1327,7 @@ Al finalizar el ejercicio, cada participante deberá:
 >     </div>
 >     <div>
 >
->     ![features_Flexible_permissions_zabbix.svg](imagenes/features_Flexible_permissions_zabbix.svg)
+>     <img src="/zabbix-101/imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
 >
 >     </div>
 >     </div>
@@ -1348,7 +1348,7 @@ Al finalizar el ejercicio, cada participante deberá:
 > </div>
 > <div>
 >
-> ![features_Multi-tenancy_zabbix.svg](imagenes/features_Multi-tenancy_zabbix.svg)
+> <img src="/zabbix-101/imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy">
 >
 > </div>
 > </div>
@@ -1390,28 +1390,28 @@ Al finalizar el ejercicio, cada participante deberá:
 > <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start;">
 > <div style="text-align: center;">
 >
-> ![Ampliación Vertical](imagenes/features-proxy_zabbix.svg)
+> <img src="/zabbix-101/imagenes/features-proxy_zabbix.svg" alt="Ampliación Vertical">
 >
 > **Ampliación Vertical**
 >
 > </div>
 > <div style="text-align: center;">
 >
-> ![Monitoreo Distribuído](imagenes/features_remote_monitoring_zabbix.svg)
+> <img src="/zabbix-101/imagenes/features_remote_monitoring_zabbix.svg" alt="Monitoreo Distribuído">
 >
 > **Monitoreo Distribuído**
 >
 > </div>
 > <div style="text-align: center;">
 >
-> ![Balanceo de carga y alta disponibilidad](imagenes/features_high_availability_zabbix.svg)
+> <img src="/zabbix-101/imagenes/features_high_availability_zabbix.svg" alt="Balanceo de carga y alta disponibilidad">
 >
 > **Balanceo de carga y alta disponibilidad**
 >
 > </div>
 > <div style="text-align: center;">
 >
-> ![Política de Retención de Datos](imagenes/features_storage_periods.svg)
+> <img src="/zabbix-101/imagenes/features_storage_periods.svg" alt="Política de Retención de Datos">
 >
 > **Política de Retención de Datos**
 >
