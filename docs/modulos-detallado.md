@@ -461,10 +461,9 @@ El **menú lateral** es la base para navegar el frontend.
 
 → **Ejercicio práctico**: Exploración del frontend.
 
-### **3.3. Ejercicio práctico**
+### **3.3. Ejercicio práctico**</summary>
 
-<details>
-<summary><strong>Objetivo:</strong> Familiarizarse con la interfaz web y localizar información clave.</summary>
+**Objetivo**: Familiarizarse con la interfaz web y localizar información clave.
 
 **<u>Pasos guiados</u>**
 
@@ -728,7 +727,7 @@ Una **LLD rule** está formada por:
 
 **Objetivo**: Configuración de una regla de descubrimiento de **interfaces de red**.
 
-**Pasos guiados**
+**<u>Pasos guiados</u>**
 
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → en el host anteriormente creado → seleccionar la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
 2. Configurar:
@@ -1003,7 +1002,7 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 **Objetivo**: Crear un trigger para alertar si la **CPU supera el 80% durante 5 minutos** y notificar por correo.
 
-**Pasos guiados**
+**<u>Pasos guiados</u>**
 
 1. <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → (host) → <span style="color: violet;"><strong>Triggers</strong></span> → <span style="color: blue;"><strong>Create trigger</strong></span>.
 2. Configurar:
@@ -1045,6 +1044,7 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
 - Flujo básico:
 
     **Trigger → Evento → Acción → Operaciones**
+- Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
 - Sirven para:
 
@@ -1065,8 +1065,6 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
 
     </div>
     </div>
-
-- Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
 ---
 
@@ -1089,7 +1087,8 @@ Los maneja exclusivamente el **Zabbix Server**.
  ![features_Messaging_channels_zabbix.svg](imagenes/features_Messaging_channels_zabbix.svg)
 
 > **💡 Tip:** Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
- Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
+
+Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 
  ![features_Custom_alerts_zabbix.svg](imagenes/features_Custom_alerts_zabbix.svg)
 
@@ -1142,7 +1141,7 @@ Los maneja exclusivamente el **Zabbix Server**.
 
 **Objetivo**: Configurar un usuario que reciba alertas personalizadas.
 
-**Pasos guiados**
+**<u>Pasos guiados</u>**
 
 1. <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → Editar un media type existente o <span style="color: blue;"><strong>Create media type</strong></span>.
 2. Configurar:
@@ -1206,13 +1205,14 @@ Zabbix te permite recopilar métricas de cualquier fuente, ya sea:
 
 Como ya se mencionó, permite recopilar **métricas detalladas** del sistema operativo, aplicaciones y servicios.
 
-- Ideal para:
-    - Uso de CPU, memoria, disco, procesos, logs.
-    - Monitoreo profundo de aplicaciones.
+Ideal para:
+- Uso de CPU, memoria, disco, procesos, logs.
+- Monitoreo profundo de aplicaciones.
 
  **8.2.2. Monitoreo con proxy (Zabbix Proxy)**
 
 Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong>Zabbix Server</strong>.
+
 Útil para:
 - Reducción de carga en el server principal.
 - Redes distribuidas o separadas por <strong>firewalls</strong>.
@@ -1264,7 +1264,7 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 
 **Objetivo:** Configurar monitoreo por **Ping** y **HTTP** para validar la disponibilidad de un host y un servicio web.
 
-### **Pasos guiados**
+**<u>Pasos guiados</u>**
 
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
 2. Definir:
@@ -1347,48 +1347,48 @@ Beneficios:
 
     Permiten ocultar o mostrar elementos de la interfaz de usuario de Zabbix para adaptarse a las diferentes necesidades de acceso.
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-<div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
 
-→ Con los roles de usuario se puede:
+    → Con los roles de usuario se puede:
 
-<ul>
-<li>Limitar el acceso a elementos específicos de la interfaz de usuario.</li>
-<li>Limitar el acceso para realizar acciones específicas en la interfaz de usuario.</li>
-<li>Crear una lista para permitir o denegar acceso a métodos API específicos.</li>
-</ul>
+    <ul>
+    <li>Limitar el acceso a elementos específicos de la interfaz de usuario.</li>
+    <li>Limitar el acceso para realizar acciones específicas en la interfaz de usuario.</li>
+    <li>Crear una lista para permitir o denegar acceso a métodos API específicos.</li>
+    </ul>
 
-</div>
-<div>
+    </div>
+    <div>
 
-<img src="imagenes/features_User_Roles.svg" alt="User Roles">
+    <img src="imagenes/features_User_Roles.svg" alt="User Roles">
 
-</div>
-</div>
+    </div>
+    </div>
 
 
 - Crear <strong>grupos de usuarios</strong> para asignar permisos en bloque.
 
     Zabbix proporciona un esquema flexible de permisos de usuario que se puede usar de manera eficiente para gestionar los permisos de usuario.
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-<div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
 
-→ Se puede definir tres niveles de permisos:
+    → Se puede definir tres niveles de permisos:
 
-<ul>
-<li>Lectura y escritura: acceso a lectura y escritura</li>
-<li>Solamente lectura: acceso a lectura solamente</li>
-<li>Denegar: acceso denegado</li>
-</ul>
+    <ul>
+    <li>Lectura y escritura: acceso a lectura y escritura</li>
+    <li>Solamente lectura: acceso a lectura solamente</li>
+    <li>Denegar: acceso denegado</li>
+    </ul>
 
-</div>
-<div>
+    </div>
+    <div>
 
-<img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
+    <img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
 
-</div>
-</div>
+    </div>
+    </div>
 
 Beneficios:
 - Mayor <strong>seguridad</strong>.
@@ -1526,7 +1526,7 @@ La **API de Zabbix** es **RESTful** y permite interactuar con casi todas las fun
 
 Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras herramientas**.
 
-Casos de uso principales:
+<u>Casos de uso principales:</u>
 
 - Alta masiva de hosts.
 - Gestión automática de templates.
@@ -1534,7 +1534,7 @@ Casos de uso principales:
 - Generación de informes personalizados.
 - Automatización de acciones repetitivas.
 
-**Ejemplo práctico:**
+<u><strong>Ejemplo práctico:</strong></u>
 
 - Hacer una **consulta básica** a la API para **listar los hosts monitoreados** mediante cURL:
 
@@ -1556,14 +1556,14 @@ Casos de uso principales:
 
 Grafana es uno de los complementos más potentes para **visualizar los datos de Zabbix** de forma más atractiva y personalizable.
 
-Ventajas de usar Grafana junto con Zabbix:
+<u><strong>Ventajas de usar Grafana junto con Zabbix:</strong></u>
 
 - Dashboards dinámicos y altamente personalizables.
 - Paneles visuales más atractivos y modernos.
 - Permite combinar datos de Zabbix con otras fuentes (Prometheus, InfluxDB, Elastic, etc.).
 - Soporta alertas y anotaciones sincronizadas.
 
-**Ejemplo práctico:**
+<u><strong>Ejemplo práctico:</strong></u>
 
 1. Mostrar un **dashboard en Grafana** conectado a Zabbix.
 2. Comparar las visualizaciones con los dashboards nativos de Zabbix.
@@ -1632,7 +1632,7 @@ Ventajas de usar Grafana junto con Zabbix:
 
 **Objetivo:** Consultar la **API de Zabbix** para obtener la lista de hosts y visualizar sus métricas en Grafana.
 
-**Pasos guiados**
+**<u>Pasos guiados</u>**
 
 1. Generar un **API Token** en <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>API tokens</strong></span>.
 2. Probar una **consulta básica** a la API para listar hosts.
