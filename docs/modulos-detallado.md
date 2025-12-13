@@ -2,9 +2,7 @@
 
 ## 📑 Índice
 
-<div style="background-color: #f6f8fa; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #0366d6;">
-
-### <span style="color: blue;">📚 Introducción, fundamentos y primeros pasos</span>
+### <span style="color: blue;">Introducción, fundamentos y primeros pasos</span>
 
 - [**Módulo –** Bienvenida e introducción](#módulo--bienvenida-e-introducción)
 - [**Módulo 1 –** Introducción al monitoreo y a Zabbix](#módulo-1--introducción-al-monitoreo-y-a-zabbix)
@@ -15,7 +13,7 @@
 - [**Módulo –** Ejercicios integradores](#módulo--ejercicios-integradores)
 - [**Módulo –** Cierre - Primera parte](#módulo--cierre---primera-parte)
 
-### <span style="color: blue;">🚀 Alertas, automatización y mejores prácticas</span>
+### <span style="color: blue;">Alertas, automatización y mejores prácticas</span>
 
 - [**Módulo –** Bienvenida y repaso](#módulo--bienvenida-y-repaso)
 - [**Módulo 6 –** Triggers y eventos](#módulo-6--triggers-y-eventos)
@@ -25,8 +23,6 @@
 - [**Módulo 10 –** Roadmap y ecosistema Zabbix](#módulo-10--roadmap-y-ecosistema-zabbix)
 - [**Módulo –** Ejercicio final: monitoreo completo](#módulo--ejercicio-final-monitoreo-completo)
 - [**Módulo –** Cierre del Workshop](#módulo--cierre-del-workshop)
-
-</div>
 
 ---
 
@@ -86,10 +82,9 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **1.1. Introducción al monitoreo**
 
- El **monitoreo** es el proceso de observar de forma continua **sistemas, redes, aplicaciones, dispositivos y servicios** para detectar problemas, prevenir incidentes y garantizar la disponibilidad.
+El **monitoreo** es el proceso de observar de forma continua **sistemas, redes, aplicaciones, dispositivos y servicios** para detectar problemas, prevenir incidentes y garantizar la disponibilidad.
 
-
- **¿Por qué es importante monitorear?**
+**¿Por qué es importante monitorear?**
 
  - Garantiza **alta disponibilidad** de los servicios críticos.
  - Permite detectar problemas **antes** de que afecten a los usuarios.
@@ -126,27 +121,26 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **1.3. Qué es Zabbix**
 
- **Zabbix** es una **solución de monitoreo distribuido, de código abierto y de clase empresarial**.
+**Zabbix** es una **solución de monitoreo distribuido, de código abierto y de clase empresarial**.
 
+Permite centralizar la recolección, almacenamiento, visualización y alerta de métricas de múltiples fuentes.
 
- Permite centralizar la recolección, almacenamiento, visualización y alerta de métricas de múltiples fuentes.
+**<u>Características principales</u>**
 
- **<u>Características principales</u>**
+- **Open Source** y gratuito.
+- Monitoreo **híbrido**: servidores, redes, aplicaciones, contenedores, IoT, cloud.
+- **Alta escalabilidad**: desde decenas hasta miles de hosts.
+- Compatible con múltiples **métodos de recolección**:
+    - Agentes Zabbix.
+    - SNMP.
+    - ICMP.
+    - HTTP / API REST.
+    - Scripts personalizados.
+- Interfaz **web intuitiva** y personalizable.
+- **Alertas automáticas**, flexibles y personalizables.
+- Integraciones con **herramientas externas** (Grafana, Ansible, Slack, Telegram, etc.).
 
- - **Open Source** y gratuito.
- - Monitoreo **híbrido**: servidores, redes, aplicaciones, contenedores, IoT, cloud.
- - **Alta escalabilidad**: desde decenas hasta miles de hosts.
- - Compatible con múltiples **métodos de recolección**:
-     - Agentes Zabbix.
-     - SNMP.
-     - ICMP.
-     - HTTP / API REST.
-     - Scripts personalizados.
- - Interfaz **web intuitiva** y personalizable.
- - **Alertas automáticas**, flexibles y personalizables.
- - Integraciones con **herramientas externas** (Grafana, Ansible, Slack, Telegram, etc.).
-
- ![zabbix_features_1200x766.svg](imagenes/zabbix_features_1200x766.svg)
+![zabbix_features_1200x766.svg](imagenes/zabbix_features_1200x766.svg)
 
 ---
 
@@ -184,7 +178,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **2.1. Visión general de la arquitectura**
 
- Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instalarse **en una sola máquina** para entornos pequeños o **distribuirse** en varios servidores para grandes infraestructuras.
+Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instalarse **en una sola máquina** para entornos pequeños o **distribuirse** en varios servidores para grandes infraestructuras.
 
 > **💡 Dato clave:** Toda la comunicación interna usa **JSON-RPC sobre TCP**, lo que permite integraciones y automatización sencillas.
 
@@ -192,7 +186,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **2.2. Componentes principales**
 
- - <span style="color: purple;"><strong>Zabbix Server</strong></span> *(el **cerebro** del sistema)*
+- <span style="color: purple;"><strong>Zabbix Server</strong></span> *(el **cerebro** del sistema)*
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
@@ -300,14 +294,13 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
     ![features_Zabbix_API_zabbix.svg](imagenes/features_Zabbix_API_zabbix.svg)
 
-
 ---
 
 → Esquema visual de arquitectura *(podría incluir un diagrama simple o una demo rápida mostrando cómo se comunican)*.
 
 ### **2.4. Diagrama de arquitectura**
 
- En el workshop mostraríamos este esquema para explicar cómo se comunican los componentes:
+En el workshop mostraríamos este esquema para explicar cómo se comunican los componentes:
 
 
 [Zabbix Agent] ---> [Zabbix Proxy] ---> [Zabbix Server] ---> [Database]
@@ -337,9 +330,6 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **2.6. Puertos y comunicación**
 
-
-
-
  ![image.png](imagenes/image%202.png)
 
  | **Componente** | **Puerto TCP** | **Función** |
@@ -359,41 +349,35 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **3.1. Acceso y login**
 
-
-
- 1. Abrir el navegador e ingresar la URL del frontend (por ejemplo: `https://alertasX.conatel-lab.conatel.cloud`).
+ 1. Abrir el navegador e ingresar la URL del frontend:
+    → `https://alertasX.conatel-lab.conatel.cloud`
     > **Nota:** Remplazar X por el número asignado a cada uno.
  2. Iniciar sesión con las credenciales:
     - Usuario: `demo`
     - Contraseña: `Zabbix123!`
  3. Identificar en la esquina superior derecha:
-    <ul>
-    <li>Usuario actual.</li>
-    <li>Idioma y tema.</li>
-    <li>Acceso rápido a configuración personal.</li>
-    </ul>
+    - Usuario actual.
+    - Idioma y tema.
+    - Acceso rápido a configuración personal.
 
 ---
 
 ### **3.2. Menú principal**
 
- El **menú lateral** es la base para navegar el frontend.
+El **menú lateral** es la base para navegar el frontend.
 
+<span style="color: purple;"><strong>3.2.1. Monitoring</strong></span> *(Monitoreo en vivo)*
 
- <span style="color: purple;"><strong>3.2.1. Monitoring</strong></span> *(Monitoreo en vivo)*
-
-<ul>
-<li><span style="color: violet;"><strong>Dashboards</strong></span> → Vista general del estado de la infraestructura.</li>
-</ul>
+- <span style="color: violet;"><strong>Dashboards</strong></span> → Vista general del estado de la infraestructura.
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-<ul>
-<li>Permiten personalizar cómo se presenta la información mediante <strong>widgets</strong>.</li>
-<li>Pueden contener varias páginas y rotar automáticamente.</li>
-<li>Muestran un resumen completo del estado de los sistemas.</li>
-</ul>
+     <ul>
+     <li>Permiten personalizar cómo se presenta la información mediante <strong>widgets</strong>.</li>
+     <li>Pueden contener varias páginas y rotar automáticamente.</li>
+     <li>Muestran un resumen completo del estado de los sistemas.</li>
+     </ul>
 
     </div>
     <div>
@@ -411,7 +395,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 <li><span style="color: violet;"><strong>Discovery</strong></span>→ Reglas para descubrimiento automático de recursos.</li>
 </ul>
 
- <span style="color: purple;"><strong>3.2.2. Services</strong></span> *(Gestión de SLA)*
+<span style="color: purple;"><strong>3.2.2. Services</strong></span> *(Gestión de SLA)*
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
@@ -433,7 +417,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 </div>
 </div>
 
- <span style="color: purple;"><strong>3.2.3. Inventory</strong></span> *(Inventario de activos)*
+<span style="color: purple;"><strong>3.2.3. Inventory</strong></span> *(Inventario de activos)*
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
@@ -451,27 +435,27 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 </div>
 </div>
 
- <span style="color: purple;"><strong>3.2.4. Reports</strong></span> *(Reportes automáticos)*
+<span style="color: purple;"><strong>3.2.4. Reports</strong></span> *(Reportes automáticos)*
 
- - Crear y enviar informes programados basados en dashboards.
+- Crear y enviar informes programados basados en dashboards.
 
- <span style="color: purple;"><strong>3.2.5. Configuration</strong></span> *(Configuración principal)*
+<span style="color: purple;"><strong>3.2.5. Configuration</strong></span> *(Configuración principal)*
 
- - <span style="color: violet;"><strong>Host Groups</strong></span> → Agrupar lógicamente hosts y templates.
- - <span style="color: violet;"><strong>Templates</strong></span> → Templates para agrupar **ítems**, **triggers** y **gráficos**.
- - <span style="color: violet;"><strong>Hosts</strong></span> → Alta y configuración de equipos.
- - <span style="color: violet;"><strong>Maintenance</strong></span> → Definir períodos de mantenimiento:
-     - Suprime notificaciones de problemas.
-     - Puede pausar la recolección de datos.
-     - Hosts en mantenimiento se marcan con un **icono de herramienta naranja**.
- - <span style="color: violet;"><strong>Actions</strong></span> → Automatización de notificaciones y tareas.
+- <span style="color: violet;"><strong>Host Groups</strong></span> → Agrupar lógicamente hosts y templates.
+- <span style="color: violet;"><strong>Templates</strong></span> → Templates para agrupar **ítems**, **triggers** y **gráficos**.
+- <span style="color: violet;"><strong>Hosts</strong></span> → Alta y configuración de equipos.
+- <span style="color: violet;"><strong>Maintenance</strong></span> → Definir períodos de mantenimiento:
+    - Suprime notificaciones de problemas.
+    - Puede pausar la recolección de datos.
+    - Hosts en mantenimiento se marcan con un **icono de herramienta** <span style="color: orange;">naranja</span>.
+- <span style="color: violet;"><strong>Actions</strong></span> → Automatización de notificaciones y tareas.
 
- <span style="color: purple;"><strong>3.2.6. Administration</strong></span> *(Administración global)*
+<span style="color: purple;"><strong>3.2.6. Administration</strong></span> *(Administración global)*
 
- - Configuración general de Zabbix.
- - Gestión de **usuarios, roles y permisos**.
- - Administración de **proxies** y **scripts globales**.
- - Control de **medios de notificación**.
+- Configuración general de Zabbix.
+- Gestión de **usuarios, roles y permisos**.
+- Administración de **proxies** y **scripts globales**.
+- Control de **medios de notificación**.
 
 ---
 
@@ -481,11 +465,11 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 **Objetivo**: Familiarizarse con la interfaz web y localizar información clave.
 
-**Pasos guiados**
+**<u>Pasos guiados</u>**
 
 1. **Ingresar al frontend** con usuario y contraseña.
-2. Abrir <span style="color: violet;"><strong>Dashboards</strong></span> → Identificar estado general.
-3. Ir a <span style="color: violet;"><strong>Problems</strong></span> → Ver problemas actuales y su severidad.
+2. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Dashboards</strong></span> → Identificar estado general.
+3. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Problems</strong></span> → Ver problemas actuales y su severidad.
 4. Buscar un **host** específico desde <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>.
 
 ---
@@ -496,27 +480,27 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ---
 
-### **4.1. Hosts**
+### **4.1. <span style="color: violet;"><strong>Hosts</strong></span>**
 
- Un **host** es cualquier **equipo, servidor, dispositivo de red o servicio** que queremos monitorear.
+Un **host** es cualquier **equipo, servidor, dispositivo de red o servicio** que queremos monitorear.
 
- - Tipos de dispositivos que podemos monitorear:
-     - Físicos: servidores, switches, routers, workstations.
-     - Virtuales: máquinas virtuales, contenedores Docker, etc.
-     - Aplicaciones: bases de datos, servicios web, aplicaciones Java.
- - Un host contiene:
-     - **Items** → Recolectan métricas.
-     - **Triggers** → Detectan problemas.
-     - **Graphs** → Muestran métricas visualmente.
-     - **Web scenarios** → Monitoreo de páginas web.
-     - **Discovery rules** → Creación automática de ítems, triggers y gráficos.
- - El host funciona como un **contenedor lógico** de métricas y entidades relacionadas.
+- Tipos de dispositivos que podemos monitorear:
+    - Físicos: servidores, switches, routers, workstations.
+    - Virtuales: máquinas virtuales, contenedores Docker, etc.
+    - Aplicaciones: bases de datos, servicios web, aplicaciones Java.
+- Un host contiene:
+    - **Items** → Recolectan métricas.
+    - **Triggers** → Detectan problemas.
+    - **Graphs** → Muestran métricas visualmente.
+    - **Web scenarios** → Monitoreo de páginas web.
+    - **Discovery rules** → Creación automática de ítems, triggers y gráficos.
+- El host funciona como un **contenedor lógico** de métricas y entidades relacionadas.
 
 ---
 
-### **4.2. Templates**
+### **4.2. <span style="color: violet;"><strong>Templates</strong></span>**
 
- Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos y reglas que se pueden aplicar a múltiples hosts.
+Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos y reglas que se pueden aplicar a múltiples hosts.
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
@@ -535,88 +519,83 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 </div>
 </div>
 
-
 ---
 
-### **4.3. Host Groups (Grupos de hosts)**
+### **4.3. <span style="color: violet;"><strong>Host Groups</strong></span> (Grupos de hosts)**
 
-
-
- - Permiten **agrupar lógicamente** hosts y templates.
- - Al eliminar un grupo, solo se borra la agrupación, **no los hosts**.
- - No se puede eliminar un grupo si es el único al que pertenece un host.
+- Permiten **agrupar lógicamente** hosts y templates.
+- Al eliminar un grupo, solo se borra la agrupación, **no los hosts**.
+- No se puede eliminar un grupo si es el único al que pertenece un host.
 
 ---
 
 ### **4.4. Interfaces de monitoreo**
 
- Los hosts no tienen interfaces configuradas por defecto, se deben agregar manualmente.
+Los hosts no tienen interfaces configuradas por defecto, se deben agregar manualmente.
 
+Tipos de interfaces disponibles:
 
- Tipos de interfaces disponibles:
+| **Tipo** | **Descripción** | **Puerto por defecto** |
+| --- | --- | --- |
+| **ZBX** | Monitoreo con agente Zabbix (pasivo) | `10050` |
+| **SNMP** | Protocolo Simple de Manejo de Red | `161` |
+| **IPMI** | Interfaz para gestión de hardware | — |
+| **JMX** | Monitoreo de aplicaciones Java | — |
 
- | **Tipo** | **Descripción** | **Puerto por defecto** |
- | --- | --- | --- |
- | **ZBX** | Monitoreo con agente Zabbix (pasivo) | `10050` |
- | **SNMP** | Protocolo Simple de Manejo de Red | `161` |
- | **IPMI** | Interfaz para gestión de hardware | — |
- | **JMX** | Monitoreo de aplicaciones Java | — |
-
- → Se puede tener múltiples interfaces definidas.
+→ Se puede tener múltiples interfaces definidas.
 
 > **💡 Estado de interfaces:**
-
- - Icono interfaz <span style="color: green;">verde</span> → todas las interfaces están "Available" (disponibles).
- - Icono interfaz <span style="color: gray;">gris</span> → al menos una interfaz esta "Unknown" (desconocida).
- - Icono interfaz <span style="color: yellow;">amarillo</span>/<span style="color: orange;">naranja</span> → al menos una interfaz esta "Available" (disponible) y al menos una "No available" (no disponible).
- - Icono interfaz <span style="color: red;">rojo</span> → todas las interfaces están "No available" - Unavailable (no disponible).
+> - Icono interfaz <span style="color: green;">verde</span> → todas las interfaces están "Available" (disponibles).
+> - Icono interfaz <span style="color: gray;">gris</span> → al menos una interfaz esta "Unknown" (desconocida).
+> - Icono interfaz <span style="color: yellow;">amarillo</span>/<span style="color: orange;">naranja</span> → al menos una interfaz esta "Available" (disponible) y al menos una "No available" (no disponible).
+> - Icono interfaz <span style="color: red;">rojo</span> → todas las interfaces están "No available" - Unavailable (no disponible).
 
 ---
 
 ### **4.5. Tags (Etiquetas)**
 
- Son una característica que permite asignar información adicional o metadatos a diferentes elementos en Zabbix.
+Son una característica que permite asignar información adicional o metadatos a diferentes elementos en Zabbix.
 
- - Permiten **clasificar** elementos en Zabbix.
- - Se aplican a:
-     - Hosts.
-     - Templates.
-     - Items.
-     - Triggers.
- - Son **pares clave-valor**.
- - Útiles para filtrar, automatizar notificaciones y crear dashboards personalizados.
+- Permiten **clasificar** elementos en Zabbix.
+- Se aplican a:
+    - Hosts.
+    - Templates.
+    - Items.
+    - Triggers.
+- Son **pares clave-valor**.
+- Útiles para filtrar, automatizar notificaciones y crear dashboards personalizados.
 
 ---
 
 ### **4.6. Macros y variables**
 
- Las **macros** permiten definir variables reutilizables y centralizar configuraciones.
+Las **macros** permiten definir variables reutilizables y centralizar configuraciones.
 
- - **Tipos de macros**:
-     - **Integradas**					→ `{MACRO}`
-     - **Definidas por el usuario**		→ `{$MACRO}`
-     - **Descubrimiento de bajo nivel**	→ `{#MACRO}`
-     - **Expresiones**					→ `{?MACRO}`
+- **Tipos de macros**:
+    - **Integradas**					→ `{MACRO}`
+    - **Definidas por el usuario**		→ `{$MACRO}`
+    - **Descubrimiento de bajo nivel**	→ `{#MACRO}`
+    - **Expresiones**					→ `{?MACRO}`
 
-     → La sintaxis siempre es en **MAYÚSCULA**.
+    → La sintaxis siempre es en **MAYÚSCULA**.
 
- - **Niveles de macros**:
-     - Globales.
-     - Por template.
-     - Por host.
+- **Niveles de macros**:
+    - Globales.
+    - Por template.
+    - Por host.
 
 ---
 
 ### **4.7. Inventario de hosts**
 
- Zabbix permite gestionar información de hardware, software y aplicaciones desde la pestaña **Inventory** del host.
+Zabbix permite gestionar información de hardware, software y aplicaciones desde la pestaña **Inventory** del host.
 
 
- Tres modos disponibles:
+Tres modos disponibles:
 
- - **Desactivado**.
- - **Manual**.
- - **Automático**.
+- **Desactivado**.
+- **Manual**.
+- **Automático**.
 
 ---
 
@@ -626,7 +605,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 **Objetivo**: Agregar un host desde cero, asociar un template y verificar métricas.
 
-**Procedimiento básico**
+**<u>Procedimiento básico</u>**
 
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
 2. Configurar:
@@ -651,7 +630,7 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
         → Dirección IP `192.168.0.0`
 
     5. <span style="color: blue;"><strong>Guardar (Add)</strong></span> y verificar la conectividad.
-3. Ir a **Monitoring**→ **Hosts** y seleccionar **Latest Data** o directamente a **Monitoring**→ **Latest data** y validar que las métricas se recolecten.
+3. <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Hosts</strong></span> y seleccionar <span style="color: violet;"><strong>Latest Data</strong></span> o directamente a <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Latest data</strong></span> y validar que las métricas se recolecten.
 4. Revisar **Graphs** y **Problems** para confirmar datos.
 
 ---
@@ -664,50 +643,50 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 
 ### **5.1. Visualización de datos**
 
- Zabbix permite **analizar métricas en tiempo real** y acceder al historial completo de datos.
+Zabbix permite **analizar métricas en tiempo real** y acceder al historial completo de datos.
 
 
- **5.1.1. Latest Data** *(Datos recientes)*
+**5.1.1. <span style="color: violet;"><strong>Latest Data</strong></span>** *(Datos recientes)*
 
- - Muestra métricas recolectadas por host, ítem o grupo.
- - Permite filtrar datos por **host, grupo, aplicación o periodo de tiempo**.
- - Información clave:
-     - Último valor.
-     - Fecha y hora de actualización.
-     - Estado del ítem (activo/inactivo).
+- Muestra métricas recolectadas por host, ítem o grupo.
+- Permite filtrar datos por **host, grupo, aplicación o periodo de tiempo**.
+- Información clave:
+    - Último valor.
+    - Fecha y hora de actualización.
+    - Estado del ítem (activo/inactivo).
 
- **5.1.2. Graphs** *(Gráficos)*
+**5.1.2. <span style="color: violet;"><strong>Graphs</strong></span>** *(Gráficos)*
 
- Los gráficos permiten **visualizar tendencias históricas** y analizar el comportamiento de los sistemas.
+Los gráficos permiten **visualizar tendencias históricas** y analizar el comportamiento de los sistemas.
 
- - Existen diferentes **tipos de gráficos:**
-     - **Predeterminados:** Incluidos en templates y hosts.
-     - **Personalizados:** Creados manualmente según las necesidades.
- - Funcionalidades principales:
-     - Comparar varias métricas simultáneamente.
-     - Ver tendencias a largo plazo.
-     - Profundizar en detalles históricos.
+- Existen diferentes **tipos de gráficos:**
+    - **Predeterminados:** Incluidos en templates y hosts.
+    - **Personalizados:** Creados manualmente según las necesidades.
+- Funcionalidades principales:
+    - Comparar varias métricas simultáneamente.
+    - Ver tendencias a largo plazo.
+    - Profundizar en detalles históricos.
 
- **5.1.3. Eventos y problemas**
+**5.1.3. <span style="color: violet;"><strong>Eventos y problemas</strong></span>**
 
- - Los **eventos** son cualquier cambio de estado en un ítem o trigger.
- - Los **problemas** se generan cuando un trigger detecta una condición fuera de rango.
- - Desde la vista de **Problems** se puede:
-     - Ver todos los eventos activos.
-     - Filtrar por severidad.
-     - Confirmar y resolver alertas.
-     - Analizar la causa raíz.
+- Los **eventos** son cualquier cambio de estado en un ítem o trigger.
+- Los **problemas** se generan cuando un trigger detecta una condición fuera de rango.
+- Desde la vista de **Problems** se puede:
+    - Ver todos los eventos activos.
+    - Filtrar por severidad.
+    - Confirmar y resolver alertas.
+    - Analizar la causa raíz.
 
 ---
 
 ### 5.2. Low-Level Discovery (LLD)
 
- Es un descubrimiento de bajo nivel el cual permite que Zabbix detecte automáticamente componentes o recursos.
+Es un descubrimiento de bajo nivel el cual permite que Zabbix detecte automáticamente componentes o recursos.
 
- - Reduce la configuración manual de ítems, triggers y gráficos, permitiendolos crear automáticamente.
- - Ideal para **entornos dinámicos** con múltiples interfaces, discos, servicios o aplicaciones.
+- Reduce la configuración manual de ítems, triggers y gráficos, permitiendolos crear automáticamente.
+- Ideal para **entornos dinámicos** con múltiples interfaces, discos, servicios o aplicaciones.
 
- **5.2.1. Recursos que puede descubrir**
+**5.2.1. Recursos que puede descubrir**
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
@@ -727,16 +706,16 @@ El workshop cubre: Introducción, fundamentos y primeros pasos del Monitoreo con
 </div>
 </div>
 
- **5.2.2. Estructura de una LLD Rule**
+**5.2.2. Estructura de una LLD Rule**
 
- Una **LLD rule** está formada por:
+Una **LLD rule** está formada por:
 
- - **Item prototypes** → Ítems creados automáticamente.
- - **Trigger prototypes** → Condiciones generadas en base a los ítems descubiertos.
- - **Graph prototypes** → Gráficos asociados a los ítems generados.
- - **Host prototypes** → Creación automática de hosts.
+- **Item prototypes** → Ítems creados automáticamente.
+- **Trigger prototypes** → Condiciones generadas en base a los ítems descubiertos.
+- **Graph prototypes** → Gráficos asociados a los ítems generados.
+- **Host prototypes** → Creación automática de hosts.
 
- **❓ Nota:** LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente.
+> **❓ Nota:** LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente.
 
 ---
 
@@ -794,8 +773,8 @@ Se entregará a cada participante la IP y nombre de un **host de prueba**. El ob
 ### **1. Acceso y exploración inicial** *(Módulo 3)*
 
 1. Ingresar al **frontend** con usuario y contraseña.
-2. Abrir **Dashboards** → Identificar el estado general de la infraestructura.
-3. Ir a **Problems** → Revisar problemas actuales y su severidad.
+2. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Dashboards</strong></span> → Identificar el estado general de la infraestructura.
+3. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Problems</strong></span> → Revisar problemas actuales y su severidad.
 4. Buscar un **host existente** y explorar sus métricas, gráficos y triggers.
 
 ---
@@ -956,62 +935,62 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### **6.1. ¿Qué es un trigger?**
 
- Un **trigger** es una **regla lógica** que evalúa datos de uno o más **items** (métricas).
+Un **trigger** es una **regla lógica** que evalúa datos de uno o más **items** (métricas).
 
- - Cuando la expresión se cumple, el trigger cambia a **Problem**; cuando deja de cumplirse, pasa a **OK**.
- - Estados posibles: **OK**, **Problem**, **Unknown** (sin datos suficientes o error en el ítem).
+- Cuando la expresión se cumple, el trigger cambia a **Problem**; cuando deja de cumplirse, pasa a **OK**.
+- Estados posibles: **OK**, **Problem**, **Unknown** (sin datos suficientes o error en el ítem).
 
- **Evento**: Incidente generado por un trigger.
+**Evento**: Incidente generado por un trigger.
 
- **Tipos de eventos generados:**
+**Tipos de eventos generados:**
 
- - **Problem →** cuando la condición del trigger se cumple.
- - **Recovery →** cuando la condición deja de cumplirse.
- - Cada cambio de estado genera un **evento**.
+- **Problem →** cuando la condición del trigger se cumple.
+- **Recovery →** cuando la condición deja de cumplirse.
+- Cada cambio de estado genera un **evento**.
 
 ---
 
 ### **6.2. Severidades (Severity)**
 
- Nivel de importancia del problema.
+Nivel de importancia del problema.
 
 
- Usá severidades coherentes para priorizar atención y escalamientos:
+Usá severidades coherentes para priorizar atención y escalamientos:
 
- - <span style="color: blue;"><strong>Information</strong></span>
- - <span style="color: yellow;"><strong>Warning</strong></span>
- - <span style="color: orange;"><strong>Average</strong></span>
- - <span style="color: red;"><strong>High</strong></span>
- - <span style="color: violet;"><strong>Disaster</strong></span>
+- <span style="color: blue;"><strong>Information</strong></span>
+- <span style="color: yellow;"><strong>Warning</strong></span>
+- <span style="color: orange;"><strong>Average</strong></span>
+- <span style="color: red;"><strong>High</strong></span>
+- <span style="color: violet;"><strong>Disaster</strong></span>
 
 ---
 
 ### **6.3. Expresiones de trigger (umbrales y tiempo)**
 
- Los **triggers** definen **condiciones** que activan o desactivan alertas.
+Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 **Casos más comunes:**
 
- - **Umbral simple** → *“Si el último valor de la CPU está por encima del 80%, disparar alerta”*
+- **Umbral simple** → *“Si el último valor de la CPU está por encima del 80%, disparar alerta”*
 
-     `last(/Host/cpu.util[system]) > 80`
+    `last(/Host/cpu.util[system]) > 80`
 
- - **Umbral con tiempo** → *“Si el promedio de uso de CPU está arriba del 80% durante un período de tiempo de 5 minutos seguidos, disparar alerta”*
+- **Umbral con tiempo** → *“Si el promedio de uso de CPU está arriba del 80% durante un período de tiempo de 5 minutos seguidos, disparar alerta”*
 
-     `avg(/Host/cpu.util[total],5m) > 80`
+    `avg(/Host/cpu.util[total],5m) > 80`
 
- - **Umbral con margen de seguridad** → *“Si el promedio de uso de CPU está arriba del 80% durante un período de tiempo de 5 minutos seguidos, disparar alerta y luego resolver la alerta recién si el promedio de uso de CPU está por debajo del 70% durante un período de tiempo de 5 minutos seguidos”*.
-     - Problem: `avg(...,5m) > 80`
-     - OK custom: `avg(...,5m) < 70`
+- **Umbral con margen de seguridad** → *“Si el promedio de uso de CPU está arriba del 80% durante un período de tiempo de 5 minutos seguidos, disparar alerta y luego resolver la alerta recién si el promedio de uso de CPU está por debajo del 70% durante un período de tiempo de 5 minutos seguidos”*.
+    - Problem: `avg(...,5m) > 80`
+    - OK custom: `avg(...,5m) < 70`
 
-     *(Esto evita que la alerta se active y desactive constantemente)*.
+    *(Esto evita que la alerta se active y desactive constantemente)*.
 
- - **Sin datos** → *“Si un host deja de enviar información durante 10 minutos”*.
+- **Sin datos** → *“Si un host deja de enviar información durante 10 minutos”*.
 
-     `nodata(/Host/item,10m)=1`
+    `nodata(/Host/item,10m)=1`
 
 
- **✅ Buena práctica:** Usar **dependencias** entre triggers para evitar cascadas (p. ej., "High CPU utilization" → suprime "Average CPU utilization").
+> **✅ Buena práctica:** Usar **dependencias** entre triggers para evitar cascadas (p. ej., "High CPU utilization" → suprime "Average CPU utilization").
 
 ---
 
@@ -1058,23 +1037,23 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### **7.1. Qué son las acciones**
 
- Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se ejecutan cuando ocurre un **evento**.
+Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se ejecutan cuando ocurre un **evento**.
 
- - Flujo básico:
+- Flujo básico:
 
-     **Trigger → Evento → Acción → Operaciones**
+    **Trigger → Evento → Acción → Operaciones**
 
- - Sirven para:
+- Sirven para:
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div>
 
-<ul>
-<li><strong>Notificar</strong> usuarios y grupos por diferentes canales.</li>
-<li><strong>Ejecutar comandos remotos</strong>.</li>
-<li><strong>Escalar</strong> notificaciones según la severidad.</li>
-<li><strong>Ejecutar scripts personalizados</strong>.</li>
-</ul>
+     <ul>
+     <li><strong>Notificar</strong> usuarios y grupos por diferentes canales.</li>
+     <li><strong>Ejecutar comandos remotos</strong>.</li>
+     <li><strong>Escalar</strong> notificaciones según la severidad.</li>
+     <li><strong>Ejecutar scripts personalizados</strong>.</li>
+     </ul>
 
     </div>
     <div>
@@ -1084,20 +1063,18 @@ Al finalizar el ejercicio, cada participante deberá:
     </div>
     </div>
 
-<ul>
-<li>Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.</li>
-</ul>
+- Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
 ---
 
 ### **7.2. Tipos de Media (Media Types)**
 
- Los **Media Types** son los **canales de comunicación** que utiliza Zabbix para enviar notificaciones y alertas.
+Los **Media Types** son los **canales de comunicación** que utiliza Zabbix para enviar notificaciones y alertas.
 
 
- Los maneja exclusivamente el **Zabbix Server**.
+Los maneja exclusivamente el **Zabbix Server**.
 
- **Tipos de media soportados:**
+**Tipos de media soportados:**
 
 <ul>
 <li><strong>Correo electrónico (E-mail)</strong>.</li>
@@ -1118,53 +1095,41 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### **7.3. Demo: Pasos para configurar alertas**
 
- **1. Configurar un Media Type**
+**1. Configurar un Media Type**
 
-<ul>
-<li>Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → <span style="color: blue;"><strong>Create media type</strong></span>.</li>
-<li>Seleccionar el tipo: <strong>Email</strong>, <strong>Telegram</strong>, <strong>Slack</strong>, <strong>Webhook</strong> o <strong>Script</strong>.</li>
-<li>Completar la configuración requerida (servidores SMTP, tokens, URLs, etc.).</li>
-<li>Probar el envío de mensajes desde la opción <strong>Test</strong>.</li>
-</ul>
+- Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → <span style="color: blue;"><strong>Create media type</strong></span>.
+- Seleccionar el tipo: <strong>Email</strong>, <strong>Telegram</strong>, <strong>Slack</strong>, <strong>Webhook</strong> o <strong>Script</strong>.
+- Completar la configuración requerida (servidores SMTP, tokens, URLs, etc.).
+- Probar el envío de mensajes desde la opción <strong>Test</strong>.
 
- **2. Configurar un usuario**
+**2. Configurar un usuario**
 
-<ul>
-<li>Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Users</strong></span> → <span style="color: blue;"><strong>Create user</strong></span>.</li>
-<li>Definir:</li>
-<li>Nombre, rol y permisos.</li>
-<li>Grupo de usuarios.</li>
-<li>Canal de notificación (<strong>Media</strong> → seleccionar Media Type).</li>
-<li>Guardar.</li>
-</ul>
+- Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Users</strong></span> → <span style="color: blue;"><strong>Create user</strong></span>.
+- Definir:
+    - Nombre, rol y permisos.
+    - Grupo de usuarios.
+    - Canal de notificación (<strong>Media</strong> → seleccionar Media Type).
+    - Guardar.
 
- **3. Crear una acción**
+**3. Crear una acción**
 
-<ul>
-<li>Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: blue;"><strong>Create action</strong></span>.</li>
-<li>Definir:</li>
-<li><strong>Name</strong>: Nombre claro y representativo.</li>
-<li><strong>Conditions</strong>:</li>
-<li>Host, host group, trigger name, severity, tag, etc.</li>
-<li><strong>Operations</strong>:</li>
-<li>A quién notificar.</li>
-<li>Canal de notificación.</li>
-<li>Mensaje personalizado.</li>
-<li>(Opcional) <strong>Recovery operations</strong>:</li>
-<li>Enviar alertas cuando el problema se resuelve.</li>
-<li>(Opcional) <strong>Update operations</strong>:</li>
-<li>Notificaciones adicionales si cambia el estado.</li>
-</ul>
+- Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: blue;"><strong>Create action</strong></span>.
+- Definir:
+    - <strong>Name</strong>: Nombre claro y representativo.
+    - <strong>Conditions</strong>: Host, host group, trigger name, severity, tag, etc.
+    - <strong>Operations</strong>: A quién notificar.
+    - Canal de notificación.
+    - Mensaje personalizado.
+    - (Opcional) <strong>Recovery operations</strong>: Enviar alertas cuando el problema se resuelve.
+    - (Opcional) <strong>Update operations</strong>: Notificaciones adicionales si cambia el estado.
 
- **4. Validar las alertas**
+**4. Validar las alertas**
 
-<ul>
-<li>Generar un <strong>evento de prueba</strong> (por ejemplo, simular una CPU > 80%).</li>
-<li>Verificar:</li>
-<li>Que la acción se ejecute.</li>
-<li>Que la notificación llegue al canal configurado.</li>
-<li>Que las operaciones de <strong>Problem</strong> y <strong>Recovery</strong> funcionen correctamente.</li>
-</ul>
+- Generar un <strong>evento de prueba</strong> (por ejemplo, simular una CPU > 80%).
+- Verificar:
+    - Que la acción se ejecute.
+    - Que la notificación llegue al canal configurado.
+    - Que las operaciones de <strong>Problem</strong> y <strong>Recovery</strong> funcionen correctamente.
 
 ---
 
@@ -1184,13 +1149,11 @@ Al finalizar el ejercicio, cada participante deberá:
 
 3. Configurar un **usuario** con su canal de notificación.
 4. Crear una **acción** que:
-<ul>
-<li>Se dispare ante triggers con severidad <strong>High</strong>.</li>
-<li>Envíe notificaciones al usuario configurado.</li>
-<li>Incluya un mensaje personalizado.</li>
+    - Se dispare ante triggers con severidad <strong>High</strong>.
+    - Envíe notificaciones al usuario configurado.
+    - Incluya un mensaje personalizado.
 5. Generar un evento de prueba para validar la notificación.
 6. Verificar en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> cuando la condición se cumpla y ver los Actions.
-</ul>
 
 ---
 
@@ -1202,9 +1165,10 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### 8.1. **Recopilar métricas de cualquier fuente**
 
- Zabbix te permite recopilar métricas de cualquier fuente, ya sea:
+Zabbix te permite recopilar métricas de cualquier fuente, ya sea:
 
-
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
 
 <ul>
 <li>Dispositivos de red</li>
@@ -1214,9 +1178,6 @@ Al finalizar el ejercicio, cada participante deberá:
 <li>Bases de datos</li>
 <li>Aplicaciones</li>
 <li>Servicios</li>
-</ul>
-
-<ul>
 <li>Sensores IoT</li>
 <li>Monitoreo de la página web</li>
 <li>Monitoreo de endpoint HTTP / HTTPS</li>
@@ -1225,77 +1186,72 @@ Al finalizar el ejercicio, cada participante deberá:
 <li>NVIDIA GPUs</li>
 </ul>
 
- ![features_Collect_from_any_source_zabbix.svg](imagenes/features_Collect_from_any_source_zabbix.svg)
+</div>
+<div>
 
+<img src="imagenes/features_Collect_from_any_source_zabbix.svg" alt="Collect from any source">
+
+</div>
+</div>
 
 ---
 
 ### **8.2. Métodos de recopilación de datos**
 
- **8.2.1. Monitoreo con agente (Zabbix Agent)**
+**8.2.1. Monitoreo con agente (Zabbix Agent)**
 
 
- Como ya se mencionó, permite recopilar **métricas detalladas** del sistema operativo, aplicaciones y servicios.
+Como ya se mencionó, permite recopilar **métricas detalladas** del sistema operativo, aplicaciones y servicios.
 
-<ul>
-<li>Ideal para:</li>
-<li>Uso de CPU, memoria, disco, procesos, logs.</li>
-<li>Monitoreo profundo de aplicaciones.</li>
-</ul>
+- Ideal para:
+    - Uso de CPU, memoria, disco, procesos, logs.
+    - Monitoreo profundo de aplicaciones.
 
  **8.2.2. Monitoreo con proxy (Zabbix Proxy)**
 
-<ul>
-<li>Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong>Zabbix Server</strong>.</li>
-<li>Útil para:</li>
-<li>Reducción de carga en el server principal.</li>
-<li>Redes distribuidas o separadas por <strong>firewalls</strong>.</li>
-<li>Ambientes multicliente.</li>
-</ul>
+Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong>Zabbix Server</strong>.
+Útil para:
+- Reducción de carga en el server principal.
+- Redes distribuidas o separadas por <strong>firewalls</strong>.
+- Ambientes multicliente.
 
  **8.2.3. Monitoreo sin agente (Agent-Less) con cualquier protocolo**
 
  Zabbix puede recolectar datos directamente desde el Zabbix Server o Zabbix Proxy, usando comprobaciones directas:
 
-<ul>
-<li><strong>Simple checks</strong>:</li>
-<li><strong>ICMP (Ping)</strong> → Comprobación de disponibilidad básica.</li>
-<li><strong>Puertos TCP</strong> → Verificar si un servicio responde.</li>
-<li><strong>SSH / Telnet check</strong> → Ejecución de comandos remotos para obtener métricas.</li>
-<li><strong>ODBC</strong> <strong>check</strong> → Monitoreo de base de datos (database) vía ODBC.</li>
-<li><strong>SNMP (v1, v2c, v3)</strong> → Dispositivos de red, impresoras, firewalls, etc.</li>
-<li><strong>SNMP traps</strong> → Recibir alertas directamente desde el dispositivo.</li>
-<li><strong>HTTP checks</strong> y <strong>monitorización Web</strong> → Disponibilidad de sitios web y APIs.</li>
-<li><strong>IPMI</strong> → Monitoreo de hardware a nivel de placa base. Sensores de hardware, temperatura, voltaje</li>
-<li><strong>JMX</strong> → Monitoreo de aplicaciones Java.</li>
-<li><strong>Virtualización</strong> → VMware, Hyper-V, KVM, Proxmox</li>
-</ul>
+- <strong>Simple checks</strong>:
+    - <strong>ICMP (Ping)</strong> → Comprobación de disponibilidad básica.
+    - <strong>Puertos TCP</strong> → Verificar si un servicio responde.
+- <strong>SSH / Telnet check</strong> → Ejecución de comandos remotos para obtener métricas.
+- <strong>ODBC</strong> <strong>check</strong> → Monitoreo de base de datos (database) vía ODBC.
+- <strong>SNMP (v1, v2c, v3)</strong> → Dispositivos de red, impresoras, firewalls, etc.
+- <strong>SNMP traps</strong> → Recibir alertas directamente desde el dispositivo.
+- <strong>HTTP checks</strong> y <strong>monitorización Web</strong> → Disponibilidad de sitios web y APIs.
+- <strong>IPMI</strong> → Monitoreo de hardware a nivel de placa base. Sensores de hardware, temperatura, voltaje
+- <strong>JMX</strong> → Monitoreo de aplicaciones Java.
+- <strong>Virtualización</strong> → VMware, Hyper-V, KVM, Proxmox
 
- * Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
+** Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
 
  ![features_Agent-less_monitoring.svg](imagenes/features_Agent-less_monitoring.svg)
 
  **8.2.4. Scripts y métricas personalizadas**
 
-<ul>
-<li>Facilidad de ampliación utilizando scripts o complementos externos.</li>
-<li>Posibilidad de crear <strong>items personalizados</strong>:</li>
-<li>Scripts en <strong>Bash, Python, JavaScript</strong>, etc.</li>
-<li>Consultas a APIs externas.</li>
-<li>Adaptación a servicios específicos.</li>
-<li>Útiles cuando no existen templates predefinidos.</li>
-</ul>
+- Facilidad de ampliación utilizando scripts o complementos externos.
+- Posibilidad de crear <strong>items personalizados</strong>:
+    - Scripts en <strong>Bash, Python, JavaScript</strong>, etc.
+    - Consultas a APIs externas.
+    - Adaptación a servicios específicos.
+- Útiles cuando no existen templates predefinidos.
 
 ---
 
 ### **8.3. Ventajas de combinar métodos**
 
-<ul>
-<li>Usar <strong>Zabbix Agent</strong> para métricas detalladas.</li>
-<li>Complementar con <strong>SNMP</strong> para equipos de red.</li>
-<li>Implementar <strong>HTTP checks</strong> para servicios web.</li>
-<li>Usar <strong>scripts personalizados</strong> para casos especiales.</li>
-</ul>
+- Usar <strong>Zabbix Agent</strong> para métricas detalladas.
+- Complementar con <strong>SNMP</strong> para equipos de red.
+- Implementar <strong>HTTP checks</strong> para servicios web.
+- Usar <strong>scripts personalizados</strong> para casos especiales.
 
 ---
 
@@ -1309,25 +1265,23 @@ Al finalizar el ejercicio, cada participante deberá:
 
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
 2. Definir:
-<ul>
-<li>Nombre del host.</li>
-<li>Dirección IP.</li>
-<li>Grupo de hosts.</li>
+    - Nombre del host.
+    - Dirección IP.
+    - Grupo de hosts.
 3. Agregar dos ítems:
-<li><strong>ICMP Ping</strong>:</li>
-<li>Tipo: Simple check.</li>
-<li>Key: `icmpping`.</li>
-<li>Update interval: `30s`.</li>
-<li><strong>HTTP Check</strong>:</li>
-<li>Tipo: HTTP agent.</li>
-<li>URL: `https://ejemplo.com`.</li>
-<li>Update interval: `1m`.</li>
+    - <strong>ICMP Ping</strong>:
+        - Tipo: Simple check.
+        - Key: `icmpping`.
+        - Update interval: `30s`.
+    - <strong>HTTP Check</strong>:
+        - Tipo: HTTP agent.
+        - URL: `https://ejemplo.com`.
+        - Update interval: `1m`.
 4. Guardar y esperar la recopilación de datos.
 5. Ir a **Monitoring → Latest Data** y verificar:
-<li>Estado de conectividad por <strong>Ping</strong>.</li>
-<li>Código de respuesta y latencia del <strong>HTTP Check</strong>.</li>
+    - Estado de conectividad por <strong>Ping</strong>.
+    - Código de respuesta y latencia del <strong>HTTP Check</strong>.
 6. Visualizar resultados en **Graphs** y **Problems**.
-</ul>
 
 ---
 
@@ -1339,18 +1293,14 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### **9.1. Uso de templates vs. ítems manuales**
 
-
-
-<ul>
-<li><strong>Templates</strong> → Recomendados siempre que sea posible:</li>
-<li>Incluyen <strong>ítems, triggers, gráficos, reglas de descubrimiento</strong> y <strong>dashboards</strong>.</li>
-<li>Permiten <strong>estandarizar configuraciones</strong> y reutilizarlas en múltiples hosts.</li>
-<li>Facilitan el mantenimiento: los cambios se aplican automáticamente a todos los hosts vinculados.</li>
-<li><strong>Ítems manuales</strong> → Usar solo cuando:</li>
-<li>Se trata de un monitoreo muy específico.</li>
-<li>No existe template adecuado.</li>
-<li>Requiere scripts personalizados.</li>
-</ul>
+- <strong>Templates</strong> → Recomendados siempre que sea posible:
+    - Incluyen <strong>ítems, triggers, gráficos, reglas de descubrimiento</strong> y <strong>dashboards</strong>.
+    - Permiten <strong>estandarizar configuraciones</strong> y reutilizarlas en múltiples hosts.
+    - Facilitan el mantenimiento: los cambios se aplican automáticamente a todos los hosts vinculados.
+- <strong>Ítems manuales</strong> → Usar solo cuando:
+    - Se trata de un monitoreo muy específico.
+    - No existe template adecuado.
+    - Requiere scripts personalizados.
 
 > **💡 Tip:** Antes de crear ítems manuales, revisar la Zabbix Template Library oficial.
 
@@ -1358,15 +1308,14 @@ Al finalizar el ejercicio, cada participante deberá:
 
 ### **9.2. Organización lógica de hosts y grupos**
 
- Crear **grupos de hosts** basados en criterios claros:
+Crear **grupos de hosts** basados en criterios claros:
 
-<ul>
-<li>Cliente, área, servicio, aplicación, ubicación o entorno (prod, dev, test).</li>
-<li>Beneficios:</li>
-<li>Mejora la <strong>visibilidad</strong> y la administración.</li>
-<li>Simplifica <strong>permisos y roles</strong>.</li>
-<li>Permite filtros más efectivos en dashboards y reportes.</li>
-</ul>
+- Cliente, área, servicio, aplicación, ubicación o entorno (prod, dev, test).
+
+Beneficios:
+- Mejora la <strong>visibilidad</strong> y la administración.
+- Simplifica <strong>permisos y roles</strong>.
+- Permite filtros más efectivos en dashboards y reportes.
 
  ```
  Clientes
@@ -1382,30 +1331,23 @@ Al finalizar el ejercicio, cada participante deberá:
   └── Infraestructura
  ```
 
-
 ---
 
 ### **9.3. Roles y permisos**
 
+- Definir <strong>roles</strong> según el tipo de usuario:
+    - <strong>Administradores</strong> → Configuración completa.
+    - <strong>Operadores</strong> → Acceso a dashboards, problemas y métricas.
+    - <strong>Visualizadores</strong> → Solo consulta.
 
+    Se puede crear roles de usuario personalizados con un conjunto granular de permisos para diferentes tipos de usuarios en el entorno.
 
+    Permiten ocultar o mostrar elementos de la interfaz de usuario de Zabbix para adaptarse a las diferentes necesidades de acceso.
 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
 
-<ul>
-<li>Definir <strong>roles</strong> según el tipo de usuario:</li>
-<li><strong>Administradores</strong> → Configuración completa.</li>
-<li><strong>Operadores</strong> → Acceso a dashboards, problemas y métricas.</li>
-<li><strong>Visualizadores</strong> → Solo consulta.</li>
-</ul>
-
-     Se puede crear roles de usuario personalizados con un conjunto granular de permisos para diferentes tipos de usuarios en el entorno.
-
-     Permiten ocultar o mostrar elementos de la interfaz de usuario de Zabbix para adaptarse a las diferentes necesidades de acceso.
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-    <div>
-
-     → Con los roles de usuario se puede:
+→ Con los roles de usuario se puede:
 
 <ul>
 <li>Limitar el acceso a elementos específicos de la interfaz de usuario.</li>
@@ -1413,25 +1355,23 @@ Al finalizar el ejercicio, cada participante deberá:
 <li>Crear una lista para permitir o denegar acceso a métodos API específicos.</li>
 </ul>
 
-    </div>
-    <div>
+</div>
+<div>
 
-    <img src="imagenes/features_User_Roles.svg" alt="User Roles">
+<img src="imagenes/features_User_Roles.svg" alt="User Roles">
 
-    </div>
-    </div>
+</div>
+</div>
 
 
-<ul>
-<li>Crear <strong>grupos de usuarios</strong> para asignar permisos en bloque.</li>
-</ul>
+- Crear <strong>grupos de usuarios</strong> para asignar permisos en bloque.
 
-     Zabbix proporciona un esquema flexible de permisos de usuario que se puede usar de manera eficiente para gestionar los permisos de usuario.
+    Zabbix proporciona un esquema flexible de permisos de usuario que se puede usar de manera eficiente para gestionar los permisos de usuario.
 
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-    <div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
 
-     → Se puede definir tres niveles de permisos:
+→ Se puede definir tres niveles de permisos:
 
 <ul>
 <li>Lectura y escritura: acceso a lectura y escritura</li>
@@ -1439,72 +1379,68 @@ Al finalizar el ejercicio, cada participante deberá:
 <li>Denegar: acceso denegado</li>
 </ul>
 
-    </div>
-    <div>
+</div>
+<div>
 
-    <img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
+<img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
 
-    </div>
-    </div>
+</div>
+</div>
 
-<ul>
-<li>Beneficios:</li>
-<li>Mayor <strong>seguridad</strong>.</li>
-<li><strong>Control granular</strong> de accesos.</li>
-<li>Simplifica la delegación de tareas.</li>
-</ul>
+Beneficios:
+- Mayor <strong>seguridad</strong>.
+- <strong>Control granular</strong> de accesos.
+- Simplifica la delegación de tareas.
 
 > **💡 Tip:** Zabbix proporciona monitoreo para entornos de múltiples clientes, se puede implementar Zabbix como el punto central de monitoreo para múltiples organizaciones.
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-<div>
-
-<ul>
-<li>Por eso es importante utilizar <strong>grupos de usuarios para aislar</strong> a los clientes entre sí.</li>
-<li>Definir <strong>roles de usuario para controlar el acceso</strong> de los usuarios a diferentes funciones de Zabbix.</li>
-</ul>
-
-</div>
-<div>
-
-<img src="imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy">
-
-</div>
-</div>
+>
+><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+><div>
+>
+><ul>
+><li>Por eso es importante utilizar <strong>grupos de usuarios para aislar</strong> a los clientes entre sí.</li>
+><li>Definir <strong>roles de usuario para controlar el acceso</strong> de los usuarios a diferentes funciones de Zabbix.</li>
+></ul>
+>
+></div>
+><div>
+>
+><img src="imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy">
+>
+></div>
+></div>
 
 ---
 
 ### **9.4. Nombres claros y consistentes**
 
- - Mantener un **estándar de nombres** para:
-     - Hosts.
-     - Templates.
-     - Grupos de hosts.
-     - Ítems y triggers.
- - Beneficios:
-     - Facilita búsquedas y filtros.
-     - Mejora la legibilidad.
-     - Reduce errores en reportes y dashboards.
- - Ejemplos:
-     - Hosts: `srv-app-web01`
-     - Templates: `tpl-linux-metrics`
-     - Grupos: `Clientes/Cliente1/Servidores`
+- Mantener un **estándar de nombres** para:
+    - Hosts.
+    - Templates.
+    - Grupos de hosts.
+    - Ítems y triggers.
+- Beneficios:
+    - Facilita búsquedas y filtros.
+    - Mejora la legibilidad.
+    - Reduce errores en reportes y dashboards.
+- Ejemplos:
+    - Hosts: `srv-app-web01`
+    - Templates: `tpl-linux-metrics`
+    - Grupos: `Clientes/Cliente1/Servidores`
 
 ---
 
 ### **9.5. Uso de proxies para entornos distribuidos**
 
-
-
- - Los **Zabbix Proxies** ayudan a:
-     - Monitorear **sucursales remotas** o entornos distribuidos.
-     - **Reducir la carga** del servidor central.
-     - Manejar **limitaciones de red** (firewalls, VPN, NAT).
- - Buenas prácticas:
-     - Usar proxies dedicados por **cliente** o **zona geográfica**.
-     - Elegir el modo correcto según el escenario.
-     - Monitorear el estado y la latencia de los proxies.
- - Beneficios:
+- Los **Zabbix Proxies** ayudan a:
+    - Monitorear **sucursales remotas** o entornos distribuidos.
+    - **Reducir la carga** del servidor central.
+    - Manejar **limitaciones de red** (firewalls, VPN, NAT).
+- Buenas prácticas:
+    - Usar proxies dedicados por **cliente** o **zona geográfica**.
+    - Elegir el modo correcto según el escenario.
+    - Monitorear el estado y la latencia de los proxies.
+- Beneficios:
 
 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start;">
 <div style="text-align: center;">
@@ -1541,22 +1477,22 @@ Política de Retención de Datos
 
 ### **9.6. Clúster de alta disponibilidad (HA)**
 
- Normalmente se requiere alta disponibilidad (HA) en infraestructuras críticas que prácticamente no puede permitirse ningún tiempo de inactividad.
+Normalmente se requiere alta disponibilidad (HA) en infraestructuras críticas que prácticamente no puede permitirse ningún tiempo de inactividad.
 
- Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan varios servidores Zabbix como nodos en un clúster. Mientras un servidor Zabbix en el clúster está activo, otros están en espera, listos para asumir el control si fuera necesario.
+Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan varios servidores Zabbix como nodos en un clúster. Mientras un servidor Zabbix en el clúster está activo, otros están en espera, listos para asumir el control si fuera necesario.
 
- ![zabbix_ha.png](imagenes/zabbix_ha.png)
+![zabbix_ha.png](imagenes/zabbix_ha.png)
 
- ![zabbix_ha_agent.png](imagenes/zabbix_ha_agent.png)
+![zabbix_ha_agent.png](imagenes/zabbix_ha_agent.png)
 
 ### **9.7. Buenas prácticas generales**
 
- - Usar **templates** siempre que sea posible.
- - Organizar hosts en **grupos lógicos**.
- - Mantener **nombres claros y consistentes**.
- - Definir **roles y permisos** adecuados.
- - Aprovechar los **proxies** para ambientes distribuidos.
- - Documentar configuraciones personalizadas.
+- Usar **templates** siempre que sea posible.
+- Organizar hosts en **grupos lógicos**.
+- Mantener **nombres claros y consistentes**.
+- Definir **roles y permisos** adecuados.
+- Aprovechar los **proxies** para ambientes distribuidos.
+- Documentar configuraciones personalizadas.
 
 > **💡 Tip:** Implementar Machine learning para detectar anomalías basándose en el análisis de datos históricos en tiempo real ya que a veces definir los umbrales del problema manualmente no siempre es un enfoque eficaz.
 
@@ -1583,98 +1519,87 @@ Política de Retención de Datos
 
 ### 10.1. Introducción básica a la API de Zabbix
 
- La **API de Zabbix** es **RESTful** y permite interactuar con casi todas las funcionalidades del sistema vía **JSON-RPC**.
+La **API de Zabbix** es **RESTful** y permite interactuar con casi todas las funcionalidades del sistema vía **JSON-RPC**.
 
+Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras herramientas**.
 
- Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras herramientas**.
+Casos de uso principales:
 
- Casos de uso principales:
+- Alta masiva de hosts.
+- Gestión automática de templates.
+- Exportación de métricas a otras plataformas.
+- Generación de informes personalizados.
+- Automatización de acciones repetitivas.
 
- - Alta masiva de hosts.
- - Gestión automática de templates.
- - Exportación de métricas a otras plataformas.
- - Generación de informes personalizados.
- - Automatización de acciones repetitivas.
+**Ejemplo práctico:**
 
- **Ejemplo práctico:**
+- Hacer una **consulta básica** a la API para **listar los hosts monitoreados** mediante cURL:
 
- - Hacer una **consulta básica** a la API para **listar los hosts monitoreados** mediante cURL:
-
-     ```jsx
-     curl -X POST -H "Content-Type: application/json" \
-     -d '{
-     "jsonrpc": "2.0",
-     "method": "host.get",
-     "params": {"output": ["hostid","host","name"]},
-     "auth": "TOKEN_API",
-     "id": 1
-     }' \
-     [https://zabbix.local/api_jsonrpc.php](https://zabbix.local/api_jsonrpc.php)
-     ```
-
+    ```jsx
+    curl -X POST -H "Content-Type: application/json" \
+    -d '{
+    "jsonrpc": "2.0",
+    "method": "host.get",
+    "params": {"output": ["hostid","host","name"]},
+    "auth": "TOKEN_API",
+    "id": 1
+    }' \
+    [https://zabbix.local/api_jsonrpc.php](https://zabbix.local/api_jsonrpc.php)
+    ```
 
 ---
 
 ### 10.2. Integración con Grafana
 
- Grafana es uno de los complementos más potentes para **visualizar los datos de Zabbix** de forma más atractiva y personalizable.
+Grafana es uno de los complementos más potentes para **visualizar los datos de Zabbix** de forma más atractiva y personalizable.
 
+Ventajas de usar Grafana junto con Zabbix:
 
- Ventajas de usar Grafana junto con Zabbix:
+- Dashboards dinámicos y altamente personalizables.
+- Paneles visuales más atractivos y modernos.
+- Permite combinar datos de Zabbix con otras fuentes (Prometheus, InfluxDB, Elastic, etc.).
+- Soporta alertas y anotaciones sincronizadas.
 
- - Dashboards dinámicos y altamente personalizables.
- - Paneles visuales más atractivos y modernos.
- - Permite combinar datos de Zabbix con otras fuentes (Prometheus, InfluxDB, Elastic, etc.).
- - Soporta alertas y anotaciones sincronizadas.
+**Ejemplo práctico:**
 
- **Ejemplo práctico:**
+1. Mostrar un **dashboard en Grafana** conectado a Zabbix.
+2. Comparar las visualizaciones con los dashboards nativos de Zabbix.
+3. Crear rápidamente un gráfico con métricas de CPU y RAM.
 
- 1. Mostrar un **dashboard en Grafana** conectado a Zabbix.
- 2. Comparar las visualizaciones con los dashboards nativos de Zabbix.
- 3. Crear rápidamente un gráfico con métricas de CPU y RAM.
-
- - Instalar el **Zabbix Data Source Plugin** en Grafana.
- - Configurar la conexión al **Zabbix Server**.
- - Crear un dashboard con:
-     - Uso de **CPU**.
-     - Memoria **RAM**.
-     - Latencia de red.
- - Comparar con dashboards nativos de Zabbix.
+- Instalar el **Zabbix Data Source Plugin** en Grafana.
+- Configurar la conexión al **Zabbix Server**.
+- Crear un dashboard con:
+    - Uso de **CPU**.
+    - Memoria **RAM**.
+    - Latencia de red.
+- Comparar con dashboards nativos de Zabbix.
 
 ---
 
 ### 10.3. Otras integraciones populares
 
-
-
- - **Prometheus** → Exportar métricas para correlación con otras fuentes.
- - **Ansible** → Automatizar despliegue de hosts y configuraciones.
- - **Grafana OnCall / Slack / Telegram / Teams** → Notificaciones más efectivas.
- - **Elasticsearch / Kibana** → Almacenamiento histórico y visualización de logs.
+- **Prometheus** → Exportar métricas para correlación con otras fuentes.
+- **Ansible** → Automatizar despliegue de hosts y configuraciones.
+- **Grafana OnCall / Slack / Telegram / Teams** → Notificaciones más efectivas.
+- **Elasticsearch / Kibana** → Almacenamiento histórico y visualización de logs.
 
 ---
 
 ### 10.4. Extensiones y scripts de la comunidad
 
+- Librerías y plugins disponibles en Zabbix Share.
+- Scripts para chequeos especiales: bases de datos, APIs externas, contenedores, etc.
 
+**Ejemplos prácticos:**
 
- - Librerías y plugins disponibles en Zabbix Share.
- - Scripts para chequeos especiales: bases de datos, APIs externas, contenedores, etc.
-
- **Ejemplos prácticos:**
-
- - Monitoreo de bases de datos no soportadas nativamente.
- - Chequeos de APIs externas.
- - Integraciones con contenedores y Kubernetes.
- - Scripts para enriquecer datos y normalizar métricas.
+- Monitoreo de bases de datos no soportadas nativamente.
+- Chequeos de APIs externas.
+- Integraciones con contenedores y Kubernetes.
+- Scripts para enriquecer datos y normalizar métricas.
 
 ---
 
 ### 10.5. Zabbix vs. otras herramientas de monitoreo
-
-
-
-
 
  | Característica | **Zabbix** | **Prometheus** | **Nagios** |
  | --- | --- | --- | --- |
@@ -1744,12 +1669,7 @@ Política de Retención de Datos
 - **Módulo 9** → Buenas prácticas y escalabilidad.
 - **Módulo 10** → Roadmap y ecosistema Zabbix.
 
-<aside>
-💡
-
-Tip: Identificar qué funcionalidades podrían aplicarse en los entornos de cada participante.
-
-</aside>
+>💡 Tip: Identificar qué funcionalidades podrían aplicarse en los entornos de cada participante.
 
 ---
 
