@@ -349,16 +349,12 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 
 ### **3.1. Acceso y login**
 
- 1. Abrir el navegador e ingresar la URL del frontend:
-    → `https://alertasX.conatel-lab.conatel.cloud`
-    > **Nota:** Remplazar X por el número asignado a cada uno.
+ 1. Abrir el navegador e ingresar la <u>URL del frontend:</u>
+<u>https://alertasX.conatel-lab.conatel.cloud</u>
+    > **Nota:** Se debe reemplazar la letra **X** por el número asignado a cada uno.
  2. Iniciar sesión con las credenciales:
     - Usuario: `demo`
     - Contraseña: `Zabbix123!`
- 3. Identificar en la esquina superior derecha:
-    - Usuario actual.
-    - Idioma y tema.
-    - Acceso rápido a configuración personal.
 
 ---
 
@@ -408,6 +404,11 @@ El **menú lateral** es la base para navegar el frontend.
 <li>Analiza el estado de los servicios relacionados para realizar el cálculo del SLA.</li>
 <li>Accede a resúmenes diarios / semanales / mensuales / anuales de los SLA de servicio.</li>
 </ul>
+<ul>
+<li><span style="color: violet;"><strong>Services</strong></span> → Configuración de servicios.</li><span style="color: violet;"><strong>Service actions</strong></span> → Acciones de servicio.
+<li><span style="color: violet;"><strong>SLA</strong></span> → Cumplimiento de objetivos.</li>
+<li><span style="color: violet;"><strong>SLA reports</strong></span> → Resúmenes de los SLA de servicio.</li>
+</ul>
 
 </div>
 <div>
@@ -437,7 +438,13 @@ El **menú lateral** es la base para navegar el frontend.
 
 <span style="color: purple;"><strong>3.2.4. Reports</strong></span> *(Reportes automáticos)*
 
-- Crear y enviar informes programados basados en dashboards.
+- <span style="color: violet;"><strong>System information</strong></span> → Información del sistema.
+- <span style="color: violet;"><strong>Scheduled reports</strong></span> → Crear y enviar informes programados basados en dashboards.
+- <span style="color: violet;"><strong>Availability report</strong></span> → Reporte de disponibilidad de los hosts.
+- <span style="color: violet;"><strong>Triggers top 100</strong></span> → Top 100 de triggers más críticos.
+- <span style="color: violet;"><strong>Audit</strong></span> → Histórico de auditoría de acciones.
+- <span style="color: violet;"><strong>Action log</strong></span> → Histórico de acciones realizadas.
+- <span style="color: violet;"><strong>Notifications</strong></span> → Notificaciones de eventos.
 
 <span style="color: purple;"><strong>3.2.5. Configuration</strong></span> *(Configuración principal)*
 
@@ -452,10 +459,15 @@ El **menú lateral** es la base para navegar el frontend.
 
 <span style="color: purple;"><strong>3.2.6. Administration</strong></span> *(Administración global)*
 
-- Configuración general de Zabbix.
-- Gestión de **usuarios, roles y permisos**.
-- Administración de **proxies** y **scripts globales**.
-- Control de **medios de notificación**.
+- <span style="color: violet;"><strong>General</strong></span> → Configuración general de Zabbix.
+- <span style="color: violet;"><strong>Proxies</strong></span> → Gestión de proxies.
+- <span style="color: violet;"><strong>Authentication</strong></span> → Gestión de autenticación.
+- <span style="color: violet;"><strong>User groups</strong></span> → Gestión de grupos de usuarios.
+- <span style="color: violet;"><strong>User roles</strong></span> → Gestión de roles de usuarios.
+- <span style="color: violet;"><strong>Users</strong></span> → Gestión de usuarios.
+- <span style="color: violet;"><strong>Media types</strong></span> → Gestión de tipos de medios de notificación.
+- <span style="color: violet;"><strong>Scripts</strong></span> → Gestión de scripts globales.
+- <span style="color: violet;"><strong>Queue</strong></span> → Gestión de cola.
 
 ---
 
@@ -463,16 +475,42 @@ El **menú lateral** es la base para navegar el frontend.
 
 ### **3.3. Ejercicio práctico**</summary>
 
-**Objetivo**: Familiarizarse con la interfaz web y localizar información clave.
+**Objetivo**: Familiarizarse con la interfaz web y localizar información clave en una instalación nueva.
 
 **<u>Pasos guiados</u>**
 
-1. **Ingresar al frontend** con usuario y contraseña.
-2. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Dashboards</strong></span> → Identificar estado general.
-3. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Problems</strong></span> → Ver problemas actuales y su severidad.
-4. Buscar un **host** específico desde <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>.
+1. Luego de **ingresar al frontend** con usuario y contraseña.
+2. <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Localizar el host **"Zabbix server"** (único host por defecto) y explorar:
+    - Tipos de filtros que se pueden realizar.
+    - Campos que se pueden ver en la lista de hosts.
+        - Name → Hacer clic en el nombre del host para ver sus detalles.
+        - Interface → Ver las interfaces del host.
+        - Availability → Ver la disponibilidad del host.
+        - Tags → Ver las etiquetas del host.
+        - Status → Ver el estado del host.
+        - Latest data → Ver las últimas métricas recolectadas del host.
+        - Problems → Ver los problemas del host.
+        - Graphs → Ver los gráficos del host.
+        - Dashboards → Ver los dashboards del host.
+3. Usar el icono de búsqueda 🔍 (ubicado en la **esquina superior izquierda, debajo del logo de Zabbix**) para buscar **"Zabbix server"** y explorar:
+    - Host:
+        - Host → Nombre del host.
+        - IP → IP del host (si contiene una dirección IP).
+        - DNS → DNS del host (si contiene un nombre de dominio).
+        - Monitoring:
+            - Latest data → Ver las últimas métricas recolectadas del host.
+            - Problems → Ver los problemas del host.
+            - Graphs → Ver los gráficos del host.
+            - Dashboards → Ver los dashboards del host.
+        - Configuration:
+            - Items → Ver los ítems del host.
+            - Triggers → Ver los triggers configurados para el host.
+            - Graphs → Ver los gráficos configurados para el host.
+            - Discovery → Ver las reglas de descubrimiento configuradas para el host.
+4. <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> → Explorar las últimas métricas recolectadas del host "Zabbix server".
+5. <span style="color: purple;"><strong>Reports</strong></span> → <span style="color: violet;"><strong>System information</strong></span> → Revisar información del sistema Zabbix (versión, número de hosts, items, triggers, etc.).
 
-</details>
+> **Nota:** Los conceptos mencionados en este ejercicio (items, triggers, graphs, discovery, etc.) se verán más a detalle en los siguientes módulos.
 
 ---
 
@@ -613,15 +651,15 @@ Tres modos disponibles:
 2. Configurar:
     1. Nombre del host.
 
-        →`SRV-Prueba`
+        →`SRV-Test`
 
     2. Asociar un **template predefinido**.
 
-        → `Zabbix agent`
+        → `Linux by Zabbix agent`
 
     3. Elegir un Grupo de hosts.
 
-        → `Servers`
+        → `Linux servers`
 
     4. Configurar **interfaces** según el método de monitoreo:
         - **Con agente** → Más detallado.
@@ -629,11 +667,24 @@ Tres modos disponibles:
 
         → <span style="color: blue;"><strong>Add</strong></span> y seleccionar Agent
 
-        → Dirección IP `192.168.0.0`
+        → DNS name `test.conatel-lab.conatel.cloud`
 
-    5. <span style="color: blue;"><strong>Guardar (Add)</strong></span> y verificar la conectividad.
-3. <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Hosts</strong></span> y seleccionar <span style="color: violet;"><strong>Latest Data</strong></span> o directamente a <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Latest data</strong></span> y validar que las métricas se recolecten.
-4. Revisar **Graphs** y **Problems** para confirmar datos.
+        → Seleccionar en 'Connect to': <span style="color: grey;"><strong>DNS</strong></span>
+
+    5. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+    6. Verificar la conectividad
+        - Verificar la columna **Availability**:
+            - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
+            - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
+            - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
+        - **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
+
+3. Validar que las métricas se recolecten:
+    1. <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Hosts</strong></span> y seleccionar <span style="color: violet;"><strong>Latest Data</strong></span>
+    2. o <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host recién creado.
+4. **⚠️ Importante:** Una vez completados los pasos anteriores, <u><strong>avisar al instructor</strong></u> para que se simule un problema. Esto generará una alerta que podrán visualizar en:
+    - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Dashboards</strong></span> → **Global view** (dashboard principal).
+    - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> (lista de problemas activos).
 
 ---
 
@@ -650,12 +701,16 @@ Zabbix permite **analizar métricas en tiempo real** y acceder al historial comp
 
 **5.1.1. <span style="color: violet;"><strong>Latest Data</strong></span>** *(Datos recientes)*
 
-- Muestra métricas recolectadas por host, ítem o grupo.
-- Permite filtrar datos por **host, grupo, aplicación o periodo de tiempo**.
+- Muestra métricas recolectadas por host.
+- Permite filtrar datos por **host, grupo, nombre de item, tags, etc**.
 - Información clave:
-    - Último valor.
-    - Fecha y hora de actualización.
-    - Estado del ítem (activo/inactivo).
+    - Host
+    - Nombre
+    - Última comprobación
+    - Último valor recolectado
+    - Variación del valor
+    - Etiquetas (tags)
+    - Gráfico o Historial
 
 **5.1.2. <span style="color: violet;"><strong>Graphs</strong></span>** *(Gráficos)*
 
@@ -729,29 +784,56 @@ Una **LLD rule** está formada por:
 
 **<u>Pasos guiados</u>**
 
-1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → en el host anteriormente creado → seleccionar la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
-2. Configurar:
-    - Nombre de la regla.
+1. Crear un nuevo host:
+    1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
+    2. Configurar:
+        1. Nombre del host.
 
-        → `Network Interfaces Discovery`
+            →`SW-Demo1`
 
-    - Tipo de verificación (SNMP, agente o script).
+        2. **No asociar template** (dejar sin template).
 
-        → `SNMP agent`
+        3. Elegir un Grupo de hosts.
 
-    - Nombre único (Key)
+            → `demo`
 
-        → `net.if.discovery`
+        4. Configurar **interfaces**:
+            → <span style="color: blue;"><strong>Add</strong></span> y seleccionar **SNMP**
 
-    - SNMP OID
+            → IP address `10.0.10.1`
 
-        →
+            → Port `161`
 
-    - Frecuencia de descubrimiento.
+            → SNMP version `SNMPv2`
 
-        → `1h`
+            → Community `snmp-conatel-lab`
 
-    - <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+        5. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+
+2. Configurar la regla de descubrimiento:
+    1. En el host recientemente creado ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
+    2. Configurar:
+        1. Nombre de la regla.
+
+            → `Network Interfaces Discovery`
+
+        2. Tipo de verificación (SNMP, agente o script).
+
+            → `SNMP agent`
+
+        3. Nombre único (Key)
+
+            → `net.if.discovery`
+
+        4. SNMP OID
+
+            → `discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFALIAS},1.3.6.1.2.1.31.1.1.1.18,{#IFNAME},1.3.6.1.2.1.31.1.1.1.1,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3]`
+
+        5. Frecuencia de descubrimiento.
+
+            → `1h`
+
+        6. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
 3. Verificar los ítems descubiertos automáticamente.
 4. Observar:
     - Nuevas métricas.
