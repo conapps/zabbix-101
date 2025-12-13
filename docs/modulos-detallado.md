@@ -463,7 +463,8 @@ El **menú lateral** es la base para navegar el frontend.
 
 ### **3.3. Ejercicio práctico**
 
-**Objetivo**: Familiarizarse con la interfaz web y localizar información clave.
+<details>
+<summary><strong>Objetivo:</strong> Familiarizarse con la interfaz web y localizar información clave.</summary>
 
 **<u>Pasos guiados</u>**
 
@@ -471,6 +472,8 @@ El **menú lateral** es la base para navegar el frontend.
 2. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Dashboards</strong></span> → Identificar estado general.
 3. <span style="color: purple;"><strong>Monitoring</strong></span> →  <span style="color: violet;"><strong>Problems</strong></span> → Ver problemas actuales y su severidad.
 4. Buscar un **host** específico desde <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>.
+
+</details>
 
 ---
 
