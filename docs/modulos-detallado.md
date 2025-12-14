@@ -473,13 +473,14 @@ El **menú lateral** es la base para navegar el frontend.
 
 → **Ejercicio práctico**: Exploración del frontend.
 
-### **3.3. Ejercicio práctico**</summary>
+### **3.3. Ejercicio práctico**
 
 **Objetivo**: Familiarizarse con la interfaz web y localizar información clave en una instalación nueva.
 
 **<u>Pasos guiados</u>**
 
 1. Luego de **ingresar al frontend** con usuario y contraseña.
+
 2. <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Localizar el host **"Zabbix server"** (único host por defecto) y explorar:
     - Tipos de filtros que se pueden realizar.
     - Campos que se pueden ver en la lista de hosts.
@@ -492,22 +493,24 @@ El **menú lateral** es la base para navegar el frontend.
         - Problems → Ver los problemas del host.
         - Graphs → Ver los gráficos del host.
         - Dashboards → Ver los dashboards del host.
-3. Usar el icono de búsqueda 🔍 (ubicado en la **esquina superior izquierda, debajo del logo de Zabbix**) para buscar **"Zabbix server"** y explorar:
-    - Host:
-        - Host → Nombre del host.
-        - IP → IP del host (si contiene una dirección IP).
-        - DNS → DNS del host (si contiene un nombre de dominio).
-        - Monitoring:
-            - Latest data → Ver las últimas métricas recolectadas del host.
-            - Problems → Ver los problemas del host.
-            - Graphs → Ver los gráficos del host.
-            - Dashboards → Ver los dashboards del host.
-        - Configuration:
-            - Items → Ver los ítems del host.
-            - Triggers → Ver los triggers configurados para el host.
-            - Graphs → Ver los gráficos configurados para el host.
-            - Discovery → Ver las reglas de descubrimiento configuradas para el host.
+
+3. Usar el icono de búsqueda 🔍 (ubicado en la **esquina superior izquierda, debajo del logo de Zabbix**) para buscar **"Zabbix server"** y explorar en <span style="color: violet;"><strong>Hosts</strong></span>:
+    - Host → Nombre del host.
+    - IP → IP del host (si contiene una dirección IP).
+    - DNS → DNS del host (si contiene un nombre de dominio).
+    - Monitoring:
+        - Latest data → Ver las últimas métricas recolectadas del host.
+        - Problems → Ver los problemas del host.
+        - Graphs → Ver los gráficos del host.
+        - Dashboards → Ver los dashboards del host.
+    - Configuration:
+        - Items → Ver los ítems del host.
+        - Triggers → Ver los triggers configurados para el host.
+        - Graphs → Ver los gráficos configurados para el host.
+        - Discovery → Ver las reglas de descubrimiento configuradas para el host.
+
 4. <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> → Explorar las últimas métricas recolectadas del host "Zabbix server".
+
 5. <span style="color: purple;"><strong>Reports</strong></span> → <span style="color: violet;"><strong>System information</strong></span> → Revisar información del sistema Zabbix (versión, número de hosts, items, triggers, etc.).
 
 > **Nota:** Los conceptos mencionados en este ejercicio (items, triggers, graphs, discovery, etc.) se verán más a detalle en los siguientes módulos.
@@ -647,41 +650,51 @@ Tres modos disponibles:
 
 **<u>Procedimiento básico</u>**
 
-1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>
+
 2. Configurar:
-    1. Nombre del host.
+    1. Nombre del host *(parámetro obligatorio)*.
 
-        →`SRV-Test`
+        → Host name: `SRV-Test`
 
-    2. Asociar un **template predefinido**.
+    2. Asociar un *template predefinido*.
 
-        → `Linux by Zabbix agent`
+        → Templates: `Linux by Zabbix agent`
 
-    3. Elegir un Grupo de hosts.
+        > **💡 ¿Qué proporciona este template?**
+        >
+        > El template **"Linux by Zabbix agent"** incluye una colección predefinida de items, triggers y gráficos para monitorear servidores Linux. Incluye métricas como: CPU, memoria, disco, red, etc. Al asociarlo al host, estos elementos se aplican automáticamente sin necesidad de configurarlos manualmente.
 
-        → `Linux servers`
+    3. Elegir un Grupo de hosts *(parámetro obligatorio)*.
 
-    4. Configurar **interfaces** según el método de monitoreo:
-        - **Con agente** → Más detallado.
-        - **Sin agente** → SNMP, ICMP o HTTP.
+        → Groups: `Linux servers`
 
-        → <span style="color: blue;"><strong>Add</strong></span> y seleccionar Agent
+    4. Configurar **interfaces** para el método de monitoreo con **agente Zabbix**:
 
-        → DNS name `test.conatel-lab.conatel.cloud`
+        → Interfaces: <span style="color: blue;"><strong>Add</strong></span> y seleccionar <strong>Agent</strong> quedando 'Type: Agent'.
 
-        → Seleccionar en 'Connect to': <span style="color: grey;"><strong>DNS</strong></span>
+        → DNS name: `test.conatel-lab.conatel.cloud`
+
+        → Seleccionar en 'Connect to': <strong>DNS</strong>.
+
+        > **💡 ¿Qué es el agente Zabbix?**
+        >
+        > El **agente Zabbix** es un software ligero que se instala en el servidor a monitorear. Se comunica con el servidor Zabbix/Proxy para enviar métricas del sistema (CPU, memoria, disco, red, etc.) de forma activa o pasiva. A diferencia de SNMP, el agente Zabbix proporciona monitoreo más detallado y específico para sistemas operativos.
 
     5. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+
     6. Verificar la conectividad
         - Verificar la columna **Availability**:
             - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
             - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
             - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
-        - **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
+
+        > **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
 
 3. Validar que las métricas se recolecten:
     1. <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Hosts</strong></span> y seleccionar <span style="color: violet;"><strong>Latest Data</strong></span>
     2. o <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host recién creado.
+
 4. **⚠️ Importante:** Una vez completados los pasos anteriores, <u><strong>avisar al instructor</strong></u> para que se simule un problema. Esto generará una alerta que podrán visualizar en:
     - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Dashboards</strong></span> → **Global view** (dashboard principal).
     - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> (lista de problemas activos).
@@ -785,60 +798,121 @@ Una **LLD rule** está formada por:
 **<u>Pasos guiados</u>**
 
 1. Crear un nuevo host:
-    1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
-    2. Configurar:
-        1. Nombre del host.
 
-            →`SW-Demo1`
+    1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
+
+    2. Configurar:
+        1. Nombre del host *(parámetro obligatorio)*.
+
+            → Host name: `SW-Demo1`
 
         2. **No asociar template** (dejar sin template).
 
-        3. Elegir un Grupo de hosts.
+        3. Elegir un Grupo de hosts *(parámetro obligatorio)*.
 
-            → `demo`
+            → Groups: `demo`
 
-        4. Configurar **interfaces**:
-            → <span style="color: blue;"><strong>Add</strong></span> y seleccionar **SNMP**
+        4. Configurar **interfaces** para el método de monitoreo con **SNMP**:
 
-            → IP address `10.0.10.1`
+            → Interfaces: <span style="color: blue;"><strong>Add</strong></span> y seleccionar **SNMP** quedando 'Type: SNMP'.
 
-            → Port `161`
+            → IP address: `10.0.10.1`
 
-            → SNMP version `SNMPv2`
+            → Port: `161` *(protocolo por defecto para SNMP)*
 
-            → Community `snmp-conatel-lab`
+            → SNMP version: `SNMPv2`
 
-        5. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+            → Community: `snmp-conatel-lab`
+
+        5. *Opcionalmente* se puede agregar una descripción.
+
+            → Description: `Switch virtual Cisco Nexus 9000`
+
+        6. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+
+        7. Verificar la conectividad
+
+            - Verificar la columna **Availability**:
+                - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
+                - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
+                - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
+
+            > **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
 
 2. Configurar la regla de descubrimiento:
-    1. En el host recientemente creado ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
-    2. Configurar:
-        1. Nombre de la regla.
 
-            → `Network Interfaces Discovery`
+    1. En el host recientemente creado ir a la columna <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
+
+    2. Configurar:
+
+        1. Nombre de la regla *(parámetro obligatorio)*.
+
+            → Name: `Network Interfaces Discovery`
 
         2. Tipo de verificación (SNMP, agente o script).
 
-            → `SNMP agent`
+            → Type: `SNMP agent`
 
-        3. Nombre único (Key)
+            > **💡 ¿Qué es un agente SNMP?**
+            >
+            > Un **agente SNMP** es un software que se ejecuta en el dispositivo de red y responde a las solicitudes SNMP proporcionando información sobre el estado y las métricas del dispositivo. Cuando Zabbix realiza una consulta SNMP, el agente recopila y envía los datos solicitados, permitiendo que Zabbix pueda monitorear y analizar el dispositivo.
 
-            → `net.if.discovery`
+        3. Clave *(parámetro obligatorio, debe ser único y no debe coincidir con ninguna otra regla de descubrimiento)*.
 
-        4. SNMP OID
+            → Key: `net.if.discovery`
 
-            → `discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFALIAS},1.3.6.1.2.1.31.1.1.1.18,{#IFNAME},1.3.6.1.2.1.31.1.1.1.1,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3]`
+        4. Identificador de objetos SNMP *(parámetro obligatorio)*
 
-        5. Frecuencia de descubrimiento.
+            → SNMP OID: `discovery[{#IFOPERSTATUS},1.3.6.1.2.1.2.2.1.8,{#IFADMINSTATUS},1.3.6.1.2.1.2.2.1.7,{#IFALIAS},1.3.6.1.2.1.31.1.1.1.18,{#IFNAME},1.3.6.1.2.1.31.1.1.1.1,{#IFDESCR},1.3.6.1.2.1.2.2.1.2,{#IFTYPE},1.3.6.1.2.1.2.2.1.3]`
 
-            → `1h`
+            > **💡 ¿Qué hace este comando?**
+            >
+            > Esta regla de descubrimiento le indica a Zabbix que **consulte múltiples OIDs SNMP** del dispositivo para **descubrir automáticamente las interfaces de red** y extraer información sobre cada una.
+            >
+            > **Formato:** `discovery[{#MACRO1}, oid1, {#MACRO2}, oid2, …,]`
+            >
+            > **¿Qué significa cada parte?**
+            > - **`{#MACRO1}`, `{#MACRO2}`, etc.** → Son **nombres de macros LLD** (Low Level Discovery) que almacenarán los valores obtenidos. Estas macros se pueden usar posteriormente en items, triggers y gráficos prototipo.
+            > - **`oid1`, `oid2`, etc.** → Son **OIDs (Object Identifiers)** que representan direcciones numéricas únicas en el árbol MIB SNMP. Cada OID apunta a una información específica del dispositivo.
+            > - **`{#SNMPINDEX}`** → Es una **macro automática** que Zabbix genera para cada entidad descubierta. Contiene el índice numérico del OID (por ejemplo, si se descubre la interfaz con índice 1, 2, 3, etc.).
+            >
+            > **¿Cómo funciona?**
+            > 1. Zabbix consulta cada OID especificado al dispositivo SNMP.
+            > 2. El dispositivo responde con una lista de valores, cada uno asociado a un índice (1, 2, 3, etc.).
+            > 3. Zabbix agrupa los resultados por el índice común (`{#SNMPINDEX}`).
+            > 4. Para cada grupo, crea macros con los valores obtenidos (por ejemplo, `{#IFDESCR}` = "GigabitEthernet0/1", `{#IFNAME}` = "Gi0/1").
+            >
+            > **En este ejemplo específico:**
+            > - `{#IFOPERSTATUS}` → Estado operativo de la interfaz (up/down).
+            > - `{#IFADMINSTATUS}` → Estado administrativo de la interfaz (enabled/disabled).
+            > - `{#IFALIAS}` → Alias o descripción personalizada de la interfaz.
+            > - `{#IFNAME}` → Nombre corto de la interfaz (ej: "Gi0/1").
+            > - `{#IFDESCR}` → Descripción completa de la interfaz.
+            > - `{#IFTYPE}` → Tipo de interfaz (ethernet, loopback, etc.).
+            >
+            > Con esta información, Zabbix puede crear automáticamente items, triggers y gráficos para cada interfaz descubierta.
 
-        6. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
-3. Verificar los ítems descubiertos automáticamente.
-4. Observar:
-    - Nuevas métricas.
-    - Triggers generados.
-    - Gráficos creados.
+        5. Frecuencia de descubrimiento *(parámetro obligatorio)*.
+
+            → Update interval: `1h`
+
+        6. Mantener recursos perdidos *(parámetro obligatorio)*.
+
+            → Keep lost resources period: `30d`
+
+        7. *Opcionalmente* se puede agregar una descripción.
+
+            → Description: `Descubriendo interfaces desde IF-MIB.`
+
+        8. Probar la regla de descubrimiento antes de guardar:
+
+            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
+            - Verificar que aparezcan resultados en formato JSON mostrando las interfaces descubiertas empezando por `{#SNMPINDEX}`.
+            - Cada resultado debe contener las macros configuradas (`{#IFOPERSTATUS}`, `{#IFADMINSTATUS}`, `{#IFALIAS}`, `{#IFNAME}`, `{#IFDESCR}`, `{#IFTYPE}`, `{#SNMPINDEX}`).
+
+        9. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+
+        > **Nota importante:** Para que se creen automáticamente los items, triggers y gráficos, es necesario configurar **item prototypes**, **trigger prototypes** y **graph prototypes** en la regla de descubrimiento. Sin estos prototipos, el discovery solo descubrirá las entidades pero no creará los elementos de monitoreo automáticamente.
 
 ---
 
