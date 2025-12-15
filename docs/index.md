@@ -43,7 +43,7 @@ Documentación completa y detallada de todos los módulos, incluyendo:
 4. **Interfaz Web**
 5. **Monitoreo básico de hosts y servicios**
 6. **Visualización de datos y descubrimiento automático**
-7. **Ejercicios integradores**
+7. **Ejercicio integrador**
 
 ### **Alertas, automatización y mejores prácticas**
 
@@ -60,7 +60,7 @@ Documentación completa y detallada de todos los módulos, incluyendo:
 - **70% práctica** - Ejercicios guiados y casos reales
 - **30% teoría** - Conceptos fundamentales y mejores prácticas
 - **Demos en vivo** - Visualización de funcionalidades
-- **Ejercicios integradores** - Aplicación práctica de conocimientos
+- **Ejercicio integrador** - Aplicación práctica de conocimientos
 
 ## 📦 Recursos
 

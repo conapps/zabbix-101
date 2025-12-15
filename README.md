@@ -61,7 +61,7 @@ zabbix-101/
 4. **Interfaz Web**
 5. **Monitoreo básico de hosts y servicios**
 6. **Visualización de datos y descubrimiento automático**
-7. **Ejercicios integradores**
+7. **Ejercicio integrador**
 
 ### **<span style="color: blue;">Alertas, automatización y mejores prácticas</span>**
 

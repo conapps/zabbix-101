@@ -15,7 +15,7 @@
 | 13:00 – 14:00 | **🍽 Almuerzo** | — | 1h | — |
 | 14:00 – 16:15 | **5. [Visualización de datos y descubrimiento automático](modulos-resumen.md#módulo-5--visualización-de-datos-y-descubrimiento-automático)** | Teoría + demo + práctica guiada | 2h 15m | Ver datos en tiempo real y aprender a automatizar el descubrimiento de recursos. |
 | 16:15 – 16:30 | **☕ Coffee Break** | — | 15 min | — |
-| 16:30 – 17:30 | [**Ejercicios integradores**](modulos-resumen.md#módulo--ejercicios-integradores) | Práctica guiada | 1h | Realizar un ejercicio práctico completo que combine lo visto en los primeros 5 módulos. |
+| 16:30 – 17:30 | [**Ejercicio integrador**](modulos-resumen.md#módulo--ejercicio-integrador) | Práctica guiada | 1h | Realizar un ejercicio práctico completo que combine lo visto en los primeros 5 módulos. Crear un host, configurar un template con items y reglas de descubrimiento, y aplicar buenas prácticas de monitoreo. |
 | 17:30 – 18:00 | [**Cierre - Primera parte**](modulos-resumen.md#módulo--cierre---primera-parte) | Repaso + Q&A | 30 min | Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop. |
 
 ---

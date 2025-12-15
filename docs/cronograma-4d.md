@@ -26,8 +26,8 @@
 | 14:15 – 15:30 | **4. [Monitoreo básico de hosts y servicios](modulos-resumen.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)** | Demo + práctica | 1h 15m | Aprender a agregar equipos a monitorear y aplicar templates. |
 | 15:30 – 15:45 | **☕ Coffee Break** | — | 15 min | — |
 | 15:45 – 17:00 | **5. [Visualización de datos y descubrimiento automático](modulos-resumen.md#módulo-5--visualización-de-datos-y-descubrimiento-automático)** | Teoría + demo + práctica guiada | 1h 15m | Ver datos en tiempo real y aprender a automatizar el descubrimiento de recursos. |
-| 17:00 – 17:45 | **5. [Visualización de datos y descubrimiento automático](modulos-resumen.md#módulo-5--visualización-de-datos-y-descubrimiento-automático)** (continuación) | Práctica guiada | 45 min | Continuar con ejercicios de visualización y descubrimiento automático. |
-| 17:45 – 18:00 | **Repaso y cierre** | Q&A | 15 min | Resolver dudas y adelantar lo que veremos mañana. |
+| 17:00 – 17:45 | [**Ejercicio integrador**](modulos-resumen.md#módulo--ejercicio-integrador) | Práctica guiada | 45 min | Realizar un ejercicio práctico completo que combine lo visto en los primeros 5 módulos. Crear un host, configurar un template con items y reglas de descubrimiento, y aplicar buenas prácticas de monitoreo. |
+| 17:45 – 18:00 | [**Cierre - Primera parte**](modulos-resumen.md#módulo--cierre---primera-parte) | Repaso + Q&A | 15 min | Resolver dudas, repasar conceptos clave y adelantar los siguientes temas del workshop. |
 
 ---
 
@@ -37,19 +37,19 @@
 
 | **Hora** | **Módulo** | **Formato** | **Duración** | **Objetivos / Contenidos** |
 | --- | --- | --- | --- | --- |
-| 14:00 – 14:15 | **Repaso Día 2** | Teoría interactiva | 15 min | Reforzar rápidamente los conceptos principales vistos. |
-| 14:15 – 15:15 | **6. [Triggers y eventos](modulos-resumen.md#módulo-6--triggers-y-eventos)** | Demo + práctica | 1h | Configurar condiciones para generar alertas. |
-| 15:15 – 15:30 | **☕ Coffee Break** | — | 15 min | — |
-| 15:30 – 16:30 | **7. [Acciones y notificaciones](modulos-resumen.md#módulo-7--acciones-y-notificaciones)** | Demo + práctica | 1h | Aprender a enviar alertas automáticas. |
-| 16:30 – 16:55 | **8. [Recopilación de datos (métricas](modulos-resumen.md#módulo-8--recopilación-de-datos-métricas))** | Demo | 25 min | Conocer los diferentes métodos de monitoreo. |
-| 16:55 – 17:55 | **8. [Recopilación de datos (métricas](modulos-resumen.md#módulo-8--recopilación-de-datos-métricas))** (continuación) | Práctica | 1h | Ejercicios prácticos con diferentes métodos de recopilación. |
-| 17:55 – 18:00 | **Repaso y cierre** | Q&A | 5 min | Resolver dudas y adelantar lo que veremos mañana. |
+| 14:00 – 14:20 | [**Bienvenida y repaso**](modulos-resumen.md#módulo--bienvenida-y-repaso) | Teoría interactiva | 20 min | Resolver dudas y reforzar rápidamente los conceptos principales vistos. |
+| 14:20 – 15:20 | **6. [Triggers y eventos](modulos-resumen.md#módulo-6--triggers-y-eventos)** | Demo + práctica | 1h | Configurar condiciones para generar alertas. |
+| 15:20 – 15:35 | **☕ Coffee Break** | — | 15 min | — |
+| 15:35 – 16:35 | **7. [Acciones y notificaciones](modulos-resumen.md#módulo-7--acciones-y-notificaciones)** | Demo + práctica | 1h | Aprender a enviar alertas automáticas. |
+| 16:35 – 17:00 | **8. [Recopilación de datos (métricas](modulos-resumen.md#módulo-8--recopilación-de-datos-métricas))** | Demo | 25 min | Conocer los diferentes métodos de monitoreo. |
+| 17:00 – 17:45 | **8. [Recopilación de datos (métricas](modulos-resumen.md#módulo-8--recopilación-de-datos-métricas))** (continuación) | Práctica | 45 min | Ejercicios prácticos con diferentes métodos de recopilación. |
+| 17:45 – 18:00 | **Repaso y cierre** | Q&A | 15 min | Resolver dudas y adelantar lo que veremos mañana. |
 
 ---
 
 ## **DÍA 4 – Buenas prácticas, ecosistema y ejercicio final**
 
-**Objetivo:** Aplicar buenas prácticas, conocer el ecosistema Zabbix y realizar un ejercicio integrador completo.
+**Objetivo:** Aplicar buenas prácticas, conocer el ecosistema Zabbix y realizar un ejercicio final completo.
 
 | **Hora** | **Módulo** | **Formato** | **Duración** | **Objetivos / Contenidos** |
 | --- | --- | --- | --- | --- |

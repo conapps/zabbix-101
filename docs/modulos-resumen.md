@@ -50,8 +50,6 @@
 - Cómo se comunican los componentes entre sí.
 - Principales **puertos de comunicación** entre componentes.
 
-→ Esquema visual de arquitectura *(podría incluir un diagrama simple o una demo rápida mostrando cómo se comunican)*.
-
 ---
 
 ## **Módulo 3 – [Interfaz Web](modulos-detallado.md#módulo-3--interfaz-web)**
@@ -64,7 +62,7 @@
 - Recorrido general por la **interfaz gráfica**.
 - Secciones principales del menú y explicación de dashboards y vistas principales.
 
-→ **Ejercicio práctico**: Exploración del frontend.
+> 📋 [Ejercicio práctico 3.3 - Exploración del frontend](ejercicios/ejercicio-3.3.md)
 
 ---
 
@@ -85,7 +83,7 @@
 - Cómo usar el **inventario** para gestionar información de los hosts.
 - Cómo verificar **gráficas**, **eventos** y **métricas**.
 
-→ **Ejercicio práctico**: Agregar un equipo local y verificar métricas.
+> 📋 [Ejercicio práctico 4.8 - Agregar host y verificar métricas](ejercicios/ejercicio-4.8.md)
 
 ---
 
@@ -101,24 +99,24 @@
 - Qué es **Low-Level Discovery (LLD)** y para qué se usa.
 - Creación de **reglas básicas de descubrimiento**.
 
-→ **Ejercicio práctico**: Detección automática de interfaces de red.
-
+> 📋 [Ejercicio práctico 5.3 - Configuración de descubrimiento de interfaces de red](ejercicios/ejercicio-5.3.md)
 ---
 
-## **Módulo – [Ejercicios integradores](modulos-detallado.md#módulo--ejercicios-integradores)**
+## **Módulo – [Ejercicio integrador](modulos-detallado.md#módulo--ejercicio-integrador)**
 
-**Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, asociará un template, validará métricas, visualizará los dashboards, configurará descubrimientos automáticos y verificará eventos y problemas.
+**Objetivo:** Realizar un ejercicio práctico completo que combine lo visto en los **primeros 5 módulos**. Cada participante dará de alta un host, configurará un template con items y reglas de descubrimiento, aplicando buenas prácticas de monitoreo.
 
 ### <u>Conceptos clave</u>
 
-- Acceso al **frontend** y exploración inicial.
-- Alta de un **host** desde cero.
-- Asociación de **templates** predefinidos.
-- Verificación de **métricas** en **Latest Data**.
-- Visualización de **gráficos** y **eventos**.
-- Creación de una **regla de Low-Level Discovery (LLD)**.
-- Validación de ítems, triggers y gráficos generados automáticamente.
-- Revisión final de **problemas** y **alertas activas**.
+- Crear un **host** desde cero con configuración SNMP.
+- Crear un **template** desde cero con items de sistema.
+- Configurar **Value Mappings** para interpretar valores.
+- Configurar **reglas de Low-Level Discovery (LLD)** en el template.
+- Crear **item prototypes** con value mappings y tags.
+- Aplicar el template al host y verificar que todos los elementos se hayan creado correctamente.
+- Confirmar que los **value mappings** muestren valores legibles.
+
+> 📋 [Ejercicio integrador - Template con LLD y Value Mappings](ejercicios/ejercicio-integrador.md)
 
 ---
 

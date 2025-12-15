@@ -10,7 +10,7 @@
 - [**Módulo 3 –** Interfaz Web](#módulo-3--interfaz-web)
 - [**Módulo 4 –** Monitoreo básico de hosts y servicios](#módulo-4--monitoreo-básico-de-hosts-y-servicios)
 - [**Módulo 5 –** Visualización de datos y descubrimiento automático](#módulo-5--visualización-de-datos-y-descubrimiento-automático)
-- [**Módulo –** Ejercicios integradores](#módulo--ejercicios-integradores)
+- [**Módulo –** Ejercicio integrador](#módulo--ejercicio-integrador)
 - [**Módulo –** Cierre - Primera parte](#módulo--cierre---primera-parte)
 
 ### <span style="color: blue;">Alertas, automatización y mejores prácticas</span>
@@ -465,7 +465,7 @@ El **menú lateral** es la base para navegar el frontend.
 
 ### **3.3. Ejercicio práctico**
 
-> 📋 [Ejercicio 3.3 - Exploración del frontend](ejercicios/ejercicio-3.3.md)
+> 📋 [Ejercicio práctico 3.3 - Exploración del frontend](ejercicios/ejercicio-3.3.md)
 
 ---
 
@@ -596,7 +596,7 @@ Tres modos disponibles:
 
 ### **4.8. Ejercicio práctico**
 
-> 📋 [Ejercicio 4.8 - Agregar host y verificar métricas](ejercicios/ejercicio-4.8.md)
+> 📋 [Ejercicio práctico 4.8 - Agregar host y verificar métricas](ejercicios/ejercicio-4.8.md)
 
 ---
 
@@ -690,7 +690,7 @@ Una **LLD rule** está formada por:
 
 ### **5.3. Ejercicio práctico**
 
-> 📋 [Ejercicio 5.3 - Configuración de descubrimiento de interfaces de red](ejercicios/ejercicio-5.3.md)
+> 📋 [Ejercicio práctico 5.3 - Configuración de descubrimiento de interfaces de red](ejercicios/ejercicio-5.3.md)
 
 ---
 
