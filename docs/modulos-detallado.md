@@ -671,7 +671,7 @@ Tres modos disponibles:
 
     4. Configurar **interfaces** para el método de monitoreo con **agente Zabbix**:
 
-        → Interfaces: <span style="color: blue;"><strong>Add</strong></span> y seleccionar <strong>Agent</strong> quedando 'Type: Agent'.
+        → Interfaces: <span style="color: blue;"><strong>Add</strong> (Guardar)</span> y seleccionar <strong>Agent</strong> quedando 'Type: Agent'.
 
         → DNS name: `test.conatel-lab.conatel.cloud`
 
@@ -681,7 +681,7 @@ Tres modos disponibles:
         >
         > El **agente Zabbix** es un software ligero que se instala en el servidor a monitorear. Se comunica con el servidor Zabbix/Proxy para enviar métricas del sistema (CPU, memoria, disco, red, etc.) de forma activa o pasiva. A diferencia de SNMP, el agente Zabbix proporciona monitoreo más detallado y específico para sistemas operativos.
 
-    5. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+    5. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     6. Verificar la conectividad
         - Verificar la columna **Availability**:
@@ -814,7 +814,7 @@ Una **LLD rule** está formada por:
 
         4. Configurar **interfaces** para el método de monitoreo con **SNMP**:
 
-            → Interfaces: <span style="color: blue;"><strong>Add</strong></span> y seleccionar **SNMP** quedando 'Type: SNMP'.
+            → Interfaces: <span style="color: blue;"><strong>Add</strong> (Guardar)</span> y seleccionar **SNMP** quedando 'Type: SNMP'.
 
             → IP address: `10.0.10.1`
 
@@ -828,7 +828,7 @@ Una **LLD rule** está formada por:
 
             → Description: `Switch virtual Cisco Nexus 9000`
 
-        6. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+        6. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
         7. Verificar la conectividad
 
@@ -909,10 +909,126 @@ Una **LLD rule** está formada por:
             - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
             - Verificar que aparezcan resultados en formato JSON mostrando las interfaces descubiertas empezando por `{#SNMPINDEX}`.
             - Cada resultado debe contener las macros configuradas (`{#IFOPERSTATUS}`, `{#IFADMINSTATUS}`, `{#IFALIAS}`, `{#IFNAME}`, `{#IFDESCR}`, `{#IFTYPE}`, `{#SNMPINDEX}`).
+            - **Guardar los primeros dos valores de `{#SNMPINDEX}`** que aparezcan (por ejemplo: `83886080` y `436207616`). Estos se usarán para probar los item prototypes más adelante.
 
-        9. <span style="color: blue;"><strong>Guardar (Add)</strong></span>
+        9. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-        > **Nota importante:** Para que se creen automáticamente los items, triggers y gráficos, es necesario configurar **item prototypes**, **trigger prototypes** y **graph prototypes** en la regla de descubrimiento. Sin estos prototipos, el discovery solo descubrirá las entidades pero no creará los elementos de monitoreo automáticamente.
+        > **Nota importante:** Para que se creen automáticamente los 
+        items, triggers y gráficos, es necesario configurar **item 
+        prototypes**, **trigger prototypes** y **graph prototypes** en 
+        la regla de descubrimiento. Sin estos prototipos, el discovery 
+        solo descubrirá las entidades pero no crea los elementos de 
+        monitoreo automáticamente.
+
+3. Crear **item prototypes** para monitorear las interfaces descubiertas:
+
+    1. En la regla de descubrimiento creada, hacer clic en <span style="color: violet;"><strong>Item prototypes</strong></span> → <span style="color: blue;"><strong>Create item prototype</strong></span>
+
+    2. Configurar el primer item prototype:
+
+        1. Nombre del item *(parámetro obligatorio)*.
+
+            → Name: `Interface {#IFDESCR}({#IFALIAS}): Operational status`
+
+        2. Tipo de verificación
+
+            → Type: `SNMP agent`
+
+        3. Clave *(parámetro obligatorio, debe ser único y no debe coincidir con ninguna otro item del host)*.
+
+            → Key: `net.if.status[{#SNMPINDEX}]`
+
+        4. Tipo de información.
+
+            → Type of information: `Numeric (unsigned)`
+
+        5. Identificador de objetos SNMP *(parámetro obligatorio)*
+
+            → SNMP OID: `1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}`
+
+        6. Frecuencia de consulta *(parámetro obligatorio)*.
+
+            → Update interval: `1m`
+
+        7. Dejar el resto de los parámetros por defecto.
+
+        8. *Opcionalmente* se puede agregar una descripción.
+
+            → Description: `El estado operativo actual de la interfaz. Sus valores pueden ser: 1-up/activo, 2-down/inactivo, 3-testing/prueba, 4-unknown/desconocido, 5-dormant/inactivo, 6-notPresent/no presente, 7-lowerLayerDown/capa inferior inactiva.`
+
+            > **💡 ¿Qué son las MIBs y para qué se usan?**
+            >
+            > Las **MIBs (Management Information Base)** son archivos de texto que definen la estructura de datos disponibles a través de SNMP. Contienen:
+            > - **OIDs (Object Identifiers)** → Direcciones numéricas únicas de cada objeto monitoreable.
+            > - **Nombres descriptivos** → Nombres legibles para los OIDs (ej: `ifOperStatus`).
+            > - **Tipos de datos** → Qué tipo de valor devuelve cada OID (entero, string, etc.).
+            > - **Descripciones y valores posibles** → Qué significa cada valor (como los estados de la interfaz: 1=up, 2=down, etc.).
+            >
+            > **¿Cómo se usan?**
+            > - Se consultan las MIBs para encontrar los **OIDs correctos** que necesitamos monitorear.
+            > - Permiten entender qué **datos están disponibles** en un dispositivo SNMP.
+            > - Ayudan a interpretar los **valores devueltos** por el dispositivo.
+            >
+            > **Ejemplo:** En este caso, consultamos la [IF-MIB](https://mibs.observium.org/mib/IF-MIB/) para obtener el OID `1.3.6.1.2.1.2.2.1.8` (ifOperStatus) y entender qué significan sus valores (1=up, 2=down, etc.).
+
+        9. Probar el item prototype antes de guardar:
+            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
+            - En el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
+            - Hacer clic en <span style="color: blue;"><strong>Get value and test</strong></span> y verificar que se obtenga un valor numérico (1, 2, 3, etc.) que representa el estado operativo de la interfaz.
+            - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
+
+        10. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+    3. Configurar el segundo item prototype:
+
+        1. Nombre del item *(parámetro obligatorio)*.
+
+            → Name: `Interface {#IFDESCR}({#IFALIAS}): Administrative status`
+
+        2. Tipo de verificación
+
+            → Type: `SNMP agent`
+
+        3. Clave *(parámetro obligatorio, debe ser único y no debe coincidir con ninguna otro item del host)*.
+
+            → Key: `net.if.adminstatus[{#SNMPINDEX}]`
+
+        4. Tipo de información.
+
+            → Type of information: `Numeric (unsigned)`
+
+        5. Identificador de objetos SNMP *(parámetro obligatorio)*
+
+            → SNMP OID: `1.3.6.1.2.1.2.2.1.7.{#SNMPINDEX}`
+
+        6. Frecuencia de consulta *(parámetro obligatorio)*.
+
+            → Update interval: `1m`
+
+        7. Dejar el resto de los parámetros por defecto.
+
+        8. *Opcionalmente* se puede agregar una descripción.
+
+            → Description: `El estado administrativo de la interfaz (configurado por el administrador). Sus valores pueden ser: 1-up/activado, 2-down/desactivado, 3-testing/prueba.`
+
+        9. Probar el item prototype antes de guardar:
+            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
+            - En el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
+            - Hacer clic en <span style="color: blue;"><strong>Get value and test</strong></span> y verificar que se obtenga un valor numérico (1, 2 o 3) que representa el estado administrativo de la interfaz.
+            - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
+
+        10. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+4. Ejecutar la regla de descubrimiento y verificar los items creados automáticamente:
+
+    1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → seleccionar el host **"SW-Demo1"** → pestaña <span style="color: violet;"><strong>Discovery</strong></span>.
+    2. Localizar la regla **"Network Interfaces Discovery"** y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> (Ejecutar ahora) para ejecutar la regla manualmente sin esperar el intervalo configurado (1 hora).
+    3. Esperar unos minutos para que Zabbix procese la regla de descubrimiento y cree los items automáticamente.
+    4. Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> del host **"SW-Demo1"**.
+    5. Verificar que se hayan creado items para cada interfaz descubierta (usando las macros `{#IFDESCR}`, `{#IFALIAS}` y `{#SNMPINDEX}`).
+    6. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host para ver las métricas recolectadas.
+
+> **💡 Nota:** Los **trigger prototypes** y **graph prototypes** se pueden configurar de manera similar. Los triggers se verán en detalle en el Módulo 7.
 
 ---
 
@@ -971,15 +1087,20 @@ Se entregará a cada participante la IP y nombre de un **host de prueba**. El ob
 
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> y seleccionar el host creado.
 2. Entrar en la pestaña **Discovery rules**.
-3. Crear una nueva **LLD rule** para **interfaces de red**.
-4. Configurar:
-    - Nombre de la regla.
-    - Tipo de verificación (SNMP o agente).
-    - Frecuencia de descubrimiento.
-5. Validar que se hayan creado automáticamente:
-    - Ítems.
-    - Triggers.
-    - Gráficos.
+3. Crear una nueva **LLD rule** para **interfaces de red** (seguir los pasos detallados del ejercicio práctico del Módulo 5).
+4. Configurar **item prototypes** para monitorear las interfaces descubiertas.
+5. Validar que se hayan creado automáticamente los items en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span>.
+
+### **6. Creación de template con LLD** *(Módulo 9 - Buenas prácticas)*
+
+1. Crear un nuevo template basado en la configuración del host:
+    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → <span style="color: blue;"><strong>Create template</strong></span>.
+    - Nombre: `Template Network Switch LLD` (o similar).
+    - Asociar el grupo de hosts apropiado.
+2. Copiar la configuración del host al template:
+    - Copiar la regla de discovery y los item prototypes creados.
+    - Esto permite reutilizar la configuración en múltiples switches.
+3. Aplicar el template a otros hosts similares para estandarizar el monitoreo.
 
 ---
 
@@ -990,7 +1111,8 @@ Al finalizar el ejercicio, cada participante deberá:
 - Tener **un host nuevo** configurado y monitoreado.
 - Asociar correctamente **templates** y **verificar ítems**.
 - Visualizar **métricas en tiempo real** y **tendencias históricas**.
-- Configurar y validar una regla de **Low-Level Discovery**.
+- Configurar y validar una regla de **Low-Level Discovery** con **item prototypes**.
+- Crear un **template** que incluya la configuración de LLD para reutilización.
 - Verificar que los **eventos** y **triggers** del host funcionen correctamente.
 
 ---
@@ -1182,7 +1304,7 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
         → `service=compute`, `env=prod`
 
-    6. <span style="color: blue;"><strong>Guardar (Add)</strong></span> y **probar**.
+    6. <span style="color: blue;"><strong>Add</strong> (Guardar)</span> y **probar**.
 3. Verificar en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> cuando la condición se cumpla.
 
 ---
