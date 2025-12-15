@@ -49,7 +49,7 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 
 <div style="margin: 20px 0;">
 
-<img src="/docs/imagenes/3.3.%20Ejercicio%20pr%C3%A1ctico_1.png" alt="3.3. Ejercicio práctico - Captura 1" style="max-width: 100%; height: auto;">
+<img src="../imagenes/3.3.%20Ejercicio%20pr%C3%A1ctico_1.png" alt="3.3. Ejercicio práctico - Captura 1" style="max-width: 100%; height: auto;">
 
 </div>
 
