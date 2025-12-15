@@ -296,16 +296,14 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
 
 ---
 
-→ Esquema visual de arquitectura *(podría incluir un diagrama simple o una demo rápida mostrando cómo se comunican)*.
-
 ### **2.4. Diagrama de arquitectura**
 
 En el workshop mostraríamos este esquema para explicar cómo se comunican los componentes:
 
 
 [Zabbix Agent] ---> [Zabbix Proxy] ---> [Zabbix Server] ---> [Database]
-|                                                                  |
-|                                                        [Frontend Web]
+                    
+|               [Frontend Web]
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
@@ -322,13 +320,7 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 
 ---
 
-**→ Demo**: Mostrar en vivo cómo el **Server** recibe métricas desde un **Agent** y visualizarlo en un **Dashboard**.
-
-### **2.5. Demo:**
-
----
-
-### **2.6. Puertos y comunicación**
+### **2.5. Puertos y comunicación**
 
  ![image.png](imagenes/image%202.png)
 
@@ -470,8 +462,6 @@ El **menú lateral** es la base para navegar el frontend.
 - <span style="color: violet;"><strong>Queue</strong></span> → Gestión de cola.
 
 ---
-
-→ **Ejercicio práctico**: Exploración del frontend.
 
 ### **3.3. Ejercicio práctico**
 
@@ -642,8 +632,6 @@ Tres modos disponibles:
 
 ---
 
-→ **Ejercicio práctico**: Agregar un equipo local y verificar métricas.
-
 ### **4.8. Ejercicio práctico**
 
 **Objetivo**: Agregar un host desde cero, asociar un template y verificar métricas.
@@ -788,8 +776,6 @@ Una **LLD rule** está formada por:
 > **❓ Nota:** LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente.
 
 ---
-
-→ **Ejercicio práctico**: Detección automática de interfaces de red.
 
 ### **5.3. Ejercicio práctico**
 
@@ -1516,8 +1502,6 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 ---
 
-→ **Ejercicio práctico**: Crear un trigger para alertar si la CPU supera el 80%.
-
 ### **6.4. Ejercicio práctico**
 
 **Objetivo**: Crear un trigger para alertar si la **CPU supera el 80% durante 5 minutos** y notificar por correo.
@@ -1655,8 +1639,6 @@ Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo
 
 ---
 
-→ **Ejercicio práctico**: Configurar un usuario que reciba alertas personalizadas.
-
 ### **7.4. Ejercicio práctico**
 
 **Objetivo**: Configurar un usuario que reciba alertas personalizadas.
@@ -1777,8 +1759,6 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 - Usar <strong>scripts personalizados</strong> para casos especiales.
 
 ---
-
-→ **Demo  / ejercicio práctico**: Monitoreo por ping y chequeo HTTP.
 
 ### 8.4. Demo / **Ejercicio práctico**
 
