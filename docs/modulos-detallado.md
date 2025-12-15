@@ -465,7 +465,7 @@ El **menú lateral** es la base para navegar el frontend.
 
 ### **3.3. Ejercicio práctico**
 
-> 📋 [Ejercicio 3.3 - Exploración del frontend](../ejercicios/ejercicio-3.3.md)
+> 📋 [Ejercicio 3.3 - Exploración del frontend](ejercicios/ejercicio-3.3.md)
 
 ---
 
@@ -596,7 +596,7 @@ Tres modos disponibles:
 
 ### **4.8. Ejercicio práctico**
 
-> 📋 [Ejercicio 4.8 - Agregar host y verificar métricas](../ejercicios/ejercicio-4.8.md)
+> 📋 [Ejercicio 4.8 - Agregar host y verificar métricas](ejercicios/ejercicio-4.8.md)
 
 ---
 
@@ -690,13 +690,13 @@ Una **LLD rule** está formada por:
 
 ### **5.3. Ejercicio práctico**
 
-> 📋 [Ejercicio 5.3 - Configuración de descubrimiento de interfaces de red](../ejercicios/ejercicio-5.3.md)
+> 📋 [Ejercicio 5.3 - Configuración de descubrimiento de interfaces de red](ejercicios/ejercicio-5.3.md)
 
 ---
 
 ## **Módulo –** <span style="color: green;">Ejercicio integrador</span>
 
-> 📋 [Ejercicio integrador - Template con LLD y Value Mappings](../ejercicios/ejercicio-integrador.md)
+> 📋 [Ejercicio integrador - Template con LLD y Value Mappings](ejercicios/ejercicio-integrador.md)
 
 ---
 
