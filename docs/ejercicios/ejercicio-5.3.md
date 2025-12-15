@@ -240,8 +240,7 @@
             - Name: `interface` | Value: `{#IFDESCR}`
 
         10. Probar el item prototype antes de guardar:
-            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
-            - En el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
+            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana en el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
             - Hacer clic en <span style="color: blue;"><strong>Get value and test</strong></span> y verificar que se obtenga un valor numérico (1, 2, 3, etc.) que representa el estado operativo de la interfaz.
             - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
 
@@ -285,8 +284,7 @@
             - Name: `interface` | Value: `{#IFDESCR}`
 
         10. Probar el item prototype antes de guardar:
-            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
-            - En el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
+            - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana en el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
             - Hacer clic en <span style="color: blue;"><strong>Get value and test</strong></span> y verificar que se obtenga un valor numérico (1, 2 o 3) que representa el estado administrativo de la interfaz.
             - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
 
