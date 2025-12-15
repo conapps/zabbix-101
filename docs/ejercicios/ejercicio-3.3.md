@@ -47,12 +47,12 @@
 
 A continuación se muestran las capturas de pantalla de referencia para este ejercicio:
 
-![3.3. Ejercicio práctico - Captura 1](imagenes/3.3.%20Ejercicio%20práctico_1.png)
+![3.3. Ejercicio práctico - Captura 1](../imagenes/3.3.%20Ejercicio%20práctico_1.png)
 
-![3.3. Ejercicio práctico - Captura 2](imagenes/3.3.%20Ejercicio%20práctico_2.png)
+![3.3. Ejercicio práctico - Captura 2](../imagenes/3.3.%20Ejercicio%20práctico_2.png)
 
-![3.3. Ejercicio práctico - Captura 3](imagenes/3.3.%20Ejercicio%20práctico_3.png)
+![3.3. Ejercicio práctico - Captura 3](../imagenes/3.3.%20Ejercicio%20práctico_3.png)
 
-![3.3. Ejercicio práctico - Captura 4](imagenes/3.3.%20Ejercicio%20práctico_4.png)
+![3.3. Ejercicio práctico - Captura 4](../imagenes/3.3.%20Ejercicio%20práctico_4.png)
 
 </details>
