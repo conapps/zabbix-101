@@ -125,7 +125,7 @@
 
 1. Crear Value Mapping para **IF-MIB::ifOperStatus**:
 
-    1. Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>General</strong></span> → <span style="color: violet;"><strong>Value mapping</strong></span> → <span style="color: blue;"><strong>Create value map</strong></span>
+    1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Template creado <span style="color: blue;"><strong>`Template Network Switch by SNMP`</strong></span>  → <span style="color: violet;"><strong>Value mapping</strong></span> → <span style="color: blue;"><strong>Create value map</strong></span>
 
     2. Configurar:
         - Name: `IF-MIB::ifOperStatus`
