@@ -217,9 +217,13 @@
         - Type: `SNMP agent`
         - Key: `cpu.utilization[{#SNMPVALUE}]`
         - Type of information: `Numeric (unsigned)`
-        - SNMP OID: `1.3.6.1.4.1.9.9.109.1.1.1.1.2.{#SNMPVALUE}`
+        - SNMP OID: `1.3.6.1.4.1.9.9.109.1.1.1.1.8.{#SNMPINDEX}`
         - Units: `%`
         - Update interval: `1m`
+        - Description: `Utilización promedio de CPU durante 5 minutos. Este OID proporciona una vista más precisa del rendimiento del router a lo largo del tiempo. El umbral recomendado es del 90%, aunque puede variar según la plataforma del dispositivo.`
+
+            > **💡 Nota:** Este OID pertenece a la MIB **CISCO-PROCESS-MIB** y corresponde al objeto `cpmCPUTotal5minRev`, que proporciona una medición más precisa que los intervalos de 1 minuto o 5 segundos.
+
         - **Tags**:
             - Name: `component` | Value: `cpu`
         - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
@@ -247,7 +251,7 @@
     - Localizar las reglas de discovery y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> en cada una:
         - **Network Interfaces Discovery**
         - **CPU Discovery**
-    - Esperar unos minutos para que se creen los items automáticamente.
+    - Esperar unos minutos para que se creen los items automáticamente y se consulten sus datos.
 
 2. Verificar los items creados:
     - Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> del host y verificar que se hayan creado los items del template y los item prototypes.
@@ -269,3 +273,100 @@ Al finalizar el ejercicio, cada participante deberá:
 - Verificar que los **value mappings** funcionen correctamente mostrando valores legibles (up/down) en lugar de números.
 
 ---
+
+<details>
+<summary><strong>📸 Solución - Capturas de pantalla</strong></summary>
+
+A continuación se muestran las capturas de pantalla de referencia para este ejercicio:
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador1.png" alt="Ejercicio integrador - Captura 1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador2.png" alt="Ejercicio integrador - Captura 2" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3.png" alt="Ejercicio integrador - Captura 3" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador4.png" alt="Ejercicio integrador - Captura 4" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador5.png" alt="Ejercicio integrador - Captura 5" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador6.png" alt="Ejercicio integrador - Captura 6" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador7.png" alt="Ejercicio integrador - Captura 7" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador8.png" alt="Ejercicio integrador - Captura 8" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador9.png" alt="Ejercicio integrador - Captura 9" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador10.png" alt="Ejercicio integrador - Captura 10" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador11.png" alt="Ejercicio integrador - Captura 11" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador12.png" alt="Ejercicio integrador - Captura 12" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador13.png" alt="Ejercicio integrador - Captura 13" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador14.png" alt="Ejercicio integrador - Captura 14" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador15.png" alt="Ejercicio integrador - Captura 15" style="max-width: 100%; height: auto;">
+
+</div>
+
+</details>

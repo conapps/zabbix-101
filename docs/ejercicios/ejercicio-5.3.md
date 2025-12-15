@@ -298,9 +298,82 @@
     2. Localizar la regla **"Network Interfaces Discovery"** y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> (Ejecutar ahora) para ejecutar la regla manualmente sin esperar el intervalo configurado (1 hora).
     3. Esperar unos minutos para que Zabbix procese la regla de descubrimiento y cree los items automáticamente.
     4. Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> del host **"SW-Demo1"**.
-    5. Verificar que se hayan creado items para cada interfaz descubierta (usando las macros `{#IFDESCR}`, `{#IFALIAS}` y `{#SNMPINDEX}`).
+    5. Verificar que se hayan creado items para cada interfaz descubierta (usando las macros `{#IFDESCR}`, `{#IFALIAS}` y `{#SNMPINDEX}`) y esperar `1m` a que se consulten los datos.
     6. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host para ver las métricas recolectadas.
 
 > **💡 Nota:** Los **trigger prototypes** y **graph prototypes** se pueden configurar de manera similar. Los triggers se verán en detalle en el Módulo 7.
 
 ---
+
+<details>
+<summary><strong>📸 Solución - Capturas de pantalla</strong></summary>
+
+A continuación se muestran las capturas de pantalla de referencia para este ejercicio:
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_1.png" alt="5.3. Ejercicio práctico - Captura 1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_2.png" alt="5.3. Ejercicio práctico - Captura 2" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_3.png" alt="5.3. Ejercicio práctico - Captura 3" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_4.png" alt="5.3. Ejercicio práctico - Captura 4" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_6.png" alt="5.3. Ejercicio práctico - Captura 6" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_7.png" alt="5.3. Ejercicio práctico - Captura 7" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_8.png" alt="5.3. Ejercicio práctico - Captura 8" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_9.png" alt="5.3. Ejercicio práctico - Captura 9" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_10.png" alt="5.3. Ejercicio práctico - Captura 10" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_11.png" alt="5.3. Ejercicio práctico - Captura 11" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/5.3.%20Ejercicio%20pr%C3%A1ctico_12.png" alt="5.3. Ejercicio práctico - Captura 12" style="max-width: 100%; height: auto;">
+
+</div>
+
+</details>

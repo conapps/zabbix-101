@@ -348,6 +348,25 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
     - Usuario: `demo`
     - Contraseña: `Zabbix123!`
 
+<details>
+<summary><strong>📸 Solución - Capturas de pantalla</strong></summary>
+
+A continuación se muestran las capturas de pantalla de referencia para el acceso y login:
+
+<div style="margin: 20px 0;">
+
+<img src="imagenes/3.1.%20Acceso%20y%20login_1.png" alt="3.1. Acceso y login - Captura 1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="imagenes/3.1.%20Acceso%20y%20login_2.png" alt="3.1. Acceso y login - Captura 2" style="max-width: 100%; height: auto;">
+
+</div>
+
+</details>
+
 ---
 
 ### **3.2. Menú principal**

@@ -54,3 +54,22 @@
     - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> (lista de problemas activos).
 
 ---
+
+<details>
+<summary><strong>📸 Solución - Capturas de pantalla</strong></summary>
+
+A continuación se muestran las capturas de pantalla de referencia para este ejercicio:
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/4.8.%20Ejercicio%20pr%C3%A1ctico_1.png" alt="4.8. Ejercicio práctico - Captura 1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/4.8.%20Ejercicio%20pr%C3%A1ctico_2.png" alt="4.8. Ejercicio práctico - Captura 2" style="max-width: 100%; height: auto;">
+
+</div>
+
+</details>
