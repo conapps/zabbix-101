@@ -1365,10 +1365,24 @@ Al finalizar el ejercicio, cada participante deberá:
 ### **2. Revisión de ejercicios**
 
 - Confirmar que cada participante:
-    - Dio de alta un host.
-    - Asoció un template.
-    - Verificó métricas, gráficos y eventos.
-    - Configuró una regla de **Low-Level Discovery**.
+    - **Creó un host** (SW-Demo2) con configuración SNMP (IP, puerto, comunidad, versión).
+    - **Verificó la conectividad** del host mediante la columna Availability.
+    - **Creó un template** desde cero con items de sistema:
+        - System name (SNMP)
+        - Memory utilization (SNMP)
+    - **Configuró Value Mappings** para interpretar estados de interfaces:
+        - IF-MIB::ifOperStatus
+        - IF-MIB::ifAdminStatus
+    - **Configuró reglas de Low-Level Discovery** en el template:
+        - Network Interfaces Discovery
+        - CPU Discovery
+    - **Creó item prototypes** para las reglas de discovery:
+        - Operational status y Administrative status (con value mappings y tags)
+        - CPU Utilization (con tags)
+    - **Agregó tags** a los item prototypes para facilitar el filtrado.
+    - **Aplicó el template al host** y verificó que todos los elementos se hayan creado.
+    - **Ejecutó manualmente las reglas de discovery** usando "Execute now".
+    - **Verificó métricas** en Latest data y confirmó que los value mappings muestren valores legibles (up/down) en lugar de números.
 
 ---
 
