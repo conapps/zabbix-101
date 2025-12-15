@@ -80,7 +80,7 @@
 
             → Description: `Nombre asignado administrativamente para este nodo gestionado. Por convención, este es el nombre de dominio completamente calificado (FQDN) del nodo. Si el nombre es desconocido, el valor es una cadena de longitud cero.`
 
-            > **💡 Nota:** Este OID pertenece a la MIB **SNMPv2-MIB** y proporciona el nombre del sistema del dispositivo. Es útil para identificar y etiquetar dispositivos en el monitoreo.
+            > **💡 Nota:** Este OID pertenece a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/) y proporciona el nombre del sistema del dispositivo. Es útil para identificar y etiquetar dispositivos en el monitoreo.
 
         8. *Opcionalmente* se puede agregar uno o más tags (etiquetas)
 

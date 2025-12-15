@@ -109,12 +109,16 @@
 ### <u>Conceptos clave</u>
 
 - Crear un **host** desde cero con configuración SNMP.
-- Crear un **template** desde cero con items de sistema.
-- Configurar **Value Mappings** para interpretar valores.
+- Crear un **template** desde cero con items básicos del sistema.
+    - Asociar items al **inventario del host**.
+- Investigar y consultar **MIBs** estándars.
+- Configurar **Value Mappings** para interpretar valores numéricos.
 - Configurar **reglas de Low-Level Discovery (LLD)** en el template.
-- Crear **item prototypes** con value mappings y tags.
+    - Crear **item prototypes** con value mappings y configuraciones apropiadas.
 - Aplicar el template al host y verificar que todos los elementos se hayan creado correctamente.
-- Confirmar que los **value mappings** muestren valores legibles.
+- Ejecutar las reglas de descubrimiento y verificar la creación automática de items.
+- Confirmar que los **value mappings** muestren valores legibles en lugar de números.
+- Verificar el **inventario del host** y confirmar que los campos se han poblado automáticamente desde los items configurados.
 
 > 📋 [Ejercicio integrador - Template con LLD y Value Mappings](ejercicios/ejercicio-integrador.md)
 
