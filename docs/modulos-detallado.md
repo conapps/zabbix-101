@@ -343,7 +343,9 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 
  1. Abrir el navegador e ingresar la <u>URL del frontend:</u>
 <u>https://alertasX.conatel-lab.conatel.cloud</u>
+
     > **Nota:** Se debe reemplazar la letra **X** por el número asignado a cada uno.
+
  2. Iniciar sesión con las credenciales:
     - Usuario: `demo`
     - Contraseña: `Zabbix123!`
@@ -868,6 +870,19 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 
 > **✅ Buena práctica:** Usar **dependencias** entre triggers para evitar cascadas (p. ej., "High CPU utilization" → suprime "Average CPU utilization").
+
+---
+
+### Acceso a Grafana
+
+1. Abrir el navegador e ingresar la <u>URL del frontend:</u>
+<u>https://monitoreoX.conatel-lab.conatel.cloud</u>
+
+    > **Nota:** Se debe reemplazar la letra **X** por el número asignado a cada uno.
+
+2. Iniciar sesión con las credenciales:
+    - Usuario: `demo`
+    - Contraseña: `Grafana123!`
 
 ---
 

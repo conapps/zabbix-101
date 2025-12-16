@@ -377,6 +377,9 @@
     > - El trigger **"Warning memory utilization"** estará **suprimido** (suppressed) porque depende del trigger Average.
     > - Esto demuestra cómo las dependencias ayudan a priorizar problemas y evitar alertas redundantes cuando hay un problema más crítico que requiere atención inmediata.
 
+5. **Solicitar al instructor para demo de Grafana**:
+    - Una vez finalizada la verificación de dependencias, avisar al instructor para realizar la demo de Grafana.
+
 ---
 
 ### **6.5. Ejercicio adicional (opcional)**
