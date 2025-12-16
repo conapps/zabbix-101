@@ -891,34 +891,7 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 ### **6.4. Ejercicio práctico**
 
-**Objetivo**: Crear un trigger para alertar si la **CPU supera el 80% durante 5 minutos** y notificar por correo.
-
-**<u>Pasos guiados</u>**
-
-1. <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → (host) → <span style="color: violet;"><strong>Triggers</strong></span> → <span style="color: blue;"><strong>Create trigger</strong></span>.
-2. Configurar:
-    1. Definir **Name** (claro y accionable).
-
-        → “`CPU > 80% durante 5 minutos`”
-
-    2. **Severity** acorde al impacto.
-
-        → En este caso seria High (Alta).
-
-    3. Armar **Expression** (selector de ítems + funciones de tiempo).
-
-        → `avg(/<HOST>/system.cpu.util[,user],5m) > 80`
-
-    4. (Opcional) **Recovery expression** → Expresión de recuperación.
-
-        → `avg(/<HOST>/system.cpu.util[,user],5m) < 70`
-
-    5. (Opcional) **Tags**
-
-        → `service=compute`, `env=prod`
-
-    6. <span style="color: blue;"><strong>Add</strong> (Guardar)</span> y **probar**.
-3. Verificar en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> cuando la condición se cumpla.
+> 📋 [Ejercicio práctico 6.4 - Configuración de triggers](ejercicios/ejercicio-6.4.md)
 
 ---
 
@@ -986,65 +959,9 @@ Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo
 
 ---
 
-### **7.3. Demo: Pasos para configurar alertas**
+### **7.3. Ejercicio práctico**
 
-**1. Configurar un Media Type**
-
-- Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → <span style="color: blue;"><strong>Create media type</strong></span>.
-- Seleccionar el tipo: <strong>Email</strong>, <strong>Telegram</strong>, <strong>Slack</strong>, <strong>Webhook</strong> o <strong>Script</strong>.
-- Completar la configuración requerida (servidores SMTP, tokens, URLs, etc.).
-- Probar el envío de mensajes desde la opción <strong>Test</strong>.
-
-**2. Configurar un usuario**
-
-- Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Users</strong></span> → <span style="color: blue;"><strong>Create user</strong></span>.
-- Definir:
-    - Nombre, rol y permisos.
-    - Grupo de usuarios.
-    - Canal de notificación (<strong>Media</strong> → seleccionar Media Type).
-    - Guardar.
-
-**3. Crear una acción**
-
-- Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: blue;"><strong>Create action</strong></span>.
-- Definir:
-    - <strong>Name</strong>: Nombre claro y representativo.
-    - <strong>Conditions</strong>: Host, host group, trigger name, severity, tag, etc.
-    - <strong>Operations</strong>: A quién notificar.
-    - Canal de notificación.
-    - Mensaje personalizado.
-    - (Opcional) <strong>Recovery operations</strong>: Enviar alertas cuando el problema se resuelve.
-    - (Opcional) <strong>Update operations</strong>: Notificaciones adicionales si cambia el estado.
-
-**4. Validar las alertas**
-
-- Generar un <strong>evento de prueba</strong> (por ejemplo, simular una CPU > 80%).
-- Verificar:
-    - Que la acción se ejecute.
-    - Que la notificación llegue al canal configurado.
-    - Que las operaciones de <strong>Problem</strong> y <strong>Recovery</strong> funcionen correctamente.
-
----
-
-### **7.4. Ejercicio práctico**
-
-**Objetivo**: Configurar un usuario que reciba alertas personalizadas.
-
-**<u>Pasos guiados</u>**
-
-1. <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → Editar un media type existente o <span style="color: blue;"><strong>Create media type</strong></span>.
-2. Configurar:
-    1. Definir **Name**.
-
-        → “”
-
-3. Configurar un **usuario** con su canal de notificación.
-4. Crear una **acción** que:
-    - Se dispare ante triggers con severidad <strong>High</strong>.
-    - Envíe notificaciones al usuario configurado.
-    - Incluya un mensaje personalizado.
-5. Generar un evento de prueba para validar la notificación.
-6. Verificar en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> cuando la condición se cumpla y ver los Actions.
+> 📋 [Ejercicio práctico 7.3 - Configuración de notificaciones](ejercicios/ejercicio-7.3.md)
 
 ---
 
