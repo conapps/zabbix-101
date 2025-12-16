@@ -57,17 +57,17 @@
 
         → <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-    6. Configurar el **inventario** del host:
+    6. *Opcionalmente* se puede agregar una descripción.
+
+        → Description: `Switch virtual Cisco Nexus 9000`
+
+    7. Configurar el **inventario** del host:
 
         → Ir a la pestaña <span style="color: violet;"><strong>Inventory</strong></span> del host.
 
         → Cambiar el modo de **Disabled** a **Automatic** *(necesario para que los items asociados al inventario puedan poblar automáticamente los campos)*
 
         > **💡 Nota:** El modo **Automatic** permite que los items configurados con "Populates host inventory field" actualicen automáticamente los campos del inventario del host.
-
-    7. *Opcionalmente* se puede agregar una descripción.
-
-        → Description: `Switch virtual Cisco Nexus 9000`
 
     8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
@@ -140,16 +140,16 @@
 
         1. Consultar la MIB **SNMPv2-MIB** en: [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/)
 
-        2. Crear nuevos items en el template para monitorear los siguientes objetos del sistema (todos terminan en `.0`):
+        2. Crear nuevos items en el template para monitorear los siguientes objetos del sistema (en este caso a todos los OIDs que van a agregar deben agregarle al final `.0`):
 
             - **System Description** (`sysDescr`)
             - **System Object ID** (`sysObjectID`)
             - **System Uptime** (`sysUpTime`)
             - Y otros que consideren importantes (por ejemplo: `sysContact`, `sysLocation`)
 
-            > **💡 ¿Por qué terminan en `.0`?**
+            > **💡 ¿Por qué determinados OIDs deben terminar en `.0`?**
             >
-            > Los OIDs que terminan en `.0` son **objetos escalares** en SNMP. Esto significa que representan un **único valor** para todo el sistema, a diferencia de los objetos tabulares (como las interfaces de red) que tienen múltiples instancias identificadas por índices (1, 2, 3, etc.).
+            > Los OIDs en la MIB SNMPv2-MIB que terminan en `.0` son **objetos escalares** en SNMP. Esto significa que representan un **único valor** para todo el sistema, a diferencia de los objetos tabulares (como las interfaces de red) que tienen múltiples instancias identificadas por índices (1, 2, 3, etc.).
             >
             > En la MIB SNMPv2-MIB, los objetos del sistema (`sysDescr`, `sysObjectID`, `sysUpTime`, etc.) son escalares porque cada dispositivo tiene solo **un** nombre de sistema, **una** descripción, **un** tiempo de actividad, etc. Por eso sus OIDs terminan en `.0` (índice 0), indicando que es la única instancia de ese objeto.
 
