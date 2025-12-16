@@ -161,69 +161,86 @@
         <details>
         <summary><strong>📋 Solución - Items sugeridos de SNMPv2-MIB</strong></summary>
 
+        <div>
+
         A continuación se muestran los items recomendados con sus configuraciones:
 
         **1. System Description**
 
-        - Name: `System Description`
-        - Type: `SNMP agent`
-        - Key: `system.description`
-        - Type of information: `Character`
-        - SNMP OID: `1.3.6.1.2.1.1.1.0`
-        - Update interval: `1h` *(dato estático que rara vez cambia)*
-        - Description: `Descripción textual del sistema, incluyendo el nombre del sistema operativo, versión del software y hardware.`
-        - **Populates host inventory field**: `OS (full details)` *(asociar este item al inventario para poblar automáticamente la información del sistema operativo)*
-        - Tags: Name: `component` | Value: `system`
+        <ul>
+        <li>Name: <code>System Description</code></li>
+        <li>Type: <code>SNMP agent</code></li>
+        <li>Key: <code>system.description</code></li>
+        <li>Type of information: <code>Character</code></li>
+        <li>SNMP OID: <code>1.3.6.1.2.1.1.1.0</code></li>
+        <li>Update interval: <code>1h</code> <em>(dato estático que rara vez cambia)</em></li>
+        <li>Description: <code>Descripción textual del sistema, incluyendo el nombre del sistema operativo, versión del software y hardware.</code></li>
+        <li><strong>Populates host inventory field</strong>: <code>OS (full details)</code> <em>(asociar este item al inventario para poblar automáticamente la información del sistema operativo)</em></li>
+        <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
+        </ul>
 
         **2. System Object ID**
 
-        - Name: `System Object ID`
-        - Type: `SNMP agent`
-        - Key: `system.objectid`
-        - Type of information: `Character`
-        - SNMP OID: `1.3.6.1.2.1.1.2.0`
-        - Update interval: `24h` *(dato estático que identifica el tipo de dispositivo)*
-        - Description: `Identificador del objeto del sistema que identifica el tipo de dispositivo o sistema gestionado.`
-        - Tags: Name: `component` | Value: `system`
+        <ul>
+        <li>Name: <code>System Object ID</code></li>
+        <li>Type: <code>SNMP agent</code></li>
+        <li>Key: <code>system.objectid</code></li>
+        <li>Type of information: <code>Character</code></li>
+        <li>SNMP OID: <code>1.3.6.1.2.1.1.2.0</code></li>
+        <li>Update interval: <code>24h</code> <em>(dato estático que identifica el tipo de dispositivo)</em></li>
+        <li>Description: <code>Identificador del objeto del sistema que identifica el tipo de dispositivo o sistema gestionado.</code></li>
+        <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
+        </ul>
 
         **3. System Uptime**
 
-        - Name: `System Uptime`
-        - Type: `SNMP agent`
-        - Key: `system.uptime`
-        - Type of information: `Numeric (unsigned)`
-        - SNMP OID: `1.3.6.1.2.1.1.3.0`
-        - Units: `uptime` *(Zabbix convertirá automáticamente TimeTicks a formato legible)*
-        - Update interval: `1m` *(dato dinámico que cambia constantemente)*
-        - Description: `Tiempo transcurrido desde el último reinicio del sistema, medido en centésimas de segundo (TimeTicks).`
-        - Tags: Name: `component` | Value: `system`
-        - **Preprocessing**: Ir a la pestaña **Preprocessing** del item, <span style="color: blue;"><strong>Add</strong> (Agregar)</span> un 'Preprocessing step':
-            - Name: `Custom multiplier`
-            - Parameters: `0.01` *(necesario porque el dato está medido en centésimas de segundo - TimeTicks)*
+        <ul>
+        <li>Name: <code>System Uptime</code></li>
+        <li>Type: <code>SNMP agent</code></li>
+        <li>Key: <code>system.uptime</code></li>
+        <li>Type of information: <code>Numeric (unsigned)</code></li>
+        <li>SNMP OID: <code>1.3.6.1.2.1.1.3.0</code></li>
+        <li>Units: <code>uptime</code> <em>(Zabbix convertirá automáticamente TimeTicks a formato legible)</em></li>
+        <li>Update interval: <code>1m</code> <em>(dato dinámico que cambia constantemente)</em></li>
+        <li>Description: <code>Tiempo transcurrido desde el último reinicio del sistema, medido en centésimas de segundo (TimeTicks).</code></li>
+        <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
+        <li><strong>Preprocessing</strong>: Ir a la pestaña <strong>Preprocessing</strong> del item, <span style="color: blue;"><strong>Add</strong> (Agregar)</span> un 'Preprocessing step':
+            <ul>
+            <li>Name: <code>Custom multiplier</code></li>
+            <li>Parameters: <code>0.01</code> <em>(necesario porque el dato está medido en centésimas de segundo - TimeTicks)</em></li>
+            </ul>
+        </li>
+        </ul>
 
         **4. System Contact (Opcional)**
 
-        - Name: `System Contact`
-        - Type: `SNMP agent`
-        - Key: `system.contact`
-        - Type of information: `Character`
-        - SNMP OID: `1.3.6.1.2.1.1.4.0`
-        - Update interval: `24h` *(dato administrativo que rara vez cambia)*
-        - Description: `Información de contacto de la persona responsable de este sistema gestionado.`
-        - Tags: Name: `component` | Value: `system`
+        <ul>
+        <li>Name: <code>System Contact</code></li>
+        <li>Type: <code>SNMP agent</code></li>
+        <li>Key: <code>system.contact</code></li>
+        <li>Type of information: <code>Character</code></li>
+        <li>SNMP OID: <code>1.3.6.1.2.1.1.4.0</code></li>
+        <li>Update interval: <code>24h</code> <em>(dato administrativo que rara vez cambia)</em></li>
+        <li>Description: <code>Información de contacto de la persona responsable de este sistema gestionado.</code></li>
+        <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
+        </ul>
 
         **5. System Location (Opcional)**
 
-        - Name: `System Location`
-        - Type: `SNMP agent`
-        - Key: `system.location`
-        - Type of information: `Character`
-        - SNMP OID: `1.3.6.1.2.1.1.6.0`
-        - Update interval: `24h` *(dato administrativo que rara vez cambia)*
-        - Description: `Ubicación física del sistema gestionado.`
-        - Tags: Name: `component` | Value: `system`
+        <ul>
+        <li>Name: <code>System Location</code></li>
+        <li>Type: <code>SNMP agent</code></li>
+        <li>Key: <code>system.location</code></li>
+        <li>Type of information: <code>Character</code></li>
+        <li>SNMP OID: <code>1.3.6.1.2.1.1.6.0</code></li>
+        <li>Update interval: <code>24h</code> <em>(dato administrativo que rara vez cambia)</em></li>
+        <li>Description: <code>Ubicación física del sistema gestionado.</code></li>
+        <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
+        </ul>
 
         > **💡 Nota importante:** Todos estos OIDs pertenecen a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/) y son estándar para todos los dispositivos SNMP. El OID `sysUpTime` devuelve valores en **TimeTicks** (centésimas de segundo), pero Zabbix puede convertirlos automáticamente a formato legible si se usa la unidad `uptime`.
+
+        </div>
 
         </details>
 
@@ -345,81 +362,110 @@
     <details>
     <summary><strong>📋 Solución - Item prototypes sugeridos de IF-MIB</strong></summary>
 
+    <div>
+
     A continuación se muestran los item prototypes recomendados con sus configuraciones:
 
     **1. Operational status**
 
-    - Name: `Interface {#IFDESCR}({#IFALIAS}): Operational status`
-    - Type: `SNMP agent`
-    - Key: `net.if.status[{#SNMPINDEX}]`
-    - Type of information: `Numeric (unsigned)`
-    - SNMP OID: `1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}`
-    - Update interval: `1m` *(dato dinámico que cambia según el estado de la interfaz)*
-    - **Value mapping**: Seleccionar `IF-MIB::ifOperStatus` (creado anteriormente)
-    - Description: `Estado operativo actual de la interfaz. Indica si la interfaz está funcionando correctamente.`
-    - **Tags**:
-        - Name: `component` | Value: `network`
-        - Name: `interface` | Value: `{#IFDESCR}`
-    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+    <ul>
+    <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Operational status</code></li>
+    <li>Type: <code>SNMP agent</code></li>
+    <li>Key: <code>net.if.status[{#SNMPINDEX}]</code></li>
+    <li>Type of information: <code>Numeric (unsigned)</code></li>
+    <li>SNMP OID: <code>1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</code></li>
+    <li>Update interval: <code>1m</code> <em>(dato dinámico que cambia según el estado de la interfaz)</em></li>
+    <li><strong>Value mapping</strong>: Seleccionar <code>IF-MIB::ifOperStatus</code> (creado anteriormente)</li>
+    <li>Description: <code>Estado operativo actual de la interfaz. Indica si la interfaz está funcionando correctamente.</code></li>
+    <li><strong>Tags</strong>:
+        <ul>
+        <li>Name: <code>component</code> | Value: <code>network</code></li>
+        <li>Name: <code>interface</code> | Value: <code>{#IFDESCR}</code></li>
+        </ul>
+    </li>
+    <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
+    </ul>
 
     **2. Administrative status**
 
-    - Name: `Interface {#IFDESCR}({#IFALIAS}): Administrative status`
-    - Type: `SNMP agent`
-    - Key: `net.if.adminstatus[{#SNMPINDEX}]`
-    - Type of information: `Numeric (unsigned)`
-    - SNMP OID: `1.3.6.1.2.1.2.2.1.7.{#SNMPINDEX}`
-    - Update interval: `1m` *(dato dinámico que puede cambiar cuando se configura la interfaz)*
-    - **Value mapping**: Seleccionar `IF-MIB::ifAdminStatus` (creado anteriormente)
-    - Description: `Estado administrativo de la interfaz. Indica si la interfaz está habilitada o deshabilitada por el administrador.`
-    - **Tags**:
-        - Name: `component` | Value: `network`
-        - Name: `interface` | Value: `{#IFDESCR}`
-    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+    <ul>
+    <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Administrative status</code></li>
+    <li>Type: <code>SNMP agent</code></li>
+    <li>Key: <code>net.if.adminstatus[{#SNMPINDEX}]</code></li>
+    <li>Type of information: <code>Numeric (unsigned)</code></li>
+    <li>SNMP OID: <code>1.3.6.1.2.1.2.2.1.7.{#SNMPINDEX}</code></li>
+    <li>Update interval: <code>1m</code> <em>(dato dinámico que puede cambiar cuando se configura la interfaz)</em></li>
+    <li><strong>Value mapping</strong>: Seleccionar <code>IF-MIB::ifAdminStatus</code> (creado anteriormente)</li>
+    <li>Description: <code>Estado administrativo de la interfaz. Indica si la interfaz está habilitada o deshabilitada por el administrador.</code></li>
+    <li><strong>Tags</strong>:
+        <ul>
+        <li>Name: <code>component</code> | Value: <code>network</code></li>
+        <li>Name: <code>interface</code> | Value: <code>{#IFDESCR}</code></li>
+        </ul>
+    </li>
+    <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
+    </ul>
 
     **3. Name**
 
-    - Name: `Interface {#IFDESCR}({#IFALIAS}): Name`
-    - Type: `SNMP agent`
-    - Key: `net.if.name[{#SNMPINDEX}]`
-    - Type of information: `Text`
-    - SNMP OID: `1.3.6.1.2.1.31.1.1.1.1.{#SNMPINDEX}`
-    - Update interval: `24h` *(dato estático que identifica el nombre de la interfaz)*
-    - Description: `Nombre textual de la interfaz, típicamente el nombre asignado por el sistema operativo.`
-    - **Tags**:
-        - Name: `component` | Value: `network`
-        - Name: `interface` | Value: `{#IFDESCR}`
-    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+    <ul>
+    <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Name</code></li>
+    <li>Type: <code>SNMP agent</code></li>
+    <li>Key: <code>net.if.name[{#SNMPINDEX}]</code></li>
+    <li>Type of information: <code>Text</code></li>
+    <li>SNMP OID: <code>1.3.6.1.2.1.31.1.1.1.1.{#SNMPINDEX}</code></li>
+    <li>Update interval: <code>24h</code> <em>(dato estático que identifica el nombre de la interfaz)</em></li>
+    <li>Description: <code>Nombre textual de la interfaz, típicamente el nombre asignado por el sistema operativo.</code></li>
+    <li><strong>Tags</strong>:
+        <ul>
+        <li>Name: <code>component</code> | Value: <code>network</code></li>
+        <li>Name: <code>interface</code> | Value: <code>{#IFDESCR}</code></li>
+        </ul>
+    </li>
+    <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
+    </ul>
 
     **4. Name Alias**
 
-    - Name: `Interface {#IFDESCR}({#IFALIAS}): Name Alias`
-    - Type: `SNMP agent`
-    - Key: `net.if.alias[{#SNMPINDEX}]`
-    - Type of information: `Text`
-    - SNMP OID: `1.3.6.1.2.1.2.2.1.2.{#SNMPINDEX}`
-    - Update interval: `24h` *(dato estático que rara vez cambia)*
-    - Description: `Alias o descripción textual de la interfaz, típicamente asignado por el administrador para facilitar la identificación.`
-    - **Tags**:
-        - Name: `component` | Value: `network`
-        - Name: `interface` | Value: `{#IFDESCR}`
-    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+    <ul>
+    <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Name Alias</code></li>
+    <li>Type: <code>SNMP agent</code></li>
+    <li>Key: <code>net.if.alias[{#SNMPINDEX}]</code></li>
+    <li>Type of information: <code>Text</code></li>
+    <li>SNMP OID: <code>1.3.6.1.2.1.2.2.1.2.{#SNMPINDEX}</code></li>
+    <li>Update interval: <code>24h</code> <em>(dato estático que rara vez cambia)</em></li>
+    <li>Description: <code>Alias o descripción textual de la interfaz, típicamente asignado por el administrador para facilitar la identificación.</code></li>
+    <li><strong>Tags</strong>:
+        <ul>
+        <li>Name: <code>component</code> | Value: <code>network</code></li>
+        <li>Name: <code>interface</code> | Value: <code>{#IFDESCR}</code></li>
+        </ul>
+    </li>
+    <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
+    </ul>
 
     **5. Interface type**
 
-    - Name: `Interface {#IFDESCR}({#IFALIAS}): Interface type`
-    - Type: `SNMP agent`
-    - Key: `net.if.type[{#SNMPINDEX}]`
-    - Type of information: `Numeric (unsigned)`
-    - SNMP OID: `1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}`
-    - Update interval: `24h` *(dato estático que identifica el tipo de interfaz)*
-    - Description: `Tipo de interfaz según la enumeración IANAifType. Identifica si es Ethernet, WiFi, Serial, etc.`
-    - **Tags**:
-        - Name: `component` | Value: `network`
-        - Name: `interface` | Value: `{#IFDESCR}`
-    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+    <ul>
+    <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Interface type</code></li>
+    <li>Type: <code>SNMP agent</code></li>
+    <li>Key: <code>net.if.type[{#SNMPINDEX}]</code></li>
+    <li>Type of information: <code>Numeric (unsigned)</code></li>
+    <li>SNMP OID: <code>1.3.6.1.2.1.2.2.1.3.{#SNMPINDEX}</code></li>
+    <li>Update interval: <code>24h</code> <em>(dato estático que identifica el tipo de interfaz)</em></li>
+    <li>Description: <code>Tipo de interfaz según la enumeración IANAifType. Identifica si es Ethernet, WiFi, Serial, etc.</code></li>
+    <li><strong>Tags</strong>:
+        <ul>
+        <li>Name: <code>component</code> | Value: <code>network</code></li>
+        <li>Name: <code>interface</code> | Value: <code>{#IFDESCR}</code></li>
+        </ul>
+    </li>
+    <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
+    </ul>
 
     > **💡 Nota importante:** Todos estos OIDs pertenecen a la MIB [IF-MIB](https://mibs.observium.org/mib/IF-MIB/) y son estándar para todos los dispositivos SNMP que implementan el monitoreo de interfaces de red. Los OIDs requieren el índice `{#SNMPINDEX}` porque son objetos tabulares que tienen múltiples instancias (una por cada interfaz del dispositivo).
+
+    </div>
 
     </details>
 
@@ -486,12 +532,16 @@
 
 3. Verificar el **inventario del host**:
     - Verificar que los campos del inventario se hayan poblado automáticamente desde los items configurados:
-        - **Name**: Debe estar poblado desde el item "System name".
-        - **OS (full details)**: Debe estar poblado desde el item "System Description".
+        - **Name**: Debe estar tener el mismo valor que el item "System name".
+        - **OS (full details)**: Debe estar tener el mismo valor que el item "System Description".
+        - **Contact**: Debe estar tener el mismo valor que el item "System Contact".
+        - **Location**: Debe estar tener el mismo valor que el item "System Location".
     - Se puede verificar de dos formas:
         - <span style="color: purple;"><strong>Inventory</strong></span> → <span style="color: violet;"><strong>Overview</strong></span> → **Resumen de datos de inventario** (vista general de todos los hosts).
         - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar el host **"SW-Demo2"** → Pestaña <span style="color: violet;"><strong>Inventory</strong></span> → **Información detallada de cada equipo** (vista específica del host).
     - Confirmar que los campos muestren los valores recolectados por los items asociados.
+
+    > **Nota:** Puede tomar unos minutos para que se creen los items y se actualicen los datos en el inventario.
 
 ---
 
@@ -500,23 +550,19 @@
 Al finalizar el ejercicio, cada participante deberá:
 
 - Tener **un host nuevo** (SW-Demo2) configurado y monitoreado con SNMP.
-- Crear un **template** con items de sistema:
+- Tener un **template** con items de sistema:
     - Items básicos: System name (asociado al inventario), System Description (asociado al inventario), System Object ID, System Uptime (con preprocessing), System Contact, System Location, Memory utilization.
     - **Total**: 7 items.
-- Configurar **Value Mappings** para interpretar los estados de las interfaces:
+- Tener configurados correctamente **Value Mappings** para interpretar los estados de las interfaces de números a valores legibles (up/down):
     - `IF-MIB::ifOperStatus` (up, down, testing, etc.)
     - `IF-MIB::ifAdminStatus` (up, down, testing)
     - **Total**: 2 Value Mappings.
-- Configurar **dos reglas de Low-Level Discovery** (Network Interfaces, CPU) con **item prototypes** en el template:
+- Tener configuradas correctamente **dos reglas de Low-Level Discovery** (Network Interfaces, CPU) con **item prototypes** en el template:
     - **Network Interfaces Discovery**: Item prototypes para Operational status, Administrative status, Name, Name Alias, Interface type.
     - **CPU Discovery**: Item prototype para CPU Utilization.
-    - **Total**: 2 discovery rules.
-- Agregar **tags** apropiados a los items e item prototypes para facilitar el filtrado y organización.
-- Asociar items al **inventario del host** (System name → Name, System Description → OS (full details)).
-- Aplicar el template al host y verificar que todos los elementos se hayan creado correctamente.
-- Ejecutar las reglas de descubrimiento y verificar que los item prototypes se creen automáticamente.
-- Verificar que los **value mappings** funcionen correctamente mostrando valores legibles (up/down) en lugar de números.
-- Consultar y entender las **MIBs** utilizadas: [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/) e [IF-MIB](https://mibs.observium.org/mib/IF-MIB/).
+    - **Total**: 2 discovery rules y 6 item prototypes.
+- Tener agregados correctamente **tags** a los items e item prototypes para facilitar el filtrado y organización.
+- Tener asociados correctamente items al **inventario del host**.
 
 ---
 
