@@ -164,6 +164,7 @@
         A continuación se muestran los items recomendados con sus configuraciones:
 
         **1. System Description**
+
         - Name: `System Description`
         - Type: `SNMP agent`
         - Key: `system.description`
@@ -175,6 +176,7 @@
         - Tags: Name: `component` | Value: `system`
 
         **2. System Object ID**
+
         - Name: `System Object ID`
         - Type: `SNMP agent`
         - Key: `system.objectid`
@@ -185,6 +187,7 @@
         - Tags: Name: `component` | Value: `system`
 
         **3. System Uptime**
+
         - Name: `System Uptime`
         - Type: `SNMP agent`
         - Key: `system.uptime`
@@ -199,6 +202,7 @@
             - Parameters: `0.01` *(necesario porque el dato está medido en centésimas de segundo - TimeTicks)*
 
         **4. System Contact (Opcional)**
+
         - Name: `System Contact`
         - Type: `SNMP agent`
         - Key: `system.contact`
@@ -209,6 +213,7 @@
         - Tags: Name: `component` | Value: `system`
 
         **5. System Location (Opcional)**
+
         - Name: `System Location`
         - Type: `SNMP agent`
         - Key: `system.location`
@@ -343,6 +348,7 @@
     A continuación se muestran los item prototypes recomendados con sus configuraciones:
 
     **1. Operational status**
+
     - Name: `Interface {#IFDESCR}({#IFALIAS}): Operational status`
     - Type: `SNMP agent`
     - Key: `net.if.status[{#SNMPINDEX}]`
@@ -357,6 +363,7 @@
     - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     **2. Administrative status**
+
     - Name: `Interface {#IFDESCR}({#IFALIAS}): Administrative status`
     - Type: `SNMP agent`
     - Key: `net.if.adminstatus[{#SNMPINDEX}]`
@@ -371,6 +378,7 @@
     - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     **3. Name**
+
     - Name: `Interface {#IFDESCR}({#IFALIAS}): Name`
     - Type: `SNMP agent`
     - Key: `net.if.name[{#SNMPINDEX}]`
@@ -384,6 +392,7 @@
     - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     **4. Name Alias**
+
     - Name: `Interface {#IFDESCR}({#IFALIAS}): Name Alias`
     - Type: `SNMP agent`
     - Key: `net.if.alias[{#SNMPINDEX}]`
@@ -397,6 +406,7 @@
     - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     **5. Interface type**
+
     - Name: `Interface {#IFDESCR}({#IFALIAS}): Interface type`
     - Type: `SNMP agent`
     - Key: `net.if.type[{#SNMPINDEX}]`
