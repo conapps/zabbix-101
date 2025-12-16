@@ -9,6 +9,7 @@
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
 
 2. Configurar:
+
     1. Nombre del host *(parámetro obligatorio)*.
 
         → Host name: `SW-Demo2`
@@ -88,6 +89,7 @@
     1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → <span style="color: blue;"><strong>Create template</strong></span>
 
     2. Configurar:
+
         1. Nombre del template *(parámetro obligatorio)*.
 
             → Template name: `Template Network Switch by SNMP`
@@ -105,6 +107,7 @@
         1. En el template creado, ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> → <span style="color: blue;"><strong>Create item</strong></span>
 
         2. Configurar:
+
             - Name: `System Name`
             - Type: `SNMP agent`
             - Key: `system.name`
@@ -116,6 +119,7 @@
             > **💡 Nota:** Este OID pertenece a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/).
 
         3. Asociar el item al inventario del host:
+
             - Populates host inventory field: seleccionar `Name` del menú desplegable.
             - Esto hará que el valor de este item se use automáticamente para poblar el campo "Name" del inventario del host.
 
@@ -137,6 +141,7 @@
         1. Consultar la MIB **SNMPv2-MIB** en: [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/)
 
         2. Crear nuevos items en el template para monitorear los siguientes objetos del sistema (todos terminan en `.0`):
+
             - **System Description** (`sysDescr`)
             - **System Object ID** (`sysObjectID`)
             - **System Uptime** (`sysUpTime`)
@@ -149,6 +154,7 @@
             > En la MIB SNMPv2-MIB, los objetos del sistema (`sysDescr`, `sysObjectID`, `sysUpTime`, etc.) son escalares porque cada dispositivo tiene solo **un** nombre de sistema, **una** descripción, **un** tiempo de actividad, etc. Por eso sus OIDs terminan en `.0` (índice 0), indicando que es la única instancia de ese objeto.
 
         3. Para cada item, analizar y configurar:
+
             - **Type of information**: Determinar si es texto (Character), numérico (Numeric), etc., según el tipo de dato que devuelve el OID.
             - **Units**: Verificar si el objeto requiere unidades de medida (por ejemplo, tiempo, porcentaje, etc.).
             - **Update interval**: Establecer un intervalo de actualización adecuado según la frecuencia con la que cambia el dato:
@@ -163,9 +169,9 @@
 
         <div>
 
-        A continuación se muestran los items recomendados con sus configuraciones:
+        <p>A continuación se muestran los items recomendados con sus configuraciones:</p>
 
-        **1. System Description**
+        <h4><strong>1. System Description</strong></h4>
 
         <ul>
         <li>Name: <code>System Description</code></li>
@@ -179,7 +185,7 @@
         <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
         </ul>
 
-        **2. System Object ID**
+        <h4><strong>2. System Object ID</strong></h4>
 
         <ul>
         <li>Name: <code>System Object ID</code></li>
@@ -192,7 +198,7 @@
         <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
         </ul>
 
-        **3. System Uptime**
+        <h4><strong>3. System Uptime</strong></h4>
 
         <ul>
         <li>Name: <code>System Uptime</code></li>
@@ -204,15 +210,16 @@
         <li>Update interval: <code>1m</code> <em>(dato dinámico que cambia constantemente)</em></li>
         <li>Description: <code>Tiempo transcurrido desde el último reinicio del sistema, medido en centésimas de segundo (TimeTicks).</code></li>
         <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
-        <li><strong>Preprocessing</strong>: Ir a la pestaña <strong>Preprocessing</strong> del item, <span style="color: blue;"><strong>Add</strong> (Agregar)</span> un 'Preprocessing step':
+        <li><strong>Preprocessing</strong>:
             <ul>
+            <li>Ir a la pestaña <strong>Preprocessing</strong> del item, <span style="color: blue;"><strong>Add</strong> (Agregar)</span> un 'Preprocessing step':</li>
             <li>Name: <code>Custom multiplier</code></li>
             <li>Parameters: <code>0.01</code> <em>(necesario porque el dato está medido en centésimas de segundo - TimeTicks)</em></li>
             </ul>
         </li>
         </ul>
 
-        **4. System Contact (Opcional)**
+        <h4><strong>4. System Contact (Opcional)</strong></h4>
 
         <ul>
         <li>Name: <code>System Contact</code></li>
@@ -222,10 +229,11 @@
         <li>SNMP OID: <code>1.3.6.1.2.1.1.4.0</code></li>
         <li>Update interval: <code>24h</code> <em>(dato administrativo que rara vez cambia)</em></li>
         <li>Description: <code>Información de contacto de la persona responsable de este sistema gestionado.</code></li>
+        <li><strong>Populates host inventory field</strong>: <code>Contact</code> <em>(asociar este item al inventario para poblar automáticamente la información del contacto)</em></li>
         <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
         </ul>
 
-        **5. System Location (Opcional)**
+        <h4><strong>5. System Location (Opcional)</strong></h4>
 
         <ul>
         <li>Name: <code>System Location</code></li>
@@ -235,10 +243,13 @@
         <li>SNMP OID: <code>1.3.6.1.2.1.1.6.0</code></li>
         <li>Update interval: <code>24h</code> <em>(dato administrativo que rara vez cambia)</em></li>
         <li>Description: <code>Ubicación física del sistema gestionado.</code></li>
+        <li><strong>Populates host inventory field</strong>: <code>Location</code> <em>(asociar este item al inventario para poblar automáticamente la información de la ubicación)</em></li>
         <li>Tags: Name: <code>component</code> | Value: <code>system</code></li>
         </ul>
 
-        > **💡 Nota importante:** Todos estos OIDs pertenecen a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/) y son estándar para todos los dispositivos SNMP. El OID `sysUpTime` devuelve valores en **TimeTicks** (centésimas de segundo), pero Zabbix puede convertirlos automáticamente a formato legible si se usa la unidad `uptime`.
+        <blockquote>
+        <p><strong>💡 Nota importante:</strong> Todos estos OIDs pertenecen a la MIB <a href="https://mibs.observium.org/mib/SNMPv2-MIB/">SNMPv2-MIB</a> y son estándar para todos los dispositivos SNMP. El OID <code>sysUpTime</code> devuelve valores en <strong>TimeTicks</strong> (centésimas de segundo), pero Zabbix puede convertirlos automáticamente a formato legible si se usa la unidad <code>uptime</code>.</p>
+        </blockquote>
 
         </div>
 
@@ -249,6 +260,7 @@
         1. <span style="color: blue;"><strong>Create item</strong></span>
 
         2. Configurar:
+
             - Name: `Memory utilization`
             - Type: `SNMP agent`
             - Key: `cseSysMemoryUtilization`
@@ -285,6 +297,7 @@
     1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Template creado <span style="color: blue;"><strong>`Template Network Switch by SNMP`</strong></span>  → <span style="color: violet;"><strong>Value mapping</strong></span> → <span style="color: blue;"><strong>Create value map</strong></span>
 
     2. Configurar:
+
         - Name: `IF-MIB::ifOperStatus`
         - Mappings:
             - Value: `1` → Mapped to: `up`
@@ -302,6 +315,7 @@
     1. <span style="color: blue;"><strong>Create value map</strong></span>
 
     2. Configurar:
+
         - Name: `IF-MIB::ifAdminStatus`
         - Mappings:
             - Value: `1` → Mapped to: `up`
@@ -334,6 +348,7 @@
     1. Consultar la MIB **IF-MIB** en: [IF-MIB](https://mibs.observium.org/mib/IF-MIB/)
 
     2. Crear **item prototypes** en la regla de descubrimiento para monitorear:
+
         - **Operational status** (`ifOperStatus`)
         - **Administrative status** (`ifAdminStatus`)
         - **Name** (`ifName`)
@@ -350,6 +365,7 @@
         > El macro `{#SNMPINDEX}` es descubierto automáticamente por la regla de descubrimiento y representa el índice SNMP de cada interfaz.
 
     3. Para cada item prototype, analizar y configurar:
+
         - **Type of information**: Determinar si es texto (Character), numérico (Numeric), etc., según el tipo de dato que devuelve el OID.
         - **Value mapping**: Aplicar cuando corresponda (por ejemplo, para Operational status y Administrative status).
         - **Update interval**: Establecer un intervalo de actualización adecuado según la frecuencia con la que cambia el dato:
@@ -364,9 +380,9 @@
 
     <div>
 
-    A continuación se muestran los item prototypes recomendados con sus configuraciones:
+    <p>A continuación se muestran los item prototypes recomendados con sus configuraciones:</p>
 
-    **1. Operational status**
+    <h4><strong>1. Operational status</strong></h4>
 
     <ul>
     <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Operational status</code></li>
@@ -386,7 +402,7 @@
     <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
     </ul>
 
-    **2. Administrative status**
+    <h4><strong>2. Administrative status</strong></h4>
 
     <ul>
     <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Administrative status</code></li>
@@ -406,7 +422,7 @@
     <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
     </ul>
 
-    **3. Name**
+    <h4><strong>3. Name</strong></h4>
 
     <ul>
     <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Name</code></li>
@@ -425,7 +441,7 @@
     <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
     </ul>
 
-    **4. Name Alias**
+    <h4><strong>4. Name Alias</strong></h4>
 
     <ul>
     <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Name Alias</code></li>
@@ -444,7 +460,7 @@
     <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
     </ul>
 
-    **5. Interface type**
+    <h4><strong>5. Interface type</strong></h4>
 
     <ul>
     <li>Name: <code>Interface {#IFDESCR}({#IFALIAS}): Interface type</code></li>
@@ -463,7 +479,9 @@
     <li><span style="color: blue;"><strong>Add</strong> (Guardar)</span></li>
     </ul>
 
-    > **💡 Nota importante:** Todos estos OIDs pertenecen a la MIB [IF-MIB](https://mibs.observium.org/mib/IF-MIB/) y son estándar para todos los dispositivos SNMP que implementan el monitoreo de interfaces de red. Los OIDs requieren el índice `{#SNMPINDEX}` porque son objetos tabulares que tienen múltiples instancias (una por cada interfaz del dispositivo).
+    <blockquote>
+    <p><strong>💡 Nota importante:</strong> Todos estos OIDs pertenecen a la MIB <a href="https://mibs.observium.org/mib/IF-MIB/">IF-MIB</a> y son estándar para todos los dispositivos SNMP que implementan el monitoreo de interfaces de red. Los OIDs requieren el índice <code>{#SNMPINDEX}</code> porque son objetos tabulares que tienen múltiples instancias (una por cada interfaz del dispositivo).</p>
+    </blockquote>
 
     </div>
 
@@ -474,6 +492,7 @@
     1. En el template, ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
 
     2. Configurar:
+
         1. Name: `CPU Discovery`
         2. Type: `SNMP agent`
         3. Key: `cpu.discovery`
@@ -484,6 +503,7 @@
         8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     3. Crear **item prototype** para CPU:
+
         - Name: `CPU Utilization {#SNMPVALUE}`
         - Type: `SNMP agent`
         - Key: `cpu.utilization[{#SNMPVALUE}]`
@@ -518,6 +538,7 @@
 ### **6. Ejecutar y verificar**
 
 1. Ejecutar las reglas de descubrimiento manualmente:
+
     - En el host **"SW-Demo2"**, ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span>.
     - Localizar las reglas de discovery y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> en cada una:
         - **Network Interfaces Discovery**
@@ -525,12 +546,14 @@
     - Esperar unos minutos para que se creen los items automáticamente y se consulten sus datos.
 
 2. Verificar los items creados:
+
     - Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> del host y verificar que se hayan creado los items del template y los item prototypes.
     - Seleccionar los items de tipo **SNMP agent** y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> para actualizar los datos.
     - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host **"SW-Demo2"**.
     - Verificar que los items muestren valores y que los estados de las interfaces se muestren con los value mappings (up/down en lugar de números).
 
 3. Verificar el **inventario del host**:
+
     - Verificar que los campos del inventario se hayan poblado automáticamente desde los items configurados:
         - **Name**: Debe estar tener el mismo valor que el item "System name".
         - **OS (full details)**: Debe estar tener el mismo valor que el item "System Description".
