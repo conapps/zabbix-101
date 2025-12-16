@@ -1,6 +1,6 @@
 # **7.3. Ejercicio práctico**
 
-**Objetivo**: Configurar **notificaciones por correo electrónico** para recibir alertas cuando se activen los triggers configurados en el ejercicio anterior.
+**Objetivo**: Configurar **notificaciones por correo electrónico** para recibir alertas cuando se activen los triggers configurados en el ejercicio anterior [Ejercicio práctico 6.4 - Configuración de triggers](ejercicios/ejercicio-6.4.md).
 
 **<u>Pasos guiados</u>**
 
