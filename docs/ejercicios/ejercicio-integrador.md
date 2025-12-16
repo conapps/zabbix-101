@@ -71,12 +71,7 @@
 
     8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-    9. Verificar la conectividad
-
-        - Verificar la columna **Availability**:
-            - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
-            - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
-            - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
+    9. No verificar la conectividad del host.
 
         > **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
 
@@ -551,7 +546,14 @@
     - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host **"SW-Demo2"**.
     - Verificar que los items muestren valores y que los estados de las interfaces se muestren con los value mappings (up/down en lugar de números).
 
-3. Verificar el **inventario del host**:
+3. Verificar la conectividad del host **"SW-Demo2"**:
+
+    - Verificar la columna **Availability**:
+        - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
+        - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
+        - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
+
+4. Verificar el **inventario del host**:
 
     - Verificar que los campos del inventario se hayan poblado automáticamente desde los items configurados:
         - **Name**: Debe estar tener el mismo valor que el item "System name".
