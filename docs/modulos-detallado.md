@@ -8,7 +8,7 @@
 - [**Módulo 1 –** Introducción al monitoreo y a Zabbix](#módulo-1--introducción-al-monitoreo-y-a-zabbix)
 - [**Módulo 2 –** Arquitectura y Componentes principales de Zabbix](#módulo-2--arquitectura-y-componentes-principales-de-zabbix)
 - [**Módulo 3 –** Interfaz Web](#módulo-3--interfaz-web)
-- [**Módulo 4 –** Monitoreo básico de hosts y servicios](#módulo-4--monitoreo-básico-de-hosts-y-servicios)
+- [**Módulo 4 –** Monitoreo básico de hosts](#módulo-4--monitoreo-básico-de-hosts-y-servicios)
 - [**Módulo 5 –** Visualización de datos y descubrimiento automático](#módulo-5--visualización-de-datos-y-descubrimiento-automático)
 - [**Módulo –** Ejercicio integrador](#módulo--ejercicio-integrador)
 - [**Módulo –** Cierre - Primera parte](#módulo--cierre---primera-parte)
@@ -490,7 +490,7 @@ El **menú lateral** es la base para navegar el frontend.
 
 ---
 
-## **Módulo 4 –** <span style="color: green;">Monitoreo básico de hosts y servicios</span>
+## **Módulo 4 –** <span style="color: green;">Monitoreo básico de hosts</span>
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
@@ -733,7 +733,7 @@ Una **LLD rule** está formada por:
     - Introducción y fundamentos.
     - Arquitectura y componentes.
     - Interfaz web.
-    - Monitoreo básico de hosts y servicios.
+    - Monitoreo básico de hosts.
     - Visualización de datos y descubrimiento automático.
 
 ---

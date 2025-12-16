@@ -41,7 +41,7 @@ Documentación completa y detallada de todos los módulos, incluyendo:
 2. **Introducción al monitoreo y a Zabbix**
 3. **Arquitectura y Componentes principales de Zabbix**
 4. **Interfaz Web**
-5. **Monitoreo básico de hosts y servicios**
+5. **Monitoreo básico de hosts**
 6. **Visualización de datos y descubrimiento automático**
 7. **Ejercicio integrador**
 

@@ -46,7 +46,7 @@ El instructor mostrará cómo:
 3. Probar el envío de correo:
 
     - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> (ubicado en la columna Action).
-    - En el campo **"Send to"**, ingresar tu dirección de correo electrónico (ej: correo@correo.com).
+    - En el campo **"Send to"**, ingresar tu dirección de correo electrónico *(ej: correo@correo.com)*.
     - Como opcional se puede agregar un asunto (Subject) y un mensaje (Message).
     - Hacer clic en <span style="color: blue;"><strong>Test</strong></span> para enviar el correo de prueba.
     - Se debe recibir un correo de prueba con el asunto y mensaje configurados.
@@ -82,11 +82,11 @@ El instructor mostrará cómo:
 
         - **Type**: Seleccionar `Email (HTML)`
 
-        - **Send to**: Ingresar **tu dirección de correo electrónico** *(la dirección donde quieres recibir las alertas)*
+        - **Send to**: Ingresar **tu dirección de correo electrónico** donde quieres recibir las alertas *(ej: correo@correo.com)*.
 
         - **When active**: *(dejar valores por defecto - normalmente 1-7,00:00-24:00 para recibir notificaciones todos los días)*
 
-        - **Use if severity**: Seleccionar las severidades que quieres recibir:
+        - **Use if severity**: Seleccionar las severidades que quieres recibir *(dejar valores por defecto)*:
             - ☑ Information
             - ☑ Warning
             - ☑ Average
@@ -139,15 +139,18 @@ El instructor mostrará cómo:
 
         → Configurar condiciones que se activen para los triggers del template:
 
-        **Opción 1: Por severidad** (recomendado para este ejercicio):
         - Condition 1:
             - **Condition type**: `Host groups`
             - **Operator**: `equals`
-            - **Severity**: `demo`
+            - **Host group**: `demo`
 
-        > **💡 Nota**: Con esta condición, la acción se activará para Hosts que pertenezcan al grupo `demo`.
+        > **💡 Nota**: Con esta condición, la acción se activará para Hosts que pertenezcan al grupo `demo`. Esta es la opción más simple y cubre todos los triggers configurados.
 
-        > **💡 Recomendación**: Para este ejercicio, usar la **Opción 1 (por host group)** es la más simple y cubre todos los triggers configurados.
+        > **💡 Ejemplos de otras condiciones que se podrían usar:**
+        > - **Por severidad**: `Condition type: Trigger severity` → `Operator: equals` → `Severity: High` (y agregar más condiciones para Average, Warning, etc.)
+        > - **Por tag**: `Condition type: Trigger tag` → `Tag: scope` → `Operator: equals` → `Value: availability` (o `capacity`, `performance`)
+        > - **Por nombre de trigger**: `Condition type: Trigger name` → `Operator: contains` → `Value: memory utilization`
+        > - **Combinación de condiciones**: Se pueden combinar múltiples condiciones usando operadores lógicos (AND/OR) para crear reglas más específicas.
 
     3. **Operations** (operaciones a ejecutar cuando se cumplan las condiciones):
 

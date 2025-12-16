@@ -66,7 +66,7 @@
 
 ---
 
-## **Módulo 4 – [Monitoreo básico de hosts y servicios](modulos-detallado.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)**
+## **Módulo 4 – [Monitoreo básico de hosts](modulos-detallado.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)**
 
 **Objetivo:** Aprender a agregar equipos a monitorear y aplicar templates para obtener métricas, eventos y gráficos.
 
@@ -151,7 +151,7 @@
     - Introducción al monitoreo y Zabbix.
     - Arquitectura y componentes principales.
     - Interfaz web.
-    - Monitoreo básico de hosts y servicios.
+    - Monitoreo básico de hosts.
     - Visualización de datos y descubrimiento automático.
 - Confirmación de que todos completaron los ejercicios.
 - Preparación para los siguientes temas.

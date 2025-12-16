@@ -7,6 +7,7 @@
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>
 
 2. Configurar:
+
     1. Nombre del host *(parámetro obligatorio)*.
 
         → Host name: `SRV-Test`
@@ -38,6 +39,7 @@
     5. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     6. Verificar la conectividad
+
         - Verificar la columna **Availability**:
             - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
             - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
@@ -46,10 +48,12 @@
         > **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
 
 3. Validar que las métricas se recolecten:
+
     1. <span style="color: purple;"><strong>Monitoring</strong></span>→ <span style="color: violet;"><strong>Hosts</strong></span> y seleccionar <span style="color: violet;"><strong>Latest Data</strong></span>
     2. o <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host recién creado.
 
 4. **⚠️ Importante:** Una vez completados los pasos anteriores, <u><strong>avisar al instructor</strong></u> para que se simule un problema. Esto generará una alerta que podrán visualizar en:
+
     - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Dashboards</strong></span> → **Global view** (dashboard principal).
     - <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> (lista de problemas activos).
 

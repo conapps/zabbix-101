@@ -7,6 +7,7 @@
 1. Luego de **ingresar al frontend** con usuario y contraseña.
 
 2. <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Localizar el host **"Zabbix server"** (único host por defecto) y explorar:
+
     - Tipos de filtros que se pueden realizar.
     - Campos que se pueden ver en la lista de hosts.
         - Name → Hacer clic en el nombre del host para ver sus detalles.
@@ -20,6 +21,7 @@
         - Dashboards → Ver los dashboards del host.
 
 3. Usar el icono de búsqueda 🔍 (ubicado en la **esquina superior izquierda, debajo del logo de Zabbix**) para buscar **"Zabbix server"** y explorar en <span style="color: violet;"><strong>Hosts</strong></span>:
+
     - Host → Nombre del host.
     - IP → IP del host (si contiene una dirección IP).
     - DNS → DNS del host (si contiene un nombre de dominio).

@@ -37,14 +37,7 @@
 
         6. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-        7. Verificar la conectividad
-
-            - Verificar la columna **Availability**:
-                - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
-                - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
-                - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
-
-            > **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
+        7. Por ahora no verificar la conectividad *(ya que no se ha creado el item y no hay datos para consultar)*
 
 2. Crear un item para monitorear el nombre del sistema:
 
@@ -87,6 +80,7 @@
             - Name: `component` | Value: `system`
 
         9. **Probar el item antes de guardar:**
+
             - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana <span style="color: blue;"><strong>Get value and test</strong></span>.
             - Verificar que se obtenga un valor de texto (string) que representa el nombre del sistema del dispositivo `NX1`.
 
@@ -240,6 +234,7 @@
             - Name: `interface` | Value: `{#IFDESCR}`
 
         10. Probar el item prototype antes de guardar:
+
             - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana en el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
             - Hacer clic en <span style="color: blue;"><strong>Get value and test</strong></span> y verificar que se obtenga un valor numérico (1, 2, 3, etc.) que representa el estado operativo de la interfaz.
             - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
@@ -284,6 +279,7 @@
             - Name: `interface` | Value: `{#IFDESCR}`
 
         10. Probar el item prototype antes de guardar:
+
             - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> y luego en la nueva ventana en el campo **Macros**, reemplazar `{#SNMPINDEX}` con uno de los valores guardados anteriormente (por ejemplo: `83886080`).
             - Hacer clic en <span style="color: blue;"><strong>Get value and test</strong></span> y verificar que se obtenga un valor numérico (1, 2 o 3) que representa el estado administrativo de la interfaz.
             - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
@@ -293,10 +289,22 @@
 5. Ejecutar la regla de descubrimiento y verificar los items creados automáticamente:
 
     1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → seleccionar el host **"SW-Demo1"** → pestaña <span style="color: violet;"><strong>Discovery</strong></span>.
-    2. Localizar la regla **"Network Interfaces Discovery"** y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> (Ejecutar ahora) para ejecutar la regla manualmente sin esperar el intervalo configurado (1 hora).
+
+    2. Localizar la regla **"Network Interfaces Discovery"** y hacer clic en <span style="color: blue;"><strong>Execute now</strong> (Ejecutar ahora)</span> para ejecutar la regla manualmente sin esperar el intervalo configurado (1 hora).
+
     3. Esperar unos minutos para que Zabbix procese la regla de descubrimiento y cree los items automáticamente.
-    4. Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> del host **"SW-Demo1"**.
-    5. Verificar que se hayan creado items para cada interfaz descubierta (usando las macros `{#IFDESCR}`, `{#IFALIAS}` y `{#SNMPINDEX}`) y esperar `1m` a que se consulten los datos.
+
+    4. Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> del host **"SW-Demo1"** y verificar que se hayan creado items para cada interfaz descubierta (usando las macros `{#IFDESCR}`, `{#IFALIAS}` y `{#SNMPINDEX}`), esperar `1m` a que se consulten los datos (o ejecutar manualmente el item con <span style="color: blue;"><strong>Execute now</strong> (Ejecutar ahora)</span>).
+
+    5. Verificar la conectividad del host:
+
+        - Verificar la columna **Availability**:
+            - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
+            - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
+            - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
+
+        > **Nota:** Puede tomar unos minutos para que el estado cambie de gris a verde/rojo según la conectividad.
+
     6. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host para ver las métricas recolectadas.
 
 > **💡 Nota:** Los **trigger prototypes** y **graph prototypes** se pueden configurar de manera similar. Los triggers se verán en detalle en el Módulo 7.

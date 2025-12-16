@@ -97,7 +97,7 @@
 
 2. Crear items en el template:
 
-    1. **Item: System name**
+    1. <u>Item: <strong>System name</strong></u>
 
         1. En el template creado, ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> → <span style="color: blue;"><strong>Create item</strong></span>
 
@@ -111,7 +111,7 @@
             - Update interval: `1h`
             - Description: `Nombre asignado administrativamente para este nodo gestionado. Por convención, este es el nombre de dominio completamente calificado (FQDN) del nodo. Si el nombre es desconocido, el valor es una cadena de longitud cero.`
 
-            > **💡 Nota:** Este OID pertenece a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/).
+                > **💡 Nota:** Este OID pertenece a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/).
 
             - Populates host inventory field: seleccionar `Name` del menú desplegable.
 
@@ -128,7 +128,7 @@
 
         5. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-    2. **Investigación de la MIB SNMPv2-MIB y creación de nuevos items**
+    2. <u><strong>OPCIONAL:</strong></u> Investigación de la MIB SNMPv2-MIB y creación de nuevos items en el template
 
         > **💡 Objetivo:** Investigar la MIB **SNMPv2-MIB** y crear items adicionales para monitorear información del sistema.
 
@@ -286,45 +286,39 @@
 >
 > **Ejemplo práctico**: En este ejercicio, cuando Zabbix monitorea el estado operativo de una interfaz de red, recibe valores numéricos (`1`, `2`, `3`, etc.). Con los Value Mappings configurados, estos números se mostrarán como `up`, `down`, `testing`, etc., haciendo mucho más fácil entender el estado de las interfaces en los dashboards y reportes.
 
-1. Crear Value Mapping para **IF-MIB::ifOperStatus**:
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Template creado <span style="color: blue;"><strong>`Template Network Switch by SNMP`</strong></span>  → <span style="color: violet;"><strong>Value mapping</strong></span> → <span style="color: blue;"><strong>Create value map</strong></span>
 
-    1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Template creado <span style="color: blue;"><strong>`Template Network Switch by SNMP`</strong></span>  → <span style="color: violet;"><strong>Value mapping</strong></span> → <span style="color: blue;"><strong>Create value map</strong></span>
+2. Crear Value Mapping para **IF-MIB::ifOperStatus**:
 
-    2. Configurar:
+    - Name: `IF-MIB::ifOperStatus`
+    - Mappings:
+        - Value: `1` → Mapped to: `up`
+        - Value: `2` → Mapped to: `down`
+        - Value: `3` → Mapped to: `testing`
+        - Value: `4` → Mapped to: `unknown`
+        - Value: `5` → Mapped to: `dormant`
+        - Value: `6` → Mapped to: `notPresent`
+        - Value: `7` → Mapped to: `lowerLayerDown`
 
-        - Name: `IF-MIB::ifOperStatus`
-        - Mappings:
-            - Value: `1` → Mapped to: `up`
-            - Value: `2` → Mapped to: `down`
-            - Value: `3` → Mapped to: `testing`
-            - Value: `4` → Mapped to: `unknown`
-            - Value: `5` → Mapped to: `dormant`
-            - Value: `6` → Mapped to: `notPresent`
-            - Value: `7` → Mapped to: `lowerLayerDown`
+    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-    3. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+3. Crear Value Mapping para **IF-MIB::ifAdminStatus**:
 
-2. Crear Value Mapping para **IF-MIB::ifAdminStatus**:
+    - Name: `IF-MIB::ifAdminStatus`
+    - Mappings:
+        - Value: `1` → Mapped to: `up`
+        - Value: `2` → Mapped to: `down`
+        - Value: `3` → Mapped to: `testing`
 
-    1. <span style="color: blue;"><strong>Create value map</strong></span>
-
-    2. Configurar:
-
-        - Name: `IF-MIB::ifAdminStatus`
-        - Mappings:
-            - Value: `1` → Mapped to: `up`
-            - Value: `2` → Mapped to: `down`
-            - Value: `3` → Mapped to: `testing`
-
-    3. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
 ---
 
-### **4. Configurar la regla de descubrimiento en el template**
+### **4. Configurar reglas de descubrimiento en el template**
 
 1. En el template **"Template Network Switch by SNMP"**, ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
 
-2. Configurar la regla de descubrimiento (seguir los mismos pasos del ejercicio práctico 5.3):
+2. <u>Regla de descubrimiento: <strong>Network Interfaces Discovery</strong></u> *(seguir los mismos pasos del ejercicio práctico <a href="ejercicio-5.3.md"><strong>5.3</strong></a>)*
 
     1. Name: `Network Interfaces Discovery`
     2. Type: `SNMP agent`
@@ -335,15 +329,61 @@
     7. Description: `Descubriendo interfaces desde [IF-MIB](https://mibs.observium.org/mib/IF-MIB/).`
     8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-3. **Investigación de la MIB IF-MIB y creación de item prototypes**
+3. <u>Regla de descubrimiento: <strong>CPU Discovery</strong></u>
 
-    > **💡 Objetivo:** Investigar la MIB **IF-MIB** y crear item prototypes para monitorear información de las interfaces de red descubiertas.
+    1. Name: `CPU Discovery`
+    2. Type: `SNMP agent`
+    3. Key: `cpu.discovery`
+    4. SNMP OID: `discovery[{#SNMPVALUE},1.3.6.1.4.1.9.9.109.1.1.1.1.2]`
+    5. Update interval: `1h`
+    6. Keep lost resources period: `30d`
+    7. Description: `Descubriendo CPUs del dispositivo.`
+    8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+### **5. Configurar item prototypes en la reglas de descubrimientos creadas**
+
+1. <u>Item prototype: <strong>Operational status</strong></u> *(seguir los mismos pasos del ejercicio práctico <a href="ejercicio-5.3.md"><strong>5.3</strong></a>)*
+
+    1. En la regla de descubrimiento **"Network Interfaces Discovery"**, ir a la pestaña <span style="color: violet;"><strong>Item prototypes</strong></span> → <span style="color: blue;"><strong>Create item prototype</strong></span>
+
+        - Name: `Interface {#IFDESCR}({#IFALIAS}): Operational status`
+        - Type: `SNMP agent`
+        - Key: `net.if.status[{#SNMPINDEX}]`
+        - Type of information: `Numeric (unsigned)`
+        - SNMP OID: `1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}`
+        - Update interval: `1m`
+        - Dejar el resto de los parámetros por defecto.
+        - *Opcionalmente* Description: `El estado operativo actual de la interfaz. Sus valores pueden ser: 1-up/activo, 2-down/inactivo, 3-testing/prueba, 4-unknown/desconocido, 5-dormant/inactivo, 6-notPresent/no presente, 7-lowerLayerDown/capa inferior inactiva.`
+        - *Opcionalmente* se puede agregar uno o más tags (etiquetas):
+            - Name: `component` | Value: `network`
+            - Name: `interface` | Value: `{#IFDESCR}`
+        - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+2. <u>Item prototype: <strong>CPU Utilization</strong></u>
+
+    1. En la regla de descubrimiento **"CPU Discovery"**, ir a la pestaña <span style="color: violet;"><strong>Item prototypes</strong></span> → <span style="color: blue;"><strong>Create item prototype</strong></span>
+
+        - Name: `CPU Utilization {#SNMPVALUE}`
+        - Type: `SNMP agent`
+        - Key: `cpu.utilization[{#SNMPVALUE}]`
+        - Type of information: `Numeric (unsigned)`
+        - SNMP OID: `1.3.6.1.4.1.9.9.109.1.1.1.1.8.{#SNMPINDEX}`
+        - Units: `%`
+        - Update interval: `1m`
+        - *Opcionalmente* Description: `Utilización promedio de CPU durante 5 minutos. Este OID proporciona una vista más precisa del rendimiento del router a lo largo del tiempo. El umbral recomendado es del 90%, aunque puede variar según la plataforma del dispositivo.`
+            > **💡 Nota:** Este OID pertenece a la MIB [CISCO-PROCESS-MIB](https://mibs.observium.org/mib/CISCO-PROCESS-MIB/) y corresponde al objeto `cpmCPUTotal5minRev`, que proporciona una medición más precisa que los intervalos de 1 minuto o 5 segundos.
+        - *Opcionalmente* se puede agregar uno o más tags (etiquetas):
+            - Name: `component` | Value: `cpu`
+        - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+3. <u><strong>OPCIONAL:</strong></u><strong> Investigación de la MIB IF-MIB y creación de nuevos items prototypes pertenecientes al Discovery en el template</strong>
+
+    > **💡 Objetivo:** Investigar la MIB **IF-MIB** y crear nuevos item prototypes para monitorear información de las interfaces de red descubiertas.
 
     1. Consultar la MIB **IF-MIB** en: [IF-MIB](https://mibs.observium.org/mib/IF-MIB/)
 
-    2. Crear **item prototypes** en la regla de descubrimiento para monitorear:
+    2. Crear nuevos item prototypes en la regla de descubrimiento **"Network Interfaces Discovery"** para monitorear:
 
-        - **Operational status** (`ifOperStatus`)
         - **Administrative status** (`ifAdminStatus`)
         - **Name** (`ifName`)
         - **Name Alias** (`ifAlias`)
@@ -480,38 +520,6 @@
     </div>
 
     </details>
-
-4. Configurar regla de descubrimiento para **CPU Discovery**:
-
-    1. En el template, ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span> → <span style="color: blue;"><strong>Create discovery rule</strong></span>
-
-    2. Configurar:
-
-        1. Name: `CPU Discovery`
-        2. Type: `SNMP agent`
-        3. Key: `cpu.discovery`
-        4. SNMP OID: `discovery[{#SNMPVALUE},1.3.6.1.4.1.9.9.109.1.1.1.1.2]`
-        5. Update interval: `1h`
-        6. Keep lost resources period: `30d`
-        7. Description: `Descubriendo CPUs del dispositivo.`
-        8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
-
-    3. Crear **item prototype** para CPU:
-
-        - Name: `CPU Utilization {#SNMPVALUE}`
-        - Type: `SNMP agent`
-        - Key: `cpu.utilization[{#SNMPVALUE}]`
-        - Type of information: `Numeric (unsigned)`
-        - SNMP OID: `1.3.6.1.4.1.9.9.109.1.1.1.1.8.{#SNMPINDEX}`
-        - Units: `%`
-        - Update interval: `1m`
-        - Description: `Utilización promedio de CPU durante 5 minutos. Este OID proporciona una vista más precisa del rendimiento del router a lo largo del tiempo. El umbral recomendado es del 90%, aunque puede variar según la plataforma del dispositivo.`
-
-            > **💡 Nota:** Este OID pertenece a la MIB [CISCO-PROCESS-MIB](https://mibs.observium.org/mib/CISCO-PROCESS-MIB/) y corresponde al objeto `cpmCPUTotal5minRev`, que proporciona una medición más precisa que los intervalos de 1 minuto o 5 segundos.
-
-        - **Tags**:
-            - Name: `component` | Value: `cpu`
-        - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
 ---
 

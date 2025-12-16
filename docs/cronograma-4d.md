@@ -23,7 +23,7 @@
 | **Hora** | **Módulo** | **Formato** | **Duración** | **Objetivos / Contenidos** |
 | --- | --- | --- | --- | --- |
 | 14:00 – 14:15 | **Repaso Día 1** | Teoría interactiva | 15 min | Reforzar rápidamente los conceptos principales vistos. |
-| 14:15 – 15:30 | **4. [Monitoreo básico de hosts y servicios](modulos-resumen.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)** | Demo + práctica | 1h 15m | Aprender a agregar equipos a monitorear y aplicar templates. |
+| 14:15 – 15:30 | **4. [Monitoreo básico de hosts](modulos-resumen.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)** | Demo + práctica | 1h 15m | Aprender a agregar equipos a monitorear y aplicar templates. |
 | 15:30 – 15:45 | **☕ Coffee Break** | — | 15 min | — |
 | 15:45 – 17:00 | **5. [Visualización de datos y descubrimiento automático](modulos-resumen.md#módulo-5--visualización-de-datos-y-descubrimiento-automático)** | Teoría + demo + práctica guiada | 1h 15m | Ver datos en tiempo real y aprender a automatizar el descubrimiento de recursos. |
 | 17:00 – 17:45 | [**Ejercicio integrador**](modulos-resumen.md#módulo--ejercicio-integrador) | Práctica guiada | 45 min | Realizar un ejercicio práctico completo que combine lo visto en los primeros 5 módulos. Crear un host, configurar un template con items y reglas de descubrimiento, y aplicar buenas prácticas de monitoreo. |

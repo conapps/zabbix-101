@@ -11,7 +11,7 @@
 | 09:55 – 10:35 | **2. [Arquitectura y Componentes principales de Zabbix](modulos-resumen.md#módulo-2--arquitectura-y-componentes-principales-de-zabbix)** | Teoría + demo | 40 min | Comprender cómo se compone Zabbix y cómo interactúan sus elementos. |
 | 10:35 – 10:50 | **☕ Coffee Break** | — | 15 min | — |
 | 10:50 – 11:45 | **3. [Interfaz Web](modulos-resumen.md#módulo-3--interfaz-web)** | Demo + práctica guiada | 55 min | Familiarizarse con el frontend web. Explorar menús, dashboards, gráficos, eventos. |
-| 11:45 – 13:00 | **4. [Monitoreo básico de hosts y servicios](modulos-resumen.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)** | Demo + práctica | 1h 15m | Aprender a agregar equipos a monitorear y aplicar templates. |
+| 11:45 – 13:00 | **4. [Monitoreo básico de hosts](modulos-resumen.md#módulo-4--monitoreo-básico-de-hosts-y-servicios)** | Demo + práctica | 1h 15m | Aprender a agregar equipos a monitorear y aplicar templates. |
 | 13:00 – 14:00 | **🍽 Almuerzo** | — | 1h | — |
 | 14:00 – 16:15 | **5. [Visualización de datos y descubrimiento automático](modulos-resumen.md#módulo-5--visualización-de-datos-y-descubrimiento-automático)** | Teoría + demo + práctica guiada | 2h 15m | Ver datos en tiempo real y aprender a automatizar el descubrimiento de recursos. |
 | 16:15 – 16:30 | **☕ Coffee Break** | — | 15 min | — |

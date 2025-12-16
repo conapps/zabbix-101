@@ -20,8 +20,8 @@
 
 **Objetivo**: Crear un trigger que se active cuando una interfaz de red cambia a estado DOWN.
 
-1. Ir al template **"Template Network Switch by SNMP"**:
-    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> ingresar a los **Item prototypes** de **Network Interfaces Discovery**, ubicar el item **Interface {#IFDESCR}({#IFALIAS}): Operational status** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
+1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
+    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> y en la regla de descubrimiento **"Network Interfaces Discovery"**, ir a la pestaña <span style="color: violet;"><strong>Item prototypes</strong></span> ubicar el item **Interface {#IFDESCR}({#IFALIAS}): Operational status** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
 
