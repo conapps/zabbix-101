@@ -738,25 +738,7 @@ Una **LLD rule** está formada por:
 
 ### **2. Revisión de ejercicios**
 
-- Confirmar que cada participante:
-    - Configurar **reglas de Low-Level Discovery (LLD)** en el template.
-        - Crear **item prototypes** con value mappings y configuraciones apropiadas.
-    - Aplicar el template al host y verificar que todos los elementos se hayan creado correctamente.
-    - Ejecutar las reglas de descubrimiento y verificar la creación automática de items.
-    - Confirmar que los **value mappings** muestren valores legibles en lugar de números.
-    - Verificar el **inventario del host** y confirmar que los campos se han poblado automáticamente desde los items configurados.
-    - **Creó un host** (SW-Demo2) con configuración SNMP (IP, puerto, comunidad, versión).
-    - **Verificó la conectividad** del host mediante la columna Availability.
-    - **Creó un template** desde cero con items básicos del sistema.
-        - **Asoció items** al inventario del host.
-    - **Configuró Value Mappings** para interpretar valores numéricos.
-    - **Investigó y consultó MIBs** estándars.
-    - **Configuró reglas de Low-Level Discovery (LLD)** en el template.
-        - **Creó items prototypes** para las reglas de discovery.
-    - **Aplicó el template al host** y verificar que todos los elementos se hayan creado correctamente.
-    - **Ejecutó manualmente las reglas de discovery**.
-    - **Verificó métricas** para confirmar que se están recolectando correctamente.
-    - **Verificó el inventario del host** para confirmar que los campos se han poblado automáticamente desde los items configurados.
+- Confirmar que cada participante pudo resolver correctamente el ejercicio integrador.
 
 ---
 

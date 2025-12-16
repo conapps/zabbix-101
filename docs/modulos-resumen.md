@@ -169,7 +169,7 @@
 - **Severity** (severidad) de problemas: *Information, Warning, Average, High, Disaster*.
 - Expresiones de trigger: ¿cómo definir umbrales y ventanas de tiempo?
 
-→ **Ejercicio práctico**: Crear un trigger para alertar si la CPU supera el 80%.
+> 📋 [Ejercicio práctico 6.4 - Configuración de triggers](ejercicios/ejercicio-6.4.md)
 
 ---
 
@@ -187,7 +187,7 @@
 - Crear una **acción** que envíe alertas automáticas.
 - Validar el envío de notificaciones personalizadas.
 
-→ **Ejercicio práctico**: Configurar un usuario que reciba alertas personalizadas.
+> 📋 [Ejercicio práctico 7.3 - Configuración de notificaciones](ejercicios/ejercicio-7.3.md)
 
 ---
 
