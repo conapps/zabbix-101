@@ -602,6 +602,18 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 
 <div style="margin: 20px 0;">
 
+<img src="../imagenes/Ejercicio%20integrador1_1.png" alt="Ejercicio integrador - Captura 1.1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador1_2.png" alt="Ejercicio integrador - Captura 1.2" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
 <img src="../imagenes/Ejercicio%20integrador2.png" alt="Ejercicio integrador - Captura 2" style="max-width: 100%; height: auto;">
 
 </div>
@@ -614,7 +626,67 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 
 <div style="margin: 20px 0;">
 
+<img src="../imagenes/Ejercicio%20integrador3_1.png" alt="Ejercicio integrador - Captura 3.1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_2.png" alt="Ejercicio integrador - Captura 3.2" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_3.png" alt="Ejercicio integrador - Captura 3.3" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_4.png" alt="Ejercicio integrador - Captura 3.4" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_5.png" alt="Ejercicio integrador - Captura 3.5" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_6.png" alt="Ejercicio integrador - Captura 3.6" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_7.png" alt="Ejercicio integrador - Captura 3.7" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador3_8.png" alt="Ejercicio integrador - Captura 3.8" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
 <img src="../imagenes/Ejercicio%20integrador4.png" alt="Ejercicio integrador - Captura 4" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador4_1.png" alt="Ejercicio integrador - Captura 4.1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador4_2.png" alt="Ejercicio integrador - Captura 4.2" style="max-width: 100%; height: auto;">
 
 </div>
 
@@ -627,6 +699,36 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 <div style="margin: 20px 0;">
 
 <img src="../imagenes/Ejercicio%20integrador6.png" alt="Ejercicio integrador - Captura 6" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador6_1.png" alt="Ejercicio integrador - Captura 6.1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador6_2.png" alt="Ejercicio integrador - Captura 6.2" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador6_3.png" alt="Ejercicio integrador - Captura 6.3" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador6_4.png" alt="Ejercicio integrador - Captura 6.4" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador6_5.png" alt="Ejercicio integrador - Captura 6.5" style="max-width: 100%; height: auto;">
 
 </div>
 
@@ -681,6 +783,12 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 <div style="margin: 20px 0;">
 
 <img src="../imagenes/Ejercicio%20integrador15.png" alt="Ejercicio integrador - Captura 15" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/Ejercicio%20integrador16.png" alt="Ejercicio integrador - Captura 16" style="max-width: 100%; height: auto;">
 
 </div>
 
