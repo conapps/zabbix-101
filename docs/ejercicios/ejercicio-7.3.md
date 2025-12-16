@@ -13,12 +13,14 @@
 El instructor mostrará cómo:
 
 1. **Configurar un Media Type**:
+
     - Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → <span style="color: blue;"><strong>Create media type</strong></span>.
     - Seleccionar el tipo: <strong>Email</strong>, <strong>Telegram</strong>, <strong>Slack</strong>, <strong>Webhook</strong> o <strong>Script</strong>.
     - Completar la configuración requerida (servidores SMTP, tokens, URLs, etc.).
     - Probar el envío de mensajes desde la opción <strong>Test</strong>.
 
 2. **Crear una Action**:
+
     - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: blue;"><strong>Create action</strong></span>.
     - Definir:
         - <strong>Name</strong>: Nombre claro y representativo.
@@ -33,7 +35,28 @@ El instructor mostrará cómo:
 
 ## **Ejercicio práctico: Configurar usuario y acción para recibir notificaciones**
 
-### **1. Crear un usuario para recibir notificaciones**
+### **1. Probar el Media Type Email (HTML)**
+
+**Objetivo**: Verificar que el Media Type "Email (HTML)" esté configurado correctamente y pueda enviar correos.
+
+1. Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span>.
+
+2. Localizar el Media Type **"Email (HTML)"** y hacer clic en él para editarlo.
+
+3. Probar el envío de correo:
+
+    - Hacer clic en el botón <span style="color: blue;"><strong>Test</strong></span> (ubicado en la columna Action).
+    - En el campo **"Send to"**, ingresar tu dirección de correo electrónico (ej: correo@correo.com).
+    - Como opcional se puede agregar un asunto (Subject) y un mensaje (Message).
+    - Hacer clic en <span style="color: blue;"><strong>Test</strong></span> para enviar el correo de prueba.
+    - Se debe recibir un correo de prueba con el asunto y mensaje configurados.
+    - Verificar que el correo de prueba haya llegado a tu bandeja de entrada.
+
+    > **💡 Nota importante:** Si el correo no llega, verificar la carpeta de spam o contactar al instructor para revisarlo.
+
+---
+
+### **2. Crear un usuario para recibir notificaciones**
 
 **Objetivo**: Crear un usuario que recibirá las alertas por correo electrónico.
 
@@ -51,23 +74,25 @@ El instructor mostrará cómo:
 
     3. **Password** *(parámetro obligatorio)*:
 
-        → Password: *(dejar valores por defecto o establecer una contraseña)*
+        → Password: `Demo123!`
 
     4. **Media** (canales de notificación):
 
-        → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar un canal de notificación.
+        → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar un canal de notificación y configurar:
 
-        → Configurar:
-            - **Type**: Seleccionar `Email (HTML)` *(o el tipo de email configurado por el instructor)*
-            - **Send to**: Ingresar **tu dirección de correo electrónico** *(la dirección donde quieres recibir las alertas)*
-            - **When active**: *(dejar valores por defecto - normalmente 1-7,00:00-24:00 para recibir notificaciones todos los días)*
-            - **Use if severity**: Seleccionar las severidades que quieres recibir:
-                - ☑ Information
-                - ☑ Warning
-                - ☑ Average
-                - ☑ High
-                - ☑ Disaster
-            - **Status**: `Enabled`
+        - **Type**: Seleccionar `Email (HTML)`
+
+        - **Send to**: Ingresar **tu dirección de correo electrónico** *(la dirección donde quieres recibir las alertas)*
+
+        - **When active**: *(dejar valores por defecto - normalmente 1-7,00:00-24:00 para recibir notificaciones todos los días)*
+
+        - **Use if severity**: Seleccionar las severidades que quieres recibir:
+            - ☑ Information
+            - ☑ Warning
+            - ☑ Average
+            - ☑ High
+            - ☑ Disaster
+        - **Status**: `Enabled`
 
         → <span style="color: blue;"><strong>Add</strong></span> (Guardar el media)
 
@@ -82,13 +107,14 @@ El instructor mostrará cómo:
     7. <span style="color: blue;"><strong>Add</strong></span> (Guardar el usuario)
 
 3. Verificar que el usuario se haya creado correctamente:
+
     - Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Users</strong></span>.
     - Verificar que el usuario **"Notificaciones"** aparezca en la lista.
     - Verificar que tenga el grupo `demo` y el rol `demo Role` asignados.
 
 ---
 
-### **2. Crear una acción para enviar notificaciones**
+### **3. Crear una acción para enviar notificaciones**
 
 **Objetivo**: Crear una acción que se active cuando los triggers configurados en el [ejercicio 6.4](ejercicio-6.4.md) detecten problemas y envíe notificaciones al usuario creado.
 
@@ -99,7 +125,7 @@ El instructor mostrará cómo:
 > 2. `{#SNMPVALUE}: Average CPU utilization` - Severity: **Average**
 > 3. `Warning memory utilization` - Severity: **Warning**
 
-1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: blue;"><strong>Create action</strong></span>.
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: violet;"><strong>Tigger actions</strong></span> → <span style="color: blue;"><strong>Create action</strong></span>.
 
 2. Configurar la acción:
 
@@ -115,96 +141,38 @@ El instructor mostrará cómo:
 
         **Opción 1: Por severidad** (recomendado para este ejercicio):
         - Condition 1:
-            - **Condition type**: `Trigger severity`
+            - **Condition type**: `Host groups`
             - **Operator**: `equals`
-            - **Severity**: `High`
-        - Condition 2:
-            - **Condition type**: `Trigger severity`
-            - **Operator**: `equals`
-            - **Severity**: `Average`
-        - Condition 3:
-            - **Condition type**: `Trigger severity`
-            - **Operator**: `equals`
-            - **Severity**: `Warning`
+            - **Severity**: `demo`
 
-        > **💡 Nota**: Con estas condiciones, la acción se activará para triggers con severidad High, Average o Warning, cubriendo los tres triggers configurados anteriormente.
+        > **💡 Nota**: Con esta condición, la acción se activará para Hosts que pertenezcan al grupo `demo`.
 
-        **Opción 2: Por host group** (alternativa):
-        - Condition:
-            - **Condition type**: `Host group`
-            - **Operator**: `equals`
-            - **Host group**: `Switches` *(o el grupo donde están los hosts con el template)*
-
-        **Opción 3: Por tag** (alternativa):
-        - Condition:
-            - **Condition type**: `Trigger tag`
-            - **Tag**: `scope`
-            - **Operator**: `equals`
-            - **Value**: `availability` o `capacity` o `performance`
-
-        > **💡 Recomendación**: Para este ejercicio, usar la **Opción 1 (por severidad)** es la más simple y cubre todos los triggers configurados.
+        > **💡 Recomendación**: Para este ejercicio, usar la **Opción 1 (por host group)** es la más simple y cubre todos los triggers configurados.
 
     3. **Operations** (operaciones a ejecutar cuando se cumplan las condiciones):
 
-        → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar una operación.
-
-        → Configurar la operación:
+        → Hacer clic en Operations → <span style="color: blue;"><strong>Add</strong></span> para agregar una operación y configurar la operación:
 
         - **Send to users**: Hacer clic en <span style="color: blue;"><strong>Add</strong></span> y seleccionar el usuario **"Notificaciones"** creado anteriormente.
-
-        - **Send only to**: Seleccionar `Email (HTML)` *(o el tipo de media configurado)*
-
-        - **Subject**: *(opcional, dejar por defecto o personalizar)*
-
-            Ejemplo: `{TRIGGER.SEVERITY}: {TRIGGER.NAME} en {HOST.NAME}`
-
-        - **Message**: *(opcional, dejar por defecto o personalizar)*
-
-            Ejemplo de mensaje personalizado:
-            ```
-            Alerta: {TRIGGER.NAME}
-            Host: {HOST.NAME}
-            Severidad: {TRIGGER.SEVERITY}
-            Estado: {TRIGGER.STATUS}
-            Último valor: {ITEM.LASTVALUE}
-            Hora: {EVENT.DATE} {EVENT.TIME}
-            ```
-
-        - **Operation details**:
-            - **Step duration**: `1m` *(tiempo entre intentos de notificación)*
-            - **Steps**: `1` *(número de pasos de escalamiento)*
-
+        - **Send only to**: Seleccionar `Email (HTML)`
         → <span style="color: blue;"><strong>Add</strong></span> (Guardar la operación)
 
     4. **Recovery operations** (operaciones cuando el problema se resuelve):
 
-        → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar una operación de recuperación.
+        → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar una operación de recuperación y configurar.
 
-        → Configurar:
-            - **Send to users**: Seleccionar el usuario **"Notificaciones"**
-            - **Send only to**: Seleccionar `Email (HTML)`
-            - **Subject**: *(opcional)*
-
-                Ejemplo: `Recuperado: {TRIGGER.NAME} en {HOST.NAME}`
-
-            - **Message**: *(opcional, dejar por defecto)*
+        - **Operation**: Seleccionar `Notify all involved`
 
         → <span style="color: blue;"><strong>Add</strong></span> (Guardar la operación de recuperación)
 
-    5. **Update operations** (operaciones cuando cambia el estado):
-
-        → *(Opcional, dejar vacío para este ejercicio)*
-
-    6. <span style="color: blue;"><strong>Add</strong></span> (Guardar la acción)
-
 3. Verificar que la acción se haya creado correctamente:
-    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span>.
+    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: violet;"><strong>Tigger actions</strong></span>.
     - Verificar que la acción **"Notificar problemas de red y sistema"** aparezca en la lista.
     - Verificar que las condiciones y operaciones estén configuradas correctamente.
 
 ---
 
-### **3. Solicitar al instructor que genere un problema y verificar la notificación**
+### **4. Solicitar al instructor que genere un problema y verificar la notificación**
 
 **Objetivo**: Validar que el sistema de notificaciones funcione correctamente.
 
@@ -236,7 +204,7 @@ El instructor mostrará cómo:
         - El nombre del trigger que se activó.
         - La información del host y el problema.
         - La severidad del problema.
-    - *(Si no llega el correo, verificar la carpeta de spam o contactar al instructor para verificar la configuración del Media Type)*
+    - *(Si no llega el correo, verificar la carpeta de spam o contactar al instructor para verificar)*
 
 5. **Verificar la notificación de recuperación** (opcional):
     - Una vez que el problema se resuelva (cuando el trigger vuelva a estado OK), verificar que llegue un correo de recuperación.
