@@ -146,7 +146,7 @@
 **Objetivo**: Crear un trigger que se active cuando la utilización de CPU supera un umbral configurado mediante una macro.
 
 1. Ir al template **"Template Network Switch by SNMP"**:
-    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> ingresar a los **Item prototypes** de **CPU Discovery**, ubicar el item **{#SNMPINDEX}: CPU utilization** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
+    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> ingresar a los **Item prototypes** de **CPU Discovery**, ubicar el item **CPU Utilization {#SNMPVALUE}** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
 
