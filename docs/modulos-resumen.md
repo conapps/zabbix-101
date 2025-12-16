@@ -111,8 +111,8 @@
 - Crear un **host** desde cero con configuración SNMP.
 - Crear un **template** desde cero con items básicos del sistema.
     - Asociar items al **inventario del host**.
-- Investigar y consultar **MIBs** estándars.
 - Configurar **Value Mappings** para interpretar valores numéricos.
+- Investigar y consultar **MIBs** estándars.
 - Configurar **reglas de Low-Level Discovery (LLD)** en el template.
     - Crear **item prototypes** con value mappings y configuraciones apropiadas.
 - Aplicar el template al host y verificar que todos los elementos se hayan creado correctamente.
