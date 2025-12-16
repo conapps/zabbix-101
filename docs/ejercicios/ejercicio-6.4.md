@@ -405,3 +405,46 @@ Este ejercicio práctico cubre la creación de triggers y la configuración de d
 - Valores de demo vs valores de producción
 
 ---
+
+<details>
+<summary><strong>📸 Solución - Capturas de pantalla</strong></summary>
+
+A continuación se muestran las capturas de pantalla de referencia para este ejercicio:
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_1.png" alt="6.4. Ejercicio práctico - Captura 1" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_2.png" alt="6.4. Ejercicio práctico - Captura 2" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_3.png" alt="6.4. Ejercicio práctico - Captura 3" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_4.png" alt="6.4. Ejercicio práctico - Captura 4" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_5.png" alt="6.4. Ejercicio práctico - Captura 5" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
+<img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_6.png" alt="6.4. Ejercicio práctico - Captura 6" style="max-width: 100%; height: auto;">
+
+</div>
+
+</details>
