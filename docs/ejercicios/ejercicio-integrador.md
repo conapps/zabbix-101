@@ -118,16 +118,15 @@
 
             > **💡 Nota:** Este OID pertenece a la MIB [SNMPv2-MIB](https://mibs.observium.org/mib/SNMPv2-MIB/).
 
-        3. Asociar el item al inventario del host:
-
             - Populates host inventory field: seleccionar `Name` del menú desplegable.
-            - Esto hará que el valor de este item se use automáticamente para poblar el campo "Name" del inventario del host.
 
-            > **💡 ¿Qué significa asociar un item al inventario?**
-            >
-            > Al asociar un item al inventario del host, el valor del item se usa automáticamente para llenar un campo específico del inventario del host (como el nombre, sistema operativo, ubicación, etc.). Esto permite mantener información del inventario actualizada automáticamente sin intervención manual.
-            >
-            > **Importante:** Solo se puede asociar **un item a un campo de inventario**. No pueden haber varios items asociados al mismo campo de inventario (por ejemplo, no puede haber dos items diferentes asociados al campo "Name").
+                Esto hará que el valor de este item se use automáticamente para poblar el campo "Name" del inventario del host.
+
+                > **💡 ¿Qué significa asociar un item al inventario?**
+                >
+                > Al asociar un item al inventario del host, el valor del item se usa automáticamente para llenar un campo específico del inventario del host (como el nombre, sistema operativo, ubicación, etc.). Esto permite mantener información del inventario actualizada automáticamente sin intervención manual.
+                >
+                > **Importante:** Solo se puede asociar **un item a un campo de inventario**. No pueden haber varios items asociados al mismo campo de inventario (por ejemplo, no puede haber dos items diferentes asociados al campo "Name").
 
         4. *Opcionalmente* se puede agregar uno o más tags (etiquetas)
             - Name: `component` | Value: `system`
