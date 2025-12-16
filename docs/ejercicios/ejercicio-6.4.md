@@ -247,6 +247,7 @@
 ## **5. Verificar los triggers creados**
 
 1. Verificar que los triggers se hayan creado correctamente y esten aplicados a los hosts:
+
     - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> el host **"SW-Demo2"**:
     - En la pestaña <span style="color: violet;"><strong>Discovery</strong></span>, localizar las reglas de discovery y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> en cada una:
         - **Network Interfaces Discovery**
@@ -255,7 +256,14 @@
     - Ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span>.
     - Verificar que los triggers del template aparezcan listados (con el icono de template indicando que provienen del template) y que esten aplicados a los hosts.
 
-2. Verificar en la vista de problemas:
+2. **Solicitar al instructor que genere un problema en las interfaces**:
+
+    - Una vez finalizada la verificación de triggers, avisar al instructor para que genere un problema en las interfaces de red.
+    - Esto permitirá ver el trigger **"Interface {#IFDESCR}({#IFALIAS}): Link down"** activarse en la vista de Problems.
+    - El instructor puede generar el problema deshabilitando una interfaz o simulando una caída de enlace.
+
+3. Verificar en la vista de problemas:
+
     - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span>.
     - Los triggers aparecerán cuando se cumplan las condiciones configuradas.
     - Verificar que los Event names y Operational data se muestren correctamente.
@@ -353,23 +361,35 @@
 
 ### **6.4. Verificar el comportamiento de las dependencias**
 
-1. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span>.
+1. Verificar los triggers creados en el host:
+    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar el host **"SW-Demo2"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>.
+    - Verificar que los triggers **"Warning memory utilization"** y **"Average memory utilization"** aparezcan listados.
+    - Verificar que el trigger **"Warning memory utilization"** tenga configurada la dependencia hacia **"Average memory utilization"**.
 
-2. Esperar aproximadamente **3 minutos** para que se actualicen los valores y se activen los triggers según sus condiciones.
+2. Esperar **3 minutos** (tiempo configurado en los triggers) para que se actualicen los valores y se activen los triggers según sus condiciones.
 
-3. Observar el comportamiento:
+3. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span>.
+
+4. Observar el comportamiento:
 
     > **💡 Nota importante:** Deberías notar que:
     > - Si ambos triggers se activan (Warning memory utilization y Average memory utilization), solo aparecerá el trigger **"Average memory utilization"** en la vista de Problems.
     > - El trigger **"Warning memory utilization"** estará **suprimido** (suppressed) porque depende del trigger Average.
     > - Esto demuestra cómo las dependencias ayudan a priorizar problemas y evitar alertas redundantes cuando hay un problema más crítico que requiere atención inmediata.
 
-> **💡 Ejercicio adicional (opcional):** Se puede repetir el proceso de los pasos **6.1, 6.2, 6.3 y 6.4** para crear un trigger adicional con severidad **High**:
-> - Crear una macro `{$MEMORY.UTIL.HIGH}` con valor `90` (valor de demo, en producción suele ser 95).
-> - Crear un trigger **"High memory utilization"** con severidad High y expresión `min(/Template Network Switch by SNMP/cseSysMemoryUtilization,3m) > {$MEMORY.UTIL.HIGH}`.
-> - Configurar dependencia en el trigger **"Average memory utilization"** hacia el nuevo trigger **"High memory utilization"**.
-> - Verificar en Problems que cuando se active el trigger High, el trigger Average se suprima automáticamente.
-> - Esto crea una jerarquía completa de alertas: Warning → Average → High, donde solo se muestra la alerta de mayor severidad.
+---
+
+### **6.5. Ejercicio adicional (opcional)**
+
+Se puede repetir el proceso de los pasos **6.1, 6.2, 6.3 y 6.4** para crear un trigger adicional con severidad **High**:
+
+1. Crear una macro `{$MEMORY.UTIL.HIGH}` con valor `90` (valor de demo, en producción suele ser 95).
+2. Crear un trigger **"High memory utilization"** con severidad High y expresión `min(/Template Network Switch by SNMP/cseSysMemoryUtilization,3m) > {$MEMORY.UTIL.HIGH}`.
+3. Configurar dependencia en el trigger **"Average memory utilization"** hacia el nuevo trigger **"High memory utilization"**.
+4. Verificar en Problems que cuando se active el trigger High, el trigger Average se suprima automáticamente.
+5. Esto crea una jerarquía completa de alertas: Warning → Average → High, donde solo se muestra la alerta de mayor severidad.
+
+> - **Para hacer desaparecer las alertas**: Puedes subir los umbrales de las macros (`{$MEMORY.UTIL.WAR}`, `{$MEMORY.UTIL.MAX}`, `{$CPU.UTIL.AVG}`) a valores más altos para que las condiciones de los triggers dejen de cumplirse. Puedes verificar los valores actuales en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> filtrando por el host y revisando el valor del item **Memory utilization** o **CPU Utilization**.
 
 ---
 
