@@ -462,7 +462,8 @@
     - Una vez que el instructor restaure el acceso al host, esperar aproximadamente **30 segundos** (intervalo de actualización del item).
     - Verificar en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> que el problema haya cambiado a estado **OK** (recuperado).
     - Verificar en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> que el item **"ICMP Ping"** muestre valor `Up` (host responde nuevamente) *(gracias al value mapping configurado, en lugar de ver `1`)*.
-    - Verificar que la página web esté funcionando correctamente (http://web.conatel-lab.conatel.cloud).
+
+5. Verificar que la página web esté funcionando correctamente [URL del sitio web](http://web.conatel-lab.conatel.cloud).
 
 ---
 
