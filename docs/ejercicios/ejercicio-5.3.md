@@ -89,11 +89,17 @@
     3. Verificar que el item funcione correctamente:
 
         1. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host **"SW-Demo1"**.
+
         2. Verificar que el item **"System name"** aún no muestre datos (esto es normal ya que el intervalo de actualización está configurado en 1 hora).
+
         3. Volver a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → seleccionar el host **"SW-Demo1"** → pestaña <span style="color: violet;"><strong>Items</strong></span>.
+
         4. Localizar el item **"System name"** y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> (Ejecutar ahora) para ejecutar manualmente el item sin esperar el intervalo configurado (1 hora).
+
         5. Esperar unos minutos para que Zabbix procese la consulta.
+
         6. Volver a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host **"SW-Demo1"**.
+
         7. Verificar que el item **"System name"** ahora muestre el nombre del dispositivo.
 
 3. Configurar la regla de descubrimiento:

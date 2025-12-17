@@ -2,8 +2,6 @@
 
 **Objetivo**: Configuración de **triggers** (disparadores) para alertar sobre problemas en interfaces de red, CPU y memoria utilizando el template **"Template Network Switch by SNMP"** anteriormente creado en [Ejercicio integrador - Template con LLD y Value Mappings](ejercicios/ejercicio-integrador.md).
 
-**<u>Pasos guiados</u>**
-
 > **💡 ¿Cómo crear un trigger?**
 >
 > Existen **varias formas** de crear un trigger en Zabbix:

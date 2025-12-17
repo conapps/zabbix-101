@@ -97,7 +97,7 @@
 
 2. Crear items en el template:
 
-    1. <u>Item: <strong>System name</strong></u>
+    1. <u>Item: <strong>System name</strong></u> *(seguir los mismos pasos del ejercicio práctico <a href="ejercicio-5.3.md"><strong>5.3</strong></a>)*
 
         1. En el template creado, ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> → <span style="color: blue;"><strong>Create item</strong></span>
 
@@ -568,9 +568,11 @@
         - **OS (full details)**: Debe estar tener el mismo valor que el item "System Description".
         - **Contact**: Debe estar tener el mismo valor que el item "System Contact".
         - **Location**: Debe estar tener el mismo valor que el item "System Location".
+
     - Se puede verificar de dos formas:
         - <span style="color: purple;"><strong>Inventory</strong></span> → <span style="color: violet;"><strong>Overview</strong></span> → **Resumen de datos de inventario** (vista general de todos los hosts).
         - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar el host **"SW-Demo2"** → Pestaña <span style="color: violet;"><strong>Inventory</strong></span> → **Información detallada de cada equipo** (vista específica del host).
+
     - Confirmar que los campos muestren los valores recolectados por los items asociados.
 
     > **Nota:** Puede tomar unos minutos para que se creen los items y se actualicen los datos en el inventario.
@@ -584,7 +586,7 @@ Al finalizar el ejercicio, cada participante deberá:
 - Tener **un host nuevo** (SW-Demo2) configurado y monitoreado con SNMP.
 - Tener un **template** con items de sistema:
     - Items básicos: System name (asociado al inventario), System Description (asociado al inventario), System Object ID, System Uptime (con preprocessing), System Contact, System Location, Memory utilization.
-    - **Total**: 7 items.
+    - **Mínimo requerido**: 1 item por template.
 - Tener configurados correctamente **Value Mappings** para interpretar los estados de las interfaces de números a valores legibles (up/down):
     - `IF-MIB::ifOperStatus` (up, down, testing, etc.)
     - `IF-MIB::ifAdminStatus` (up, down, testing)
@@ -592,7 +594,8 @@ Al finalizar el ejercicio, cada participante deberá:
 - Tener configuradas correctamente **dos reglas de Low-Level Discovery** (Network Interfaces, CPU) con **item prototypes** en el template:
     - **Network Interfaces Discovery**: Item prototypes para Operational status, Administrative status, Name, Name Alias, Interface type.
     - **CPU Discovery**: Item prototype para CPU Utilization.
-    - **Total**: 2 discovery rules y 6 item prototypes.
+    - **Total**: 2 discovery rules
+    - **Mínimo requerido**: 2 item prototypes (uno por cada discovery rule)
 - Tener agregados correctamente **tags** a los items e item prototypes para facilitar el filtrado y organización.
 - Tener asociados correctamente items al **inventario del host**.
 

@@ -2,9 +2,6 @@
 
 **Objetivo**: Configurar **notificaciones por correo electrónico** para recibir alertas cuando se activen los triggers configurados en el ejercicio anterior [Ejercicio práctico 6.4 - Configuración de triggers](ejercicios/ejercicio-6.4.md).
 
-**<u>Pasos guiados</u>**
-
----
 
 ## **Demo: Configuración de Media Type y Action (mostrada por el instructor)**
 
@@ -175,32 +172,47 @@ El instructor mostrará cómo:
 
 ---
 
-### **4. Solicitar al instructor que genere un problema y verificar la notificación**
+### **4. Validar el sistema de notificaciones**
 
 **Objetivo**: Validar que el sistema de notificaciones funcione correctamente.
 
-1. **Solicitar al instructor que genere un problema**:
-    - Pedir al instructor que active uno de los triggers configurados en el [ejercicio 6.4](ejercicio-6.4.md):
-        - Trigger de interfaz (Link down)
-        - Trigger de CPU (Average CPU utilization)
-        - Trigger de memoria (Warning memory utilization)
+Hay dos formas de generar problemas para validar las notificaciones:
 
-    > **💡 Nota**: El instructor puede generar un problema de varias formas:
-    > - Modificando temporalmente los umbrales de las macros (`{$CPU.UTIL.AVG}` o `{$MEMORY.UTIL.WAR}`) para que se activen más fácilmente.
-    > - Simulando un problema en el dispositivo monitoreado.
-    > - Usando la función "Test" en los triggers para generar eventos de prueba.
+**Opción 1: Generar problemas modificando los umbrales de las macros** (pueden hacerlo los participantes):
 
-2. **Verificar en Zabbix que el problema se haya generado**:
+- Modificar los umbrales de las macros para activar los triggers:
+- Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Macros</strong></span>.
+- Reducir temporalmente los valores de las macros para que se activen los triggers:
+    - `{$CPU.UTIL.AVG}`: Reducir a un valor bajo (ej: `1`) para activar el trigger de CPU.
+    - `{$MEMORY.UTIL.WAR}`: Reducir a un valor bajo (ej: `1`) para activar el trigger de memoria.
+- Esperar aproximadamente **3 minutos** para que los triggers se activen según sus condiciones.
+
+    > **💡 Nota**: Como se mencionó en el [ejercicio 6.4](ejercicio-6.4.md), se pueden verificar los valores actuales en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> para ver el valor del item **CPU Utilization** o **Memory utilization** y ajustar las macros en consecuencia.
+
+**Opción 2: Solicitar al instructor que genere un problema de interfaz (Link down)**:
+
+- Solicitar al instructor que genere un problema en las interfaces de red:
+- Pedir al instructor que active el trigger **"Interface {#IFDESCR}({#IFALIAS}): Link down"** configurado en el [ejercicio 6.4](ejercicio-6.4.md).
+- El instructor puede simular un problema deshabilitando una interfaz en el dispositivo monitoreado.
+
+    > **💡 Nota**: Esta opción es más sencilla y rápida para validar el sistema de notificaciones.
+
+---
+
+1. **Verificar en Zabbix que el problema se haya generado**:
+
     - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span>.
-    - Verificar que aparezca el problema generado por el instructor.
+    - Verificar que aparezca el problema generado (ya sea por modificación de macros o por el instructor).
     - Verificar que la severidad coincida con la configurada en el trigger.
 
-3. **Verificar que la acción se haya ejecutado**:
+2. **Verificar que la acción se haya ejecutado**:
+
     - En la vista de **Problems**, hacer clic en el problema para ver los detalles.
     - Verificar en la pestaña **Actions** o **History** que la acción se haya ejecutado.
     - Verificar que aparezca el usuario **"Notificaciones"** como destinatario de la notificación.
 
-4. **Verificar el correo electrónico**:
+3. **Verificar el correo electrónico**:
+
     - Revisar la bandeja de entrada del correo electrónico configurado en el usuario **"Notificaciones"**.
     - Verificar que haya llegado un correo con:
         - El asunto configurado (o el por defecto).
@@ -209,7 +221,8 @@ El instructor mostrará cómo:
         - La severidad del problema.
     - *(Si no llega el correo, verificar la carpeta de spam o contactar al instructor para verificar)*
 
-5. **Verificar la notificación de recuperación** (opcional):
+4. **Verificar la notificación de recuperación** (opcional):
+
     - Una vez que el problema se resuelva (cuando el trigger vuelva a estado OK), verificar que llegue un correo de recuperación.
     - El correo debe indicar que el problema se ha resuelto.
 
@@ -219,9 +232,9 @@ El instructor mostrará cómo:
 
 Este ejercicio práctico cubre la configuración completa del sistema de notificaciones:
 
-1. **Creación de usuario**: Se creó un usuario **"Notificaciones"** con permisos de solo lectura (`demo Role`) y configurado para recibir alertas por correo electrónico.
+1. **Creación de usuario**: Se creó un usuario **"Notificaciones"** con permisos de grupo y rol específicos para recibir alertas por correo electrónico.
 
-2. **Creación de acción**: Se configuró una acción que se activa cuando los triggers del template detectan problemas (por severidad High, Average o Warning) y envía notificaciones al usuario creado.
+2. **Creación de acción**: Se configuró una acción que se activa cuando se cumple una condición y envía notificaciones al usuario creado.
 
 3. **Validación**: Se verificó que el sistema funcione correctamente generando un problema y confirmando que la notificación llegue al correo electrónico configurado.
 
@@ -238,3 +251,4 @@ Este ejercicio práctico cubre la configuración completa del sistema de notific
 
 > **💡 Nota importante:** Las acciones se ejecutan automáticamente cuando se cumplen las condiciones configuradas. Es importante verificar que las condiciones coincidan con los triggers que se quieren monitorear para asegurar que las notificaciones se envíen correctamente.
 
+---
