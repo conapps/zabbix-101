@@ -42,6 +42,8 @@
 
         → Seleccionar en 'Connect to': <strong>DNS</strong>.
 
+        → Port: `10050` *(protocolo por defecto para Agent)*
+
     5. *Opcionalmente* se puede agregar una descripción.
 
         → Description: `Servidor con web para monitoreo agent-less`
