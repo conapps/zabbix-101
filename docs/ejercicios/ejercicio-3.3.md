@@ -2,6 +2,8 @@
 
 **Objetivo**: Familiarizarse con la interfaz web y localizar información clave en una instalación nueva.
 
+> **📚 Documentación oficial:** Para más información sobre la interfaz web de Zabbix, consulta la [documentación oficial de Zabbix 6.0 - Interfaz web](https://www.zabbix.com/documentation/6.0/es/manual/web_interface) y [Secciones del frontend](https://www.zabbix.com/documentation/6.0/es/manual/web_interface/frontend_sections).
+
 **<u>Pasos guiados</u>**
 
 1. Luego de **ingresar al frontend** con usuario y contraseña.
@@ -19,6 +21,8 @@
         - Problems → Ver los problemas del host.
         - Graphs → Ver los gráficos del host.
         - Dashboards → Ver los dashboards del host.
+
+    > **📚 Documentación oficial:** Para más detalles sobre Hosts, consulta [Zabbix - Hosts](https://www.zabbix.com/documentation/6.0/en/manual/web_interface/frontend_sections/monitoring/hosts).
 
 3. Usar el icono de búsqueda 🔍 (ubicado en la **esquina superior izquierda, debajo del logo de Zabbix**) para buscar **"Zabbix server"** y explorar en <span style="color: violet;"><strong>Hosts</strong></span>:
 

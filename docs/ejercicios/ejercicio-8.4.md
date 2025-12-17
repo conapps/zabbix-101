@@ -6,11 +6,11 @@
 
 ## **1. Verificar el servidor web antes de configurar el monitoreo**
 
-> **💡 Nota importante:** Antes de comenzar a configurar el monitoreo, es importante verificar que el servidor web esté funcionando correctamente. El host que vamos a monitorear es un servidor con página web disponible en `https://web.conatel-lab.conatel.cloud`.
+> **💡 Nota importante:** Antes de comenzar a configurar el monitoreo, es importante verificar que el servidor web esté funcionando correctamente. El host que vamos a monitorear es un servidor con página web disponible.
 
 1. **Abrir el navegador** e ingresar a la URL del servidor web: `https://web.conatel-lab.conatel.cloud`
 
-2. **Verificar que la página web se cargue correctamente** y mostrar la página en el navegador.
+2. **Verificar que la página web se cargue correctamente**.
 
     <img src="../imagenes/8.4.%20Ejercicio%20pr%C3%A1ctico_1.png" alt="8.4. Ejercicio práctico - Captura 1 - Página web del servidor" style="max-width: 100%; height: auto;">
 

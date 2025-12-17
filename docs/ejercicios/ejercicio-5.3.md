@@ -86,6 +86,8 @@
 
         10. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
+        > **📚 Documentación oficial:** Para más detalles sobre Items, consulta [Zabbix - Items](https://www.zabbix.com/documentation/current/es/manual/config/items/item).
+
     3. Verificar que el item funcione correctamente:
 
         1. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> y filtrar por el host **"SW-Demo1"**.
@@ -123,6 +125,8 @@
         3. Clave *(parámetro obligatorio, debe ser único y no debe coincidir con ninguna otra regla de descubrimiento)*.
 
             → Key: `net.if.discovery`
+
+            > **📚 Documentación oficial:** Para más detalles sobre Descubrimiento de interfaces de red, consulta [Zabbix - Descubrimiento de interfaces de red](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/examples/network_interfaces).
 
         4. Identificador de objetos SNMP *(parámetro obligatorio)*
 
@@ -182,6 +186,8 @@
         la regla de descubrimiento. Sin estos prototipos, el discovery 
         solo descubrirá las entidades pero no crea los elementos de 
         monitoreo automáticamente.
+
+        > **📚 Documentación oficial:** Para más detalles sobre Discovery rules, consulta [Zabbix - Discovery rules](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery).
 
 4. Crear **item prototypes** para monitorear las interfaces descubiertas:
 
@@ -246,6 +252,8 @@
             - Repetir el test con el segundo valor de SNMPINDEX guardado (por ejemplo: `436207616`) para confirmar que funciona correctamente.
 
         11. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+        > **📚 Documentación oficial:** Para más detalles sobre Item prototypes, consulta [Zabbix - Item prototypes](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/item_prototypes).
 
     3. Configurar el segundo item prototype:
 

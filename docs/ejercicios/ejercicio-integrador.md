@@ -312,6 +312,8 @@
 
     - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
+> **📚 Documentación oficial:** Para más detalles sobre Value Mapping, consulta [Zabbix - Value Mapping](https://www.zabbix.com/documentation/6.0/en/manual/config/items/mapping).
+
 ---
 
 ### **4. Configurar reglas de descubrimiento en el template**
@@ -339,6 +341,8 @@
     6. Keep lost resources period: `30d`
     7. Description: `Descubriendo CPUs del dispositivo.`
     8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+    > **📚 Documentación oficial:** Para más detalles sobre Discovery rules - CPU Discovery, consulta [Zabbix - Discovery rules - CPU Discovery](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/examples/cpu).
 
 ### **5. Configurar item prototypes en la reglas de descubrimientos creadas**
 

@@ -482,6 +482,8 @@ El **menú lateral** es la base para navegar el frontend.
 - <span style="color: violet;"><strong>Scripts</strong></span> → Gestión de scripts globales.
 - <span style="color: violet;"><strong>Queue</strong></span> → Gestión de cola.
 
+> **📚 Documentación oficial:** Para más detalles sobre las secciones del frontend, consulta [Zabbix - Interfaz web](https://www.zabbix.com/documentation/6.0/es/manual/web_interface).
+
 ---
 
 ### **3.3. Ejercicio práctico**
@@ -512,6 +514,8 @@ Un **host** es cualquier **equipo, servidor, dispositivo de red o servicio** que
     - **Discovery rules** → Creación automática de ítems, triggers y gráficos.
 - El host funciona como un **contenedor lógico** de métricas y entidades relacionadas.
 
+> **📚 Documentación oficial:** Para más detalles sobre hosts, consulta [Zabbix - Configuración de hosts](https://www.zabbix.com/documentation/6.0/es/manual/config/hosts).
+
 ---
 
 ### **4.2. <span style="color: violet;"><strong>Templates</strong></span>**
@@ -535,6 +539,8 @@ Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos
 </div>
 </div>
 
+> **📚 Documentación oficial:** Para más detalles sobre templates, consulta [Zabbix - Templates](https://www.zabbix.com/documentation/6.0/es/manual/config/templates).
+
 ---
 
 ### **4.3. <span style="color: violet;"><strong>Host Groups</strong></span> (Grupos de hosts)**
@@ -542,6 +548,8 @@ Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos
 - Permiten **agrupar lógicamente** hosts y templates.
 - Al eliminar un grupo, solo se borra la agrupación, **no los hosts**.
 - No se puede eliminar un grupo si es el único al que pertenece un host.
+
+> **📚 Documentación oficial:** Para más detalles sobre grupos de hosts, consulta [Zabbix - Grupos de hosts](https://www.zabbix.com/documentation/6.0/es/manual/config/hosts/host_groups).
 
 ---
 
@@ -581,6 +589,8 @@ Son una característica que permite asignar información adicional o metadatos a
 - Son **pares clave-valor**.
 - Útiles para filtrar, automatizar notificaciones y crear dashboards personalizados.
 
+> **📚 Documentación oficial:** Para más detalles sobre tags, consulta [Zabbix - Tags](https://www.zabbix.com/documentation/6.0/es/manual/config/tagging).
+
 ---
 
 ### **4.6. Macros y variables**
@@ -600,6 +610,8 @@ Las **macros** permiten definir variables reutilizables y centralizar configurac
     - Por template.
     - Por host.
 
+> **📚 Documentación oficial:** Para más detalles sobre macros y variables, consulta [Zabbix - Macros y variables](https://www.zabbix.com/documentation/6.0/en/manual/config/macros).
+
 ---
 
 ### **4.7. Inventario de hosts**
@@ -612,6 +624,8 @@ Tres modos disponibles:
 - **Desactivado**.
 - **Manual**.
 - **Automático**.
+
+> **📚 Documentación oficial:** Para más detalles sobre inventario de hosts, consulta [Zabbix - Inventario](https://www.zabbix.com/documentation/6.0/es/manual/config/hosts/inventory).
 
 ---
 
@@ -645,6 +659,8 @@ Zabbix permite **analizar métricas en tiempo real** y acceder al historial comp
     - Etiquetas (tags)
     - Gráfico o Historial
 
+> **📚 Documentación oficial:** Para más detalles sobre Latest Data, consulta [Zabbix - Latest Data](https://www.zabbix.com/documentation/6.0/en/manual/web_interface/frontend_sections/monitoring/latest_data).
+
 **5.1.2. <span style="color: violet;"><strong>Graphs</strong></span>** *(Gráficos)*
 
 Los gráficos permiten **visualizar tendencias históricas** y analizar el comportamiento de los sistemas.
@@ -657,6 +673,8 @@ Los gráficos permiten **visualizar tendencias históricas** y analizar el compo
     - Ver tendencias a largo plazo.
     - Profundizar en detalles históricos.
 
+> **📚 Documentación oficial:** Para más detalles sobre gráficos, consulta [Zabbix - Gráficos](https://www.zabbix.com/documentation/6.0/es/manual/config/visualization/graphs).
+
 **5.1.3. <span style="color: violet;"><strong>Eventos y problemas</strong></span>**
 
 - Los **eventos** son cualquier cambio de estado en un ítem o trigger.
@@ -666,6 +684,8 @@ Los gráficos permiten **visualizar tendencias históricas** y analizar el compo
     - Filtrar por severidad.
     - Confirmar y resolver alertas.
     - Analizar la causa raíz.
+
+> **📚 Documentación oficial:** Para más detalles sobre Eventos y problemas, consulta [Zabbix - Eventos y problemas](https://www.zabbix.com/documentation/6.0/en/manual/web_interface/frontend_sections/monitoring/problems).
 
 ---
 
@@ -706,6 +726,8 @@ Una **LLD rule** está formada por:
 - **Host prototypes** → Creación automática de hosts.
 
 > **❓ Nota:** LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente.
+
+> **📚 Documentación oficial:** Para más detalles sobre Low-Level Discovery, consulta [Zabbix - Low-Level Discovery](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery).
 
 ---
 
@@ -871,18 +893,7 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 > **✅ Buena práctica:** Usar **dependencias** entre triggers para evitar cascadas (p. ej., "High CPU utilization" → suprime "Average CPU utilization").
 
----
-
-### Acceso a Grafana
-
-1. Abrir el navegador e ingresar la <u>URL del frontend:</u>
-<u>https://monitoreoX.conatel-lab.conatel.cloud</u>
-
-    > **Nota:** Se debe reemplazar la letra **X** por el número asignado a cada uno.
-
-2. Iniciar sesión con las credenciales:
-    - Usuario: `demo`
-    - Contraseña: `Grafana123!`
+> **📚 Documentación oficial:** Para más detalles sobre triggers y eventos, consulta [Zabbix - Eventos](https://www.zabbix.com/documentation/6.0/es/manual/config/events) o [Zabbix - Triggers](https://www.zabbix.com/documentation/6.0/es/manual/config/triggers).
 
 ---
 
@@ -927,6 +938,8 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
     </div>
     </div>
 
+> **📚 Documentación oficial:** Para más detalles sobre acciones, consulta [Zabbix - Acciones](https://www.zabbix.com/documentation/6.0/en/manual/config/notifications/action).
+
 ---
 
 ### **7.2. Tipos de Media (Media Types)**
@@ -953,6 +966,8 @@ Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo
 
  ![features_Custom_alerts_zabbix.svg](imagenes/features_Custom_alerts_zabbix.svg)
 
+
+> **📚 Documentación oficial:** Para más detalles sobre Media Types, consulta [Zabbix - Media Types](https://www.zabbix.com/documentation/6.0/es/manual/config/notifications/media_types).
 
 ---
 
@@ -1050,6 +1065,8 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
     - Adaptación a servicios específicos.
 - Útiles cuando no existen templates predefinidos.
 
+> **📚 Documentación oficial:** Para más detalles sobre Métricas, consulta [Zabbix - Tipos de Métricas](https://www.zabbix.com/documentation/current/es/manual/config/items/itemtypes).
+
 ---
 
 ### **8.3. Ventajas de combinar métodos**
@@ -1058,6 +1075,8 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 - Complementar con <strong>SNMP</strong> para equipos de red.
 - Implementar <strong>HTTP checks</strong> para servicios web.
 - Usar <strong>scripts personalizados</strong> para casos especiales.
+
+> **📚 Documentación oficial:** Para más detalles sobre Recopilación de datos, consulta [Zabbix - Recopilación de datos](https://www.zabbix.com/documentation/current/es/manual/web_interface/frontend_sections/data_collection).
 
 ---
 
@@ -1169,10 +1188,12 @@ Beneficios:
     </div>
     </div>
 
-Beneficios:
+→ Beneficios:
 - Mayor <strong>seguridad</strong>.
 - <strong>Control granular</strong> de accesos.
 - Simplifica la delegación de tareas.
+
+> **📚 Documentación oficial:** Para más detalles sobre Grupos de usuarios y roles de usuario, consulta [Zabbix - Grupos de usuarios y roles de usuario](https://www.zabbix.com/documentation/6.0/en/manual/config/users_and_usergroups).
 
 > **💡 Tip:** Zabbix proporciona monitoreo para entornos de múltiples clientes, se puede implementar Zabbix como el punto central de monitoreo para múltiples organizaciones.
 >
@@ -1255,6 +1276,8 @@ Política de Retención de Datos
 </div>
 </div>
 
+> **📚 Documentación oficial:** Para más detalles sobre Proxies, consulta [Zabbix - Proxies](https://www.zabbix.com/documentation/6.0/es/manual/distributed_monitoring/proxies).
+
 ---
 
 ### **9.6. Clúster de alta disponibilidad (HA)**
@@ -1266,6 +1289,8 @@ Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan vario
 ![zabbix_ha.png](imagenes/zabbix_ha.png)
 
 ![zabbix_ha_agent.png](imagenes/zabbix_ha_agent.png)
+
+> **📚 Documentación oficial:** Para más detalles sobre Clúster de alta disponibilidad, consulta [Zabbix - Clúster de alta disponibilidad](https://www.zabbix.com/documentation/6.0/es/manual/concepts/server/ha).
 
 ### **9.7. Buenas prácticas generales**
 
@@ -1329,6 +1354,7 @@ Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras 
     [https://zabbix.local/api_jsonrpc.php](https://zabbix.local/api_jsonrpc.php)
     ```
 
+> **📚 Documentación oficial:** Para más detalles sobre API de Zabbix, consulta [Zabbix - API de Zabbix](https://www.zabbix.com/documentation/6.0/es/manual/api).
 ---
 
 ### 10.2. Integración con Grafana
@@ -1355,6 +1381,8 @@ Grafana es uno de los complementos más potentes para **visualizar los datos de 
     - Memoria **RAM**.
     - Latencia de red.
 - Comparar con dashboards nativos de Zabbix.
+
+> **📚 Documentación oficial:** Para más detalles sobre Integración con Grafana, consulta [Zabbix - Integración con Grafana](https://www.zabbix.com/la/integrations/grafana).
 
 ---
 

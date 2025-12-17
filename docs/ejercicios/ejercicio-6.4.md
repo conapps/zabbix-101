@@ -2,6 +2,40 @@
 
 **Objetivo**: Configuración de **triggers** (disparadores) para alertar sobre problemas en interfaces de red, CPU y memoria utilizando el template **"Template Network Switch by SNMP"** anteriormente creado en [Ejercicio integrador - Template con LLD y Value Mappings](ejercicios/ejercicio-integrador.md).
 
+---
+
+## **1. Acceso a Grafana**
+
+> **💡 Nota importante:** Durante este ejercicio, también podrás visualizar los datos y problemas en Grafana, una herramienta de visualización complementaria a Zabbix.
+
+1. **Abrir el navegador** e ingresar la URL del frontend: `https://monitoreoX.conatel-lab.conatel.cloud`
+
+    > **Nota:** Se debe reemplazar la letra **X** por el número asignado a cada uno.
+
+2. **Iniciar sesión** con las credenciales:
+    - Usuario: `demo`
+    - Contraseña: `Grafana123!`
+
+    > **💡 Nota**: Grafana te permitirá visualizar los triggers y problemas de manera gráfica. Al finalizar la configuración de triggers, el instructor mostrará cómo se visualizan los problemas en Grafana.
+
+3. **Verificar que Grafana se haya cargado correctamente**.
+
+    <div style="margin: 20px 0;">
+
+    <img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_Grafana1.png" alt="6.4. Ejercicio práctico - Grafana 1" style="max-width: 100%; height: auto;">
+
+    </div>
+
+    <div style="margin: 20px 0;">
+
+    <img src="../imagenes/6.4.%20Ejercicio%20pr%C3%A1ctico_Grafana2.png" alt="6.4. Ejercicio práctico - Grafana 2" style="max-width: 100%; height: auto;">
+
+    </div>
+
+---
+
+## **2. Crear trigger para interfaces de red (Link down)**
+
 > **💡 ¿Cómo crear un trigger?**
 >
 > Existen **varias formas** de crear un trigger en Zabbix:
@@ -11,10 +45,6 @@
 > 2. **Desde la pestaña Triggers**: En la esquina superior derecha de la pantalla hacer clic en <span style="color: blue;"><strong>Create trigger</strong></span>.
 >
 > **Recomendación**: Para este ejercicio, crearemos los triggers directamente en el **template** para que se apliquen automáticamente a todos los hosts que usen el template.
-
----
-
-## **1. Crear trigger para interfaces de red (Link down)**
 
 **Objetivo**: Crear un trigger que se active cuando una interfaz de red cambia a estado DOWN.
 
@@ -88,9 +118,11 @@
 
     9. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
+    > **📚 Documentación oficial:** Para más detalles sobre Triggers prototypes, consulta [Zabbix - Triggers prototypes](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/trigger_prototypes).
+
 ---
 
-## **2. Crear macros a nivel de template para triggers**
+## **3. Crear macros a nivel de template para triggers**
 
 > **💡 ¿Por qué crear macros a nivel de template?**
 >
@@ -135,9 +167,11 @@
     > - **Valor de demo**: `50` → Se usa un valor bajo para facilitar la generación de alertas durante las demostraciones y pruebas.
     > - **Valor de producción**: `75` → En entornos reales, típicamente se usa un umbral del 75% para evitar falsas alarmas y alertar solo cuando hay un problema real.
 
+> **📚 Documentación oficial:** Para más detalles sobre Macros, consulta [Zabbix - Macros](https://www.zabbix.com/documentation/6.0/es/manual/config/macros/user_macros).
+
 ---
 
-## **3. Crear trigger para CPU (utilizando macros)**
+## **4. Crear trigger para CPU (utilizando macros)**
 
 **Objetivo**: Crear un trigger que se active cuando la utilización de CPU supera un umbral configurado mediante una macro.
 
@@ -193,7 +227,7 @@
 
 ---
 
-## **4. Crear trigger para memoria (utilizando macros)**
+## **5. Crear trigger para memoria (utilizando macros)**
 
 **Objetivo**: Crear un trigger que se active cuando la utilización de memoria supera un umbral configurado mediante una macro.
 
@@ -242,7 +276,7 @@
 
 ---
 
-## **5. Verificar los triggers creados**
+## **6. Verificar los triggers creados**
 
 1. Verificar que los triggers se hayan creado correctamente y esten aplicados a los hosts:
 
@@ -263,15 +297,15 @@
 
     - Una vez finalizada la verificación de triggers, avisar al instructor para que genere un problema en las interfaces de red.
     - Esto permitirá ver el trigger **'Interface {#IFDESCR}({#IFALIAS}): Link down'** activarse en la vista de Problems.
-    - El instructor mostrará la demo de Grafana con el problema en las interfaces de red.
+    - El instructor mostrará la demo de Grafana (acceso configurado en la sección 1) con el problema en las interfaces de red.
 
 ---
 
-## **6. Crear macro adicional y trigger con dependencia**
+## **7. Crear macro adicional y trigger con dependencia**
 
 **Objetivo**: Crear una macro adicional para memoria y configurar un trigger con dependencia para demostrar cómo funcionan las dependencias entre triggers.
 
-### **6.1. Crear macro para memoria (Average)**
+### **7.1. Crear macro para memoria (Average)**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
 
@@ -294,7 +328,7 @@
 
 ---
 
-### **6.2. Crear trigger para memoria (Average)**
+### **7.2. Crear trigger para memoria (Average)**
 
 **Objetivo**: Crear un trigger que se active cuando la utilización de memoria supera un umbral configurado mediante una macro.
 
@@ -337,7 +371,7 @@
 
 ---
 
-### **6.3. Configurar dependencia en el trigger de memoria (Warning)**
+### **7.3. Configurar dependencia en el trigger de memoria (Warning)**
 
 1. Editar el trigger **"Warning memory utilization"**:
 
@@ -361,9 +395,11 @@
     >
     > **En este caso**: Si el trigger "Average memory utilization" está activo (mayor severidad), el trigger "Warning memory utilization" se suprimirá, mostrando solo el problema de memoria más crítico.
 
+> **📚 Documentación oficial:** Para más detalles sobre Dependencies, consulta [Zabbix - Dependencies](https://www.zabbix.com/documentation/6.0/es/manual/config/triggers/dependencies).
+
 ---
 
-### **6.4. Verificar el comportamiento de las dependencias**
+### **7.4. Verificar el comportamiento de las dependencias**
 
 1. Verificar los triggers creados en el host:
 
@@ -384,11 +420,11 @@
 
 ---
 
-### <u><strong>OPCIONAL:</strong></u><strong> 6.5. Agregar más dependencias a los trigger de la memoria</strong>
+### <u><strong>OPCIONAL:</strong></u><strong> 7.5. Agregar más dependencias a los trigger de la memoria</strong>
 
-**Objetivo**: Repetir el proceso de los pasos <a href="ejercicio-6.4.md#61-crear-macro-para-memoria-average"><strong>6.1</strong></a>, <a href="ejercicio-6.4.md#62-crear-trigger-para-memoria-average"><strong>6.2</strong></a>, <a href="ejercicio-6.4.md#63-configurar-dependencia-en-el-trigger-de-memoria-warning"><strong>6.3</strong></a> y <a href="ejercicio-6.4.md#64-verificar-el-comportamiento-de-las-dependencias"><strong>6.4</strong></a> para crear un trigger adicional con severidad **High**:
+**Objetivo**: Repetir el proceso de los pasos <a href="ejercicio-6.4.md#71-crear-macro-para-memoria-average"><strong>7.1</strong></a>, <a href="ejercicio-6.4.md#72-crear-trigger-para-memoria-average"><strong>7.2</strong></a>, <a href="ejercicio-6.4.md#73-configurar-dependencia-en-el-trigger-de-memoria-warning"><strong>7.3</strong></a> y <a href="ejercicio-6.4.md#74-verificar-el-comportamiento-de-las-dependencias"><strong>7.4</strong></a> para crear un trigger adicional con severidad **High**:
 
-### **6.5.1. Crear macro para memoria (High)**
+### **7.5.1. Crear macro para memoria (High)**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
 
@@ -411,7 +447,7 @@
 
 ---
 
-### **6.5.2. Crear trigger para memoria (High)**
+### **7.5.2. Crear trigger para memoria (High)**
 
 1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
 
@@ -452,7 +488,7 @@
 
 ---
 
-### **6.5.3. Configurar dependencia en el trigger de memoria (Warning)**
+### **7.5.3. Configurar dependencia en el trigger de memoria (Warning)**
 
 1. Editar el trigger **"Warning memory utilization"**:
 
@@ -473,7 +509,7 @@
 
 ---
 
-### **6.5.4. Configurar dependencia en el trigger de memoria (Average)**
+### **7.5.4. Configurar dependencia en el trigger de memoria (Average)**
 
 1. Editar el trigger **"Average memory utilization"**:
 
@@ -491,7 +527,7 @@
 
 ---
 
-### **6.5.5. Verificar el comportamiento de las dependencias**
+### **7.5.5. Verificar el comportamiento de las dependencias**
 
 1. Verificar los triggers creados en el host:
 

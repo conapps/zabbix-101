@@ -20,6 +20,8 @@
         >
         > El template **"Linux by Zabbix agent"** incluye una colección predefinida de items, triggers y gráficos para monitorear servidores Linux. Incluye métricas como: CPU, memoria, disco, red, etc. Al asociarlo al host, estos elementos se aplican automáticamente sin necesidad de configurarlos manualmente.
 
+        > **📚 Documentación oficial:** Para más detalles sobre el templates listos para usar, consulta [Zabbix - Templates](https://www.zabbix.com/documentation/6.0/es/manual/config/templates_out_of_the_box).
+
     3. Elegir un Grupo de hosts *(parámetro obligatorio)*.
 
         → Groups: `demo` y `Linux servers`
