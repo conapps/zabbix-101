@@ -21,7 +21,8 @@
 **Objetivo**: Crear un trigger que se active cuando una interfaz de red cambia a estado DOWN.
 
 1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
-    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> y en la regla de descubrimiento **"Network Interfaces Discovery"**, ir a la pestaña <span style="color: violet;"><strong>Item prototypes</strong></span> ubicar el item **Interface {#IFDESCR}({#IFALIAS}): Operational status** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
+
+    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> y en la regla de descubrimiento **"Network Interfaces Discovery"**, ir a la pestaña <span style="color: violet;"><strong>Item prototypes</strong></span> ubicar el item **'Interface {#IFDESCR}({#IFALIAS}): Operational status'** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
 
@@ -110,11 +111,9 @@
 
 2. Crear la macro:
 
-    - Configurar:
-
-        - Macro: `{$CPU.UTIL.AVG}`
-        - Value: `5` *(valor de demo para generar alertas fácilmente)*
-        - Description: `Umbral promedio de utilización de CPU (%) para alerta Average.`
+    - Macro: `{$CPU.UTIL.AVG}`
+    - Value: `5` *(valor de demo para generar alertas fácilmente)*
+    - Description: `Umbral promedio de utilización de CPU (%) para alerta Average.`
 
     > **💡 Nota sobre valores de demo vs producción:**
     >
@@ -126,18 +125,17 @@
 1. En la misma pestaña <span style="color: violet;"><strong>Macros</strong></span> del template, crear otra macro:
 
     - <span style="color: blue;"><strong>Add</strong> (Agregar)</span>
-    - Configurar:
 
-        - Macro: `{$MEMORY.UTIL.WAR}`
-        - Value: `50` *(valor de demo para generar alertas fácilmente)*
-        - Description: `Umbral de advertencia de utilización de memoria (%) para alerta Warning.`
+    - Macro: `{$MEMORY.UTIL.WAR}`
+    - Value: `50` *(valor de demo para generar alertas fácilmente)*
+    - Description: `Umbral de advertencia de utilización de memoria (%) para alerta Warning.`
+
+    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
     > **💡 Nota sobre valores de demo vs producción:**
     >
     > - **Valor de demo**: `50` → Se usa un valor bajo para facilitar la generación de alertas durante las demostraciones y pruebas.
     > - **Valor de producción**: `75` → En entornos reales, típicamente se usa un umbral del 75% para evitar falsas alarmas y alertar solo cuando hay un problema real.
-
-2. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 ---
 
@@ -145,8 +143,9 @@
 
 **Objetivo**: Crear un trigger que se active cuando la utilización de CPU supera un umbral configurado mediante una macro.
 
-1. Ir al template **"Template Network Switch by SNMP"**:
-    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> ingresar a los **Item prototypes** de **CPU Discovery**, ubicar el item **CPU Utilization {#SNMPVALUE}** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
+1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
+
+    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> y en la regla de descubrimiento **"CPU Discovery"**, ir a la pestaña <span style="color: violet;"><strong>Item prototypes</strong></span> ubicar el item **'CPU Utilization {#SNMPVALUE}'** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
 
@@ -200,8 +199,9 @@
 
 **Objetivo**: Crear un trigger que se active cuando la utilización de memoria supera un umbral configurado mediante una macro.
 
-1. Ir al template **"Template Network Switch by SNMP"**:
-    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Items</strong></span> ubicar el item **Memory utilization** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger</strong></span>
+1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
+
+    - Pestaña <span style="color: violet;"><strong>Items</strong></span> ubicar el item **'Memory utilization'** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger</strong></span>
 
 2. Configurar el trigger:
 
@@ -253,20 +253,19 @@
         - **Network Interfaces Discovery**
         - **CPU Discovery**
     - Esperar unos minutos para que se creen los triggers correspondientes.
-    - Ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span>.
-    - Verificar que los triggers del template aparezcan listados (con el icono de template indicando que provienen del template) y que esten aplicados a los hosts.
+    - Ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span> y verificar que los triggers del template aparezcan listados (con el icono de template indicando que provienen del template) y que esten aplicados a los hosts.
 
-2. **Solicitar al instructor que genere un problema en las interfaces**:
-
-    - Una vez finalizada la verificación de triggers, avisar al instructor para que genere un problema en las interfaces de red.
-    - Esto permitirá ver el trigger **"Interface {#IFDESCR}({#IFALIAS}): Link down"** activarse en la vista de Problems.
-    - El instructor puede generar el problema deshabilitando una interfaz o simulando una caída de enlace.
-
-3. Verificar en la vista de problemas:
+2. Verificar en la vista de problemas:
 
     - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span>.
-    - Los triggers aparecerán cuando se cumplan las condiciones configuradas.
-    - Verificar que los Event names y Operational data se muestren correctamente.
+    - Los triggers para CPU y memoria aparecerán cuando se cumplan las condiciones configuradas.
+    - Verificar que los 'Event names' y 'Operational data' se muestren correctamente.
+
+3. **Solicitar al instructor que genere un problema en las interfaces y ver demo de Grafana**:
+
+    - Una vez finalizada la verificación de triggers, avisar al instructor para que genere un problema en las interfaces de red.
+    - Esto permitirá ver el trigger **'Interface {#IFDESCR}({#IFALIAS}): Link down'** activarse en la vista de Problems.
+    - El instructor mostrará la demo de Grafana con el problema en las interfaces de red.
 
 ---
 
@@ -277,30 +276,33 @@
 ### **6.1. Crear macro para memoria (Average)**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
     - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Macros</strong></span>
 
 2. Crear la macro:
+
     - <span style="color: blue;"><strong>Add</strong> (Agregar)</span>
-    - Configurar:
-        - Macro: `{$MEMORY.UTIL.MAX}`
-        - Value: `75` *(valor de demo para generar alertas fácilmente)*
-        - Description: `Umbral máximo de utilización de memoria (%) para alerta Average.`
+
+    - Macro: `{$MEMORY.UTIL.MAX}`
+    - Value: `75` *(valor de demo para generar alertas fácilmente)*
+    - Description: `Umbral medio de utilización de memoria (%) para alerta Average.`
+
+    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     > **💡 Nota sobre valores de demo vs producción:**
     >
     > - **Valor de demo**: `75` → Se usa un valor bajo para facilitar la generación de alertas durante las demostraciones y pruebas.
     > - **Valor de producción**: `85` → En entornos reales, típicamente se usa un umbral del 85% para evitar falsas alarmas y alertar solo cuando hay un problema real que requiere atención inmediata.
 
-3. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
-
 ---
 
 ### **6.2. Crear trigger para memoria (Average)**
 
-**Objetivo**: Crear un trigger que se active cuando la utilización de memoria supera un umbral más alto configurado mediante una macro.
+**Objetivo**: Crear un trigger que se active cuando la utilización de memoria supera un umbral configurado mediante una macro.
 
-1. Ir al template **"Template Network Switch by SNMP"**:
-    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Items</strong></span> ubicar el item **Memory utilization** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger</strong></span>
+1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
+
+    - Pestaña <span style="color: violet;"><strong>Items</strong></span> ubicar el item **'Memory utilization'** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger</strong></span>
 
 2. Configurar el trigger:
 
@@ -340,13 +342,17 @@
 ### **6.3. Configurar dependencia en el trigger de memoria (Warning)**
 
 1. Editar el trigger **"Warning memory utilization"**:
-    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>.
-    - Localizar el trigger **"Warning memory utilization"** y hacer clic en él para editarlo.
+
+    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> ubicar el trigger **'Warning memory utilization'** y hacer clic en él para editarlo.
 
 2. Configurar la dependencia:
+
     - Ir a la pestaña <span style="color: violet;"><strong>Dependencies</strong></span>.
+
     - Hacer clic en <span style="color: blue;"><strong>Add</strong></span>.
+
     - Seleccionar el trigger **"Average memory utilization"** (el que acabamos de crear).
+
     - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
     > **💡 ¿Qué es una dependencia entre triggers?**
@@ -362,6 +368,7 @@
 ### **6.4. Verificar el comportamiento de las dependencias**
 
 1. Verificar los triggers creados en el host:
+
     - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar el host **"SW-Demo2"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>.
     - Verificar que los triggers **"Warning memory utilization"** y **"Average memory utilization"** aparezcan listados.
     - Verificar que el trigger **"Warning memory utilization"** tenga configurada la dependencia hacia **"Average memory utilization"**.
@@ -377,26 +384,136 @@
     > - El trigger **"Warning memory utilization"** estará **suprimido** (suppressed) porque depende del trigger Average.
     > - Esto demuestra cómo las dependencias ayudan a priorizar problemas y evitar alertas redundantes cuando hay un problema más crítico que requiere atención inmediata.
 
-5. **Solicitar al instructor para demo de Grafana**:
-    - Una vez finalizada la verificación de dependencias, avisar al instructor para realizar la demo de Grafana.
+---
+
+### <u><strong>OPCIONAL:</strong></u><strong> 6.5. Agregar más dependencias a los trigger de la memoria</strong>
+
+**Objetivo**: Repetir el proceso de los pasos <a href="ejercicio-6.4.md#61-crear-macro-para-memoria-average"><strong>6.1</strong></a>, <a href="ejercicio-6.4.md#62-crear-trigger-para-memoria-average"><strong>6.2</strong></a>, <a href="ejercicio-6.4.md#63-configurar-dependencia-en-el-trigger-de-memoria-warning"><strong>6.3</strong></a> y <a href="ejercicio-6.4.md#64-verificar-el-comportamiento-de-las-dependencias"><strong>6.4</strong></a> para crear un trigger adicional con severidad **High**:
+
+### **6.5.1. Crear macro para memoria (High)**
+
+1. Ir al template **"Template Network Switch by SNMP"**:
+
+    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Macros</strong></span>
+
+2. Crear la macro:
+
+    - <span style="color: blue;"><strong>Add</strong> (Agregar)</span>
+
+    - Macro: `{$MEMORY.UTIL.HIGH}`
+    - Value: `90` *(valor de demo para generar alertas fácilmente)*
+    - Description: `Umbral máximo de utilización de memoria (%) para alerta High.`
+
+    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+    > **💡 Nota sobre valores de demo vs producción:**
+    >
+    > - **Valor de demo**: `90` → Se usa un valor alto para facilitar la generación de alertas durante las demostraciones y pruebas.
+    > - **Valor de producción**: `95` → En entornos reales, típicamente se usa un umbral del 95% para evitar falsas alarmas y alertar solo cuando hay un problema real que requiere atención inmediata.
 
 ---
 
-### **6.5. Ejercicio adicional (opcional)**
+### **6.5.2. Crear trigger para memoria (High)**
 
-Se puede repetir el proceso de los pasos **6.1, 6.2, 6.3 y 6.4** para crear un trigger adicional con severidad **High**:
+1. Ir al template **"Template Network Switch by SNMP"** (<span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**):
 
-1. Crear una macro `{$MEMORY.UTIL.HIGH}` con valor `90` (valor de demo, en producción suele ser 95).
-2. Crear un trigger **"High memory utilization"** con severidad High y expresión `min(/Template Network Switch by SNMP/cseSysMemoryUtilization,3m) > {$MEMORY.UTIL.HIGH}`.
-3. Configurar dependencia en el trigger **"Average memory utilization"** hacia el nuevo trigger **"High memory utilization"**.
-4. Verificar en Problems que cuando se active el trigger High, el trigger Average se suprima automáticamente.
-5. Esto crea una jerarquía completa de alertas: Warning → Average → High, donde solo se muestra la alerta de mayor severidad.
+    - Pestaña <span style="color: violet;"><strong>Items</strong></span> ubicar el item **'Memory utilization'** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger</strong></span>
 
-> - **Para hacer desaparecer las alertas**: Puedes subir los umbrales de las macros (`{$MEMORY.UTIL.WAR}`, `{$MEMORY.UTIL.MAX}`, `{$CPU.UTIL.AVG}`) a valores más altos para que las condiciones de los triggers dejen de cumplirse. Puedes verificar los valores actuales en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> filtrando por el host y revisando el valor del item **Memory utilization** o **CPU Utilization**.
+2. Configurar el trigger:
+
+    1. **Name**:
+
+        → Name: `High memory utilization`
+
+    2. **Event name**:
+
+        → Event name: `High memory utilization (>{$MEMORY.UTIL.HIGH}% for 3m)`
+
+    3. **Severity**:
+
+        → Severity: `High` *(Alta)*
+
+    4. **Expression**:
+
+        → Expression: `min(/Template Network Switch by SNMP/cseSysMemoryUtilization,3m) > {$MEMORY.UTIL.HIGH}`
+
+        > **💡 Nota**: Se usa `min()` con un período de 3 minutos para evitar alertas por picos temporales de memoria.
+        >
+        > **Período de tiempo**: En este ejercicio usamos `3m` (3 minutos), pero en producción suele usarse `10m` (10 minutos) para evitar alertas por picos temporales y obtener una visión más precisa del uso de memoria a lo largo del tiempo.
+
+    5. **Description**:
+
+        → Description: `Utilización máxima de la memoria. Este trigger se activa cuando la utilización de la memoria en los últimos 3 minutos es mayor que {$MEMORY.UTIL.HIGH}. Esto indica un uso extremadamente elevado de la memoria. Se considera revisar el uso de la memoria, ya que este estado puede afectar seriamente el rendimiento del sistema y requiere atención inmediata. Es posible que el sistema tarde en responder. Es recomendable monitorear y ajustar la carga de trabajo para prevenir posibles problemas críticos.`
+
+    6. **Tags**:
+
+        - Name: `scope` | Value: `capacity`
+        - Name: `scope` | Value: `performance`
+
+    7. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
 ---
 
-> **💡 Nota importante:** Los triggers creados en el template se aplicarán automáticamente a todos los hosts que usen el template. Si necesitas modificar los umbrales para un host específico, puedes sobrescribir las macros a nivel de host en lugar de modificar el template.
+### **6.5.3. Configurar dependencia en el trigger de memoria (Warning)**
+
+1. Editar el trigger **"Warning memory utilization"**:
+
+    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> ubicar el trigger **'Warning memory utilization'** y hacer clic en él para editarlo.
+
+2. Configurar la dependencia:
+
+    - Ir a la pestaña <span style="color: violet;"><strong>Dependencies</strong></span>.
+
+    - Aquí se configuró la dependencia del trigger **"Warning memory utilization"** hacia el trigger **"Average memory utilization"** y ahora se configurará la dependencia del trigger **"Average memory utilization"** hacia el trigger **"High memory utilization"**.
+
+    - Hacer clic en <span style="color: blue;"><strong>Add</strong></span>.
+
+    - Seleccionar el trigger **"High memory utilization"** (el que acabamos de crear).
+
+    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
+
+
+---
+
+### **6.5.4. Configurar dependencia en el trigger de memoria (Average)**
+
+1. Editar el trigger **"Average memory utilization"**:
+
+    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> ubicar el trigger **'Average memory utilization'** y hacer clic en él para editarlo.
+
+2. Configurar la dependencia:
+
+    - Ir a la pestaña <span style="color: violet;"><strong>Dependencies</strong></span>.
+
+    - Hacer clic en <span style="color: blue;"><strong>Add</strong></span>.
+
+    - Seleccionar el trigger **"High memory utilization"** (el que acabamos de crear).
+
+    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
+
+---
+
+### **6.5.5. Verificar el comportamiento de las dependencias**
+
+1. Verificar los triggers creados en el host:
+
+    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar el host **"SW-Demo2"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>.
+    - Verificar que los triggers **"Warning memory utilization"**, **"Average memory utilization"** y **"High memory utilization"** aparezcan listados.
+    - Verificar que el trigger **"Warning memory utilization"** tenga configurada la dependencia hacia el trigger **"Average memory utilization"**.
+    - Verificar que el trigger **"Average memory utilization"** tenga configurada la dependencia hacia el trigger **"High memory utilization"**.
+
+2. Esperar **3 minutos** (tiempo configurado en los triggers) para que se actualicen los valores y se activen los triggers según sus condiciones.
+
+3. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Problems</strong></span> y observar el comportamiento de los triggers.
+
+    - Verificar que cuando se active el trigger High, el trigger Warning y Average se supriman automáticamente.
+    - Esto crea una jerarquía completa de alertas: Warning → Average → High, donde solo se muestra la alerta de mayor severidad.
+
+> **💡 Para hacer desaparecer las alertas:** Se puede subir los umbrales de las macros (`{$MEMORY.UTIL.WAR}`, `{$MEMORY.UTIL.MAX}`, `{$MEMORY.UTIL.HIGH}` o `{$CPU.UTIL.AVG}`) a valores más altos para que las condiciones de los triggers dejen de cumplirse. Se puede verificar los valores actuales en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span> filtrando por el host y revisando el valor del item **Memory utilization** o **CPU Utilization**.
+
+---
+
+> **💡 Nota importante:** Los triggers creados en el template se aplicarán automáticamente a todos los hosts que usen el template. Si se necesita modificar los umbrales para un host específico, se puede sobrescribir las macros a nivel de host en lugar de modificar el template.
 
 ---
 
