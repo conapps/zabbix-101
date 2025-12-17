@@ -60,7 +60,13 @@
 
 - Cómo acceder al **frontend web** y realizar login.
 - Recorrido general por la **interfaz gráfica**.
-- Secciones principales del menú y explicación de dashboards y vistas principales.
+- Secciones principales del menú:
+    - **Monitoring**: Dashboards, Problems, Hosts, Latest data, Maps, Discovery.
+    - **Services**: Configuración de servicios y SLA.
+    - **Inventory**: Gestión de inventario de activos.
+    - **Reports**: Reportes automáticos y información del sistema.
+    - **Configuration**: Hosts, Templates, Host Groups, Maintenance, Actions.
+    - **Administration**: Configuración general, Proxies, Authentication, Usuarios y roles.
 
 > 📋 [Ejercicio práctico 3.3 - Exploración del frontend](ejercicios/ejercicio-3.3.md)
 
@@ -168,6 +174,11 @@
 - Tipos de eventos: **Problem** y **Recovery**.
 - **Severity** (severidad) de problemas: *Information, Warning, Average, High, Disaster*.
 - Expresiones de trigger: ¿cómo definir umbrales y ventanas de tiempo?
+    - **Umbral simple**: `last(/Host/item) > valor`
+    - **Umbral con tiempo**: `avg(/Host/item,5m) > valor`
+    - **Umbral con margen de seguridad**: Problem y Recovery expressions personalizadas.
+    - **Sin datos**: `nodata(/Host/item,10m)=1`
+- **Buena práctica**: Usar dependencias entre triggers para evitar cascadas de alertas.
 
 > 📋 [Ejercicio práctico 6.4 - Configuración de triggers](ejercicios/ejercicio-6.4.md)
 
@@ -180,9 +191,20 @@
 ### <u>Conceptos clave</u>
 
 - Qué es una **acción** y para qué sirve.
+- **Flujo básico**: Trigger → Evento → Acción → Operaciones.
 - Condiciones y operaciones de las acciones.
-- Qué son los **Media Types** y cuáles admite Zabbix.
-- Configurar canales de notificación (correo, Telegram, Slack, etc.).
+- Las acciones sirven para:
+    - Notificar usuarios y grupos por diferentes canales.
+    - Ejecutar comandos remotos.
+    - Escalar notificaciones según la severidad.
+    - Ejecutar scripts personalizados.
+- Qué son los **Media Types** y cuáles admite Zabbix:
+    - Correo electrónico (E-mail).
+    - SMS.
+    - Webhooks (Slack, Telegram, MS Teams, Grafana OnCall).
+    - Scripts personalizados (AlertScripts).
+- **Tip**: Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
+- Personalización de mensajes de alerta para diferentes canales de mensajería.
 - Configurar un **usuario** con canal de notificación.
 - Crear una **acción** que envíe alertas automáticas.
 - Validar el envío de notificaciones personalizadas.
@@ -197,16 +219,24 @@
 
 ### <u>Conceptos clave</u>
 
-- Recolección de datos con **Zabbix Agent** y **Zabbix Proxy**.
-- Monitoreo **sin agente** (agentless) desde el **Zabbix Server**.
-- **Simple checks**: Ping (ICMP) y verificación de puertos.
-- **SNMP**: Monitoreo de dispositivos de red.
-- **HTTP**: Verificar disponibilidad de sitios y servicios web.
-- **IPMI, JMX y SSH**: Monitoreo de hardware y aplicaciones.
-- **ODBC**: Monitoreo de bases de datos.
-- **Java Monitoring**: JMX y aplicaciones Java.
-- **Virtualización**: Monitoreo de VMs, hipervisores y datastores.
-- Uso de **métricas personalizadas** y **scripts propios**.
+- **Recopilar métricas de cualquier fuente**: Dispositivos de red, servicios cloud, containers, VMs, archivos de registro, bases de datos, aplicaciones, servicios, sensores IoT, páginas web, APIs externas, NVIDIA GPUs.
+
+- **Métodos de recopilación de datos**:
+    - **Zabbix Agent**: Métricas detalladas del SO, aplicaciones y servicios. Ideal para CPU, memoria, disco, procesos, logs.
+    - **Zabbix Proxy**: Recolección en sucursales remotas. Útil para reducir carga del servidor, redes distribuidas o separadas por firewalls, ambientes multicliente.
+    - **Monitoreo sin agente (Agent-Less)**:
+        - **Simple checks**: ICMP (Ping) para disponibilidad básica, Puertos TCP para verificar servicios.
+        - **SSH / Telnet check**: Ejecución de comandos remotos.
+        - **ODBC check**: Monitoreo de bases de datos vía ODBC.
+        - **SNMP (v1, v2c, v3)**: Dispositivos de red, impresoras, firewalls.
+        - **SNMP traps**: Recibir alertas directamente desde dispositivos.
+        - **HTTP checks y monitoreo Web**: Disponibilidad de sitios web y APIs.
+        - **IPMI**: Monitoreo de hardware a nivel de placa base (sensores, temperatura, voltaje).
+        - **JMX**: Monitoreo de aplicaciones Java.
+        - **Virtualización**: VMware, Hyper-V, KVM, Proxmox.
+    - **Scripts y métricas personalizadas**: Bash, Python, JavaScript, consultas a APIs externas, adaptación a servicios específicos.
+
+- **Ventajas de combinar métodos**: Usar Agent para métricas detalladas, SNMP para equipos de red, HTTP checks para servicios web, scripts personalizados para casos especiales.
 
 > 📋 [Ejercicio práctico 8.4 - Monitoreo agent-less con ICMP, TCP y HTTP](ejercicios/ejercicio-8.4.md)
 
