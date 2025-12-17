@@ -284,7 +284,7 @@
 
         → Update interval: `2m`
 
-     11. **Value mapping**:
+    11. **Value mapping**:
 
         → Value mapping: Seleccionar `HTTP Status Codes` (el value mapping creado anteriormente)
 
