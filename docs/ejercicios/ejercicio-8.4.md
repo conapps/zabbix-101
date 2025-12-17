@@ -427,25 +427,11 @@
     - **TCP Port: 80 Check**: Debe mostrar `Up` si el puerto está abierto, o `Down` si no responde *(gracias al value mapping "Service Status" configurado, en lugar de ver `1` o `0`)*.
     - **HTTP Check - Website**: Debe mostrar el código de estado HTTP convertido a texto legible gracias al value mapping "HTTP Status Codes" (por ejemplo, `OK` para código 200, `Not Found` para código 404, `Internal Server Error` para código 500, etc.).
 
----
-
-## **10. Visualizar resultados en Graphs**
-
-1. Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Graphs</strong></span>.
-
-2. Filtrar por el host **"SRV-Demo-Web-Server"**.
-
-3. Crear un gráfico simple (opcional):
-
-    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar **"SRV-Demo-Web-Server"** → Pestaña <span style="color: violet;"><strong>Graphs</strong></span> → <span style="color: blue;"><strong>Create graph</strong></span>.
-    - Agregar los items **"ICMP Ping"**, **"TCP Port: 80 Check"** y **"HTTP Check - Website"** al gráfico.
-    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
-
-4. Visualizar el gráfico en <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Graphs</strong></span> para ver la evolución de los valores en el tiempo.
+5. Visualizar resultados de los items con Graphs.
 
 ---
 
-## **11. Solicitar al instructor que genere un problema**
+## **10. Solicitar al instructor que genere un problema**
 
 1. **Solicitar al instructor que genere un problema de conectividad**:
 
@@ -487,7 +473,7 @@ Este ejercicio práctico cubre la configuración de monitoreo **agent-less** en 
     - **TCP Port Check**: Verificación de disponibilidad de puertos TCP (con value mapping "Service Status").
     - **HTTP Check**: Monitoreo de disponibilidad de servicios web (con value mapping "HTTP Status Codes").
 5. **Configuración de trigger**: Se creó un trigger que alerta cuando el host no responde a ping ICMP.
-6. **Verificación**: Se verificó la recopilación de datos y la visualización en graphs y problems.
+6. **Verificación**: Se verificó la recopilación de datos y la visualización de graphs y problems.
 
 > **💡 Nota importante:** Los métodos agent-less son útiles cuando no se puede instalar un agente en el dispositivo monitoreado, pero proporcionan información más limitada que el monitoreo con agente. Para métricas detalladas del sistema operativo, se recomienda usar Zabbix Agent.
 
