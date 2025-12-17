@@ -918,7 +918,7 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
 
 - Flujo básico:
 
-    **Trigger → Evento → Acción → Operaciones**
+    **Trigger → Problema → Evento → Acción → Operaciones**
 - Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
 - Sirven para:
