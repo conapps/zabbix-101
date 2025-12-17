@@ -9,11 +9,11 @@
 
 El instructor mostrará cómo:
 
-1. **Configurar un Media Type**:
+1. **Mostrar la configuración de Media Types existentes**:
 
-    - Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span> → <span style="color: blue;"><strong>Create media type</strong></span>.
-    - Seleccionar el tipo: <strong>Email</strong>, <strong>Telegram</strong>, <strong>Slack</strong>, <strong>Webhook</strong> o <strong>Script</strong>.
-    - Completar la configuración requerida (servidores SMTP, tokens, URLs, etc.).
+    - Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Media types</strong></span>.
+    - Seleccionar algún Media Type: <strong>Email</strong>, <strong>Telegram</strong>, <strong>SMS</strong>, <strong>Slack</strong>, <strong>MS Teams</strong>.
+    - Ver configuraciones predefinidas.
     - Probar el envío de mensajes desde la opción <strong>Test</strong>.
 
 2. **Crear una Action**:

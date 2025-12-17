@@ -1061,31 +1061,9 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 
 ---
 
-### 8.4. Demo / **Ejercicio práctico**
+### **8.4. Ejercicio práctico**
 
-**Objetivo:** Configurar monitoreo por **Ping** y **HTTP** para validar la disponibilidad de un host y un servicio web.
-
-**<u>Pasos guiados</u>**
-
-1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>.
-2. Definir:
-    - Nombre del host.
-    - Dirección IP.
-    - Grupo de hosts.
-3. Agregar dos ítems:
-    - <strong>ICMP Ping</strong>:
-        - Tipo: Simple check.
-        - Key: `icmpping`.
-        - Update interval: `30s`.
-    - <strong>HTTP Check</strong>:
-        - Tipo: HTTP agent.
-        - URL: `https://ejemplo.com`.
-        - Update interval: `1m`.
-4. Guardar y esperar la recopilación de datos.
-5. Ir a **Monitoring → Latest Data** y verificar:
-    - Estado de conectividad por <strong>Ping</strong>.
-    - Código de respuesta y latencia del <strong>HTTP Check</strong>.
-6. Visualizar resultados en **Graphs** y **Problems**.
+> 📋 [Ejercicio práctico 8.4 - Monitoreo agent-less con ICMP, TCP y HTTP](ejercicios/ejercicio-8.4.md)
 
 ---
 

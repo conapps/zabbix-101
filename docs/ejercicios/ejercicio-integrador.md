@@ -564,12 +564,14 @@
 4. Verificar el **inventario del host**:
 
     - Verificar que los campos del inventario se hayan poblado automáticamente desde los items configurados:
+
         - **Name**: Debe estar tener el mismo valor que el item "System name".
         - **OS (full details)**: Debe estar tener el mismo valor que el item "System Description".
         - **Contact**: Debe estar tener el mismo valor que el item "System Contact".
         - **Location**: Debe estar tener el mismo valor que el item "System Location".
 
     - Se puede verificar de dos formas:
+
         - <span style="color: purple;"><strong>Inventory</strong></span> → <span style="color: violet;"><strong>Overview</strong></span> → **Resumen de datos de inventario** (vista general de todos los hosts).
         - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar el host **"SW-Demo2"** → Pestaña <span style="color: violet;"><strong>Inventory</strong></span> → **Información detallada de cada equipo** (vista específica del host).
 

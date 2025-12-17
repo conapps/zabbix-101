@@ -208,7 +208,7 @@
 - **Virtualización**: Monitoreo de VMs, hipervisores y datastores.
 - Uso de **métricas personalizadas** y **scripts propios**.
 
-→ **Demo  / ejercicio práctico**: Monitoreo por ping y chequeo HTTP.
+> 📋 [Ejercicio práctico 8.4 - Monitoreo agent-less con ICMP, TCP y HTTP](ejercicios/ejercicio-8.4.md)
 
 ---
 
