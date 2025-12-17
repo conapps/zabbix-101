@@ -775,9 +775,10 @@ Una **LLD rule** está formada por:
 
 ### **4. Avance de los siguientes temas**
 
-- Configuración de triggers y alertas.
-- Acciones y notificaciones automáticas.
-- Buenas prácticas de escalabilidad.
+- Configuración de **triggers** y **eventos**.
+- Automatización de **acciones** y **notificaciones**.
+- **Recopilación de datos (métricas)** con diferentes métodos de monitoreo.
+- **Buenas prácticas** de configuración y escalabilidad.
 - Integraciones con herramientas externas.
 - Ejercicio integrador final.
 
@@ -823,9 +824,11 @@ Una **LLD rule** está formada por:
 ### **4. Preparación para los siguientes temas**
 
 - Adelanto de los temas:
-    - Configuración de **triggers** y **eventos**.
-    - Automatización de **acciones** y **notificaciones**.
-    - Buenas prácticas de configuración y escalabilidad.
+    - **Módulo 6**: Configuración de **triggers** y **eventos**.
+    - **Módulo 7**: Automatización de **acciones** y **notificaciones**.
+    - **Módulo 8**: **Recopilación de datos (métricas)** con diferentes métodos de monitoreo.
+    - **Módulo 9**: **Buenas prácticas** de configuración y escalabilidad.
+    - **Módulo 10**: Roadmap y ecosistema Zabbix.
     - Ejercicio integrador final.
 
 ## **Módulo 6 –** <span style="color: green;">Triggers y eventos</span>
@@ -1305,16 +1308,9 @@ Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan vario
 
 ---
 
-### **9.8. Ejercicio práctico (opcional)**
+### **9.8. Ejercicio práctico**
 
-**Objetivo:** Reorganizar un conjunto de hosts aplicando buenas prácticas.
-
-**Pasos:**
-
-1. Crear **grupos de hosts** según servicio o cliente.
-2. Asignar **templates estándar** en lugar de ítems manuales.
-3. Configurar roles y permisos para un usuario de prueba.
-4. (Opcional) Simular la configuración de un proxy para un sitio remoto.
+> 📋 [Ejercicio práctico 9.8 - Organización de hosts y configuración de roles y permisos](ejercicios/ejercicio-9.8.md)
 
 ---
 
@@ -1476,7 +1472,7 @@ Grafana es uno de los complementos más potentes para **visualizar los datos de 
 - **Módulo 6** → Triggers y eventos.
 - **Módulo 7** → Acciones y notificaciones.
 - **Módulo 8** → Recopilación de datos (métricas).
-- **Módulo 9** → Buenas prácticas y escalabilidad.
+- **Módulo 9** → Buenas prácticas de configuración y escalabilidad.
 - **Módulo 10** → Roadmap y ecosistema Zabbix.
 
 >💡 Tip: Identificar qué funcionalidades podrían aplicarse en los entornos de cada participante.

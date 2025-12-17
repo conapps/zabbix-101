@@ -68,7 +68,7 @@
     - **Configuration**: Hosts, Templates, Host Groups, Maintenance, Actions.
     - **Administration**: Configuración general, Proxies, Authentication, Usuarios y roles.
 
-> 📋 [Ejercicio práctico 3.3 - Exploración del frontend](ejercicios/ejercicio-3.3.md)
+> 📋 [Ejercicio práctico - Exploración del frontend](ejercicios/ejercicio-3.3.md)
 
 ---
 
@@ -89,7 +89,7 @@
 - Cómo usar el **inventario** para gestionar información de los hosts.
 - Cómo verificar **gráficas**, **eventos** y **métricas**.
 
-> 📋 [Ejercicio práctico 4.8 - Agregar host y verificar métricas](ejercicios/ejercicio-4.8.md)
+> 📋 [Ejercicio práctico - Agregar host y verificar métricas](ejercicios/ejercicio-4.8.md)
 
 ---
 
@@ -105,7 +105,7 @@
 - Qué es **Low-Level Discovery (LLD)** y para qué se usa.
 - Creación de **reglas básicas de descubrimiento**.
 
-> 📋 [Ejercicio práctico 5.3 - Configuración de descubrimiento de interfaces de red](ejercicios/ejercicio-5.3.md)
+> 📋 [Ejercicio práctico - Configuración de descubrimiento de interfaces de red](ejercicios/ejercicio-5.3.md)
 ---
 
 ## **Módulo – [Ejercicio integrador](modulos-detallado.md#módulo--ejercicio-integrador)**
@@ -180,7 +180,7 @@
     - **Sin datos**: `nodata(/Host/item,10m)=1`
 - **Buena práctica**: Usar dependencias entre triggers para evitar cascadas de alertas.
 
-> 📋 [Ejercicio práctico 6.4 - Configuración de triggers](ejercicios/ejercicio-6.4.md)
+> 📋 [Ejercicio práctico - Configuración de triggers](ejercicios/ejercicio-6.4.md)
 
 ---
 
@@ -209,7 +209,7 @@
 - Crear una **acción** que envíe alertas automáticas.
 - Validar el envío de notificaciones personalizadas.
 
-> 📋 [Ejercicio práctico 7.3 - Configuración de notificaciones](ejercicios/ejercicio-7.3.md)
+> 📋 [Ejercicio práctico - Configuración de notificaciones](ejercicios/ejercicio-7.3.md)
 
 ---
 
@@ -238,7 +238,7 @@
 
 - **Ventajas de combinar métodos**: Usar Agent para métricas detalladas, SNMP para equipos de red, HTTP checks para servicios web, scripts personalizados para casos especiales.
 
-> 📋 [Ejercicio práctico 8.4 - Monitoreo agent-less con ICMP, TCP y HTTP](ejercicios/ejercicio-8.4.md)
+> 📋 [Ejercicio práctico - Monitoreo agent-less con ICMP, TCP y HTTP](ejercicios/ejercicio-8.4.md)
 
 ---
 
@@ -255,7 +255,7 @@
 - Establecer **nombres claros y consistentes**.
 - Estandarizar la configuración para simplificar la administración.
 
-→ **Ejercicio práctico (Opcional)**
+> 📋 [Ejercicio práctico - Organización de hosts y configuración de roles y permisos](ejercicios/ejercicio-9.8.md)
 
 ---
 
