@@ -140,7 +140,7 @@
         >
         > En este caso, usamos `Simple check` porque queremos monitorear la disponibilidad del host mediante ping ICMP sin necesidad de tener un agente instalado.
 
-        > **📚 Documentación oficial:** Para más detalles sobre Simple checks items, consulta [Zabbix - Simple checks items](https://www.zabbix.com/documentation/6.0/en/manual/config/items/itemtypes/simple_checks).
+        > **📚 Documentación oficial:** Para más detalles sobre Simple checks items, consulta [Zabbix - Simple checks items](https://www.zabbix.com/documentation/6.0/es/manual/config/items/itemtypes/simple_checks).
 
     3. **Key** *(parámetro obligatorio)*:
 
@@ -196,7 +196,7 @@
 
         → Type: `Simple check`
 
-        > **📚 Documentación oficial:** Para más detalles sobre Simple checks items, consulta [Zabbix - Simple checks items](https://www.zabbix.com/documentation/6.0/en/manual/config/items/itemtypes/simple_checks).
+        > **📚 Documentación oficial:** Para más detalles sobre Simple checks items, consulta [Zabbix - Simple checks items](https://www.zabbix.com/documentation/6.0/es/manual/config/items/itemtypes/simple_checks).
 
     3. **Key** *(parámetro obligatorio)*:
 

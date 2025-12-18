@@ -275,7 +275,9 @@
 - Comparativa con otras soluciones de monitoreo.
 - Novedades recientes y **roadmap de Zabbix??**
 
-→ **Ejercicio práctico (Opcional: Avanzado)**
+> **📹 Demostración Práctica:** de la API de Zabbix.
+
+> 📋 [Ejercicio práctico - Consultas básicas a la API de Zabbix](ejercicios/ejercicio-10.7.md)
 
 ---
 

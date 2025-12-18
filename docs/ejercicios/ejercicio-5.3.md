@@ -126,7 +126,7 @@
 
             → Key: `net.if.discovery`
 
-            > **📚 Documentación oficial:** Para más detalles sobre Descubrimiento de interfaces de red, consulta [Zabbix - Descubrimiento de interfaces de red](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/examples/network_interfaces).
+            > **📚 Documentación oficial:** Para más detalles sobre Descubrimiento de interfaces de red, consulta [Zabbix - Descubrimiento de interfaces de red](https://www.zabbix.com/documentation/6.0/es/manual/discovery/low_level_discovery/examples/network_interfaces).
 
         4. Identificador de objetos SNMP *(parámetro obligatorio)*
 
@@ -187,7 +187,7 @@
         solo descubrirá las entidades pero no crea los elementos de 
         monitoreo automáticamente.
 
-        > **📚 Documentación oficial:** Para más detalles sobre Discovery rules, consulta [Zabbix - Discovery rules](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery).
+        > **📚 Documentación oficial:** Para más detalles sobre Discovery rules, consulta [Zabbix - Discovery rules](https://www.zabbix.com/documentation/6.0/es/manual/discovery/low_level_discovery).
 
 4. Crear **item prototypes** para monitorear las interfaces descubiertas:
 
@@ -253,7 +253,7 @@
 
         11. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-        > **📚 Documentación oficial:** Para más detalles sobre Item prototypes, consulta [Zabbix - Item prototypes](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/item_prototypes).
+        > **📚 Documentación oficial:** Para más detalles sobre Item prototypes, consulta [Zabbix - Item prototypes](https://www.zabbix.com/documentation/6.0/es/manual/discovery/low_level_discovery/item_prototypes).
 
     3. Configurar el segundo item prototype:
 

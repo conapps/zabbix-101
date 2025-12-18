@@ -610,7 +610,7 @@ Las **macros** permiten definir variables reutilizables y centralizar configurac
     - Por template.
     - Por host.
 
-> **📚 Documentación oficial:** Para más detalles sobre macros y variables, consulta [Zabbix - Macros y variables](https://www.zabbix.com/documentation/6.0/en/manual/config/macros).
+> **📚 Documentación oficial:** Para más detalles sobre macros y variables, consulta [Zabbix - Macros y variables](https://www.zabbix.com/documentation/6.0/es/manual/config/macros).
 
 ---
 
@@ -659,7 +659,7 @@ Zabbix permite **analizar métricas en tiempo real** y acceder al historial comp
     - Etiquetas (tags)
     - Gráfico o Historial
 
-> **📚 Documentación oficial:** Para más detalles sobre Latest Data, consulta [Zabbix - Latest Data](https://www.zabbix.com/documentation/6.0/en/manual/web_interface/frontend_sections/monitoring/latest_data).
+> **📚 Documentación oficial:** Para más detalles sobre Latest Data, consulta [Zabbix - Latest Data](https://www.zabbix.com/documentation/6.0/es/manual/web_interface/frontend_sections/monitoring/latest_data).
 
 **5.1.2. <span style="color: violet;"><strong>Graphs</strong></span>** *(Gráficos)*
 
@@ -685,7 +685,7 @@ Los gráficos permiten **visualizar tendencias históricas** y analizar el compo
     - Confirmar y resolver alertas.
     - Analizar la causa raíz.
 
-> **📚 Documentación oficial:** Para más detalles sobre Eventos y problemas, consulta [Zabbix - Eventos y problemas](https://www.zabbix.com/documentation/6.0/en/manual/web_interface/frontend_sections/monitoring/problems).
+> **📚 Documentación oficial:** Para más detalles sobre Eventos y problemas, consulta [Zabbix - Eventos y problemas](https://www.zabbix.com/documentation/6.0/es/manual/web_interface/frontend_sections/monitoring/problems).
 
 ---
 
@@ -727,7 +727,7 @@ Una **LLD rule** está formada por:
 
 > **❓ Nota:** LLD es ideal para monitorear grandes infraestructuras con recursos que cambian frecuentemente.
 
-> **📚 Documentación oficial:** Para más detalles sobre Low-Level Discovery, consulta [Zabbix - Low-Level Discovery](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery).
+> **📚 Documentación oficial:** Para más detalles sobre Low-Level Discovery, consulta [Zabbix - Low-Level Discovery](https://www.zabbix.com/documentation/6.0/es/manual/discovery/low_level_discovery).
 
 ---
 
@@ -941,7 +941,7 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
     </div>
     </div>
 
-> **📚 Documentación oficial:** Para más detalles sobre acciones, consulta [Zabbix - Acciones](https://www.zabbix.com/documentation/6.0/en/manual/config/notifications/action).
+> **📚 Documentación oficial:** Para más detalles sobre acciones, consulta [Zabbix - Acciones](https://www.zabbix.com/documentation/6.0/es/manual/config/notifications/action).
 
 ---
 
@@ -1196,7 +1196,7 @@ Beneficios:
 - <strong>Control granular</strong> de accesos.
 - Simplifica la delegación de tareas.
 
-> **📚 Documentación oficial:** Para más detalles sobre Grupos de usuarios y roles de usuario, consulta [Zabbix - Grupos de usuarios y roles de usuario](https://www.zabbix.com/documentation/6.0/en/manual/config/users_and_usergroups).
+> **📚 Documentación oficial:** Para más detalles sobre Grupos de usuarios y roles de usuario, consulta [Zabbix - Grupos de usuarios y roles de usuario](https://www.zabbix.com/documentation/6.0/es/manual/config/users_and_usergroups).
 
 > **💡 Tip:** Zabbix proporciona monitoreo para entornos de múltiples clientes, se puede implementar Zabbix como el punto central de monitoreo para múltiples organizaciones.
 >
@@ -1336,21 +1336,64 @@ Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras 
 
 <u><strong>Ejemplo práctico:</strong></u>
 
-- Hacer una **consulta básica** a la API para **listar los hosts monitoreados** mediante cURL:
+- Hacer una **consulta básica** a la API para consultar la **versión actual instalada** de Zabbix mediante solicitudes HTTP POST:
+
+    ```jsx
+        POST https://alertasX.conatel-lab.conatel.cloud/api_jsonrpc.php HTTP/1.1
+        Content-Type: application/json-rpc
+        {
+            "jsonrpc": "2.0",               # Versión de la API
+            "method": "apiinfo.version",    # Método para consultar la versión actual instalada
+            "params": {},                   # Parámetros para el método
+            "auth": null,                   # No requiere autenticación para consultar la versión
+            "id": 1                         # ID de la solicitud
+        }
+    ```
+
+    **Salida esperada:**
+    ```json
+    {"jsonrpc":"2.0","result":"6.0.0","id":1}
+    ```
+
+    > **💡 Nota:** La documentación oficial muestra el formato HTTP POST para referencia, pero en la práctica se usa cURL o herramientas similares. El método `apiinfo.version` no requiere autenticación.
+
+- Hacer una **consulta básica** a la API para **listar los hosts monitoreados** de Zabbix mediante cURL:
 
     ```jsx
     curl -X POST -H "Content-Type: application/json" \
     -d '{
-    "jsonrpc": "2.0",
-    "method": "host.get",
-    "params": {"output": ["hostid","host","name"]},
-    "auth": "TOKEN_API",
-    "id": 1
+        "jsonrpc": "2.0",               # Versión de la API
+        "method": "host.get",           # Método para consultar los hosts monitoreados
+        "params": {                     # Parámetros para el método
+            "output": [                 # Columnas de salida
+                "hostid",               # Columna de salida para el ID del host
+                "host"                  # Columna de salida para el nombre del host
+            ],
+            "filter": { "status": 0 }   # Filtro para obtener solo los hosts activos
+        },
+        "auth": "TOKEN_API",            # Token de autenticación para la API
+        "id": 2                         # ID de la solicitud
     }' \
-    [https://zabbix.local/api_jsonrpc.php](https://zabbix.local/api_jsonrpc.php)
+    https://alertasX.conatel-lab.conatel.cloud/api_jsonrpc.php
+    ```
+
+    **Salida esperada:**
+    ```json
+    {
+        "jsonrpc": "2.0",
+        "result": [
+            {"hostid": "11111", "host": "Zabbix server"},
+            {"hostid": "11112", "host": "SW-Demo1"},
+            {"hostid": "11113", "host": "SW-Demo2"}
+        ],
+        "id": 2
+    }
     ```
 
 > **📚 Documentación oficial:** Para más detalles sobre API de Zabbix, consulta [Zabbix - API de Zabbix](https://www.zabbix.com/documentation/6.0/es/manual/api).
+
+> **📹 Demostración:** El instructor realizará una demostración práctica de la API de Zabbix durante esta sección.
+
 ---
 
 ### 10.2. Integración con Grafana
@@ -1364,19 +1407,12 @@ Grafana es uno de los complementos más potentes para **visualizar los datos de 
 - Permite combinar datos de Zabbix con otras fuentes (Prometheus, InfluxDB, Elastic, etc.).
 - Soporta alertas y anotaciones sincronizadas.
 
-<u><strong>Ejemplo práctico:</strong></u>
+> **💡 Nota:** Durante el [ejercicio 6.4](ejercicios/ejercicio-6.4.md) ya se utilizaron dashboards preconfigurados de Grafana conectados a Zabbix para visualizar problemas, equipos de networking y servidores.
 
-1. Mostrar un **dashboard en Grafana** conectado a Zabbix.
-2. Comparar las visualizaciones con los dashboards nativos de Zabbix.
-3. Crear rápidamente un gráfico con métricas de CPU y RAM.
-
-- Instalar el **Zabbix Data Source Plugin** en Grafana.
-- Configurar la conexión al **Zabbix Server**.
-- Crear un dashboard con:
-    - Uso de **CPU**.
-    - Memoria **RAM**.
-    - Latencia de red.
-- Comparar con dashboards nativos de Zabbix.
+> **📹 Demostración:** El instructor realizará una demostración práctica mostrando:
+> - Los dashboards de Grafana preconfigurados utilizados en el ejercicio 6.4.
+> - Comparación de visualizaciones entre Grafana y los dashboards nativos de Zabbix.
+> - Capacidades avanzadas de visualización y personalización disponibles en Grafana.
 
 > **📚 Documentación oficial:** Para más detalles sobre Integración con Grafana, consulta [Zabbix - Integración con Grafana](https://www.zabbix.com/la/integrations/grafana).
 
@@ -1393,7 +1429,7 @@ Grafana es uno de los complementos más potentes para **visualizar los datos de 
 
 ### 10.4. Extensiones y scripts de la comunidad
 
-- Librerías y plugins disponibles en Zabbix Share.
+- Librerías y plugins disponibles en [Zabbix Share](https://www.zabbix.com/la/integrations).
 - Scripts para chequeos especiales: bases de datos, APIs externas, contenedores, etc.
 
 **Ejemplos prácticos:**
@@ -1405,42 +1441,101 @@ Grafana es uno de los complementos más potentes para **visualizar los datos de 
 
 ---
 
-### 10.5. Zabbix vs. otras herramientas de monitoreo
+### 10.5. Cuándo elegir Zabbix vs. otras herramientas de monitoreo
 
- | Característica | **Zabbix** | **Prometheus** | **Nagios** |
- | --- | --- | --- | --- |
- | Licencia | Open Source | Open Source | Open Source |
- | Visualización | Nativa + Grafana | Grafana | Limitada |
- | Escalabilidad | Muy alta | Alta | Media |
- | Alertas | Nativas, flexibles | Requiere configuración | Bajas |
- | Integraciones | Amplias | Muy buenas | Limitadas |
+> **💡 Nota:** Para una comparativa técnica detallada, consulta la sección [1.5. Comparativa con otras soluciones](#15-comparativa-con-otras-soluciones) del Módulo 1.
 
- **Conclusión:** Zabbix ofrece un **ecosistema más completo** para empresas, mientras que Prometheus suele elegirse para entornos **cloud-native** y Nagios para **monitoreo básico**.
+Esta sección se enfoca en **decisiones estratégicas** sobre cuándo elegir cada herramienta según el contexto y necesidades del proyecto:
+
+**<u>Cuándo elegir Zabbix:</u>**
+- Necesitas un **ecosistema completo** con configuración, alertas y visualización integradas.
+- Requieres **monitoreo empresarial** con alta escalabilidad (miles de hosts).
+- Buscas **facilidad de mantenimiento** con interfaz gráfica intuitiva.
+- Necesitas **monitoreo heterogéneo** (servidores, redes, aplicaciones, IoT) en una sola plataforma.
+- Prefieres una solución **Open Source gratuita** con soporte comercial disponible.
+
+**<u>Cuándo elegir Prometheus:</u>**
+- Trabajas en entornos **cloud-native** (Kubernetes, contenedores).
+- Necesitas **almacenamiento de métricas** optimizado para series temporales.
+- Prefieres un modelo de **pull** (Prometheus consulta a los endpoints) vs push.
+- Buscas integración profunda con el **ecosistema Cloud Native Computing Foundation (CNCF)**.
+
+**<u>Cuándo elegir Nagios:</u>**
+- Requieres un monitoreo **muy básico** con necesidades simples.
+- Tienes sistemas **legacy** que ya usan Nagios.
+- Prefieres una solución **ultra-ligera** con mínimo overhead.
+- Necesitas **customización extrema** mediante scripts personalizados.
+
+**Conclusión:** Zabbix ofrece un **ecosistema más completo** para empresas que necesitan monitoreo integral, mientras que Prometheus suele elegirse para entornos **cloud-native** y Nagios para **monitoreo básico o legacy**.
 
 
 ### **10.6. Roadmap y novedades**
 
-- Mejoras recientes en **Zabbix 7.0**.
-    - Mejoras de rendimiento.
-    - Dashboards más dinámicos.
-    - Integraciones cloud nativas.
-- **Ciclo de versiones**:
-    - Cada año y medio se lanza una nueva versión LTS (soporte prolongado).
-    - Cada 6 meses se lanza una versión principal con funciones nuevas y destacadas.
-    - Los parches/correcciones de errores se publican mensualmente.
+#### **Mejoras recientes en Zabbix**
+
+- **Mejoras de rendimiento**: Optimizaciones en el procesamiento de datos y consultas a la base de datos.
+- **Dashboards más dinámicos**: Nuevas opciones de visualización y personalización de widgets.
+- **Integraciones cloud nativas**: Mejor soporte para entornos cloud y contenedores.
+- **Mejoras en la API**: Nuevas funciones y endpoints para automatización.
+
+### Política de lanzamiento y ciclo de vida de Zabbix
+
+#### <u><strong>Ciclo de versiones de Zabbix</strong></u>
+
+Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y soporte a largo plazo:
+
+- **Versiones LTS (Long Term Support)**:
+    - Se lanzan aproximadamente cada **18 meses** (1.5 años).
+    - Reciben **soporte completo durante 3 años** (actualizaciones de funciones + correcciones de seguridad) y **soporte limitado durante 2 años adicionales** (solo correcciones críticas) → total: **5 años de soporte**.
+    - Ideales para entornos de producción que requieren estabilidad y soporte prolongado.
+    ![zabbix_version_lts.png](imagenes/zabbix_version_lts.png)
+
+- **Versiones estándar**:
+    - Se lanzan aproximadamente cada **6 meses** entre versiones LTS.
+    - Reciben **soporte completo durante 6 meses** (hasta la próxima versión estándar) y **soporte limitado durante 6 meses adicionales** → total: **12 meses de soporte**.
+    - Incluyen nuevas funcionalidades y mejoras significativas.
+    ![zabbix_version_standard.png](imagenes/zabbix_version_standard.png)
+
+- **Ritmo de liberación**:
+    - 2 versiones estándar entre cada versión LTS (aproximadamente cada 6 meses).
+    - Todas las plataformas de distribución se actualizaron dentro de las 24 horas posteriores al lanzamiento.
+    - Los parches de seguridad y correcciones de errores se publican **mensualmente** para todas las versiones soportadas.
+    ![zabbix_version_ritmodeliberacion.png](imagenes/zabbix_version_ritmodeliberacion.png)
+
+#### <u><strong>Versiones actualmente soportadas</strong></u>
+
+| Versión | Fecha de lanzamiento | Fin de soporte completo | Fin de soporte limitado |
+|---------|---------------------|------------------------|------------------------|
+| **Zabbix 7.4** | Julio 1, 2025 | Hasta 8.0 LTS | Q3 2026 |
+| **Zabbix 7.2** | Diciembre 10, 2024 | Junio 30, 2025 | Diciembre 31, 2025 |
+| **Zabbix 7.0 LTS** | Junio 4, 2024 | Junio 30, 2027 | Junio 30, 2029 |
+| **Zabbix 6.0 LTS** | Febrero 8, 2022 | Febrero 28, 2025 | Febrero 28, 2027 |
+
+#### **Versiones planificadas**
+
+| Versión | Fecha de lanzamiento planificada | Fin de soporte completo | Fin de soporte limitado |
+|---------|--------------------------------|------------------------|------------------------|
+| **Zabbix 8.0 LTS** | Q1 2026 | Q4 2028 | Q4 2030 |
+| **Zabbix 8.2** | Q3 2026 | Q1 2027 | Q3 2027 |
+
+> **📚 Referencia oficial:** Para información detallada sobre la política de ciclo de vida, sistemas operativos compatibles, arquitecturas soportadas y distribución del software, consulta la [Zabbix Roadmap](https://www.zabbix.com/la/roadmap) y la [Política de lanzamiento y ciclo de vida de Zabbix](https://www.zabbix.com/la/life_cycle_and_release_policy).
+
+#### **Tipos de soporte**
+
+- **Soporte completo**: Incluye nuevas funcionalidades, mejoras, correcciones de errores y parches de seguridad.
+- **Soporte limitado**: Solo incluye correcciones críticas de errores y parches de seguridad. No se agregan nuevas funcionalidades.
+
+#### **Recomendaciones de actualización**
+
+- Para **entornos de producción críticos**: Usa versiones **LTS** para garantizar soporte a largo plazo.
+- Para **probar nuevas funcionalidades**: Considera versiones estándar, pero planifica la migración a LTS.
+- **Planifica las actualizaciones** con anticipación, especialmente cuando una versión LTS se acerca al fin de su soporte.
 
 ---
 
 ### **10.7. Ejercicio práctico (Opcional: Avanzado)**
 
-**Objetivo:** Consultar la **API de Zabbix** para obtener la lista de hosts y visualizar sus métricas en Grafana.
-
-**<u>Pasos guiados</u>**
-
-1. Generar un **API Token** en <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>API tokens</strong></span>.
-2. Probar una **consulta básica** a la API para listar hosts.
-3. Configurar un **data source** de Zabbix en Grafana.
-4. Crear un dashboard con métricas de CPU y RAM.
+> 📋 [Ejercicio práctico 10.7 - Consultas básicas a la API de Zabbix](ejercicios/ejercicio-10.7.md)
 
 ---
 

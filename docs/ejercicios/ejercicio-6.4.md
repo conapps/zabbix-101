@@ -118,7 +118,7 @@
 
     9. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
-    > **📚 Documentación oficial:** Para más detalles sobre Triggers prototypes, consulta [Zabbix - Triggers prototypes](https://www.zabbix.com/documentation/6.0/en/manual/discovery/low_level_discovery/trigger_prototypes).
+    > **📚 Documentación oficial:** Para más detalles sobre Triggers prototypes, consulta [Zabbix - Triggers prototypes](https://www.zabbix.com/documentation/6.0/es/manual/discovery/low_level_discovery/trigger_prototypes).
 
 ---
 

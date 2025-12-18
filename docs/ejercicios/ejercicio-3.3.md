@@ -22,7 +22,7 @@
         - Graphs → Ver los gráficos del host.
         - Dashboards → Ver los dashboards del host.
 
-    > **📚 Documentación oficial:** Para más detalles sobre Hosts, consulta [Zabbix - Hosts](https://www.zabbix.com/documentation/6.0/en/manual/web_interface/frontend_sections/monitoring/hosts).
+    > **📚 Documentación oficial:** Para más detalles sobre Hosts, consulta [Zabbix - Hosts](https://www.zabbix.com/documentation/6.0/es/manual/web_interface/frontend_sections/monitoring/hosts).
 
 3. Usar el icono de búsqueda 🔍 (ubicado en la **esquina superior izquierda, debajo del logo de Zabbix**) para buscar **"Zabbix server"** y explorar en <span style="color: violet;"><strong>Hosts</strong></span>:
 

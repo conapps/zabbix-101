@@ -60,13 +60,14 @@ Documentación completa y detallada de todos los módulos, incluyendo:
 - **70% práctica** - Ejercicios guiados y casos reales
 - **30% teoría** - Conceptos fundamentales y mejores prácticas
 - **Demos en vivo** - Visualización de funcionalidades
-- **Ejercicio integrador** - Aplicación práctica de conocimientos
+- **Ejercicios prácticos** - Aplicación práctica de conocimientos
 
 ## 📦 Recursos
 
 - **Imágenes y diagramas**: Disponibles en la carpeta [`imagenes/`](imagenes/)
-- **Templates predefinidos**: Para uso en ejercicios prácticos
+- **Templates predefinidos**: Para uso en ejercicios prácticos.
 - **Material complementario**: Referencias y documentación adicional
+- **Tips y trucos**: Consejos y recomendaciones para realizar los ejercicios prácticos.
 
 ## 🚀 Inicio Rápido
 
@@ -76,9 +77,10 @@ Documentación completa y detallada de todos los módulos, incluyendo:
 
 ## 📝 Notas
 
-- Este workshop está diseñado para participantes con conocimientos básicos de administración de sistemas
-- Se recomienda tener acceso a un entorno de laboratorio con Zabbix instalado
-- Los ejercicios prácticos son guiados y pueden adaptarse según el nivel del grupo
+- Este workshop está diseñado para participantes con conocimientos básicos de administración de sistemas.
+- Se proporciona un entorno de laboratorio con Zabbix instalado para realizar los ejercicios prácticos.
+- Se proporciona host y templates predefinidos para realizar los ejercicios prácticos.
+- Los ejercicios prácticos son guiados y pueden adaptarse según el nivel del grupo.
 
 ---
 
