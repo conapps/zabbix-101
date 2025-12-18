@@ -1561,9 +1561,9 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
 
 > 📋 [Ejercicio final - Monitoreo integral de infraestructura](ejercicios/ejercicio-final.md)
 
-<!--
+
 > 💡 [Ejercicio final - Monitoreo integral de infraestructura (Solución completa)](ejercicios/ejercicio-final-solucion.md)
--->
+
 
 ---
 

@@ -103,6 +103,8 @@ Infraestructura
         └── SW-Demo3
 ```
 
+> Siguiendo las pŕacticas que se realizaron en [ejercicio 9.8](ejercicio-9.8.md).
+
 **Tags sugeridos para aplicar:**
 
 - `component` *(ej: `web-server,router,switch`)*
@@ -115,14 +117,14 @@ Infraestructura
 
 ## **3. Verificación y mejora de triggers existentes**
 
-**Objetivo**: Revisar los triggers configurados en ejercicios anteriores y asegurar que estén correctamente organizados y optimizados.
+**Objetivo**: Revisar los triggers configurados en ejercicios anteriores (o si se siguieron las buenas prácticas de los templates) y asegurar que estén correctamente organizados y optimizados.
 
 **Tareas:**
 
 - *Revisar los triggers* existentes de los ejercicios anteriores:
   - Triggers del [ejercicio 8.4](ejercicio-8.4.md) (icmp).
   - Triggers del [ejercicio 6.4](ejercicio-6.4.md) (interfaces, CPU, memoria).
-- **Completar las 3 severidades (Warning, Average, High) con dependencias** para cada tipo de problema:
+- **Completar las 3 severidades (Warning, Average, High) con dependencias** para cada tipo de problema de los templates:
   - **ICMP Ping**: Tiene un trigger High con expresión `last(...)=0` → Modificar severidad a **Warning**, crear trigger **Average** con `last(...#2)=0`, y crear trigger **High** con expresión más robusta `max(...#3)=0`, configurando dependencias (Warning → Average → High).
   - **Memoria**: Ya tienen Warning y Average → Crear trigger **High** y configurar dependencias (Warning → Average → High).
   - **CPU**: Solo tienen Average → Crear triggers **Warning** y **High**, y configurar dependencias (Warning → Average → High).
@@ -286,9 +288,9 @@ Al finalizar este ejercicio, habrás demostrado:
 
 ---
 
-<!--
+
 > **💡 ¿Necesitas ayuda?**
 > Si después de intentar resolver el ejercicio necesitas consultar la solución detallada, puedes acceder a: [Ejercicio final - Monitoreo integral de infraestructura (Solución completa)](ejercicios/ejercicio-final-solucion.md).
--->
+
 
 ---
