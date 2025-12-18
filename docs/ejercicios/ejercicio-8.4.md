@@ -581,4 +581,3 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 </div>
 
 </details>
-

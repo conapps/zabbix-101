@@ -10,6 +10,22 @@
 
 **Objetivo**: Crear un token de API para autenticarse en las solicitudes a la API de Zabbix.
 
+> **💡 ¿Qué es un API Token?**
+>
+> Un **API Token** (también llamado "token de autenticación") es una cadena de caracteres única y secreta que se utiliza para autenticarse en las solicitudes a la API de Zabbix sin necesidad de proporcionar usuario y contraseña en cada petición. Los tokens ofrecen varias ventajas:
+>
+> - **Seguridad**: Permiten autenticación sin exponer credenciales de usuario en cada solicitud.
+> - **Control de acceso**: Se pueden asociar a usuarios específicos y tienen los mismos permisos que el usuario asociado.
+> - **Gestión**: Se pueden revocar individualmente sin afectar otras aplicaciones o scripts.
+> - **Expiración**: Se pueden configurar con fechas de expiración para mayor seguridad.
+> - **Trazabilidad**: Cada token está asociado a un usuario, lo que permite auditar quién realizó cada operación.
+>
+> Los tokens son especialmente útiles para:
+> - Scripts de automatización que consultan o modifican datos en Zabbix.
+> - Integraciones con sistemas externos.
+> - Aplicaciones que necesitan acceso programático a Zabbix.
+> - Items HTTP Agent que consultan la propia API de Zabbix.
+
 1. Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>General</strong></span> → <span style="color: violet;"><strong>API tokens</strong></span> → <span style="color: blue;"><strong>Create API token</strong></span>
 
 2. Configurar el token:

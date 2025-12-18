@@ -283,7 +283,25 @@
 
 ## **Módulo – [Ejercicio final: monitoreo completo](modulos-detallado.md#módulo--ejercicio-final-monitoreo-completo)**
 
-**Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
+**Objetivo:** Integrar todos los conceptos aprendidos a lo largo del workshop para configurar y verificar un monitoreo completo de una infraestructura real, aplicando buenas prácticas y demostrando la capacidad de analizar problemas.
+
+**Tareas del ejercicio:**
+- Revisar y organizar la infraestructura existente configurada en ejercicios anteriores.
+- Crear una **estructura jerárquica de grupos de hosts** que refleje la arquitectura real.
+- Mover los hosts existentes a los grupos apropiados.
+- **Aplicar tags** consistentes a los hosts para facilitar el filtrado y la organización.
+- **Completar triggers con múltiples severidades y dependencias** para cada tipo de problema:
+  - Modificar triggers existentes y crear triggers adicionales con diferentes expresiones robustas.
+  - Configurar dependencias entre triggers para evitar alertas redundantes.
+  - Crear triggers para diferentes estados y umbrales.
+- Agregar tags a los triggers para mejor categorización y filtrado.
+- Verificar y actualizar acciones existentes para reflejar la nueva organización.
+- **Crear acciones nuevas** con diferentes condiciones utilizando grupos de hosts, severidades y tags.
+- **Configurar permisos de grupos de hosts** en grupos de usuarios para que las acciones funcionen correctamente.
+- Configurar período de mantenimiento (opcional) para suprimir alertas durante mantenimientos planificados.
+- Realizar verificación integral: estado de hosts, problemas activos, recopilación de métricas, información del sistema.
+- Simular y analizar un incidente en tiempo real (con instructor).
+- Validar el flujo completo desde la recopilación de datos hasta la notificación de problemas.
 
 > 📋 [Ejercicio final - Monitoreo integral de infraestructura](ejercicios/ejercicio-final.md)
 
