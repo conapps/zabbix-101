@@ -151,10 +151,12 @@ Internet
 1. **Agregar tags al host SRV-Demo-Web-Server**:
 
     1. Editar el host `SRV-Demo-Web-Server`
+
     2. En la pestaña <span style="color: violet;"><strong>Tags</strong></span>, agregar:
         - Name: `component` | Value: `web-server`
         - Name: `environment` | Value: `production`
         - Name: `os` | Value: `linux`
+
     3. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 2. **Agregar tags a los switches** (múltiples hosts con los mismos tags):
@@ -168,21 +170,27 @@ Internet
     **Opción 1: Actualización masiva (recomendado para múltiples hosts)**
 
     1. Seleccionar ambos hosts `SW-Demo2` y `SW-Demo3` (mantener presionada la tecla Ctrl/Cmd y hacer clic en cada host)
+
     2. Hacer clic en <span style="color: blue;"><strong>Mass update</strong></span> (actualización masiva)
+
     3. En la pestaña **Tags**:
+
         → Tildar la opción **Tags** → Agregar los tags:
         - Name: `component` | Value: `network-switch`
         - Name: `vendor` | Value: `cisco`
         - Name: `model` | Value: `nexus-9000`
+
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
     **Opción 2: Edición individual (si prefieres hacerlo uno por uno)**
 
     1. Editar el host `SW-Demo2`
+
     2. En la pestaña <span style="color: violet;"><strong>Tags</strong></span>, agregar:
         - Name: `component` | Value: `network-switch`
         - Name: `vendor` | Value: `cisco`
         - Name: `model` | Value: `nexus-9000`
+
     3. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
     4. Repetir los pasos 1-3 para `SW-Demo3` con los mismos tags
@@ -204,10 +212,14 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 2. Editar el trigger **"Unavailable by ICMP ping"**:
 
     1. Cambiar **Severity** de `High` a `Warning`
+
     2. **Name**: Cambiar a `Unavailable by ICMP ping (Warning)` *(opcional, pero recomendado para claridad)*
+
     3. Verificar que la **Expression** sea: `last(/SRV-Demo-Web-Server/icmpping)=0`
+
     4. En la pestaña <span style="color: violet;"><strong>Tags</strong></span>, agregar (si no lo tiene):
         - Name: `scope` | Value: `availability`
+
     5. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 #### **3.1.2. Crear trigger Average para ICMP Ping**
@@ -551,13 +563,17 @@ Verificar que todos los triggers tengan tags apropiados:
 3. **Actualizar condiciones de la acción** (si es necesario):
 
     1. Editar la acción `Notificar problemas de red y sistema`
+
     2. Revisar las condiciones configuradas en la pestaña <span style="color: violet;"><strong>Conditions</strong></span>
+
     3. Actualizar para incluir los nuevos grupos:
+
         - Si tenía condición `Host groups` → `equals` → `demo`, actualizar o agregar:
         - Condición 1: `Host groups` → `equals` → `Infraestructura` (para incluir todos los subgrupos)
         - O agregar condiciones separadas para cada subgrupo:
           - `Host groups` → `equals` → `Infraestructura/Web Servers`
           - `Host groups` → `equals` → `Infraestructura/Network Devices`
+
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span> si se hicieron cambios
 
 ### **4.2. Crear acción para alertas críticas en servidores web**
