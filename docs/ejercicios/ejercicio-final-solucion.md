@@ -53,11 +53,13 @@ Internet
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>
 
 2. Identificar los siguientes hosts configurados en ejercicios anteriores:
+
    - `SRV-Demo-Web-Server` (configurado en [ejercicio 8.4](ejercicio-8.4.md))
    - `SW-Demo2` (configurado en [ejercicio integrador](ejercicio-integrador.md))
    - `SW-Demo3` (configurado en [ejercicio 9.8](ejercicio-9.8.md))
 
 3. Para cada host, verificar:
+
    - Los grupos a los que pertenece
    - Los templates aplicados
    - El estado de disponibilidad
@@ -76,16 +78,19 @@ Internet
 2. Crear los siguientes grupos en orden:
 
     1. **Grupo principal "Infraestructura"**:
-        → Name: `Infraestructura`
-        → <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+        - Name: `Infraestructura`
+        - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     2. **Subgrupo "Web Servers"**:
-        → Name: `Infraestructura/Web Servers`
-        → <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+        - Name: `Infraestructura/Web Servers`
+        - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
     3. **Subgrupo "Network Devices"**:
-        → Name: `Infraestructura/Network Devices`
-        → <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+        - Name: `Infraestructura/Network Devices`
+        - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
 ### **2.2. Mover hosts a los grupos apropiados**
 
@@ -94,10 +99,15 @@ Internet
 2. **Mover SRV-Demo-Web-Server**:
 
     1. Seleccionar el host `SRV-Demo-Web-Server`
+
     2. Hacer clic para editarlo
+
     3. En la pestaña <span style="color: violet;"><strong>Groups</strong></span>:
+
         → Quitar el grupo `demo` (o mantenerlo si es necesario)
+
         → Agregar el grupo `Infraestructura/Web Servers`
+
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 3. **Mover SW-Demo2 y SW-Demo3** (múltiples hosts con la misma configuración):
@@ -111,18 +121,27 @@ Internet
     **Opción 1: Actualización masiva (recomendado para múltiples hosts)**
 
     1. Seleccionar ambos hosts `SW-Demo2` y `SW-Demo3` (mantener presionada la tecla Ctrl/Cmd y hacer clic en cada host)
+
     2. Hacer clic en <span style="color: blue;"><strong>Mass update</strong></span> (actualización masiva)
+
     3. En la pestaña **Host**:
+
         → Tildar la opción **Host groups** → <span style="color: blue;"><strong>Add</strong> (Agregar)</span> y buscar y seleccionar el grupo `Infraestructura/Network Devices`
+
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
     **Opción 2: Edición individual (si prefieres hacerlo uno por uno)**
 
     1. Seleccionar el host `SW-Demo2`
+
     2. Hacer clic para editarlo
+
     3. En la pestaña <span style="color: violet;"><strong>Groups</strong></span>:
+
         → Quitar el grupo `demo` (o mantenerlo si es necesario)
+
         → Agregar el grupo `Infraestructura/Network Devices`
+
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
     5. Repetir los pasos 1-4 para `SW-Demo3`
@@ -198,24 +217,24 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 2. Configurar el trigger:
 
     1. **Name**:
-        → Name: `Unavailable by ICMP ping (Average)`
+        - Name: `Unavailable by ICMP ping (Average)`
 
     2. **Event name**:
-        → Event name: `Host {HOST.NAME} is down (no response to ICMP ping - confirmed)`
+        - Event name: `Host {HOST.NAME} is down (no response to ICMP ping - confirmed)`
 
     3. **Severity**:
-        → Severity: `Average` *(Media)*
+        - Severity: `Average` *(Media)*
 
     4. **Expression**:
-        → Expression: `last(/SRV-Demo-Web-Server/icmpping,#2)=0`
+        - Expression: `last(/SRV-Demo-Web-Server/icmpping,#2)=0`
 
         > **💡 Nota**: Esta expresión verifica si el último valor hace 2 períodos (#2) es igual a `0`, proporcionando una verificación más robusta que solo el último valor inmediato. Esto ayuda a reducir falsas alarmas causadas por problemas temporales de red.
 
     5. **Recovery expression**:
-        → Recovery expression: `last(/SRV-Demo-Web-Server/icmpping)=1`
+        - Recovery expression: `last(/SRV-Demo-Web-Server/icmpping)=1`
 
     6. **Description**:
-        → Description: `No disponible por ping ICMP (confirmado). Este trigger se activa cuando la solicitud de ping ICMP al dispositivo devolvió un tiempo de espera agotado. Esto puede indicar que el host está inaccesible, apagado o que hay problemas de conectividad de red.`
+        - Description: `No disponible por ping ICMP (confirmado). Este trigger se activa cuando la solicitud de ping ICMP al dispositivo devolvió un tiempo de espera agotado. Esto puede indicar que el host está inaccesible, apagado o que hay problemas de conectividad de red.`
 
     7. **Tags**:
         - Name: `scope` | Value: `availability`
@@ -229,26 +248,26 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 2. Configurar el trigger:
 
     1. **Name**:
-        → Name: `Unavailable by ICMP ping (High)`
+        - Name: `Unavailable by ICMP ping (High)`
 
     2. **Event name**:
-        → Event name: `Host {HOST.NAME} is down (no response to ICMP ping - critical)`
+        - Event name: `Host {HOST.NAME} is down (no response to ICMP ping - critical)`
 
     3. **Severity**:
-        → Severity: `High` *(Alta)*
+        - Severity: `High` *(Alta)*
 
     4. **Expression**:
-        → Expression: `max(/SRV-Demo-Web-Server/icmpping,#3)=0`
+        - Expression: `max(/SRV-Demo-Web-Server/icmpping,#3)=0`
 
         > **💡 Nota importante**: Esta expresión es más robusta que `last(...)=0`. Verifica si el **máximo valor de los últimos 3 valores** es igual a `0`, lo que reduce falsas alarmas causadas por valores puntuales o problemas temporales de red. Requiere que **todos** los últimos 3 valores sean `0` para activarse, siendo más confiable para detectar problemas críticos.
 
         > **💡 Referencia**: Esta expresión alternativa se menciona en el [ejercicio 8.4](ejercicio-8.4.md) como una opción más robusta.
 
     5. **Recovery expression**:
-        → Recovery expression: `last(/SRV-Demo-Web-Server/icmpping)=1`
+        - Recovery expression: `last(/SRV-Demo-Web-Server/icmpping)=1`
 
     6. **Description**:
-        → Description: `No disponible por ping ICMP (crítico). Este trigger se activa cuando el host no responde a ping ICMP durante los últimos 3 intentos consecutivos, lo que indica un problema crítico de conectividad. Por favor, verifique la conectividad del dispositivo inmediatamente.`
+        - Description: `No disponible por ping ICMP (crítico). Este trigger se activa cuando el host no responde a ping ICMP durante los últimos 3 intentos consecutivos, lo que indica un problema crítico de conectividad. Por favor, verifique la conectividad del dispositivo inmediatamente.`
 
     7. **Tags**:
         - Name: `scope` | Value: `availability`
@@ -258,22 +277,28 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 #### **3.1.4. Configurar dependencias para triggers de ICMP Ping**
 
 1. Editar el trigger **"Unavailable by ICMP ping (Warning)"**:
+
    - Ir al host **"SRV-Demo-Web-Server"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Unavailable by ICMP ping (Warning)`
+
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
+
    - Agregar dependencias hacia:
      - `Unavailable by ICMP ping (Average)`
      - `Unavailable by ICMP ping (High)`
+
      - Para cada una: <span style="color: blue;"><strong>Add</strong></span> → Seleccionar el trigger correspondiente
    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 2. Editar el trigger **"Unavailable by ICMP ping (Average)"**:
+
    - Ir al host **"SRV-Demo-Web-Server"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Unavailable by ICMP ping (Average)`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Agregar dependencia hacia `Unavailable by ICMP ping (High)`:
      - <span style="color: blue;"><strong>Add</strong></span> → Seleccionar `Unavailable by ICMP ping (High)`
    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
-3. **Resultado**: 
+3. **Resultado**:
+
    - Warning → depende de Average y High
    - Average → depende de High
    - High → no tiene dependencias (es el más crítico)
@@ -287,9 +312,11 @@ Los triggers de memoria ya tienen Warning y Average configurados. Necesitamos cr
 #### **3.2.1. Crear macro para memoria (High)**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Macros</strong></span>
 
 2. Verificar si existe la macro `{$MEMORY.UTIL.HIGH}`, si no existe crearla:
+
    - <span style="color: blue;"><strong>Add</strong> (Agregar)</span>
    - Macro: `{$MEMORY.UTIL.HIGH}`
    - Value: `90` *(valor de demo para generar alertas fácilmente)*
@@ -299,10 +326,12 @@ Los triggers de memoria ya tienen Warning y Average configurados. Necesitamos cr
 #### **3.2.2. Crear trigger High memory utilization**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"**
    - Pestaña <span style="color: violet;"><strong>Items</strong></span> ubicar el item **'Memory utilization'** y a la izquierda del mismo fijarse en el icono de <span style="text-align: center; display: inline-block; width: 1em;">⋯</span> y seleccionar <span style="color: blue;"><strong>Create trigger</strong></span>
 
 2. Configurar el trigger:
+
    - **Name**: `High memory utilization`
    - **Event name**: `High memory utilization (>{$MEMORY.UTIL.HIGH}% for 3m)`
    - **Operational data**: `Value: {ITEM.VALUE1} - Last: {ITEM.LASTVALUE1}`
@@ -315,6 +344,7 @@ Los triggers de memoria ya tienen Warning y Average configurados. Necesitamos cr
 #### **3.2.3. Configurar dependencias para triggers de memoria**
 
 1. Editar el trigger **"Warning memory utilization"**:
+
    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Warning memory utilization`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Si no tiene dependencia hacia `Average memory utilization`, agregarla:
@@ -322,6 +352,7 @@ Los triggers de memoria ya tienen Warning y Average configurados. Necesitamos cr
    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 2. Editar el trigger **"Average memory utilization"**:
+
    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Average memory utilization`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Agregar dependencia hacia `High memory utilization`:
@@ -337,9 +368,11 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
 #### **3.3.1. Crear macros para CPU (Warning y High)**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
    - <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Templates</strong></span> → Seleccionar **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Macros</strong></span>
 
 2. Verificar si existe la macro `{$CPU.UTIL.WAR}`, si no existe crearla:
+
    - <span style="color: blue;"><strong>Add</strong> (Agregar)</span>
    - Macro: `{$CPU.UTIL.WAR}`
    - Value: `60` *(valor de demo)*
@@ -347,6 +380,7 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
    - <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
 3. Verificar si existe la macro `{$CPU.UTIL.HIGH}`, si no existe crearla:
+
    - <span style="color: blue;"><strong>Add</strong> (Agregar)</span>
    - Macro: `{$CPU.UTIL.HIGH}`
    - Value: `85` *(valor de demo)*
@@ -356,10 +390,12 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
 #### **3.3.2. Crear trigger Warning CPU utilization**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> → Regla **"CPU Discovery"** → Pestaña <span style="color: violet;"><strong>Trigger prototypes</strong></span>
    - <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
+
    - **Name**: `{#SNMPVALUE}: Warning CPU utilization`
    - **Event name**: `{#SNMPVALUE}: Warning CPU utilization (over {$CPU.UTIL.WAR}% for 5m)`
    - **Operational data**: `Current utilization: {ITEM.LASTVALUE}`
@@ -373,10 +409,12 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
 #### **3.3.3. Crear trigger High CPU utilization**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> → Regla **"CPU Discovery"** → Pestaña <span style="color: violet;"><strong>Trigger prototypes</strong></span>
    - <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
+
    - **Name**: `{#SNMPVALUE}: High CPU utilization`
    - **Event name**: `{#SNMPVALUE}: High CPU utilization (over {$CPU.UTIL.HIGH}% for 5m)`
    - **Operational data**: `Current utilization: {ITEM.LASTVALUE}`
@@ -390,6 +428,7 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
 #### **3.3.4. Configurar dependencias para triggers de CPU**
 
 1. Editar el trigger **"Warning CPU utilization"**:
+
    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> → Regla **"CPU Discovery"** → Pestaña <span style="color: violet;"><strong>Trigger prototypes</strong></span> → Seleccionar `{#SNMPVALUE}: Warning CPU utilization`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Agregar dependencia hacia `{#SNMPVALUE}: Average CPU utilization`:
@@ -397,6 +436,7 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
 2. Editar el trigger **"Average CPU utilization"**:
+
    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> → Regla **"CPU Discovery"** → Pestaña <span style="color: violet;"><strong>Trigger prototypes</strong></span> → Seleccionar `{#SNMPVALUE}: Average CPU utilization`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Agregar dependencia hacia `{#SNMPVALUE}: High CPU utilization`:
@@ -406,6 +446,7 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
 3. **Resultado**: La cadena de dependencias debe ser: Warning → Average → High
 
 4. **Ejecutar discovery para aplicar los nuevos triggers**:
+
    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Demo2` o `SW-Demo3`
    - Pestaña <span style="color: violet;"><strong>Discovery</strong></span> → Regla **"CPU Discovery"** → <span style="color: blue;"><strong>Execute now</strong></span>
    - Esperar unos minutos para que se creen los nuevos triggers
@@ -422,10 +463,12 @@ Actualmente solo existe el trigger High para interfaces cuando están en estado 
 #### **3.4.1. Crear trigger Warning para interfaces en estado testing**
 
 1. Ir al template **"Template Network Switch by SNMP"**:
+
    - Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> → Regla **"Network Interfaces Discovery"** → Pestaña <span style="color: violet;"><strong>Trigger prototypes</strong></span>
    - <span style="color: blue;"><strong>Create trigger prototype</strong></span>
 
 2. Configurar el trigger:
+
    - **Name**: `Interface {#IFDESCR}({#IFALIAS}): Operational status is testing (Warning)`
    - **Event name**: `Interface {#IFDESCR}({#IFALIAS}): Interface in testing state`
    - **Severity**: `Warning` *(Advertencia)*
@@ -442,19 +485,22 @@ Actualmente solo existe el trigger High para interfaces cuando están en estado 
 Las dependencias deben configurarse de manera que cuando una interfaz esté en estado DOWN (High), el trigger de TESTING (Warning) se suprima, ya que DOWN es un estado más crítico que TESTING.
 
 1. Editar el trigger **"Operational status is testing (Warning)"**:
+
    - Ir al template **"Template Network Switch by SNMP"** → Pestaña <span style="color: violet;"><strong>Discovery rules</strong></span> → Regla **"Network Interfaces Discovery"** → Pestaña <span style="color: violet;"><strong>Trigger prototypes</strong></span> → Seleccionar `Interface {#IFDESCR}({#IFALIAS}): Operational status is testing (Warning)`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Agregar dependencia hacia `Interface {#IFDESCR}({#IFALIAS}): Link down` (el trigger High existente):
      - <span style="color: blue;"><strong>Add</strong></span> → Seleccionar `Interface {#IFDESCR}({#IFALIAS}): Link down`
    - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
-2. **Resultado**: 
+2. **Resultado**:
+
    - Warning (testing) → depende de High (down)
    - High (down) → no tiene dependencias (es el más crítico)
    
    Esto significa que cuando una interfaz está DOWN, solo se mostrará el trigger High, y el trigger Warning de testing se suprimirá porque depende de High.
 
-4. **Ejecutar discovery para aplicar los nuevos triggers**:
+3. **Ejecutar discovery para aplicar los nuevos triggers**:
+
    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Demo2` o `SW-Demo3`
    - Pestaña <span style="color: violet;"><strong>Discovery</strong></span> → Regla **"Network Interfaces Discovery"** → <span style="color: blue;"><strong>Execute now</strong></span>
    - Esperar unos minutos para que se creen los nuevos triggers
@@ -462,11 +508,13 @@ Las dependencias deben configurarse de manera que cuando una interfaz esté en e
 ### **3.5. Verificar triggers y dependencias configuradas**
 
 1. **Verificar triggers del servidor web (SRV-Demo-Web-Server)**:
+
    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SRV-Demo-Web-Server` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
    - Verificar que existan los triggers de ICMP Ping con las 3 severidades:
      - **ICMP Ping**: Warning (`last(...)=0`), Average (`last(...#2)=0`), High (`max(...#3)=0`)
 
 2. **Verificar triggers de los switches (SW-Demo2 o SW-Demo3)**:
+
    - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Demo2` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
    - Verificar que existan todos los triggers con las severidades correspondientes:
      - **Memoria**: Warning, Average, High
@@ -474,12 +522,14 @@ Las dependencias deben configurarse de manera que cuando una interfaz esté en e
      - **Interfaces**: Warning (testing - estado 3), High (Link down - estado 2)
 
 3. Verificar que las dependencias estén configuradas correctamente:
+
    - **ICMP Ping, Memoria, CPU**: Warning → Average → High
    - **Interfaces**: Warning → High
 
 ### **3.6. Agregar tags a todos los triggers**
 
 Verificar que todos los triggers tengan tags apropiados:
+
 - **Availability triggers** (interfaces, ICMP): `scope: availability`
 - **Performance triggers** (CPU): `scope: performance`
 - **Capacity triggers** (memoria): `scope: capacity`
@@ -495,6 +545,7 @@ Verificar que todos los triggers tengan tags apropiados:
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: violet;"><strong>Trigger actions</strong></span>
 
 2. Verificar que exista la acción configurada en el [ejercicio 7.3](ejercicio-7.3.md):
+
    - `Notificar problemas de red y sistema`
 
 3. **Actualizar condiciones de la acción** (si es necesario):
@@ -518,9 +569,11 @@ Verificar que todos los triggers tengan tags apropiados:
 2. Configurar la acción:
 
     1. **Name**:
-        → Name: `Alertas críticas - Servidores Web`
+
+        - Name: `Alertas críticas - Servidores Web`
 
     2. **Conditions** (condiciones):
+
         → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar condiciones.
 
         - **Condición 1**:
@@ -558,9 +611,11 @@ Verificar que todos los triggers tengan tags apropiados:
 2. Configurar la acción:
 
     1. **Name**:
-        → Name: `Problemas de capacidad y rendimiento`
+
+        - Name: `Problemas de capacidad y rendimiento`
 
     2. **Conditions** (condiciones):
+
         → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar condiciones.
 
         - **Condición 1** (problemas de capacidad):
@@ -607,9 +662,10 @@ Verificar que todos los triggers tengan tags apropiados:
 2. Configurar la acción:
 
     1. **Name**:
-        → Name: `Alertas de dispositivos de red`
+        - Name: `Alertas de dispositivos de red`
 
     2. **Conditions** (condiciones):
+
         → Hacer clic en <span style="color: blue;"><strong>Add</strong></span> para agregar condiciones.
 
         - **Condición 1**:
@@ -649,6 +705,7 @@ Verificar que todos los triggers tengan tags apropiados:
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Actions</strong></span> → <span style="color: violet;"><strong>Trigger actions</strong></span>
 
 2. Verificar que existan las siguientes acciones:
+
    - `Notificar problemas de red y sistema` (actualizada)
    - `Alertas críticas - Servidores Web` (nueva)
    - `Problemas de capacidad y rendimiento` (nueva)
@@ -661,6 +718,7 @@ Verificar que todos los triggers tengan tags apropiados:
 1. Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Users</strong></span> → Seleccionar `Notificaciones`
 
 2. Verificar:
+
    - Que el usuario tenga configurado su correo electrónico en **Media**
    - Que el usuario esté en los grupos apropiados (según el [ejercicio 9.8](ejercicio-9.8.md))
    - Que tenga el rol correcto asignado
@@ -670,6 +728,7 @@ Verificar que todos los triggers tengan tags apropiados:
 > **💡 Nota importante**: Para que las acciones funcionen correctamente con los nuevos grupos de hosts creados (`Infraestructura/Web Servers`, `Infraestructura/Network Devices`), es necesario agregar permisos de estos grupos al grupo de usuarios al que pertenece el usuario "Notificaciones".
 
 1. Identificar a qué grupo de usuarios pertenece el usuario "Notificaciones":
+
    - Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>Users</strong></span> → Seleccionar `Notificaciones`
    - Revisar en la pestaña <span style="color: violet;"><strong>Groups</strong></span> a qué grupo(s) pertenece el usuario
    - *(Nota: Según el [ejercicio 9.8](ejercicio-9.8.md), el usuario puede estar en grupos como "Cliente Demo" o "Notificaciones Demo")*
@@ -677,6 +736,7 @@ Verificar que todos los triggers tengan tags apropiados:
 2. Ir a <span style="color: purple;"><strong>Administration</strong></span> → <span style="color: violet;"><strong>User groups</strong></span> → Seleccionar el grupo de usuarios correspondiente
 
 3. En la pestaña <span style="color: violet;"><strong>Permissions</strong></span>, agregar permisos para los nuevos grupos de hosts:
+
    - Hacer clic en <span style="color: blue;"><strong>Select</strong></span> para agregar permisos
    - Agregar los siguientes grupos de hosts con permiso **Read** (Lectura):
      - `Infraestructura` (o incluir los subgrupos específicos)
@@ -689,6 +749,7 @@ Verificar que todos los triggers tengan tags apropiados:
 4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span> el grupo de usuarios
 
 5. **Verificar que los permisos se hayan aplicado correctamente**:
+
    - Verificar en la pestaña <span style="color: violet;"><strong>Permissions</strong></span> que los nuevos grupos de hosts aparezcan listados con permiso **Read**
    - Opcionalmente, verificar en el usuario "Notificaciones" que su grupo de usuarios tenga los permisos correctos
 
@@ -715,22 +776,22 @@ Para probar el flujo completo, se puede solicitar al instructor que:
 2. Configurar el mantenimiento:
 
     1. **Name** *(parámetro obligatorio)*:
-        → Name: `Mantenimiento programado - Servidor Web`
+        - Name: `Mantenimiento programado - Servidor Web`
 
     2. **Maintenance type**:
-        → Maintenance type: `With data collection` *(permite recolección de datos pero suprime notificaciones)*
+        - Maintenance type: `With data collection` *(permite recolección de datos pero suprime notificaciones)*
 
     3. **Active since**:
-        → Active since: Seleccionar fecha/hora actual o próxima
+        - Active since: Seleccionar fecha/hora actual o próxima
 
     4. **Active till**:
-        → Active till: Seleccionar una hora 30 minutos después de "Active since"
+        - Active till: Seleccionar una hora 30 minutos después de "Active since"
 
     5. **Host groups**:
-        → Agregar el grupo `Infraestructura/Web Servers`
+        - Agregar el grupo `Infraestructura/Web Servers`
 
     6. **Description** *(opcional)*:
-        → Description: `Mantenimiento programado para pruebas del ejercicio final`
+        - Description: `Mantenimiento programado para pruebas del ejercicio final`
 
     7. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
@@ -789,6 +850,7 @@ Para probar el flujo completo, se puede solicitar al instructor que:
 2. Para cada host, verificar:
 
     **SRV-Demo-Web-Server**:
+
     - Filtrar por `SRV-Demo-Web-Server`
     - Verificar que existan items:
       - `ICMP Ping`
@@ -800,6 +862,7 @@ Para probar el flujo completo, se puede solicitar al instructor que:
       - `HTTP Check - Website` debe mostrar `OK` en lugar de `200` (gracias al value mapping "HTTP Status Codes")
 
     **SW-Demo2**:
+
     - Filtrar por `SW-Demo2`
     - Verificar que se estén recopilando métricas SNMP:
       - Items del sistema (System Name, System Description, etc.)
@@ -808,6 +871,7 @@ Para probar el flujo completo, se puede solicitar al instructor que:
     - Verificar que los estados de interfaces muestren value mappings (up/down en lugar de números)
 
     **SW-Demo3**:
+
     - Filtrar por `SW-Demo3`
     - Verificar que se estén recopilando métricas del template `Cisco Nexus 9000 Series by SNMP`
     - Verificar que los items descubiertos estén funcionando
@@ -817,6 +881,7 @@ Para probar el flujo completo, se puede solicitar al instructor que:
 1. Ir a <span style="color: purple;"><strong>Reports</strong></span> → <span style="color: violet;"><strong>System information</strong></span>
 
 2. Revisar las estadísticas generales:
+
    - Número de hosts
    - Número de items
    - Número de triggers
@@ -841,6 +906,7 @@ Para probar el flujo completo, se puede solicitar al instructor que:
     - Revisar el operational data para obtener información adicional
 
 2. Verificar la notificación:
+
     - Revisar el correo electrónico configurado para el usuario "Notificaciones"
     - Verificar que el mensaje contenga información útil sobre el problema
 
