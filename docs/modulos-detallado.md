@@ -912,13 +912,31 @@ Los **triggers** definen **condiciones** que activan o desactivan alertas.
 
 ---
 
-### **7.1. Qué son las acciones**
+### **7.1. Flujo completo de monitoreo y alertas**:
+
+**Item → Trigger → Problema/Evento → Acción → Operaciones (Notificaciones/Comandos/Scripts)**
+
+1. **Item recopila datos**: Un item (métrica) recopila valores periódicamente (por ejemplo, uso de CPU, memoria, etc.).
+
+2. **Trigger evalúa condición**: Si el item tiene un trigger asociado, Zabbix evalúa la condición del trigger contra el valor recopilado (por ejemplo, "CPU > 80%").
+
+3. **Trigger genera problema**: Si la condición del trigger se cumple, se genera un **problema** (problem) y se crea un **evento** (event) que registra este cambio de estado.
+
+4. **Evento activa acción**: Cada nuevo evento se compara automáticamente con todas las **acciones** configuradas en Zabbix. Si el evento cumple las condiciones de una acción (por ejemplo, "trigger = 'CPU alta' y severidad = 'Alta'"), la acción se ejecuta.
+
+5. **Acción ejecuta operaciones**: La acción ejecuta las **operaciones** configuradas, que pueden incluir:
+    - Enviar **notificaciones** a usuarios/grupos por diferentes canales (email, SMS, Telegram, Slack, etc.)
+    - Ejecutar **comandos remotos** en los hosts monitoreados
+    - Ejecutar **scripts personalizados**
+    - Crear o cerrar **tickets** en sistemas externos
+    - Modificar el estado de hosts o items
+
+6. **Escalación (opcional)**: Si el problema persiste, pueden configurarse **escalaciones** que ejecuten operaciones adicionales después de un tiempo determinado (por ejemplo, notificar a un supervisor si el problema no se resuelve en 30 minutos).
+
+#### <u>7.1.1. Qué son las acciones</u>
 
 Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se ejecutan cuando ocurre un **evento**.
 
-- Flujo básico:
-
-    **Trigger → Problema → Evento → Acción → Operaciones**
 - Cada nuevo evento se compara con todas las acciones configuradas y, si cumple las condiciones, se ejecutan las operaciones.
 
 - Sirven para:
@@ -1541,7 +1559,7 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
 
 ## **Módulo –** <span style="color: green;">Ejercicio final: monitoreo completo</span>
 
-**Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
+> 📋 [Ejercicio final - Monitoreo integral de infraestructura](ejercicios/ejercicio-final.md)
 
 ---
 

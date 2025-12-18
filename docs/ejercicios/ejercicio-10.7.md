@@ -43,13 +43,21 @@
 
 ---
 
-## **2. Consultar la versión de Zabbix (Ejemplo básico sin autenticación)**
+## **2. Consulta a la API de Zabbix - Versión de Zabbix (Ejemplo básico sin autenticación)**
 
 **Objetivo**: Realizar una consulta básica a la API de Zabbix para obtener la versión instalada, sin necesidad de autenticación.
 
 > **💡 Nota**: El método `apiinfo.version` es uno de los pocos métodos de la API que no requiere autenticación, lo que lo hace ideal para comenzar a aprender a usar la API de Zabbix.
 
 ### **2.1. Consulta básica con cURL**
+
+> **💡 Nota**: Para realizar consultas a la API, puedes usar diferentes herramientas:
+> - **cURL** (desde la línea de comandos)
+> - **Postman** (interfaz gráfica)
+> - **Python** con la librería `requests`
+> - **JavaScript** con `fetch` o `axios`
+>
+> En este ejercicio se mostrará el ejemplo usando **cURL**, pero puedes adaptarlo a la herramienta que prefieras.
 
 1. **Abrir una terminal o línea de comandos**.
 
@@ -88,7 +96,7 @@
 
 ---
 
-### **2.2. Usar la API desde un Item HTTP Agent - Versión de Zabbix**
+### **2.2. Consulta desde un Item HTTP Agent en Zabbix**
 
 **Objetivo**: Crear un item de tipo **HTTP Agent** que consulte la versión de Zabbix mediante la API, sin necesidad de usar herramientas externas como cURL.
 
@@ -170,17 +178,9 @@
 
 ---
 
-## **3. Realizar una consulta básica a la API para listar hosts**
+## **3. Consulta a la API de Zabbix - Listar hosts (Ejemplo básico con autenticación mediante token)**
 
 **Objetivo**: Realizar una consulta básica a la API de Zabbix para obtener la lista de hosts monitoreados.
-
-> **💡 Nota**: Para realizar consultas a la API, puedes usar diferentes herramientas:
-> - **cURL** (desde la línea de comandos)
-> - **Postman** (interfaz gráfica)
-> - **Python** con la librería `requests`
-> - **JavaScript** con `fetch` o `axios`
->
-> En este ejercicio se mostrará el ejemplo usando **cURL**, pero puedes adaptarlo a la herramienta que prefieras.
 
 ### **3.1. Consulta básica con cURL**
 
@@ -237,11 +237,11 @@
 
 ---
 
-### **3.2. Usar la API desde un Item HTTP Agent - Cantidad de Hosts (Ejemplo con autenticación)**
+### **3.2. Consulta desde un Item HTTP Agent en Zabbix**
 
 **Objetivo**: Crear un item de tipo **HTTP Agent** que consulte la API de Zabbix para obtener la cantidad de hosts activos, utilizando autenticación mediante token.
 
-> **💡 Nota**: Este ejemplo requiere autenticación mediante token de API. Asegúrate de haber completado la sección 1 para generar el token y configurar la macro `{$ZABBIX.TOKEN}`.
+> **💡 Nota**: Este ejemplo requiere autenticación mediante token de API. Asegúrate de haber completado la [sección 1](ejercicio-10.7.md#1-generacion-de-tokens-de-api) para generar el token y configurar la macro `{$ZABBIX.TOKEN}`.
 
 1. **Navegar al host donde deseas crear el item**:
 

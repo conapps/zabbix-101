@@ -285,6 +285,8 @@
 
 **Objetivo:** Simulación de escenario real: alta de hosts, triggers, dashboards, alertas.
 
+> 📋 [Ejercicio final - Monitoreo integral de infraestructura](ejercicios/ejercicio-final.md)
+
 ---
 
 ## **Módulo – [Cierre del Workshop](modulos-detallado.md#módulo--cierre-del-workshop)**
