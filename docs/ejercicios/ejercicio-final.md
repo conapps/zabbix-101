@@ -16,6 +16,7 @@ Una empresa necesita implementar monitoreo integral para su infraestructura crí
    - Servicio desplegado sobre **Oracle Cloud Infrastructure**.
    - Servicio desplegado con **Ansible**.
    - Página web corporativa accesible públicamente.
+   - **Zabbix Agent**: Ya tiene preconfigurado el agente de Zabbix.
    - **Método de monitoreo**: Agent-less (ICMP, TCP, HTTP).
 
 2. **Switch de red (SW-Demo2)**:
@@ -23,12 +24,14 @@ Una empresa necesita implementar monitoreo integral para su infraestructura crí
    - **Cisco Nexus 9000** Series.
    - Conecta el servidor web a la red corporativa.
    - Permite acceso al servidor web desde internet.
+   - **SNMP**: Ya tiene preconfigurado SNMPv2.
    - **Método de monitoreo**: SNMPv2.
 
 3. **Switch adicional (SW-Demo3)**:
 
    - **Cisco Nexus 9000** Series.
    - Parte de la infraestructura de red.
+   - **SNMP**: Ya tiene preconfigurado SNMPv2.
    - Monitoreado mediante template estándar de Cisco.
    - **Método de monitoreo**: SNMPv2 con template predefinido.
 
@@ -53,14 +56,19 @@ Internet
 
 ## **1. Revisión y organización de infraestructura existente**
 
-**Objetivo**: Revisar los hosts configurados en ejercicios anteriores y prepararlos para una organización integral.
+**Objetivo**: Revisar los hosts configurados en ejercicios anteriores y prepararlos para una organización integral, asegurando que sigan las mejores prácticas de configuración.
 
 **Tareas:**
 
 - Identificar todos los hosts existentes configurados durante el workshop.
 - Revisar la configuración actual de cada host.
-- Verificar que los templates estén correctamente aplicados.
+- **Verificar que los templates estén correctamente aplicados y seguir las mejores prácticas**:
+  - Asegurar que los items y discovery rules estén dentro de templates en lugar de estar configurados directamente en los hosts.
+  - Esto facilita el mantenimiento, la reutilización y la estandarización de la configuración.
 - Identificar qué mejoras de organización son necesarias.
+- **Reorganizar hosts según sea necesario**:
+  - Algunos hosts pueden tener items o configuraciones directamente en el host que deberían estar en templates.
+  - Aplicar templates estándar donde corresponda para seguir las mejores prácticas.
 
 **Hosts a revisar:**
 

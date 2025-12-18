@@ -17,6 +17,7 @@ Una empresa necesita implementar monitoreo integral para su infraestructura crí
    - Servicio desplegado sobre **Oracle Cloud Infrastructure**.
    - Servicio desplegado con **Ansible**.
    - Página web corporativa accesible públicamente.
+   - **Zabbix Agent**: Ya tiene preconfigurado el agente de Zabbix.
    - **Método de monitoreo**: Agent-less (ICMP, TCP, HTTP).
 
 2. **Switch de red (SW-Demo2)**:
@@ -24,12 +25,14 @@ Una empresa necesita implementar monitoreo integral para su infraestructura crí
    - **Cisco Nexus 9000** Series.
    - Conecta el servidor web a la red corporativa.
    - Permite acceso al servidor web desde internet.
+   - **SNMP**: Ya tiene preconfigurado SNMPv2.
    - **Método de monitoreo**: SNMPv2.
 
 3. **Switch adicional (SW-Demo3)**:
 
    - **Cisco Nexus 9000** Series.
    - Parte de la infraestructura de red.
+   - **SNMP**: Ya tiene preconfigurado SNMPv2.
    - Monitoreado mediante template estándar de Cisco.
    - **Método de monitoreo**: SNMPv2 con template predefinido.
 
@@ -46,7 +49,15 @@ Internet
 
 ## **1. Revisión y organización de infraestructura existente**
 
-**Objetivo**: Revisar los hosts configurados en ejercicios anteriores y prepararlos para una organización integral.
+**Objetivo**: Revisar los hosts configurados en ejercicios anteriores y prepararlos para una organización integral, asegurando que sigan las mejores prácticas de configuración.
+
+> **💡 Buenas prácticas de templates:**
+>
+> Es importante asegurar que los items y discovery rules estén configurados dentro de **templates** en lugar de estar directamente en los hosts. Esto facilita:
+> - **Reutilización**: Un template puede aplicarse a múltiples hosts.
+> - **Mantenimiento**: Los cambios en un template se aplican automáticamente a todos los hosts que lo usan.
+> - **Estandarización**: Garantiza que todos los hosts del mismo tipo tengan la misma configuración.
+> - **Escalabilidad**: Facilita agregar nuevos hosts sin reconfigurar desde cero.
 
 ### **1.1. Identificar hosts existentes**
 
@@ -64,6 +75,144 @@ Internet
    - Los templates aplicados
    - El estado de disponibilidad
    - Las interfaces configuradas
+
+### **1.2. Reorganizar SW-Demo2 (aplicar template estándar)**
+
+El host `SW-Demo2` fue configurado en el [ejercicio integrador](ejercicio-integrador.md) creando un template personalizado. Para seguir las mejores prácticas, vamos a:
+
+1. **Renombrar el host actual y desactivarlo**:
+
+   - Editar el host `SW-Demo2`
+   - Cambiar el **Host name** a `SW-Demo4`
+   - Cambiar el **Status** a `Disabled`
+   - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
+
+2. **Crear un nuevo host SW-Demo2 con template estándar**:
+
+   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>
+
+    1. **Host name**: `SW-Demo2`
+
+    2. Asociar un *template predefinido*.
+
+        → Templates: `Cisco Nexus 9000 Series by SNMP`
+
+        > **💡 Nota importante**: Al asignar un template al host, automáticamente se aplicarán todos los ítems, triggers, gráficos, reglas de descubrimiento y dashboards definidos en el template. Esto es una buena práctica porque:
+        > - **Estandariza** el monitoreo de dispositivos similares
+        > - **Facilita el mantenimiento** (los cambios en el template se propagan automáticamente)
+        > - **Ahorra tiempo** al no tener que crear ítems manualmente
+
+    3. **Groups** *(parámetro obligatorio)*:
+
+        → Groups: `demo` y crear o seleccionar el grupo `Switches`
+
+    4. **Interfaces**:
+
+        → Interfaces: <span style="color: blue;"><strong>Add</strong></span> y seleccionar **SNMP**
+
+        → IP address: `10.0.10.1`
+
+        → Port: `161`
+
+        → SNMP version: `SNMPv2`
+
+        → Community: `{$SNMP_COMMUNITY}` *(usar la macro como en el ejercicio de referencia)*
+
+    5. **Macros**:
+
+        → Ir a la pestaña <span style="color: violet;"><strong>Macros</strong></span>
+
+        → Agregar macro:
+
+        - Macro: `{$SNMP_COMMUNITY}`
+        - Value: `snmp-demo`
+        - Type: **Secret Text**
+        - Description: `Community SNMPv2`
+
+        → <span style="color: blue;"><strong>Add</strong></span>
+
+    6. **Description** *(opcional)*:
+
+        → Description: `Switch virtual Cisco Nexus 9000 para demostración de templates`
+
+    7. Configurar el **inventario** del host:
+
+        → Ir a la pestaña <span style="color: violet;"><strong>Inventory</strong></span> del host.
+
+        → Cambiar el modo de **Disabled** a **Automatic** *(necesario para que los items asociados al inventario puedan poblar automáticamente los campos)*
+
+        > **💡 Nota:** El modo **Automatic** permite que los items configurados con "Populates host inventory field" actualicen automáticamente los campos del inventario del host.
+
+    8. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
+
+3. **Verificar que el template se haya aplicado correctamente**:
+
+    1. En el host recientemente creado `SW-Demo3`, ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> y verificar que aparezcan múltiples ítems heredados del template `Cisco Nexus 9000 Series by SNMP`
+
+        > **💡 Nota**: Los ítems heredados del template mostrarán el nombre del template entre corchetes junto al nombre del elemento, por ejemplo: `[Template Cisco Nexus 9000 Series by SNMP] Nombre del item`.
+
+    2. Ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span> y verificar que aparezcan triggers heredados del template `Cisco Nexus 9000 Series by SNMP`
+
+    3. Ir a la pestaña <span style="color: violet;"><strong>Graphs</strong></span> y verificar que aparezcan gráficos heredados del template `Cisco Nexus 9000 Series by SNMP`
+
+    4. Ir a la pestaña <span style="color: violet;"><strong>Discovery</strong></span> y verificar que aparezcan reglas de descubrimiento (LLD) heredadas del template `Cisco Nexus 9000 Series by SNMP`
+
+    5. **Forzar la ejecución de las reglas de descubrimiento**:
+
+        - En la pestaña <span style="color: violet;"><strong>Discovery</strong></span>, seleccionar las reglas de descubrimiento y hacer clic en <span style="color: blue;"><strong>Execute now</strong></span> (si está disponible) o esperar a que se ejecuten automáticamente según su intervalo configurado.
+        - Esperar unos minutos para que Zabbix realice el descubrimiento.
+        - Volver a la pestaña <span style="color: violet;"><strong>Items</strong></span> y verificar que ahora aparezcan nuevos ítems descubiertos automáticamente (por ejemplo, interfaces de red, discos, etc.).
+
+    6. Verificar la conectividad del host **"SW-Demo3"**:
+
+        - Verificar la columna **Availability**:
+            - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
+            - <span style="color: red;">🔴 Rojo</span> → Host no disponible o agente no responde.
+            - <span style="color: grey;">⚪ Gris</span> → Host deshabilitado o sin monitoreo.
+
+    7. **Verificar la recopilación de datos**:
+
+        - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span>
+        - Filtrar por el host `SW-Demo3`
+        - Verificar que se estén recopilando datos de los ítems SNMP (valores con timestamp reciente)
+        - Verificar que los campos del inventario del host se hayan poblado automáticamente con información del dispositivo (ir a la pestaña <span style="color: violet;"><strong>Inventory</strong></span> del host y verificar campos como "Name", "Type", "Serial number", etc.)
+
+### **1.3. Aplicar templates estándar a SRV-Demo-Web-Server**
+
+El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.4.md) con items directamente en el host. Para seguir las mejores prácticas, vamos a aplicar templates estándar:
+
+1. **Eliminar item duplicado antes de aplicar template ICMP Ping**:
+
+   > **⚠️ Importante**: El host `SRV-Demo-Web-Server` ya tiene un item "ICMP Ping" configurado directamente en el host. Antes de aplicar el template "ICMP Ping", debemos eliminarlo para evitar conflictos.
+
+   1. Editar el host `SRV-Demo-Web-Server`
+
+   2. Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span>
+
+   3. Localizar el item **"ICMP Ping"** (el que fue creado directamente en el host)
+
+   4. Seleccionarlo y hacer clic en <span style="color: blue;"><strong>Delete</strong></span> (eliminar)
+
+   5. Confirmar la eliminación
+
+2. **Aplicar templates estándar**:
+
+   1. Editar el host `SRV-Demo-Web-Server`
+
+   2. Ir a la pestaña <span style="color: violet;"><strong>Templates</strong></span>
+
+   3. Agregar los siguientes templates:
+
+      - `Linux by Zabbix agent`
+      - `ICMP Ping`
+
+   4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
+
+   > **💡 Nota**: Estos templates estándar incluyen:
+   > - **Linux by Zabbix agent**: Items, triggers y gráficos para monitoreo de servidores Linux (CPU, memoria, disco, red, procesos, etc.).
+   > - **ICMP Ping**: Item y trigger preconfigurados para monitoreo de disponibilidad mediante ping ICMP.
+   >
+   > Al aplicar estos templates, los items se crearán automáticamente desde los templates, siguiendo las mejores prácticas.
 
 ---
 
