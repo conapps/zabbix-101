@@ -1,7 +1,7 @@
 # **Ejercicio final - Solución completa**
 
 > **📋 Este documento contiene la solución detallada del ejercicio final.**  
-> **Se recomienda intentar resolver el ejercicio primero consultando [Ejercicio final - Monitoreo integral de infraestructura](ejercicios/ejercicio-final.md) antes de ver esta solución.**
+> **Se recomienda intentar resolver el ejercicio primero consultando [Ejercicio final - Monitoreo integral de infraestructura](ejercicio-final.md) antes de ver esta solución.**
 
 ---
 
