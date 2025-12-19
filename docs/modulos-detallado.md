@@ -1040,7 +1040,7 @@ Los maneja exclusivamente el **Zabbix Server**.
 
 > <strong>💡 Tip:</strong> Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
 
-<br>Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
+Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 
 </div>
 </div>
@@ -1644,9 +1644,9 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
 
 > 📋 [Ejercicio final - Monitoreo integral de infraestructura](ejercicios/ejercicio-final.md)
 
-
+<!--
 > 💡 [Ejercicio final - Monitoreo integral de infraestructura (Solución completa)](ejercicios/ejercicio-final-solucion.md)
-
+-->
 
 ---
 

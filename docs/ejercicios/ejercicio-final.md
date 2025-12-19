@@ -288,9 +288,9 @@ Al finalizar este ejercicio, habrás demostrado:
 
 ---
 
-
+<!--
 > **💡 ¿Necesitas ayuda?**
 > Si después de intentar resolver el ejercicio necesitas consultar la solución detallada, puedes acceder a: [Ejercicio final - Monitoreo integral de infraestructura (Solución completa)](ejercicio-final-solucion.md).
-
+-->
 
 ---
