@@ -10,38 +10,46 @@
 
 Una empresa necesita implementar monitoreo integral para su infraestructura crítica de servicios web. La infraestructura está compuesta por:
 
-1. **Servidor Web (SRV-Demo-Web-Server)**:
+1. **Servidor Web (SRV-Prod-WebServer)**:
 
-   - Sistema operativo **Linux** con **Nginx** como servidor web.
    - Servicio desplegado sobre **Oracle Cloud Infrastructure**.
-   - Servicio desplegado con **Ansible**.
+   - Sistema operativo **Linux** con **Nginx** como servidor web.
    - Página web corporativa accesible públicamente.
-   - **Zabbix Agent**: Ya tiene preconfigurado el agente de Zabbix.
-   - **Método de monitoreo**: Agent-less (ICMP, TCP, HTTP).
+   - **Método de monitoreo**: con agente (tiene preconfigurado **Zabbix Agent** con el puerto por defecto).
+   - **DNS**: `web.conatel-lab.conatel.cloud`
 
-2. **Switch de red (SW-Demo2)**:
+2. **Switch Core (SW-Prod-Core1)**:
 
-   - **Cisco Nexus 9000** Series.
-   - Conecta el servidor web a la red corporativa.
-   - Permite acceso al servidor web desde internet.
-   - **SNMP**: Ya tiene preconfigurado SNMPv2.
-   - **Método de monitoreo**: SNMPv2.
+   - Equipo: **Cisco Nexus 9000** Series Switches con sistema operativo **Cisco NX-OS**.
+   - **Función**: Switch principal (Core) que conecta el servidor web a la red corporativa.
+   - **Rol en la arquitectura**: Interconecta el servidor web con el switch edge y la red interna.
+   - **Método de monitoreo**: sin agente (Agent-Less) con protocolo SNMP (tiene preconfigurado **SNMPv2** con el puerto por defecto).
+   - **IP**: `10.0.10.1`.
 
-3. **Switch adicional (SW-Demo3)**:
+3. **Switch Edge (SW-Prod-Edge1)**:
 
-   - **Cisco Nexus 9000** Series.
-   - Parte de la infraestructura de red.
-   - **SNMP**: Ya tiene preconfigurado SNMPv2.
-   - Monitoreado mediante template estándar de Cisco.
-   - **Método de monitoreo**: SNMPv2 con template predefinido.
+   - Equipo: **Cisco Nexus 9000** Series Switches con sistema operativo **Cisco NX-OS**.
+   - **Función**: Switch perimetral (Edge) que conecta la infraestructura interna con Internet.
+   - **Rol en la arquitectura**: Primer punto de entrada desde Internet hacia la red corporativa.
+   - **Método de monitoreo**: sin agente (Agent-Less) con protocolo SNMP (tiene preconfigurado **SNMPv2** con el puerto por defecto).
+   - **IP**: `10.0.10.2`.
 
 **Arquitectura de red:**
+
+La infraestructura sigue una topología simple donde:
+
+- **SW-Prod-Edge1** (Edge Switch): Es el switch perimetral que conecta la infraestructura con Internet.
+- **SW-Prod-Core1** (Core Switch): Es el switch principal que conecta el servidor web con el resto de la red.
+- **SRV-Prod-WebServer**: El servidor web que aloja la página corporativa accesible desde Internet.
+
+**Diagrama de topología:**
+
 ```
 Internet
    ↓
-[Switch SW-Demo3] ←→ [Switch SW-Demo2] ←→ [Servidor Web SRV-Demo-Web-Server]
-                                                      ↓
-                                              Nginx (Puerto 80)
+[Switch SW-Prod-Edge1] ←→ [Switch SW-Prod-Core1] ←→ [Servidor Web SRV-Prod-WebServer]
+                                                              ↓
+                                                      Nginx (Puerto 80)
 ```
 
 **Requisitos del monitoreo:**
@@ -54,28 +62,41 @@ Internet
 
 ---
 
-## **1. Revisión y organización de infraestructura existente**
+## **0. Preparación inicial: Desactivar hosts de ejercicios anteriores**
 
-**Objetivo**: Revisar los hosts configurados en ejercicios anteriores y prepararlos para una organización integral, asegurando que sigan las mejores prácticas de configuración.
+**Objetivo**: Desactivar los hosts creados en ejercicios anteriores para evitar confusiones y mantener un entorno limpio.
 
 **Tareas:**
 
-- Identificar todos los hosts existentes configurados durante el workshop.
-- Revisar la configuración actual de cada host.
-- **Verificar que los templates estén correctamente aplicados y seguir las mejores prácticas**:
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>
+2. Buscar y desactivar los siguientes hosts configurados en ejercicios anteriores:
+   - `SRV-Test`
+   - `SW-Demo1`
+   - `SW-Demo2`
+   - `SW-Demo3`
+   - `SRV-Demo-Web-Server`
+3. Para cada host:
+   - Seleccionar el host
+   - Hacer clic en <span style="color: blue;"><strong>Disable</strong></span> o editar el host y cambiar el **Status** a `Disabled`
+   - <span style="color: blue;"><strong>Update</strong></span>
+
+> **💡 Nota**: Esto desactivará los hosts de ejercicios anteriores para que no interfieran con el ejercicio final. Los hosts desactivados no serán monitoreados pero permanecerán en la base de datos.
+
+---
+
+## **1. Revisión y organización de infraestructura existente**
+
+**Objetivo**: Revisar y preparar los hosts para el ejercicio final, asegurando que sigan las mejores prácticas de configuración.
+
+**Tareas:**
+
+- Crear los hosts pertinentes desde cero.
+- **Aplicar templates estándar siguiendo las mejores prácticas**:
   - Asegurar que los items y discovery rules estén dentro de templates en lugar de estar configurados directamente en los hosts.
   - Esto facilita el mantenimiento, la reutilización y la estandarización de la configuración.
-- Identificar qué mejoras de organización son necesarias.
-- **Reorganizar hosts según sea necesario**:
-  - Algunos hosts pueden tener items o configuraciones directamente en el host que deberían estar en templates.
-  - Aplicar templates estándar donde corresponda para seguir las mejores prácticas.
+- Verificar que los hosts sigan las mejores prácticas de configuración.
 
-**Hosts a revisar:**
-
-- `SRV-Demo-Web-Server` (configurado en [ejercicio 8.4](ejercicio-8.4.md))
-- `SW-Demo2` (configurado en [ejercicio integrador](ejercicio-integrador.md))
-- `SW-Demo3` (configurado en [ejercicio 9.8](ejercicio-9.8.md))
-- Otros hosts existentes si los hay.
+> **💡 Nota**: Para crear los hosts, se puede seguir las pŕacticas que se realizaron en los ejercicios [ejercicio integrador](ejercicio-integrador.md), [ejercicio 8.4](ejercicio-8.4.md) o [ejercicio 9.8](ejercicio-9.8.md).
 
 ---
 
@@ -97,10 +118,10 @@ Internet
 ```
 Infraestructura
   ├── Web Servers
-  │     └── SRV-Demo-Web-Server
+  │     └── SRV-Prod-WebServer
   └── Network Devices
-        ├── SW-Demo2
-        └── SW-Demo3
+        ├── SW-Prod-Core1
+        └── SW-Prod-Edge1
 ```
 
 > Siguiendo las pŕacticas que se realizaron en [ejercicio 9.8](ejercicio-9.8.md).
@@ -117,20 +138,38 @@ Infraestructura
 
 ## **3. Verificación y mejora de triggers existentes**
 
-**Objetivo**: Revisar los triggers configurados en ejercicios anteriores (o si se siguieron las buenas prácticas de los templates) y asegurar que estén correctamente organizados y optimizados.
+**Objetivo**: Revisar los triggers configurados en los templates y asegurar que estén correctamente organizados y optimizados.
 
 **Tareas:**
 
-- *Revisar los triggers* existentes de los ejercicios anteriores:
-  - Triggers del [ejercicio 8.4](ejercicio-8.4.md) (icmp).
-  - Triggers del [ejercicio 6.4](ejercicio-6.4.md) (interfaces, CPU, memoria).
-- **Completar las 3 severidades (Warning, Average, High) con dependencias** para cada tipo de problema de los templates:
-  - **ICMP Ping**: Tiene un trigger High con expresión `last(...)=0` → Modificar severidad a **Warning**, crear trigger **Average** con `last(...#2)=0`, y crear trigger **High** con expresión más robusta `max(...#3)=0`, configurando dependencias (Warning → Average → High).
-  - **Memoria**: Ya tienen Warning y Average → Crear trigger **High** y configurar dependencias (Warning → Average → High).
-  - **CPU**: Solo tienen Average → Crear triggers **Warning** y **High**, y configurar dependencias (Warning → Average → High).
-  - **Interfaces**: Solo tienen High (Link down, estado 2) → Crear trigger **Warning** (estado 3 - testing), y configurar dependencia (Warning → High).
+- **Completar los triggers de las severidades (Warning, Average, High) y dependencias** para estos tipos de problemas:
+  - **ICMP Ping**:
+    - **Warning**: `last(...)=0`
+    - **Average**: `last(...#2)=0`
+    - **High**: `max(...#3)=0`
+    - **Dependencias**: (Warning → Average → High)
+
+  - **Memoria**:
+    - **Warning**: `min(...,15m)>{$MEMORY.UTIL.WAR}` → Valor 75
+    - **Average**: `min(...,15m)>{$MEMORY.UTIL.AVG}` → Valor 85
+    - **High**: `min(...,10m)>{$MEMORY.UTIL.HIGH}` → Valor 95
+    - **Dependencias**: (Warning → Average → High)
+
+  - **CPU**:
+    - **Warning**: `min(...,15m)>{$CPU.UTIL.WAR}` → Valor 50
+    - **Average**: `min(...,10m)>{$CPU.UTIL.AVG}` → Valor 75
+    - **High**: `min(...,10m)>{$CPU.UTIL.HIGH}` → Valor 90
+    - **Dependencias**: (Warning → Average → High)
+
+  - **Interfaces**:
+    - **Warning**: Para estado 3 (testing) → `(last(...)=3 and last(...,#1)<>last(...,#2))` → recovery `last(...)<>3`
+    - **High**: Para estado 2 (down) → `(last(...)=2 and last(...,#1)<>last(...,#2))` → recovery `last(...)<>2`
+    - **Dependencias**: (Warning → High)
+
 - Agregar tags a los triggers para mejor categorización (`scope: availability`, `scope: performance`, `scope: capacity`).
 - Verificar que los triggers tengan descripciones claras y útiles.
+
+> **💡 Nota**: Para revisar los triggers, se puede seguir las pŕacticas que se realizaron en los ejercicios [ejercicio 6.4](ejercicio-6.4.md), [ejercicio 8.4](ejercicio-8.4.md) o [ejercicio 9.8](ejercicio-9.8.md).
 
 ---
 

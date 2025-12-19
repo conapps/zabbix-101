@@ -469,6 +469,12 @@ A continuación se muestran las capturas de pantalla de referencia para este eje
 
 <div style="margin: 20px 0;">
 
+<img src="../imagenes/9.8.%20Ejercicio%20pr%C3%A1ctico_6_2.png" alt="9.8. Ejercicio práctico - Captura 6" style="max-width: 100%; height: auto;">
+
+</div>
+
+<div style="margin: 20px 0;">
+
 <img src="../imagenes/9.8.%20Ejercicio%20pr%C3%A1ctico_7.png" alt="9.8. Ejercicio práctico - Captura 7" style="max-width: 100%; height: auto;">
 
 </div>

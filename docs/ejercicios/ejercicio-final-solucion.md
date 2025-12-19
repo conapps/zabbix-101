@@ -11,45 +11,77 @@
 
 Una empresa necesita implementar monitoreo integral para su infraestructura crítica de servicios web. La infraestructura está compuesta por:
 
-1. **Servidor Web (SRV-Demo-Web-Server)**:
+1. **Servidor Web (SRV-Prod-WebServer)**:
 
-   - Sistema operativo **Linux** con **Nginx** como servidor web.
    - Servicio desplegado sobre **Oracle Cloud Infrastructure**.
-   - Servicio desplegado con **Ansible**.
+   - Sistema operativo **Linux** con **Nginx** como servidor web.
    - Página web corporativa accesible públicamente.
-   - **Zabbix Agent**: Ya tiene preconfigurado el agente de Zabbix.
-   - **Método de monitoreo**: Agent-less (ICMP, TCP, HTTP).
+   - **Método de monitoreo**: con agente (tiene preconfigurado **Zabbix Agent** con el puerto por defecto).
+   - **DNS**: `web.conatel-lab.conatel.cloud`
 
-2. **Switch de red (SW-Demo2)**:
+2. **Switch Core (SW-Prod-Core1)**:
 
-   - **Cisco Nexus 9000** Series.
-   - Conecta el servidor web a la red corporativa.
-   - Permite acceso al servidor web desde internet.
-   - **SNMP**: Ya tiene preconfigurado SNMPv2.
-   - **Método de monitoreo**: SNMPv2.
+   - Equipo: **Cisco Nexus 9000** Series Switches con sistema operativo **Cisco NX-OS**.
+   - **Función**: Switch principal (Core) que conecta el servidor web a la red corporativa.
+   - **Rol en la arquitectura**: Interconecta el servidor web con el switch edge y la red interna.
+   - **Método de monitoreo**: sin agente (Agent-Less) con protocolo SNMP (tiene preconfigurado **SNMPv2** con el puerto por defecto).
+   - **IP**: `10.0.10.1`.
 
-3. **Switch adicional (SW-Demo3)**:
+3. **Switch Edge (SW-Prod-Edge1)**:
 
-   - **Cisco Nexus 9000** Series.
-   - Parte de la infraestructura de red.
-   - **SNMP**: Ya tiene preconfigurado SNMPv2.
-   - Monitoreado mediante template estándar de Cisco.
-   - **Método de monitoreo**: SNMPv2 con template predefinido.
+   - Equipo: **Cisco Nexus 9000** Series Switches con sistema operativo **Cisco NX-OS**.
+   - **Función**: Switch perimetral (Edge) que conecta la infraestructura interna con Internet.
+   - **Rol en la arquitectura**: Primer punto de entrada desde Internet hacia la red corporativa.
+   - **Método de monitoreo**: sin agente (Agent-Less) con protocolo SNMP (tiene preconfigurado **SNMPv2** con el puerto por defecto).
+   - **IP**: `10.0.10.2`.
 
 **Arquitectura de red:**
+
+La infraestructura sigue una topología simple donde:
+
+- **SW-Prod-Edge1** (Edge Switch): Es el switch perimetral que conecta la infraestructura con Internet.
+- **SW-Prod-Core1** (Core Switch): Es el switch principal que conecta el servidor web con el resto de la red.
+- **SRV-Prod-WebServer**: El servidor web que aloja la página corporativa accesible desde Internet.
+
+**Diagrama de topología:**
+
 ```
 Internet
    ↓
-[Switch SW-Demo3] ←→ [Switch SW-Demo2] ←→ [Servidor Web SRV-Demo-Web-Server]
-                                                      ↓
-                                              Nginx (Puerto 80)
+[Switch SW-Prod-Edge1] ←→ [Switch SW-Prod-Core1] ←→ [Servidor Web SRV-Prod-WebServer]
+                                                              ↓
+                                                      Nginx (Puerto 80)
 ```
+
+---
+
+## **0. Preparación inicial: Desactivar hosts de ejercicios anteriores**
+
+**Objetivo**: Desactivar los hosts creados en ejercicios anteriores para evitar confusiones y mantener un entorno limpio.
+
+### **0.1. Desactivar hosts anteriores**
+
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>
+
+2. Buscar y desactivar los siguientes hosts configurados en ejercicios anteriores:
+   - `SRV-Test`
+   - `SW-Demo1`
+   - `SW-Prod-Core1`
+   - `SW-Prod-Edge1`
+   - `SRV-Prod-WebServer`
+
+3. Para cada host:
+   - Seleccionar el host en la lista
+   - Hacer clic en <span style="color: blue;"><strong>Disable</strong></span> o editar el host y cambiar el **Status** a `Disabled`
+   - <span style="color: blue;"><strong>Update</strong></span>
+
+> **💡 Nota**: Esto desactivará los hosts de ejercicios anteriores para que no interfieran con el ejercicio final. Los hosts desactivados no serán monitoreados pero permanecerán en la base de datos.
 
 ---
 
 ## **1. Revisión y organización de infraestructura existente**
 
-**Objetivo**: Revisar los hosts configurados en ejercicios anteriores y prepararlos para una organización integral, asegurando que sigan las mejores prácticas de configuración.
+**Objetivo**: Crear y configurar los hosts para el ejercicio final, asegurando que sigan las mejores prácticas de configuración.
 
 > **💡 Buenas prácticas de templates:**
 >
@@ -59,39 +91,13 @@ Internet
 > - **Estandarización**: Garantiza que todos los hosts del mismo tipo tengan la misma configuración.
 > - **Escalabilidad**: Facilita agregar nuevos hosts sin reconfigurar desde cero.
 
-### **1.1. Identificar hosts existentes**
+### **1.1. Crear host SW-Prod-Core1**
 
-1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>
+Vamos a crear el switch principal de la infraestructura:
 
-2. Identificar los siguientes hosts configurados en ejercicios anteriores:
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>
 
-   - `SRV-Demo-Web-Server` (configurado en [ejercicio 8.4](ejercicio-8.4.md))
-   - `SW-Demo2` (configurado en [ejercicio integrador](ejercicio-integrador.md))
-   - `SW-Demo3` (configurado en [ejercicio 9.8](ejercicio-9.8.md))
-
-3. Para cada host, verificar:
-
-   - Los grupos a los que pertenece
-   - Los templates aplicados
-   - El estado de disponibilidad
-   - Las interfaces configuradas
-
-### **1.2. Reorganizar SW-Demo2 (aplicar template estándar)**
-
-El host `SW-Demo2` fue configurado en el [ejercicio integrador](ejercicio-integrador.md) creando un template personalizado. Para seguir las mejores prácticas, vamos a:
-
-1. **Renombrar el host actual y desactivarlo**:
-
-   - Editar el host `SW-Demo2`
-   - Cambiar el **Host name** a `SW-Demo4`
-   - Cambiar el **Status** a `Disabled`
-   - <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
-
-2. **Crear un nuevo host SW-Demo2 con template estándar**:
-
-   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>
-
-    1. **Host name**: `SW-Demo2`
+    1. **Host name**: `SW-Prod-Core1`
 
     2. Asociar un *template predefinido*.
 
@@ -147,7 +153,7 @@ El host `SW-Demo2` fue configurado en el [ejercicio integrador](ejercicio-integr
 
 3. **Verificar que el template se haya aplicado correctamente**:
 
-    1. En el host recientemente creado `SW-Demo3`, ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> y verificar que aparezcan múltiples ítems heredados del template `Cisco Nexus 9000 Series by SNMP`
+    1. En el host recientemente creado `SW-Prod-Edge1`, ir a la pestaña <span style="color: violet;"><strong>Items</strong></span> y verificar que aparezcan múltiples ítems heredados del template `Cisco Nexus 9000 Series by SNMP`
 
         > **💡 Nota**: Los ítems heredados del template mostrarán el nombre del template entre corchetes junto al nombre del elemento, por ejemplo: `[Template Cisco Nexus 9000 Series by SNMP] Nombre del item`.
 
@@ -163,7 +169,7 @@ El host `SW-Demo2` fue configurado en el [ejercicio integrador](ejercicio-integr
         - Esperar unos minutos para que Zabbix realice el descubrimiento.
         - Volver a la pestaña <span style="color: violet;"><strong>Items</strong></span> y verificar que ahora aparezcan nuevos ítems descubiertos automáticamente (por ejemplo, interfaces de red, discos, etc.).
 
-    6. Verificar la conectividad del host **"SW-Demo3"**:
+    6. Verificar la conectividad del host **"SW-Prod-Core1"**:
 
         - Verificar la columna **Availability**:
             - <span style="color: green;">🟢 Verde</span> → Host disponible y agente respondiendo.
@@ -173,40 +179,48 @@ El host `SW-Demo2` fue configurado en el [ejercicio integrador](ejercicio-integr
     7. **Verificar la recopilación de datos**:
 
         - Ir a <span style="color: purple;"><strong>Monitoring</strong></span> → <span style="color: violet;"><strong>Latest data</strong></span>
-        - Filtrar por el host `SW-Demo3`
+        - Filtrar por el host `SW-Prod-Core1`
         - Verificar que se estén recopilando datos de los ítems SNMP (valores con timestamp reciente)
         - Verificar que los campos del inventario del host se hayan poblado automáticamente con información del dispositivo (ir a la pestaña <span style="color: violet;"><strong>Inventory</strong></span> del host y verificar campos como "Name", "Type", "Serial number", etc.)
 
-### **1.3. Aplicar templates estándar a SRV-Demo-Web-Server**
+### **1.2. Crear host SW-Prod-Edge1**
 
-El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.4.md) con items directamente en el host. Para seguir las mejores prácticas, vamos a aplicar templates estándar:
+Vamos a crear el switch secundario de la infraestructura:
 
-1. **Eliminar item duplicado antes de aplicar template ICMP Ping**:
+1. Repetir los mismos pasos de la sección 1.1 pero con los siguientes valores:
 
-   > **⚠️ Importante**: El host `SRV-Demo-Web-Server` ya tiene un item "ICMP Ping" configurado directamente en el host. Antes de aplicar el template "ICMP Ping", debemos eliminarlo para evitar conflictos.
+   - **Host name**: `SW-Prod-Edge1`
+   - **IP address**: `10.0.10.3` (ajustar según tu configuración de red)
 
-   1. Editar el host `SRV-Demo-Web-Server`
+2. El resto de la configuración es igual a `SW-Prod-Core1`.
 
-   2. Ir a la pestaña <span style="color: violet;"><strong>Items</strong></span>
+### **1.3. Crear host SRV-Prod-WebServer**
 
-   3. Localizar el item **"ICMP Ping"** (el que fue creado directamente en el host)
+Vamos a crear el servidor web aplicando templates estándar:
 
-   4. Seleccionarlo y hacer clic en <span style="color: blue;"><strong>Delete</strong></span> (eliminar)
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → <span style="color: blue;"><strong>Create host</strong></span>
 
-   5. Confirmar la eliminación
+2. **Configuración básica**:
 
-2. **Aplicar templates estándar**:
+   1. **Host name**: `SRV-Prod-WebServer`
 
-   1. Editar el host `SRV-Demo-Web-Server`
+   2. **Groups** *(parámetro obligatorio)*:
+      - Crear o seleccionar el grupo `Web Servers` (lo organizaremos mejor después)
 
-   2. Ir a la pestaña <span style="color: violet;"><strong>Templates</strong></span>
+   3. **Interfaces**:
+      - <span style="color: blue;"><strong>Add</strong></span> y seleccionar **Agent**
+      - IP address: `10.0.10.10` (ajustar según tu configuración)
+      - Port: `10050`
 
-   3. Agregar los siguientes templates:
+   4. **Templates**:
+      - Agregar los siguientes templates:
+        - `Linux by Zabbix agent`
+        - `ICMP Ping`
 
-      - `Linux by Zabbix agent`
-      - `ICMP Ping`
+   5. **Description** *(opcional)*:
+      - Description: `Servidor web de producción con Nginx`
 
-   4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
+   6. <span style="color: blue;"><strong>Add</strong> (Guardar)</span>
 
    > **💡 Nota**: Estos templates estándar incluyen:
    > - **Linux by Zabbix agent**: Items, triggers y gráficos para monitoreo de servidores Linux (CPU, memoria, disco, red, procesos, etc.).
@@ -245,9 +259,9 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
 1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span>
 
-2. **Mover SRV-Demo-Web-Server**:
+2. **Mover SRV-Prod-WebServer**:
 
-    1. Seleccionar el host `SRV-Demo-Web-Server`
+    1. Seleccionar el host `SRV-Prod-WebServer`
 
     2. Hacer clic para editarlo
 
@@ -259,7 +273,7 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
-3. **Mover SW-Demo2 y SW-Demo3** (múltiples hosts con la misma configuración):
+3. **Mover SW-Prod-Core1 y SW-Prod-Edge1** (múltiples hosts con la misma configuración):
 
     > **💡 Tip - Actualización masiva (Mass update):**
     >
@@ -269,7 +283,7 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     **Opción 1: Actualización masiva (recomendado para múltiples hosts)**
 
-    1. Seleccionar ambos hosts `SW-Demo2` y `SW-Demo3` (mantener presionada la tecla Ctrl/Cmd y hacer clic en cada host)
+    1. Seleccionar ambos hosts `SW-Prod-Core1` y `SW-Prod-Edge1` (mantener presionada la tecla Ctrl/Cmd y hacer clic en cada host)
 
     2. Hacer clic en <span style="color: blue;"><strong>Mass update</strong></span> (actualización masiva)
 
@@ -281,7 +295,7 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     **Opción 2: Edición individual (si prefieres hacerlo uno por uno)**
 
-    1. Seleccionar el host `SW-Demo2`
+    1. Seleccionar el host `SW-Prod-Core1`
 
     2. Hacer clic para editarlo
 
@@ -293,13 +307,13 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     4. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
-    5. Repetir los pasos 1-4 para `SW-Demo3`
+    5. Repetir los pasos 1-4 para `SW-Prod-Edge1`
 
 ### **2.3. Aplicar tags consistentes a los hosts**
 
-1. **Agregar tags al host SRV-Demo-Web-Server**:
+1. **Agregar tags al host SRV-Prod-WebServer**:
 
-    1. Editar el host `SRV-Demo-Web-Server`
+    1. Editar el host `SRV-Prod-WebServer`
 
     2. En la pestaña <span style="color: violet;"><strong>Tags</strong></span>, agregar:
         - Name: `component` | Value: `web-server`
@@ -318,7 +332,7 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     **Opción 1: Actualización masiva (recomendado para múltiples hosts)**
 
-    1. Seleccionar ambos hosts `SW-Demo2` y `SW-Demo3` (mantener presionada la tecla Ctrl/Cmd y hacer clic en cada host)
+    1. Seleccionar ambos hosts `SW-Prod-Core1` y `SW-Prod-Edge1` (mantener presionada la tecla Ctrl/Cmd y hacer clic en cada host)
 
     2. Hacer clic en <span style="color: blue;"><strong>Mass update</strong></span> (actualización masiva)
 
@@ -333,7 +347,7 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     **Opción 2: Edición individual (si prefieres hacerlo uno por uno)**
 
-    1. Editar el host `SW-Demo2`
+    1. Editar el host `SW-Prod-Core1`
 
     2. En la pestaña <span style="color: violet;"><strong>Tags</strong></span>, agregar:
         - Name: `component` | Value: `network-switch`
@@ -342,7 +356,7 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
     3. <span style="color: blue;"><strong>Update</strong> (Actualizar)</span>
 
-    4. Repetir los pasos 1-3 para `SW-Demo3` con los mismos tags
+    4. Repetir los pasos 1-3 para `SW-Prod-Edge1` con los mismos tags
 
 ---
 
@@ -352,11 +366,11 @@ El host `SRV-Demo-Web-Server` fue configurado en el [ejercicio 8.4](ejercicio-8.
 
 ### **3.1. Completar triggers de ICMP Ping - 3 severidades con dependencias**
 
-El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tiene severidad High y usa la expresión `last(/SRV-Demo-Web-Server/icmpping)=0`. Necesitamos modificar este trigger y crear los triggers adicionales para completar las 3 severidades con dependencias.
+El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tiene severidad High y usa la expresión `last(/SRV-Prod-WebServer/icmpping)=0`. Necesitamos modificar este trigger y crear los triggers adicionales para completar las 3 severidades con dependencias.
 
 #### **3.1.1. Modificar el trigger existente (High → Warning)**
 
-1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SRV-Demo-Web-Server` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
+1. Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SRV-Prod-WebServer` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
 
 2. Editar el trigger **"Unavailable by ICMP ping"**:
 
@@ -364,7 +378,7 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 
     2. **Name**: Cambiar a `Unavailable by ICMP ping (Warning)` *(opcional, pero recomendado para claridad)*
 
-    3. Verificar que la **Expression** sea: `last(/SRV-Demo-Web-Server/icmpping)=0`
+    3. Verificar que la **Expression** sea: `last(/SRV-Prod-WebServer/icmpping)=0`
 
     4. En la pestaña <span style="color: violet;"><strong>Tags</strong></span>, agregar (si no lo tiene):
         - Name: `scope` | Value: `availability`
@@ -373,7 +387,7 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 
 #### **3.1.2. Crear trigger Average para ICMP Ping**
 
-1. En el host **"SRV-Demo-Web-Server"**, ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span> → <span style="color: blue;"><strong>Create trigger</strong></span>
+1. En el host **"SRV-Prod-WebServer"**, ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span> → <span style="color: blue;"><strong>Create trigger</strong></span>
 
 2. Configurar el trigger:
 
@@ -387,12 +401,12 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
         - Severity: `Average` *(Media)*
 
     4. **Expression**:
-        - Expression: `last(/SRV-Demo-Web-Server/icmpping,#2)=0`
+        - Expression: `last(/SRV-Prod-WebServer/icmpping,#2)=0`
 
         > **💡 Nota**: Esta expresión verifica si el último valor hace 2 períodos (#2) es igual a `0`, proporcionando una verificación más robusta que solo el último valor inmediato. Esto ayuda a reducir falsas alarmas causadas por problemas temporales de red.
 
     5. **Recovery expression**:
-        - Recovery expression: `last(/SRV-Demo-Web-Server/icmpping)=1`
+        - Recovery expression: `last(/SRV-Prod-WebServer/icmpping)=1`
 
     6. **Description**:
         - Description: `No disponible por ping ICMP (confirmado). Este trigger se activa cuando la solicitud de ping ICMP al dispositivo devolvió un tiempo de espera agotado. Esto puede indicar que el host está inaccesible, apagado o que hay problemas de conectividad de red.`
@@ -404,7 +418,7 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 
 #### **3.1.3. Crear trigger High para ICMP Ping (expresión robusta)**
 
-1. En el host **"SRV-Demo-Web-Server"**, ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span> → <span style="color: blue;"><strong>Create trigger</strong></span>
+1. En el host **"SRV-Prod-WebServer"**, ir a la pestaña <span style="color: violet;"><strong>Triggers</strong></span> → <span style="color: blue;"><strong>Create trigger</strong></span>
 
 2. Configurar el trigger:
 
@@ -418,14 +432,14 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
         - Severity: `High` *(Alta)*
 
     4. **Expression**:
-        - Expression: `max(/SRV-Demo-Web-Server/icmpping,#3)=0`
+        - Expression: `max(/SRV-Prod-WebServer/icmpping,#3)=0`
 
         > **💡 Nota importante**: Esta expresión es más robusta que `last(...)=0`. Verifica si el **máximo valor de los últimos 3 valores** es igual a `0`, lo que reduce falsas alarmas causadas por valores puntuales o problemas temporales de red. Requiere que **todos** los últimos 3 valores sean `0` para activarse, siendo más confiable para detectar problemas críticos.
 
         > **💡 Referencia**: Esta expresión alternativa se menciona en el [ejercicio 8.4](ejercicio-8.4.md) como una opción más robusta.
 
     5. **Recovery expression**:
-        - Recovery expression: `last(/SRV-Demo-Web-Server/icmpping)=1`
+        - Recovery expression: `last(/SRV-Prod-WebServer/icmpping)=1`
 
     6. **Description**:
         - Description: `No disponible por ping ICMP (crítico). Este trigger se activa cuando el host no responde a ping ICMP durante los últimos 3 intentos consecutivos, lo que indica un problema crítico de conectividad. Por favor, verifique la conectividad del dispositivo inmediatamente.`
@@ -439,7 +453,7 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 
 1. Editar el trigger **"Unavailable by ICMP ping (Warning)"**:
 
-   - Ir al host **"SRV-Demo-Web-Server"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Unavailable by ICMP ping (Warning)`
+   - Ir al host **"SRV-Prod-WebServer"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Unavailable by ICMP ping (Warning)`
 
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
 
@@ -452,7 +466,7 @@ El trigger de ICMP ping configurado en el [ejercicio 8.4](ejercicio-8.4.md) tien
 
 2. Editar el trigger **"Unavailable by ICMP ping (Average)"**:
 
-   - Ir al host **"SRV-Demo-Web-Server"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Unavailable by ICMP ping (Average)`
+   - Ir al host **"SRV-Prod-WebServer"** → Pestaña <span style="color: violet;"><strong>Triggers</strong></span> → Seleccionar `Unavailable by ICMP ping (Average)`
    - Pestaña <span style="color: violet;"><strong>Dependencies</strong></span>
    - Agregar dependencia hacia `Unavailable by ICMP ping (High)`:
      - <span style="color: blue;"><strong>Add</strong></span> → Seleccionar `Unavailable by ICMP ping (High)`
@@ -608,7 +622,7 @@ Actualmente solo existe el trigger Average para CPU. Necesitamos crear los trigg
 
 4. **Ejecutar discovery para aplicar los nuevos triggers**:
 
-   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Demo2` o `SW-Demo3`
+   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Prod-Core1` o `SW-Prod-Edge1`
    - Pestaña <span style="color: violet;"><strong>Discovery</strong></span> → Regla **"CPU Discovery"** → <span style="color: blue;"><strong>Execute now</strong></span>
    - Esperar unos minutos para que se creen los nuevos triggers
 
@@ -662,21 +676,21 @@ Las dependencias deben configurarse de manera que cuando una interfaz esté en e
 
 3. **Ejecutar discovery para aplicar los nuevos triggers**:
 
-   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Demo2` o `SW-Demo3`
+   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Prod-Core1` o `SW-Prod-Edge1`
    - Pestaña <span style="color: violet;"><strong>Discovery</strong></span> → Regla **"Network Interfaces Discovery"** → <span style="color: blue;"><strong>Execute now</strong></span>
    - Esperar unos minutos para que se creen los nuevos triggers
 
 ### **3.5. Verificar triggers y dependencias configuradas**
 
-1. **Verificar triggers del servidor web (SRV-Demo-Web-Server)**:
+1. **Verificar triggers del servidor web (SRV-Prod-WebServer)**:
 
-   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SRV-Demo-Web-Server` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
+   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SRV-Prod-WebServer` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
    - Verificar que existan los triggers de ICMP Ping con las 3 severidades:
      - **ICMP Ping**: Warning (`last(...)=0`), Average (`last(...#2)=0`), High (`max(...#3)=0`)
 
-2. **Verificar triggers de los switches (SW-Demo2 o SW-Demo3)**:
+2. **Verificar triggers de los switches (SW-Prod-Core1 o SW-Prod-Edge1)**:
 
-   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Demo2` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
+   - Ir a <span style="color: purple;"><strong>Configuration</strong></span> → <span style="color: violet;"><strong>Hosts</strong></span> → Seleccionar `SW-Prod-Core1` → Pestaña <span style="color: violet;"><strong>Triggers</strong></span>
    - Verificar que existan todos los triggers con las severidades correspondientes:
      - **Memoria**: Warning, Average, High
      - **CPU**: Warning, Average, High
@@ -1014,9 +1028,9 @@ Para probar el flujo completo, se puede solicitar al instructor que:
 
 2. Para cada host, verificar:
 
-    **SRV-Demo-Web-Server**:
+    **SRV-Prod-WebServer**:
 
-    - Filtrar por `SRV-Demo-Web-Server`
+    - Filtrar por `SRV-Prod-WebServer`
     - Verificar que existan items:
       - `ICMP Ping`
       - `TCP Port: 80 Check`
@@ -1026,18 +1040,18 @@ Para probar el flujo completo, se puede solicitar al instructor que:
       - `ICMP Ping` y `TCP Port: 80 Check` deben mostrar `Up` o `Down` (gracias al value mapping "Service Status")
       - `HTTP Check - Website` debe mostrar `OK` en lugar de `200` (gracias al value mapping "HTTP Status Codes")
 
-    **SW-Demo2**:
+    **SW-Prod-Core1**:
 
-    - Filtrar por `SW-Demo2`
+    - Filtrar por `SW-Prod-Core1`
     - Verificar que se estén recopilando métricas SNMP:
       - Items del sistema (System Name, System Description, etc.)
       - Memory utilization
       - Items descubiertos (interfaces de red, CPU)
     - Verificar que los estados de interfaces muestren value mappings (up/down en lugar de números)
 
-    **SW-Demo3**:
+    **SW-Prod-Edge1**:
 
-    - Filtrar por `SW-Demo3`
+    - Filtrar por `SW-Prod-Edge1`
     - Verificar que se estén recopilando métricas del template `Cisco Nexus 9000 Series by SNMP`
     - Verificar que los items descubiertos estén funcionando
 
