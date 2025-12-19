@@ -112,7 +112,7 @@ El **monitoreo** es el proceso de observar de forma continua **sistemas, redes, 
 </div>
 <div>
 
-<img src="imagenes/640px-Metric_collection.svg.png" alt="Casos típicos de uso">
+<img src="imagenes/640px-Metric_collection.svg.png" alt="Casos típicos de uso" style="max-width: 100%; height: auto;">
 
 </div>
 </div>
@@ -141,7 +141,7 @@ Permite centralizar la recolección, almacenamiento, visualización y alerta de 
 - Integraciones con **herramientas externas** (Grafana, Ansible, Slack, Telegram, etc.).
 
 <div style="text-align: center;">
-<img src="imagenes/zabbix_features_1200x766.svg" alt="Características de Zabbix" style="max-width: 800px; height: auto; display: block; margin: 0 auto;">
+<img src="imagenes/zabbix_features_1200x766.svg" alt="Características de Zabbix" style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
 </div>
 
 ---
@@ -205,7 +205,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     </div>
     <div>
 
-    <img src="imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds">
+    <img src="imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds" style="max-width: 80%; height: auto;">
 
     </div>
     </div>
@@ -236,7 +236,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     </div>
     <div>
 
-    <img src="imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment">
+    <img src="imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment" style="max-width: 60%; height: auto;">
 
     </div>
     </div>
@@ -247,7 +247,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
         - <strong>Modo pasivo</strong> → El servidor <strong>consulta</strong> al agente bajo demanda.
 
     <div style="text-align: center; margin: 20px 0;">
-    <img src="imagenes/image.png" alt="Modos de operación">
+    <img src="imagenes/image.png" alt="Modos de operación" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
     </div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
@@ -260,7 +260,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     </div>
     <div>
 
-    <img src="imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents">
+    <img src="imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents" style="max-width: 80%; height: auto;">
 
     </div>
     </div>
@@ -273,7 +273,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
         - <strong>Modo pasivo</strong> → El servidor <strong>se conecta</strong> y <strong>consulta</strong> al proxy.
 
     <div style="text-align: center;">
-    <img src="imagenes/8-1.jpg" alt="Arquitectura con Proxy" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    <img src="imagenes/8-1.jpg" alt="Arquitectura con Proxy" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
     </div>
 
     - >**ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
@@ -291,7 +291,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     - Genera reportes PDF programados automáticamente.
 
     <div style="text-align: center;">
-    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
     </div>
 
 - <span style="color: violet;"><strong>API REST de Zabbix</strong></span>
@@ -299,7 +299,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     - Ideal para integraciones con Ansible, Grafana, n8n, etc.
 
     <div style="text-align: center;">
-    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
     </div>
 
 ---
@@ -316,12 +316,12 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
 
-<img src="imagenes/features_Install_in_minutes_zabbix.svg" alt="Install in Minutes">
+<img src="imagenes/features_Install_in_minutes_zabbix.svg" alt="Install in Minutes" style="max-width: 90%; height: auto;">
 
 </div>
 <div>
 
-<img src="imagenes/image 1.png" alt="Arquitectura">
+<img src="imagenes/image 1.png" alt="Arquitectura" style="max-width: 100%; height: auto;">
 
 </div>
 </div>
@@ -331,7 +331,7 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 ### **2.5. Puertos y comunicación**
 
  <div style="text-align: center;">
- <img src="imagenes/image%202.png" alt="Puertos y comunicación" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+ <img src="imagenes/image%202.png" alt="Puertos y comunicación" style="max-width: 80%; height: auto; display: block; margin: 0 auto;">
  </div>
 
  | **Componente** | **Puerto TCP** | **Función** |
@@ -401,7 +401,7 @@ El **menú lateral** es la base para navegar el frontend.
     </div>
     <div>
 
-    <img src="imagenes/visualization.svg" alt="Visualization">
+    <img src="imagenes/visualization.svg" alt="Visualization" style="max-width: 80%; height: auto;">
 
     </div>
     </div>
@@ -436,7 +436,7 @@ El **menú lateral** es la base para navegar el frontend.
 </div>
 <div>
 
-<img src="imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring">
+<img src="imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring" style="max-width: 80%; height: auto;">
 
 </div>
 </div>
@@ -454,7 +454,7 @@ El **menú lateral** es la base para navegar el frontend.
 </div>
 <div>
 
-<img src="imagenes/features_Inventory_information.svg" alt="Inventory Information">
+<img src="imagenes/features_Inventory_information.svg" alt="Inventory Information" style="max-width: 80%; height: auto;">
 
 </div>
 </div>
@@ -544,7 +544,7 @@ Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos
 </div>
 <div>
 
-<img src="imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates">
+<img src="imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates" style="max-width: 80%; height: auto;">
 
 </div>
 </div>
@@ -721,7 +721,7 @@ Es un descubrimiento de bajo nivel el cual permite que Zabbix detecte automátic
 </div>
 <div>
 
-<img src="imagenes/features_low_level_discovery.svg" alt="Low Level Discovery">
+<img src="imagenes/features_low_level_discovery.svg" alt="Low Level Discovery" style="max-width: 70%; height: auto;">
 
 </div>
 </div>
@@ -964,7 +964,7 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
     </div>
     <div>
 
-    <img src="imagenes/features_Escalations.svg" alt="Escalations">
+    <img src="imagenes/features_Escalations.svg" alt="Escalations" style="max-width: 50%; height: auto;">
 
     </div>
     </div>
@@ -982,6 +982,9 @@ Los maneja exclusivamente el **Zabbix Server**.
 
 **Tipos de media soportados:**
 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 <ul>
 <li><strong>Correo electrónico (E-mail)</strong>.</li>
 <li><strong>SMS</strong>.</li>
@@ -989,17 +992,28 @@ Los maneja exclusivamente el **Zabbix Server**.
 <li><strong>Scripts personalizados</strong> (AlertScripts).</li>
 </ul>
 
- <div style="text-align: center;">
- <img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
- </div>
+</div>
+<div>
+
+<img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 80%; height: auto;">
+
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
+<img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 80%; height: auto;">
+
+</div>
+<div>
 
 > **💡 Tip:** Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
 
 Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 
- <div style="text-align: center;">
- <img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
- </div>
+</div>
+</div>
 
 
 > **📚 Documentación oficial:** Para más detalles sobre Media Types, consulta [Zabbix - Media Types](https://www.zabbix.com/documentation/6.0/es/manual/config/notifications/media_types).
@@ -1044,7 +1058,7 @@ Zabbix te permite recopilar métricas de cualquier fuente, ya sea:
 </div>
 <div>
 
-<img src="imagenes/features_Collect_from_any_source_zabbix.svg" alt="Collect from any source">
+<img src="imagenes/features_Collect_from_any_source_zabbix.svg" alt="Collect from any source" style="max-width: 80%; height: auto;">
 
 </div>
 </div>
@@ -1075,6 +1089,9 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 
  Zabbix puede recolectar datos directamente desde el Zabbix Server o Zabbix Proxy, usando comprobaciones directas:
 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+<div>
+
 - <strong>Simple checks</strong>:
     - <strong>ICMP (Ping)</strong> → Comprobación de disponibilidad básica.
     - <strong>Puertos TCP</strong> → Verificar si un servicio responde.
@@ -1089,9 +1106,13 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 
 ** Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
 
- <div style="text-align: center;">
- <img src="imagenes/features_Agent-less_monitoring.svg" alt="Monitoreo sin agente" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
- </div>
+</div>
+<div>
+
+<img src="imagenes/features_Agent-less_monitoring.svg" alt="Monitoreo sin agente" style="max-width: 80%; height: auto;">
+
+</div>
+</div>
 
  **8.2.4. Scripts y métricas personalizadas**
 
@@ -1196,7 +1217,7 @@ Beneficios:
     </div>
     <div>
 
-    <img src="imagenes/features_User_Roles.svg" alt="User Roles">
+    <img src="imagenes/features_User_Roles.svg" alt="User Roles" style="max-width: 70%; height: auto;">
 
     </div>
     </div>
@@ -1220,7 +1241,7 @@ Beneficios:
     </div>
     <div>
 
-    <img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions">
+    <img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions" style="max-width: 70%; height: auto;">
 
     </div>
     </div>
@@ -1245,7 +1266,7 @@ Beneficios:
 ></div>
 ><div>
 >
-><img src="imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy">
+><img src="imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy" style="max-width: 70%; height: auto;">
 >
 ></div>
 ></div>
@@ -1324,11 +1345,11 @@ Normalmente se requiere alta disponibilidad (HA) en infraestructuras críticas q
 Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan varios servidores Zabbix como nodos en un clúster. Mientras un servidor Zabbix en el clúster está activo, otros están en espera, listos para asumir el control si fuera necesario.
 
 <div style="text-align: center;">
-<img src="imagenes/zabbix_ha.png" alt="Clúster de alta disponibilidad" style="max-width: 700px; height: auto; display: block; margin: 0 auto;">
+<img src="imagenes/zabbix_ha.png" alt="Clúster de alta disponibilidad" style="max-width: 70%; height: auto; display: block; margin: 0 auto;">
 </div>
 
 <div style="text-align: center;">
-<img src="imagenes/zabbix_ha_agent.png" alt="Clúster HA con agente" style="max-width: 700px; height: auto; display: block; margin: 0 auto;">
+<img src="imagenes/zabbix_ha_agent.png" alt="Clúster HA con agente" style="max-width: 70%; height: auto; display: block; margin: 0 auto;">
 </div>
 
 > **📚 Documentación oficial:** Para más detalles sobre Clúster de alta disponibilidad, consulta [Zabbix - Clúster de alta disponibilidad](https://www.zabbix.com/documentation/6.0/es/manual/concepts/server/ha).
@@ -1376,7 +1397,7 @@ Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras 
 
 - Hacer una **consulta básica** a la API para consultar la **versión actual instalada** de Zabbix mediante solicitudes HTTP POST:
 
-    ```jsx
+    ```json
         POST https://alertasX.conatel-lab.conatel.cloud/api_jsonrpc.php HTTP/1.1
         Content-Type: application/json-rpc
         {
@@ -1397,7 +1418,7 @@ Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras 
 
 - Hacer una **consulta básica** a la API para **listar los hosts monitoreados** de Zabbix mediante cURL:
 
-    ```jsx
+    ```json
     curl -X POST -H "Content-Type: application/json" \
     -d '{
         "jsonrpc": "2.0",               # Versión de la API
@@ -1527,7 +1548,7 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
     - Reciben **soporte completo durante 3 años** (actualizaciones de funciones + correcciones de seguridad) y **soporte limitado durante 2 años adicionales** (solo correcciones críticas) → total: **5 años de soporte**.
     - Ideales para entornos de producción que requieren estabilidad y soporte prolongado.
     <div style="text-align: center;">
-    <img src="imagenes/zabbix_version_lts.png" alt="Versiones LTS" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    <img src="imagenes/zabbix_version_lts.png" alt="Versiones LTS" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
     </div>
 
 - **Versiones estándar**:
@@ -1535,7 +1556,7 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
     - Reciben **soporte completo durante 6 meses** (hasta la próxima versión estándar) y **soporte limitado durante 6 meses adicionales** → total: **12 meses de soporte**.
     - Incluyen nuevas funcionalidades y mejoras significativas.
     <div style="text-align: center;">
-    <img src="imagenes/zabbix_version_standard.png" alt="Versiones estándar" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    <img src="imagenes/zabbix_version_standard.png" alt="Versiones estándar" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
     </div>
 
 - **Ritmo de liberación**:
@@ -1543,7 +1564,7 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
     - Todas las plataformas de distribución se actualizaron dentro de las 24 horas posteriores al lanzamiento.
     - Los parches de seguridad y correcciones de errores se publican **mensualmente** para todas las versiones soportadas.
     <div style="text-align: center;">
-    <img src="imagenes/zabbix_version_ritmodeliberacion.png" alt="Ritmo de liberación" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    <img src="imagenes/zabbix_version_ritmodeliberacion.png" alt="Ritmo de liberación" style="max-width: 60%; height: auto; display: block; margin: 0 auto;">
     </div>
 
 #### <u><strong>Versiones actualmente soportadas</strong></u>
