@@ -1038,9 +1038,9 @@ Los maneja exclusivamente el **Zabbix Server**.
 </div>
 <div>
 
-> **💡 Tip:** Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
+> <strong>💡 Tip:</strong> Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
 
-Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
+<br>Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 
 </div>
 </div>
@@ -1230,6 +1230,7 @@ Beneficios:
 ### **9.3. Roles y permisos**
 
 - Definir <strong>roles</strong> según el tipo de usuario:
+
     - <strong>Administradores</strong> → Configuración completa.
     - <strong>Operadores</strong> → Acceso a dashboards, problemas y métricas.
     - <strong>Visualizadores</strong> → Solo consulta.
@@ -1281,10 +1282,10 @@ Beneficios:
     </div>
     </div>
 
-→ Beneficios:
-- Mayor <strong>seguridad</strong>.
-- <strong>Control granular</strong> de accesos.
-- Simplifica la delegación de tareas.
+- Beneficios de crear <strong>grupos de usuarios</strong> y <strong>roles de usuario</strong>:
+    - Mayor <strong>seguridad</strong>.
+    - <strong>Control granular</strong> de accesos.
+    - Simplifica la delegación de tareas.
 
 > **📚 Documentación oficial:** Para más detalles sobre Grupos de usuarios y roles de usuario, consulta [Zabbix - Grupos de usuarios y roles de usuario](https://www.zabbix.com/documentation/6.0/es/manual/config/users_and_usergroups).
 
