@@ -1040,6 +1040,8 @@ Los maneja exclusivamente el **Zabbix Server**.
 
 > <strong>💡 Tip:</strong> Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
 
+<br>
+
 Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 
 </div>
@@ -1224,6 +1226,25 @@ Beneficios:
   ├── Bases de datos
   └── Infraestructura
  ```
+
+> **💡 Importante - Cómo crear grupos jerárquicos en Zabbix:**
+>
+> Aunque el diagrama anterior muestra una estructura de árbol visual, en Zabbix los grupos jerárquicos se crean usando **barras diagonales (`/`)** en el nombre del grupo para representar la jerarquía.
+>
+> **Ejemplo práctico:**
+> - Para crear la estructura mostrada arriba, se debe crear grupos con los siguientes nombres:
+>   - `Clientes`
+>   - `Clientes/Cliente1`
+>   - `Clientes/Cliente1/Servidores`
+>
+> **Cómo funciona:**
+> - Zabbix interpreta las barras diagonales (`/`) como separadores de niveles jerárquicos.
+> - Cuando se crea un grupo llamado `Clientes/Cliente1/Servidores`, Zabbix automáticamente reconoce la jerarquía:
+>   - Nivel 1: `Clientes`
+>   - Nivel 2: `Cliente1` (dentro de `Clientes`)
+>   - Nivel 3: `Servidores` (dentro de `Clientes/Cliente1`)
+> - En la interfaz web, estos grupos aparecerán organizados jerárquicamente, pero el nombre completo del grupo será `Clientes/Cliente1/Servidores`.
+> - Los permisos y filtros funcionan con el nombre completo del grupo.
 
 ---
 
