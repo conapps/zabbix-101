@@ -110,7 +110,7 @@ El **monitoreo** es el proceso de observar de forma continua **sistemas, redes, 
 </ul>
 
 </div>
-<div>
+<div align="center">
 
 <img src="imagenes/640px-Metric_collection.svg.png" alt="Casos típicos de uso" style="max-width: 100%; height: auto;">
 
@@ -199,11 +199,11 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
      <li>Detecta problemas y envía alertas.</li>
      <li>Transfiere los valores recopilados a una base de datos.</li>
      <li>Controla, procesa y coordina la comunicación entre todos los elementos (agentes, proxies y frontend).</li>
-     <li>Soporta múltiples sistemas operativos: Linux (RedHat / CentOS / Oracle Linux, Alma Linux / Rocky Linux, Debian / Ubuntu / Raspbian, SUSE Linux), Solaris, AIX, HP-UX, FreeBSD / OpenBSD, MacOS, Otros.</li>
+     <li>Soporta múltiples sistemas operativos: <strong>Linux</strong> (RedHat / CentOS / Oracle Linux, Alma Linux / Rocky Linux, Debian / Ubuntu / Raspbian, SUSE Linux), Solaris, AIX, HP-UX, FreeBSD / OpenBSD, MacOS, Otros.</li>
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
     <img src="imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds" style="max-width: 70%; height: auto;">
 
@@ -234,9 +234,9 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
-    <img src="imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment" style="max-width: 60%; height: auto;">
+    <img src="imagenes/features_Automatic_agent_deployment_zabbix.svg" alt="Automatic Agent Deployment" style="max-width: 50%; height: auto;">
 
     </div>
     </div>
@@ -254,11 +254,19 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     <div>
 
      <ul>
-     <li>Implementación del agente en cualquier SO: Linux, UNIX, macOS, Windows, etc. como instalarse en servidores, PCs y dispositivos de red.</li>
+     <li>Implementación del agente en cualquier SO:</li>
+        <ul>
+        <li>Linux</li>
+        <li>UNIX</li>
+        <li>macOS</li>
+        <li>Windows</li>
+        <li>etc</li>
+        </ul>
+     <li>Como instalarse en servidores, PCs y dispositivos de red.</li>
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
     <img src="imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents" style="max-width: 70%; height: auto;">
 
@@ -298,9 +306,9 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
-    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 70%; height: auto;">
+    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 60%; height: auto;">
 
    </div>
     </div>
@@ -316,9 +324,9 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
-    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 70%; height: auto;">
+    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 60%; height: auto;">
 
     </div>
     </div>
@@ -420,7 +428,7 @@ El **menú lateral** es la base para navegar el frontend.
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
     <img src="imagenes/visualization.svg" alt="Visualization" style="max-width: 70%; height: auto;">
 
@@ -455,7 +463,7 @@ El **menú lateral** es la base para navegar el frontend.
 </ul>
 
 </div>
-<div>
+<div align="center">
 
 <img src="imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring" style="max-width: 70%; height: auto;">
 
@@ -473,7 +481,7 @@ El **menú lateral** es la base para navegar el frontend.
 </ul>
 
 </div>
-<div>
+<div align="center">
 
 <img src="imagenes/features_Inventory_information.svg" alt="Inventory Information" style="max-width: 70%; height: auto;">
 
@@ -563,7 +571,7 @@ Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos
 </ul>
 
 </div>
-<div>
+<div align="center">
 
 <img src="imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates" style="max-width: 70%; height: auto;">
 
@@ -740,7 +748,7 @@ Es un descubrimiento de bajo nivel el cual permite que Zabbix detecte automátic
 </ul>
 
 </div>
-<div>
+<div align="center">
 
 <img src="imagenes/features_low_level_discovery.svg" alt="Low Level Discovery" style="max-width: 70%; height: auto;">
 
@@ -983,9 +991,9 @@ Las **acciones** en Zabbix son **conjuntos de condiciones y operaciones** que se
      </ul>
 
     </div>
-    <div>
+    <div align="center">
 
-    <img src="imagenes/features_Escalations.svg" alt="Escalations" style="max-width: 50%; height: auto;">
+    <img src="imagenes/features_Escalations.svg" alt="Escalations" style="max-width: 40%; height: auto;">
 
     </div>
     </div>
@@ -1016,7 +1024,7 @@ Los maneja exclusivamente el **Zabbix Server**.
 </div>
 <div align="center">
 
-<img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 70%; height: auto;">
+<img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 60%; height: auto;">
 
 </div>
 </div>
@@ -1024,7 +1032,7 @@ Los maneja exclusivamente el **Zabbix Server**.
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div align="center">
 
-<img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 70%; height: auto;">
+<img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 60%; height: auto;">
 
 </div>
 <div>
@@ -1077,9 +1085,9 @@ Zabbix te permite recopilar métricas de cualquier fuente, ya sea:
 </ul>
 
 </div>
-<div>
+<div align="center">
 
-<img src="imagenes/features_Collect_from_any_source_zabbix.svg" alt="Collect from any source" style="max-width: 80%; height: auto;">
+<img src="imagenes/features_Collect_from_any_source_zabbix.svg" alt="Collect from any source" style="max-width: 70%; height: auto;">
 
 </div>
 </div>
@@ -1113,24 +1121,27 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
 
-- <strong>Simple checks</strong>:
-    - <strong>ICMP (Ping)</strong> → Comprobación de disponibilidad básica.
-    - <strong>Puertos TCP</strong> → Verificar si un servicio responde.
-- <strong>SSH / Telnet check</strong> → Ejecución de comandos remotos para obtener métricas.
-- <strong>ODBC</strong> <strong>check</strong> → Monitoreo de base de datos (database) vía ODBC.
-- <strong>SNMP (v1, v2c, v3)</strong> → Dispositivos de red, impresoras, firewalls, etc.
-- <strong>SNMP traps</strong> → Recibir alertas directamente desde el dispositivo.
-- <strong>HTTP checks</strong> y <strong>monitorización Web</strong> → Disponibilidad de sitios web y APIs.
-- <strong>IPMI</strong> → Monitoreo de hardware a nivel de placa base. Sensores de hardware, temperatura, voltaje
-- <strong>JMX</strong> → Monitoreo de aplicaciones Java.
-- <strong>Virtualización</strong> → VMware, Hyper-V, KVM, Proxmox
-
-** Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
+<ul>
+<li><strong>Simple checks</strong>:</li>
+    <ul>
+    <li><strong>ICMP (Ping)</strong> → Comprobación de disponibilidad básica.</li>
+    <li></li><strong>Puertos TCP</strong> → Verificar si un servicio responde.</li>
+    </ul>
+<li><strong>SSH / Telnet check</strong> → Ejecución de comandos remotos para obtener métricas.</li>
+<li><strong>ODBC</strong> <strong>check</strong> → Monitoreo de base de datos (database) vía ODBC.</li>
+<li><strong>SNMP (v1, v2c, v3)</strong> → Dispositivos de red, impresoras, firewalls, etc.</li>
+<li><strong>SNMP traps</strong> → Recibir alertas directamente desde el dispositivo.</li>
+<li><strong>HTTP checks</strong> y <strong>monitorización Web</strong> → Disponibilidad de sitios web y APIs.</li>
+<li><strong>IPMI</strong> → Monitoreo de hardware a nivel de placa base. Sensores de hardware, temperatura, voltaje</li>
+<li><strong>JMX</strong> → Monitoreo de aplicaciones Java.</li>
+<li><strong>Virtualización</strong> → VMware, Hyper-V, KVM, Proxmox</li>
 
 </div>
 <div>
 
 <img src="imagenes/features_Agent-less_monitoring.svg" alt="Monitoreo sin agente" style="max-width: 80%; height: auto;">
+
+** Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
 
 </div>
 </div>
@@ -1418,7 +1429,7 @@ Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras 
 
 - Hacer una **consulta básica** a la API para consultar la **versión actual instalada** de Zabbix mediante solicitudes HTTP POST:
 
-    ```json
+    ```bash
         POST https://alertasX.conatel-lab.conatel.cloud/api_jsonrpc.php HTTP/1.1
         Content-Type: application/json-rpc
         {
@@ -1439,7 +1450,7 @@ Se usa principalmente para **automatizar tareas** y **conectar Zabbix con otras 
 
 - Hacer una **consulta básica** a la API para **listar los hosts monitoreados** de Zabbix mediante cURL:
 
-    ```json
+    ```bash
     curl -X POST -H "Content-Type: application/json" \
     -d '{
         "jsonrpc": "2.0",               # Versión de la API
