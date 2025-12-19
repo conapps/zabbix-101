@@ -1122,11 +1122,12 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 <div>
 
 <ul>
-<li><strong>Simple checks</strong>:</li>
+<li><strong>Simple checks</strong>:
     <ul>
     <li><strong>ICMP (Ping)</strong> → Comprobación de disponibilidad básica.</li>
-    <li></li><strong>Puertos TCP</strong> → Verificar si un servicio responde.</li>
+    <li><strong>Puertos TCP</strong> → Verificar si un servicio responde.</li>
     </ul>
+</li>
 <li><strong>SSH / Telnet check</strong> → Ejecución de comandos remotos para obtener métricas.</li>
 <li><strong>ODBC</strong> <strong>check</strong> → Monitoreo de base de datos (database) vía ODBC.</li>
 <li><strong>SNMP (v1, v2c, v3)</strong> → Dispositivos de red, impresoras, firewalls, etc.</li>
@@ -1135,6 +1136,7 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 <li><strong>IPMI</strong> → Monitoreo de hardware a nivel de placa base. Sensores de hardware, temperatura, voltaje</li>
 <li><strong>JMX</strong> → Monitoreo de aplicaciones Java.</li>
 <li><strong>Virtualización</strong> → VMware, Hyper-V, KVM, Proxmox</li>
+</ul>
 
 </div>
 <div>
