@@ -140,7 +140,9 @@ Permite centralizar la recolección, almacenamiento, visualización y alerta de 
 - **Alertas automáticas**, flexibles y personalizables.
 - Integraciones con **herramientas externas** (Grafana, Ansible, Slack, Telegram, etc.).
 
-![zabbix_features_1200x766.svg](imagenes/zabbix_features_1200x766.svg)
+<div style="text-align: center;">
+<img src="imagenes/zabbix_features_1200x766.svg" alt="Características de Zabbix" style="max-width: 800px; height: auto; display: block; margin: 0 auto;">
+</div>
 
 ---
 
@@ -270,7 +272,9 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
         - <strong>Modo activo</strong> → El proxy <strong>se conecta</strong> al servidor y envía datos.
         - <strong>Modo pasivo</strong> → El servidor <strong>se conecta</strong> y <strong>consulta</strong> al proxy.
 
-    ![8-1.jpg](imagenes/8-1.jpg)
+    <div style="text-align: center;">
+    <img src="imagenes/8-1.jpg" alt="Arquitectura con Proxy" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    </div>
 
     - >**ℹ️ Nota:** El modo de proxy preferido depende de la configuración de la red.
 
@@ -286,13 +290,17 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
 - <span style="color: violet;"><strong>Zabbix Web Service</strong></span>
     - Genera reportes PDF programados automáticamente.
 
-    ![features_Scheduled_reports.svg](imagenes/features_Scheduled_reports.svg)
+    <div style="text-align: center;">
+    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    </div>
 
 - <span style="color: violet;"><strong>API REST de Zabbix</strong></span>
     - Permite <strong>automatizar tareas</strong> y conectar con otros sistemas.
     - Ideal para integraciones con Ansible, Grafana, n8n, etc.
 
-    ![features_Zabbix_API_zabbix.svg](imagenes/features_Zabbix_API_zabbix.svg)
+    <div style="text-align: center;">
+    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    </div>
 
 ---
 
@@ -322,7 +330,9 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 
 ### **2.5. Puertos y comunicación**
 
- ![image.png](imagenes/image%202.png)
+ <div style="text-align: center;">
+ <img src="imagenes/image%202.png" alt="Puertos y comunicación" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+ </div>
 
  | **Componente** | **Puerto TCP** | **Función** |
  | --- | --- | --- |
@@ -979,13 +989,17 @@ Los maneja exclusivamente el **Zabbix Server**.
 <li><strong>Scripts personalizados</strong> (AlertScripts).</li>
 </ul>
 
- ![features_Messaging_channels_zabbix.svg](imagenes/features_Messaging_channels_zabbix.svg)
+ <div style="text-align: center;">
+ <img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+ </div>
 
 > **💡 Tip:** Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
 
 Dentro de cada Media Type se puede personaliza los mensajes de alerta definiendo diferentes mensajes para diferentes canales de mensajería.
 
- ![features_Custom_alerts_zabbix.svg](imagenes/features_Custom_alerts_zabbix.svg)
+ <div style="text-align: center;">
+ <img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+ </div>
 
 
 > **📚 Documentación oficial:** Para más detalles sobre Media Types, consulta [Zabbix - Media Types](https://www.zabbix.com/documentation/6.0/es/manual/config/notifications/media_types).
@@ -1075,7 +1089,9 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 
 ** Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
 
- ![features_Agent-less_monitoring.svg](imagenes/features_Agent-less_monitoring.svg)
+ <div style="text-align: center;">
+ <img src="imagenes/features_Agent-less_monitoring.svg" alt="Monitoreo sin agente" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+ </div>
 
  **8.2.4. Scripts y métricas personalizadas**
 
@@ -1307,9 +1323,13 @@ Normalmente se requiere alta disponibilidad (HA) en infraestructuras críticas q
 
 Zabbix ofrece una solución **nativa** de alta disponibilidad, se ejecutan varios servidores Zabbix como nodos en un clúster. Mientras un servidor Zabbix en el clúster está activo, otros están en espera, listos para asumir el control si fuera necesario.
 
-![zabbix_ha.png](imagenes/zabbix_ha.png)
+<div style="text-align: center;">
+<img src="imagenes/zabbix_ha.png" alt="Clúster de alta disponibilidad" style="max-width: 700px; height: auto; display: block; margin: 0 auto;">
+</div>
 
-![zabbix_ha_agent.png](imagenes/zabbix_ha_agent.png)
+<div style="text-align: center;">
+<img src="imagenes/zabbix_ha_agent.png" alt="Clúster HA con agente" style="max-width: 700px; height: auto; display: block; margin: 0 auto;">
+</div>
 
 > **📚 Documentación oficial:** Para más detalles sobre Clúster de alta disponibilidad, consulta [Zabbix - Clúster de alta disponibilidad](https://www.zabbix.com/documentation/6.0/es/manual/concepts/server/ha).
 
@@ -1506,19 +1526,25 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
     - Se lanzan aproximadamente cada **18 meses** (1.5 años).
     - Reciben **soporte completo durante 3 años** (actualizaciones de funciones + correcciones de seguridad) y **soporte limitado durante 2 años adicionales** (solo correcciones críticas) → total: **5 años de soporte**.
     - Ideales para entornos de producción que requieren estabilidad y soporte prolongado.
-    ![zabbix_version_lts.png](imagenes/zabbix_version_lts.png)
+    <div style="text-align: center;">
+    <img src="imagenes/zabbix_version_lts.png" alt="Versiones LTS" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    </div>
 
 - **Versiones estándar**:
     - Se lanzan aproximadamente cada **6 meses** entre versiones LTS.
     - Reciben **soporte completo durante 6 meses** (hasta la próxima versión estándar) y **soporte limitado durante 6 meses adicionales** → total: **12 meses de soporte**.
     - Incluyen nuevas funcionalidades y mejoras significativas.
-    ![zabbix_version_standard.png](imagenes/zabbix_version_standard.png)
+    <div style="text-align: center;">
+    <img src="imagenes/zabbix_version_standard.png" alt="Versiones estándar" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    </div>
 
 - **Ritmo de liberación**:
     - 2 versiones estándar entre cada versión LTS (aproximadamente cada 6 meses).
     - Todas las plataformas de distribución se actualizaron dentro de las 24 horas posteriores al lanzamiento.
     - Los parches de seguridad y correcciones de errores se publican **mensualmente** para todas las versiones soportadas.
-    ![zabbix_version_ritmodeliberacion.png](imagenes/zabbix_version_ritmodeliberacion.png)
+    <div style="text-align: center;">
+    <img src="imagenes/zabbix_version_ritmodeliberacion.png" alt="Ritmo de liberación" style="max-width: 600px; height: auto; display: block; margin: 0 auto;">
+    </div>
 
 #### <u><strong>Versiones actualmente soportadas</strong></u>
 
@@ -1591,8 +1617,6 @@ Zabbix sigue un modelo de lanzamiento predecible que garantiza estabilidad y sop
 - **Módulo 8** → Recopilación de datos (métricas).
 - **Módulo 9** → Buenas prácticas de configuración y escalabilidad.
 - **Módulo 10** → Roadmap y ecosistema Zabbix.
-
->💡 Tip: Identificar qué funcionalidades podrían aplicarse en los entornos de cada participante.
 
 ---
 
