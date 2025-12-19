@@ -205,7 +205,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     </div>
     <div>
 
-    <img src="imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds" style="max-width: 80%; height: auto;">
+    <img src="imagenes/features_Smart_thresholds.svg" alt="Smart Thresholds" style="max-width: 70%; height: auto;">
 
     </div>
     </div>
@@ -260,7 +260,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     </div>
     <div>
 
-    <img src="imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents" style="max-width: 80%; height: auto;">
+    <img src="imagenes/features_Agents4_zabbix.svg" alt="Zabbix Agents" style="max-width: 70%; height: auto;">
 
     </div>
     </div>
@@ -287,19 +287,40 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
 - <span style="color: violet;"><strong>Zabbix Java Gateway</strong></span>
     - Permite monitorear <strong>aplicaciones Java</strong> (JMX).
     - Se puede conectar al servidor Zabbix o al zabbix proxy.
-- <span style="color: violet;"><strong>Zabbix Web Service</strong></span>
-    - Genera reportes PDF programados automáticamente.
 
-    <div style="text-align: center;">
-    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
+- <span style="color: violet;"><strong>Zabbix Web Service</strong></span>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
+     <ul>
+     <li>Genera reportes PDF programados automáticamente.</li>
+     </ul>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Scheduled_reports.svg" alt="Reportes programados" style="max-width: 70%; height: auto;">
+
+   </div>
     </div>
 
 - <span style="color: violet;"><strong>API REST de Zabbix</strong></span>
-    - Permite <strong>automatizar tareas</strong> y conectar con otros sistemas.
-    - Ideal para integraciones con Ansible, Grafana, n8n, etc.
 
-    <div style="text-align: center;">
-    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 50%; height: auto; display: block; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+
+     <ul>
+     <li>Permite <strong>automatizar tareas</strong> y conectar con otros sistemas.</li>
+     <li>Ideal para integraciones con Ansible, Grafana, n8n, etc.</li>
+     </ul>
+
+    </div>
+    <div>
+
+    <img src="imagenes/features_Zabbix_API_zabbix.svg" alt="API de Zabbix" style="max-width: 70%; height: auto;">
+
+    </div>
     </div>
 
 ---
@@ -316,7 +337,7 @@ En el workshop mostraríamos este esquema para explicar cómo se comunican los c
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
 <div>
 
-<img src="imagenes/features_Install_in_minutes_zabbix.svg" alt="Install in Minutes" style="max-width: 90%; height: auto;">
+<img src="imagenes/features_Install_in_minutes_zabbix.svg" alt="Install in Minutes" style="max-width: 80%; height: auto;">
 
 </div>
 <div>
@@ -401,7 +422,7 @@ El **menú lateral** es la base para navegar el frontend.
     </div>
     <div>
 
-    <img src="imagenes/visualization.svg" alt="Visualization" style="max-width: 80%; height: auto;">
+    <img src="imagenes/visualization.svg" alt="Visualization" style="max-width: 70%; height: auto;">
 
     </div>
     </div>
@@ -436,7 +457,7 @@ El **menú lateral** es la base para navegar el frontend.
 </div>
 <div>
 
-<img src="imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring" style="max-width: 80%; height: auto;">
+<img src="imagenes/features_SLA_monitoring.svg" alt="SLA Monitoring" style="max-width: 70%; height: auto;">
 
 </div>
 </div>
@@ -454,7 +475,7 @@ El **menú lateral** es la base para navegar el frontend.
 </div>
 <div>
 
-<img src="imagenes/features_Inventory_information.svg" alt="Inventory Information" style="max-width: 80%; height: auto;">
+<img src="imagenes/features_Inventory_information.svg" alt="Inventory Information" style="max-width: 70%; height: auto;">
 
 </div>
 </div>
@@ -544,7 +565,7 @@ Un **template** es un conjunto **preconfigurado** de ítems, triggers, gráficos
 </div>
 <div>
 
-<img src="imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates" style="max-width: 80%; height: auto;">
+<img src="imagenes/features_Out-of-the-box_templates_zabbix.svg" alt="Out-of-the-box Templates" style="max-width: 70%; height: auto;">
 
 </div>
 </div>
@@ -993,17 +1014,17 @@ Los maneja exclusivamente el **Zabbix Server**.
 </ul>
 
 </div>
-<div>
+<div align="center">
 
-<img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 80%; height: auto;">
+<img src="imagenes/features_Messaging_channels_zabbix.svg" alt="Canales de mensajería" style="max-width: 70%; height: auto;">
 
 </div>
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-<div>
+<div align="center">
 
-<img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 80%; height: auto;">
+<img src="imagenes/features_Custom_alerts_zabbix.svg" alt="Alertas personalizadas" style="max-width: 70%; height: auto;">
 
 </div>
 <div>
@@ -1215,7 +1236,7 @@ Beneficios:
     </ul>
 
     </div>
-    <div>
+    <div align="center">
 
     <img src="imagenes/features_User_Roles.svg" alt="User Roles" style="max-width: 70%; height: auto;">
 
@@ -1239,7 +1260,7 @@ Beneficios:
     </ul>
 
     </div>
-    <div>
+    <div align="center">
 
     <img src="imagenes/features_Flexible_permissions_zabbix.svg" alt="Flexible Permissions" style="max-width: 70%; height: auto;">
 
@@ -1264,7 +1285,7 @@ Beneficios:
 ></ul>
 >
 ></div>
-><div>
+><div align="center">
 >
 ><img src="imagenes/features_Multi-tenancy_zabbix.svg" alt="Multi-tenancy" style="max-width: 70%; height: auto;">
 >
