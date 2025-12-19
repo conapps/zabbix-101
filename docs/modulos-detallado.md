@@ -1143,8 +1143,8 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 <div>
 
 <img src="imagenes/features_Agent-less_monitoring.svg" alt="Monitoreo sin agente" style="max-width: 80%; height: auto;">
-
-** Algunos métodos **sí dependen de que el dispositivo/servicio tenga habilitado su propio agente** o API.
+<br>
+** Algunos métodos <strong>sí dependen de que el dispositivo/servicio tenga habilitado su propio agente</strong> o API.
 
 </div>
 </div>
