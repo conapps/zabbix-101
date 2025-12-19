@@ -254,7 +254,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
     <div>
 
      <ul>
-     <li>Implementación del agente en cualquier SO:</li>
+     <li>Implementación del agente en cualquier SO:
         <ul>
         <li>Linux</li>
         <li>UNIX</li>
@@ -262,6 +262,7 @@ Zabbix es una plataforma **modular y escalable**. Sus componentes pueden instala
         <li>Windows</li>
         <li>etc</li>
         </ul>
+     </li>
      <li>Como instalarse en servidores, PCs y dispositivos de red.</li>
      </ul>
 
