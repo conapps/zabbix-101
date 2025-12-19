@@ -1038,7 +1038,7 @@ Los maneja exclusivamente el **Zabbix Server**.
 </div>
 <div>
 
-> <strong>💡 Tip:</strong> Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
+<strong>💡 Tip:</strong> Para Slack, Telegram o Teams es recomendable usar Webhooks preconfigurados.
 
 <br>
 
@@ -1146,7 +1146,7 @@ Recolecta datos en <strong>sucursales remotas</strong> y los reenvía al <strong
 
 <img src="imagenes/features_Agent-less_monitoring.svg" alt="Monitoreo sin agente" style="max-width: 80%; height: auto;">
 <br>
-** Algunos métodos <strong>sí dependen de que el dispositivo/servicio tenga habilitado su propio agente</strong> o API.
+* Algunos métodos <strong>sí dependen de que el dispositivo/servicio tenga habilitado su propio agente</strong> o API.
 
 </div>
 </div>
